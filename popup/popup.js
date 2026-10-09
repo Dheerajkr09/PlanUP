@@ -1291,107 +1291,68 @@ function createDayCard(dayData, index) {
     const videoItem = document.createElement('li');
     videoItem.className = `video-item ${video.completed ? 'video-completed' : ''}`;
     
-    if (appState.mode === 'custom') {
-      // Create sub-checkbox
-      const videoCheckbox = document.createElement('input');
-      videoCheckbox.type = 'checkbox';
-      videoCheckbox.className = 'video-checkbox';
-      videoCheckbox.id = `day-${index}-video-${videoIdx}-checkbox`;
-      videoCheckbox.checked = video.completed || false;
-      videoCheckbox?.addEventListener('change', (e) => handleVideoCompletion(index, videoIdx, e.target.checked));
-      
-      videoItem.appendChild(videoCheckbox);
-      
-      // Create content container
-      const contentContainer = document.createElement('div');
-      contentContainer.className = 'video-content-container';
-      
-      const vId = video.id || video.videoId;
-      const titleSpan = vId ? document.createElement('a') : document.createElement('span');
-      titleSpan.className = 'video-title';
-      titleSpan.textContent = video.title;
-      if (vId) {
-        let videoUrl = `https://www.youtube.com/watch?v=${vId}`;
-        if (video.startTime) {
-          videoUrl += `&t=${Math.floor(video.startTime * 60)}s`;
+    // Create sub-checkbox
+    const videoCheckbox = document.createElement('input');
+    videoCheckbox.type = 'checkbox';
+    videoCheckbox.className = 'video-checkbox';
+    videoCheckbox.id = `day-${index}-video-${videoIdx}-checkbox`;
+    videoCheckbox.checked = video.completed || false;
+    videoCheckbox?.addEventListener('change', (e) => handleVideoCompletion(index, videoIdx, e.target.checked));
+    
+    videoItem.appendChild(videoCheckbox);
+    
+    // Create content container
+    const contentContainer = document.createElement('div');
+    contentContainer.className = 'video-content-container';
+    
+    const vId = video.id || video.videoId;
+    const titleSpan = vId ? document.createElement('a') : document.createElement('span');
+    titleSpan.className = 'video-title';
+    titleSpan.textContent = video.title;
+    if (vId) {
+      let videoUrl = `https://www.youtube.com/watch?v=${vId}`;
+      if (video.startTime) {
+        videoUrl += `&t=${Math.floor(video.startTime * 60)}s`;
+      }
+      titleSpan.href = videoUrl;
+      titleSpan.target = '_blank';
+      titleSpan?.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (typeof chrome !== 'undefined' && chrome.tabs && chrome.tabs.create) {
+          chrome.tabs.create({ url: videoUrl });
+        } else {
+          window.open(videoUrl, '_blank');
         }
-        titleSpan.href = videoUrl;
-        titleSpan.target = '_blank';
-        titleSpan?.addEventListener('click', (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          if (typeof chrome !== 'undefined' && chrome.tabs && chrome.tabs.create) {
-            chrome.tabs.create({ url: videoUrl });
-          } else {
-            window.open(videoUrl, '_blank');
-          }
-        });
-      }
-      contentContainer.appendChild(titleSpan);
-      
-      const metaDiv = document.createElement('div');
-      metaDiv.className = 'video-meta-row';
-      
-      let timeRangeStr = '';
-      if (video.isPartial) {
-        const startTimeStr = video.startTime ? formatMinutes(video.startTime) : '0:00';
-        const endTimeStr = video.endTime ? formatMinutes(video.endTime) : 'end';
-        timeRangeStr = `(${startTimeStr} - ${endTimeStr}) `;
-      }
-      timeRangeStr += `[${formatMinutes(video.duration)}]`;
-      
-      const timeRangeLabel = document.createElement('span');
-      timeRangeLabel.className = 'video-time-range';
-      timeRangeLabel.textContent = timeRangeStr;
-      metaDiv.appendChild(timeRangeLabel);
-      
-      if (video.isPartial) {
-        const partialBadge = document.createElement('span');
-        partialBadge.className = 'partial-badge';
-        partialBadge.textContent = 'partial';
-        metaDiv.appendChild(partialBadge);
-      }
-      
-      contentContainer.appendChild(metaDiv);
-      videoItem.appendChild(contentContainer);
-    } else {
-      // Video-by-video mode
-      const vId = video.id || video.videoId;
-      
-      const titleLink = vId ? document.createElement('a') : document.createElement('span');
-      titleLink.className = vId ? 'playlist-title-link' : '';
-      titleLink.textContent = video.title;
-      if (vId) {
-        let videoUrl = `https://www.youtube.com/watch?v=${vId}`;
-        if (video.startTime) {
-          videoUrl += `&t=${Math.floor(video.startTime * 60)}s`;
-        }
-        titleLink.href = videoUrl;
-        titleLink.target = '_blank';
-        titleLink?.addEventListener('click', (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          if (typeof chrome !== 'undefined' && chrome.tabs && chrome.tabs.create) {
-            chrome.tabs.create({ url: videoUrl });
-          } else {
-            window.open(videoUrl, '_blank');
-          }
-        });
-      }
-      videoItem.appendChild(titleLink);
-
-      let videoText = '';
-      if (video.isPartial) {
-        const startTimeStr = video.startTime ? formatMinutes(video.startTime) : '0:00';
-        const endTimeStr = video.endTime ? formatMinutes(video.endTime) : 'end';
-        videoText += ` (${startTimeStr} - ${endTimeStr})`;
-      }
-      videoText += ` [${formatMinutes(video.duration)}]`;
-      
-      const metaSpan = document.createElement('span');
-      metaSpan.textContent = videoText;
-      videoItem.appendChild(metaSpan);
+      });
     }
+    contentContainer.appendChild(titleSpan);
+    
+    const metaDiv = document.createElement('div');
+    metaDiv.className = 'video-meta-row';
+    
+    let timeRangeStr = '';
+    if (video.isPartial) {
+      const startTimeStr = video.startTime ? formatMinutes(video.startTime) : '0:00';
+      const endTimeStr = video.endTime ? formatMinutes(video.endTime) : 'end';
+      timeRangeStr = `(${startTimeStr} - ${endTimeStr}) `;
+    }
+    timeRangeStr += `[${formatMinutes(video.duration)}]`;
+    
+    const timeRangeLabel = document.createElement('span');
+    timeRangeLabel.className = 'video-time-range';
+    timeRangeLabel.textContent = timeRangeStr;
+    metaDiv.appendChild(timeRangeLabel);
+    
+    if (video.isPartial) {
+      const partialBadge = document.createElement('span');
+      partialBadge.className = 'partial-badge';
+      partialBadge.textContent = 'partial';
+      metaDiv.appendChild(partialBadge);
+    }
+    
+    contentContainer.appendChild(metaDiv);
+    videoItem.appendChild(contentContainer);
     
     videoList.appendChild(videoItem);
   });
@@ -1437,6 +1398,7 @@ async function getGamificationState(playlistId) {
     minutesDate: null,
     minutesWatchedToday: 0,
     goalClaimedDate: null,
+    streakClaimedDate: null,
     completedVideoIds: [],
     rewardedSegmentIds: []
   };
@@ -1462,7 +1424,23 @@ async function syncAndRenderGamification() {
   
   if (window.Gamification) {
     const { state: refreshedState, events } = window.Gamification.refreshStreak(rawState);
-    if (events.length > 0 || rawState.xp === undefined) {
+    
+    // Auto-heal ghost XP if no videos are checked
+    if (appState.plan && appState.plan.length > 0) {
+      const allVideos = appState.plan.flatMap(day => Array.isArray(day.videos) ? day.videos : []);
+      const anyCompleted = allVideos.some(v => v.completed);
+      if (!anyCompleted && refreshedState.xp > 0) {
+        refreshedState.xp = 0;
+        refreshedState.level = 1;
+        refreshedState.streak = 0;
+        refreshedState.minutesWatchedToday = 0;
+        refreshedState.goalClaimedDate = null;
+        refreshedState.completedVideoIds = [];
+        refreshedState.rewardedSegmentIds = [];
+      }
+    }
+    
+    if (events.length > 0 || rawState.xp === undefined || refreshedState.xp === 0) {
       await saveGamificationState(playlistId, refreshedState);
     }
     rawState = refreshedState;
@@ -1477,50 +1455,64 @@ async function syncAndRenderGamification() {
 }
 
 async function processGamificationForVideoSegment(video, completed) {
-  if (!completed || !window.Gamification || !appState.playlistData || !appState.playlistData.id) return;
+  if (!window.Gamification || !appState.playlistData || !appState.playlistData.id) return;
   const playlistId = appState.playlistData.id;
-  const state = await getGamificationState(playlistId);
+  let state = await getGamificationState(playlistId);
   
   const segmentId = `${video.title}_${video.startTime || 0}_${video.endTime || 'end'}`;
   if (!state.rewardedSegmentIds) state.rewardedSegmentIds = [];
   
-  if (state.rewardedSegmentIds.includes(segmentId)) return; // already rewarded
+  if (completed) {
+    if (state.rewardedSegmentIds.includes(segmentId)) return;
+    state.rewardedSegmentIds.push(segmentId);
+    let { state: newState } = window.Gamification.addWatchMinutes(state, video.duration || 0);
+    const videoId = video.id || video.title;
+    const result = window.Gamification.completeVideo(newState, videoId);
+    state = result.state;
+  } else {
+    if (!state.rewardedSegmentIds.includes(segmentId)) return;
+    state.rewardedSegmentIds = state.rewardedSegmentIds.filter(id => id !== segmentId);
+    let { state: newState } = window.Gamification.removeWatchMinutes(state, video.duration || 0);
+    const videoId = video.id || video.title;
+    const result = window.Gamification.uncompleteVideo(newState, videoId);
+    state = result.state;
+  }
   
-  state.rewardedSegmentIds.push(segmentId);
-  
-  let { state: newState } = window.Gamification.addWatchMinutes(state, video.duration || 0);
-  
-  const videoId = video.id || video.title;
-  const result = window.Gamification.completeVideo(newState, videoId);
-  newState = result.state;
-  
-  await saveGamificationState(playlistId, newState);
+  await saveGamificationState(playlistId, state);
   await syncAndRenderGamification();
 }
 
 async function processGamificationForDay(dayData, completed) {
-  if (!completed || !window.Gamification || !appState.playlistData || !appState.playlistData.id) return;
+  if (!window.Gamification || !appState.playlistData || !appState.playlistData.id) return;
   const playlistId = appState.playlistData.id;
-  const state = await getGamificationState(playlistId);
+  let state = await getGamificationState(playlistId);
   
-  const daySegmentId = `day_${dayData.day}_${dayData.totalTime}`;
   if (!state.rewardedSegmentIds) state.rewardedSegmentIds = [];
   
-  if (state.rewardedSegmentIds.includes(daySegmentId)) return; // already rewarded
-  
-  state.rewardedSegmentIds.push(daySegmentId);
-  
-  let { state: newState } = window.Gamification.addWatchMinutes(state, dayData.totalTime || 0);
-  
   if (Array.isArray(dayData.videos)) {
-    dayData.videos.forEach(v => {
-      const videoId = v.id || v.title;
-      const res = window.Gamification.completeVideo(newState, videoId);
-      newState = res.state;
-    });
+    for (const video of dayData.videos) {
+      const segmentId = `${video.title}_${video.startTime || 0}_${video.endTime || 'end'}`;
+      if (completed) {
+        if (!state.rewardedSegmentIds.includes(segmentId)) {
+          state.rewardedSegmentIds.push(segmentId);
+          let { state: newState } = window.Gamification.addWatchMinutes(state, video.duration || 0);
+          const videoId = video.id || video.title;
+          const result = window.Gamification.completeVideo(newState, videoId);
+          state = result.state;
+        }
+      } else {
+        if (state.rewardedSegmentIds.includes(segmentId)) {
+          state.rewardedSegmentIds = state.rewardedSegmentIds.filter(id => id !== segmentId);
+          let { state: newState } = window.Gamification.removeWatchMinutes(state, video.duration || 0);
+          const videoId = video.id || video.title;
+          const result = window.Gamification.uncompleteVideo(newState, videoId);
+          state = result.state;
+        }
+      }
+    }
   }
   
-  await saveGamificationState(playlistId, newState);
+  await saveGamificationState(playlistId, state);
   await syncAndRenderGamification();
 }
 
@@ -1532,8 +1524,8 @@ async function handleVideoCompletion(dayIndex, videoIndex, completed) {
   try {
     const videoObj = appState.plan[dayIndex].videos[videoIndex];
     // Gamification
-    if (completed && !videoObj.completed) {
-      processGamificationForVideoSegment(videoObj, true);
+    if (completed !== videoObj.completed) {
+      processGamificationForVideoSegment(videoObj, completed);
     }
     
     // Update local state
@@ -1572,8 +1564,8 @@ async function handleDayCompletion(dayIndex, completed) {
   try {
     const dayData = appState.plan[dayIndex];
     // Gamification
-    if (completed && !dayData.completed) {
-      processGamificationForDay(dayData, true);
+    if (completed !== dayData.completed) {
+      processGamificationForDay(dayData, completed);
     }
     
     // Update local state

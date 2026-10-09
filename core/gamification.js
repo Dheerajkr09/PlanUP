@@ -121,13 +121,13 @@ window.Gamification = (function() {
     return { state: newState, events };
   }
 
-  // Claim daily goal (20 XP + streak bonus)
+  // Claim daily goal and streak
   function checkAndClaimDailyGoal(state, todayStr = getLocalDateString()) {
     const newState = { ...state };
     const events = [];
     
-    if (newState.minutesWatchedToday >= newState.dailyGoalMin && newState.goalClaimedDate !== todayStr) {
-      // Process streak
+    // Process streak logic: increases on FIRST TICK (minutesWatchedToday > 0)
+    if (newState.minutesWatchedToday > 0 && newState.streakClaimedDate !== todayStr) {
       if (newState.lastActiveDate) {
         const today = new Date(todayStr);
         const lastActive = new Date(newState.lastActiveDate);
@@ -138,7 +138,7 @@ window.Gamification = (function() {
           newState.streak += 1;
           events.push('streakIncreased');
         } else if (diffDays === 0) {
-          // Already active today, streak doesn't increase but we can still claim the goal if not claimed
+          // Already active today
         } else {
           newState.streak = 1;
         }
@@ -148,6 +148,11 @@ window.Gamification = (function() {
       
       newState.bestStreak = Math.max(newState.bestStreak, newState.streak);
       newState.lastActiveDate = todayStr;
+      newState.streakClaimedDate = todayStr;
+    }
+    
+    // Process Daily Goal XP Bonus
+    if (newState.minutesWatchedToday >= newState.dailyGoalMin && newState.goalClaimedDate !== todayStr) {
       newState.goalClaimedDate = todayStr;
       
       // Give rewards
@@ -169,13 +174,64 @@ window.Gamification = (function() {
     return { state: newState, events };
   }
 
+  // Remove watched minutes (and revert daily goal / streak if it drops below threshold)
+  function removeWatchMinutes(state, minutes, todayStr = getLocalDateString()) {
+    let newState = handleDailyRollover(state, todayStr);
+    const events = [];
+    
+    newState.xp = Math.max(0, newState.xp - minutes);
+    newState.minutesWatchedToday = Math.max(0, newState.minutesWatchedToday - minutes);
+    
+    // Check if we dropped below daily goal and need to revert BONUS
+    const droppedBelowGoal = (newState.dailyGoalMin > 0 && newState.minutesWatchedToday < newState.dailyGoalMin) || 
+                             (newState.dailyGoalMin === 0 && newState.minutesWatchedToday === 0);
+                             
+    if (newState.goalClaimedDate === todayStr && droppedBelowGoal) {
+      newState.goalClaimedDate = null;
+      
+      const streakBonus = Math.min(5 * newState.streak, 50);
+      const totalBonus = 20 + streakBonus;
+      newState.xp = Math.max(0, newState.xp - totalBonus);
+    }
+    
+    // Revert streak if ALL watch minutes for today are removed
+    if (newState.streakClaimedDate === todayStr && newState.minutesWatchedToday <= 0) {
+      newState.streakClaimedDate = null;
+      if (newState.streak > 0) {
+        newState.streak -= 1;
+      }
+      if (newState.streak === 0) {
+        newState.lastActiveDate = null;
+      }
+    }
+    
+    newState.level = getLevelFromXp(newState.xp);
+    return { state: newState, events };
+  }
+
+  // Uncomplete a video
+  function uncompleteVideo(state, videoId, todayStr = getLocalDateString()) {
+    let newState = handleDailyRollover(state, todayStr);
+    const events = [];
+    
+    if (newState.completedVideoIds.includes(videoId)) {
+      newState.completedVideoIds = newState.completedVideoIds.filter(id => id !== videoId);
+      newState.xp = Math.max(0, newState.xp - 10);
+      newState.level = getLevelFromXp(newState.xp);
+    }
+    
+    return { state: newState, events };
+  }
+
   return {
     getLocalDateString,
     getLevelFromXp,
     getProgress,
     refreshStreak,
     addWatchMinutes,
+    removeWatchMinutes,
     completeVideo,
+    uncompleteVideo,
     checkAndClaimDailyGoal
   };
 })();
