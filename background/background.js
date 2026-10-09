@@ -41,7 +41,25 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       chrome.action.openPopup().catch(err => console.error('PlanYT: Failed to open popup', err));
       sendResponse({ success: true });
     });
-    return true;
+  }
+  
+  // Proxy fetch requests through background to bypass CORS
+  if (message.type === 'FETCH_URL') {
+    fetch(message.url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.text();
+      })
+      .then(text => {
+        sendResponse({ success: true, data: text });
+      })
+      .catch(error => {
+        console.error('PlanYT Fetch error:', error);
+        sendResponse({ success: false, error: error.message });
+      });
+    return true; // Indicates async response
   }
 });
 

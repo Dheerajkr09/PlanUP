@@ -24,7 +24,7 @@ function applyI18n() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', applyI18n);
+document?.addEventListener('DOMContentLoaded', applyI18n);
 
 /**
  * popup.js
@@ -45,6 +45,10 @@ const elements = {
   playlistUrlInput: document.getElementById('playlistUrlInput'),
   fetchPlaylistBtn: document.getElementById('fetchPlaylistBtn'),
   playlistSectionBackBtn: document.getElementById('playlistSectionBackBtn'),
+  
+  // One-Shot Section
+  oneShotUrlInput: document.getElementById('oneShotUrlInput'),
+  fetchOneShotBtn: document.getElementById('fetchOneShotBtn'),
   
   // UI States
   loadingIndicator: document.getElementById('loadingIndicator'),
@@ -77,14 +81,6 @@ const elements = {
   modePickerBackBtn: document.getElementById('modePickerBackBtn'),
   modeVideoByVideoBtn: document.getElementById('modeVideoByVideoBtn'),
   modeCustomBtn: document.getElementById('modeCustomBtn'),
-  
-  // Speed Picker
-  speedPickerSection: document.getElementById('speedPickerSection'),
-  speedPickerBackBtn: document.getElementById('speedPickerBackBtn'),
-  speedPickerNextBtn: document.getElementById('speedPickerNextBtn'),
-  speedSlider: document.getElementById('speedSlider'),
-  speedValueDisplay: document.getElementById('speedValueDisplay'),
-  speedHintText: document.getElementById('speedHintText'),
   generatePlanBtn: document.getElementById('finalGenerateBtn'),
   
   // Confirm Section
@@ -93,8 +89,6 @@ const elements = {
   confirmMode: document.getElementById('confirmMode'),
   confirmDailyTimeRow: document.getElementById('confirmDailyTimeRow'),
   confirmDailyTime: document.getElementById('confirmDailyTime'),
-  confirmSpeedRow: document.getElementById('confirmSpeedRow'),
-  confirmSpeed: document.getElementById('confirmSpeed'),
   
   // Plan Display
   planSection: document.getElementById('planSection'),
@@ -123,7 +117,7 @@ let appState = {
 // ========================================
 // Initialization
 // ========================================
-document.addEventListener('DOMContentLoaded', async () => {
+document?.addEventListener('DOMContentLoaded', async () => {
   console.log('Extension loaded');
   attachEventListeners();
 
@@ -238,61 +232,65 @@ function attachEventListeners() {
   listenersAttached = true;
 
   // Add New Plan
-  elements.addPlanBtn.addEventListener('click', handleAddNewPlan);
+  elements.addPlanBtn?.addEventListener('click', handleAddNewPlan);
 
   // Fetch Playlist
-  elements.fetchPlaylistBtn.addEventListener('click', handleFetchPlaylist);
+  elements.fetchPlaylistBtn?.addEventListener('click', handleFetchPlaylist);
+  
+  // Fetch One-Shot URL
+  if (elements.fetchOneShotBtn) {
+    elements.fetchOneShotBtn?.addEventListener('click', handleOneShotGenerate);
+  }
   
   // Generate Plan
-  elements.generatePlanBtn.addEventListener('click', handleGeneratePlan);
+  elements.generatePlanBtn?.addEventListener('click', handleGeneratePlan);
   
   // Reset
-  elements.resetBtn.addEventListener('click', handleReset);
+  elements.resetBtn?.addEventListener('click', handleReset);
 
   // Playlist Section Back Button
-  elements.playlistSectionBackBtn.addEventListener('click', () => {
+  elements.playlistSectionBackBtn?.addEventListener('click', () => {
     appState.isAddingNewPlan = false;
     renderUI();
   });
 
   // Mode Picker Back
-  elements.modePickerBackBtn.addEventListener('click', () => {
+  elements.modePickerBackBtn?.addEventListener('click', () => {
     appState.wizardStep = 'enter-url';
     renderUI();
   });
 
   // Mode Picker Cards Selection
-  elements.modeVideoByVideoBtn.addEventListener('click', () => {
+  elements.modeVideoByVideoBtn?.addEventListener('click', () => {
     appState.mode = 'video-by-video';
     appState.wizardStep = 'confirm';
     renderUI();
   });
 
-  elements.modeCustomBtn.addEventListener('click', () => {
+  elements.modeCustomBtn?.addEventListener('click', () => {
     appState.mode = 'custom';
     appState.wizardStep = 'daily-time';
     renderUI();
   });
 
   // Planner Input Back & Next
-  elements.plannerInputBackBtn.addEventListener('click', () => {
+  elements.plannerInputBackBtn?.addEventListener('click', () => {
     appState.wizardStep = 'mode-picker';
     renderUI();
   });
 
-  elements.plannerInputNextBtn.addEventListener('click', () => {
+  elements.plannerInputNextBtn?.addEventListener('click', () => {
     const dailyTime = parseInt(elements.dailyWatchTimeInput.value);
     if (!dailyTime || dailyTime <= 0) {
       showError('Please enter a valid daily watch time');
       return;
     }
     appState.dailyWatchTime = dailyTime;
-    appState.wizardStep = 'speed-picker';
-    renderUI();
+    handleGeneratePlan();
   });
 
   // Speed Picker Back & Next
-  elements.speedPickerBackBtn.addEventListener('click', () => {
+  elements.speedPickerBackBtn?.addEventListener('click', () => {
     if (appState.mode === 'video-by-video') {
       appState.wizardStep = 'mode-picker';
     } else {
@@ -301,13 +299,13 @@ function attachEventListeners() {
     renderUI();
   });
 
-  elements.speedPickerNextBtn.addEventListener('click', () => {
+  elements.speedPickerNextBtn?.addEventListener('click', () => {
     appState.wizardStep = 'confirm';
     renderUI();
   });
 
   // Confirm Back
-  elements.confirmBackBtn.addEventListener('click', () => {
+  elements.confirmBackBtn?.addEventListener('click', () => {
     if (appState.mode === 'video-by-video') {
       appState.wizardStep = 'mode-picker';
     } else {
@@ -318,7 +316,7 @@ function attachEventListeners() {
 
   // Speed Slider input event
   if (elements.speedSlider) {
-    elements.speedSlider.addEventListener('input', (e) => {
+    elements.speedSlider?.addEventListener('input', (e) => {
       updateSpeedFromSlider(parseInt(e.target.value));
     });
   }
@@ -326,7 +324,7 @@ function attachEventListeners() {
   // Speed Tick Labels Click/Tap
   const tickLabels = document.querySelectorAll('.tick-label');
   tickLabels.forEach(tick => {
-    tick.addEventListener('click', () => {
+    tick?.addEventListener('click', () => {
       const idx = parseInt(tick.dataset.index);
       if (elements.speedSlider) {
         elements.speedSlider.value = idx;
@@ -384,12 +382,14 @@ function updateSpeedHint() {
 function renderUI() {
   hideSuccessScreen();
 
+  syncAndRenderGamification(); // GAMIFICATION SYNC
+
   if (appState.isAddingNewPlan) {
     hideSection(elements.plansSection);
     hideSection(elements.plansFooter);
     hideSection(elements.planSection);
-    hideSection(elements.progressSection);
     hideSection(elements.confirmSection);
+    hideSection(elements.progressSection);
 
     if (appState.playlistData) {
       displayPlaylistSummary(appState.playlistData);
@@ -400,19 +400,19 @@ function renderUI() {
       hideSection(elements.resultsSection);
       hideSection(elements.modePickerSection);
       hideSection(elements.plannerInputSection);
-      hideSection(elements.speedPickerSection);
+    
     } else if (appState.wizardStep === 'mode-picker') {
       hideSection(elements.playlistSection);
       showSection(elements.resultsSection);
       showSection(elements.modePickerSection);
       hideSection(elements.plannerInputSection);
-      hideSection(elements.speedPickerSection);
+    
     } else if (appState.wizardStep === 'daily-time') {
       hideSection(elements.playlistSection);
       showSection(elements.resultsSection);
       hideSection(elements.modePickerSection);
       showSection(elements.plannerInputSection);
-      hideSection(elements.speedPickerSection);
+    
     } else if (appState.wizardStep === 'speed-picker') {
       hideSection(elements.playlistSection);
       showSection(elements.resultsSection);
@@ -431,18 +431,15 @@ function renderUI() {
       showSection(elements.resultsSection);
       hideSection(elements.modePickerSection);
       hideSection(elements.plannerInputSection);
-      hideSection(elements.speedPickerSection);
+    
       showSection(elements.confirmSection);
 
       elements.confirmMode.textContent = appState.mode === 'video-by-video' ? 'Video by Video' : 'Custom Schedule';
       if (appState.mode === 'video-by-video') {
         hideSection(elements.confirmDailyTimeRow);
-        hideSection(elements.confirmSpeedRow);
       } else {
         showSection(elements.confirmDailyTimeRow);
-        showSection(elements.confirmSpeedRow);
         elements.confirmDailyTime.textContent = formatMinutes(appState.dailyWatchTime);
-        elements.confirmSpeed.textContent = appState.playbackSpeed + 'x';
       }
     }
     return;
@@ -453,7 +450,7 @@ function renderUI() {
   hideSection(elements.playlistSection);
   hideSection(elements.modePickerSection);
   hideSection(elements.plannerInputSection);
-  hideSection(elements.speedPickerSection);
+
   hideSection(elements.confirmSection);
 
   if (appState.currentPlanId && appState.plan && appState.plan.length > 0) {
@@ -525,7 +522,6 @@ function applyPlanToState(plan) {
   })) : [];
   appState.dailyWatchTime = plan.dailyMinutes || 0;
   elements.dailyWatchTimeInput.value = appState.dailyWatchTime || '';
-  appState.playbackSpeed = plan.playbackSpeed || 1.0;
   appState.mode = plan.mode || 'custom';
 }
 
@@ -535,7 +531,6 @@ function handleAddNewPlan() {
   appState.plan = [];
   appState.wizardStep = 'enter-url';
   appState.mode = 'custom';
-  appState.playbackSpeed = 1.0;
   elements.playlistUrlInput.value = '';
   elements.dailyWatchTimeInput.value = '';
   hideError();
@@ -628,7 +623,8 @@ async function restoreActivePlan() {
     return;
   }
 
-  clearActivePlanUI();
+  // If no plans exist, automatically open the wizard
+  handleAddNewPlan();
 }
 
 function renderPlansList(plans, activePlanId) {
@@ -646,14 +642,14 @@ function renderPlansList(plans, activePlanId) {
     const planItem = document.createElement('div');
     planItem.className = `plan-item ${plan.id === activePlanId ? 'active' : ''}`;
     planItem.dataset.planId = plan.id;
-    planItem.addEventListener('click', () => handlePlanSelect(plan.id, plan));
+    planItem?.addEventListener('click', () => handlePlanSelect(plan.id, plan));
 
     const deleteBtn = document.createElement('button');
     deleteBtn.className = 'plan-item-delete';
     deleteBtn.type = 'button';
     deleteBtn.setAttribute('aria-label', `Delete plan ${plan.title}`);
     deleteBtn.textContent = '×';
-    deleteBtn.addEventListener('click', (event) => {
+    deleteBtn?.addEventListener('click', (event) => {
       event.stopPropagation();
       handlePlanDelete(plan.id);
     });
@@ -826,6 +822,141 @@ async function handleFetchPlaylist() {
   }
 }
 
+async function handleOneShotGenerate() {
+  const url = elements.oneShotUrlInput.value.trim();
+  
+  if (!url) {
+    showError('Please enter a YouTube Video URL for One-Shot mode');
+    return;
+  }
+
+  // Very basic validation for YouTube URL
+  if (!url.includes('youtube.com') && !url.includes('youtu.be')) {
+    showError('Invalid YouTube URL');
+    return;
+  }
+
+  if (appState.isFetching) return;
+  
+  try {
+    appState.isFetching = true;
+    showLoading(true);
+    hideError();
+    // Fetch video page HTML to parse duration and title
+    let durationSeconds = 0;
+    let videoTitle = "One-Shot Video";
+    let videoId = "oneshot_" + Date.now();
+    
+    // Extract ID
+    try {
+      const urlObj = new URL(url.startsWith('http') ? url : `https://${url}`);
+      if (url.includes('youtu.be/')) {
+         videoId = url.split('youtu.be/')[1].split('?')[0];
+      } else if (urlObj.searchParams.has('v')) {
+         videoId = urlObj.searchParams.get('v');
+      }
+    } catch (e) {
+      console.warn("Could not parse URL for video ID:", e);
+    }
+    
+    try {
+      let html = "";
+      // Check if running inside Chrome Extension
+      if (typeof chrome !== 'undefined' && chrome.runtime && chrome.runtime.sendMessage) {
+        // Use background script to fetch HTML to bypass CORS/CSP restrictions in popup
+        html = await new Promise((resolve, reject) => {
+          chrome.runtime.sendMessage({ type: 'FETCH_URL', url: `https://www.youtube.com/watch?v=${videoId}` }, (res) => {
+            if (chrome.runtime.lastError) {
+              reject(new Error("Background Service Worker not responding. Please RELOAD the extension in chrome://extensions."));
+            } else if (!res || !res.success) {
+              reject(new Error(res ? res.error : "Unknown fetch error"));
+            } else {
+              resolve(res.data);
+            }
+          });
+        });
+      } else {
+        // Local testing context (localhost:8080) - use CORS proxy
+        const res = await fetch(`https://corsproxy.io/?${encodeURIComponent(`https://www.youtube.com/watch?v=${videoId}`)}`);
+        html = await res.text();
+      }
+      
+      const lengthMatch = html.match(/"lengthSeconds":"?(\d+)"?/);
+      if (lengthMatch) {
+        durationSeconds = parseInt(lengthMatch[1]);
+      } else {
+        // Fallback to meta tags
+        const metaMatch = html.match(/<meta itemprop="duration" content="PT(\d+)M(\d+)S">/);
+        if (metaMatch) {
+          durationSeconds = parseInt(metaMatch[1]) * 60 + parseInt(metaMatch[2]);
+        } else {
+          const metaMatchH = html.match(/<meta itemprop="duration" content="PT(\d+)H(\d+)M(\d+)S">/);
+          if (metaMatchH) {
+             durationSeconds = parseInt(metaMatchH[1]) * 3600 + parseInt(metaMatchH[2]) * 60 + parseInt(metaMatchH[3]);
+          } else {
+             const metaMatchH2 = html.match(/<meta itemprop="duration" content="PT(\d+)H(\d+)S">/);
+             if (metaMatchH2) {
+               durationSeconds = parseInt(metaMatchH2[1]) * 3600 + parseInt(metaMatchH2[2]);
+             }
+          }
+        }
+      }
+      
+      const titleMatch = html.match(/<title>(.*?) - YouTube<\/title>/);
+      if (titleMatch) {
+        videoTitle = titleMatch[1];
+      }
+      
+      if (durationSeconds <= 0) {
+        // Fallback for local testing (localhost) where corsproxy.io gets blocked by YouTube
+        if (typeof chrome === 'undefined' || !chrome.runtime || !chrome.runtime.sendMessage) {
+          console.warn("Using mock duration because CORS proxy was blocked by YouTube in local testing mode.");
+          durationSeconds = 9107; // 2 hr 31 min
+          if (videoTitle === "One-Shot Video") videoTitle = "Computer Network - Edulogy (Mock)";
+        } else {
+          throw new Error("Could not find duration in YouTube HTML. Pattern not matched.");
+        }
+      }
+    } catch (e) {
+      console.warn("Failed to fetch one-shot data:", e);
+      throw new Error(e.message);
+    }
+    
+    const durationMinutes = Math.ceil(durationSeconds / 60);
+    
+    const videoData = {
+      title: videoTitle,
+      durationMinutes: durationMinutes,
+      videoId: videoId,
+      thumbnail: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`
+    };
+    
+    appState.playlistData = {
+      id: "oneshot_" + videoId,
+      url: url,
+      title: videoData.title,
+      videoCount: 1,
+      totalDuration: videoData.durationMinutes,
+      videos: [videoData]
+    };
+    
+    // Force Custom mode for One-Shot
+    appState.mode = 'custom';
+    
+    // Skip to Daily Time step
+    appState.wizardStep = 'daily-time';
+    renderUI();
+    showLoading(false);
+    
+  } catch (error) {
+    showLoading(false);
+    showError(`Error: ${error.message}`);
+    console.error('One-Shot Fetch error:', error);
+  } finally {
+    appState.isFetching = false;
+  }
+}
+
 async function handleGeneratePlan() {
   const generateButton = elements.generatePlanBtn;
   if (generateButton) {
@@ -886,27 +1017,22 @@ async function handleGeneratePlan() {
       appState.playlistData,
       dailyTime,
       plan,
-      appState.mode === 'video-by-video' ? null : speed,
       appState.mode
     );
     appState.currentPlanId = newPlan.id;
 
-    showSuccessScreen();
-    shouldClose = true;
+    // Transition to the generated plan directly
+    appState.isAddingNewPlan = false;
+    await loadAndDisplayPlans();
+    renderUI();
     
   } catch (error) {
     showError(`Error generating plan: ${error.message}`);
     console.error('Plan generation error:', error);
   } finally {
-    if (!shouldClose && generateButton) {
+    if (generateButton) {
       generateButton.disabled = false;
     }
-  }
-
-  if (shouldClose) {
-    setTimeout(() => {
-      window.close();
-    }, 1000);
   }
 }
 
@@ -955,6 +1081,9 @@ function showSuccessScreen() {
   hideSection(elements.resultsSection);
   hideSection(elements.progressSection);
   hideSection(elements.plannerInputSection);
+  hideSection(elements.modePickerSection);
+
+  hideSection(elements.confirmSection);
   hideSection(elements.planSection);
   hideSection(elements.loadingIndicator);
   hideSection(elements.plansFooter);
@@ -975,11 +1104,11 @@ function showMessage(message, type = 'info') {
 }
 
 function showSection(section) {
-  section.classList.remove('hidden');
+  if (section) section.classList.remove('hidden');
 }
 
 function hideSection(section) {
-  section.classList.add('hidden');
+  if (section) section.classList.add('hidden');
 }
 
 // ========================================
@@ -1000,19 +1129,27 @@ function displayPlaylistSummary(data) {
     titleLink.setAttribute('title', 'Click to open playlist on YouTube');
     
     // Add click handler using chrome.tabs.create for extension compatibility
-    titleLink.addEventListener('click', (event) => {
+    titleLink?.addEventListener('click', (event) => {
       event.preventDefault();
       if (data.url) {
-        chrome.tabs.create({ url: data.url });
+        if (typeof chrome !== 'undefined' && chrome.tabs && chrome.tabs.create) {
+          chrome.tabs.create({ url: data.url });
+        } else {
+          window.open(data.url, '_blank');
+        }
       }
     });
     
     // Add keyboard accessibility
-    titleLink.addEventListener('keydown', (event) => {
+    titleLink?.addEventListener('keydown', (event) => {
       if (event.key === 'Enter' || event.key === ' ') {
         event.preventDefault();
         if (data.url) {
-          chrome.tabs.create({ url: data.url });
+          if (typeof chrome !== 'undefined' && chrome.tabs && chrome.tabs.create) {
+            chrome.tabs.create({ url: data.url });
+          } else {
+            window.open(data.url, '_blank');
+          }
         }
       }
     });
@@ -1068,9 +1205,29 @@ function createDayCard(dayData, index) {
   const header = document.createElement('div');
   header.className = 'day-header';
   
-  const title = document.createElement('div');
-  title.className = 'day-title';
+  const firstVideo = (dayData.videos && dayData.videos.length > 0) ? dayData.videos[0] : null;
+  const vId = firstVideo ? (firstVideo.id || firstVideo.videoId) : null;
+  
+  const title = vId ? document.createElement('a') : document.createElement('div');
+  title.className = 'day-title' + (vId ? ' playlist-title-link' : '');
   title.textContent = `Day ${dayData.day}`;
+  if (vId) {
+    let videoUrl = `https://www.youtube.com/watch?v=${vId}`;
+    if (firstVideo.startTime) {
+      videoUrl += `&t=${Math.floor(firstVideo.startTime * 60)}s`;
+    }
+    title.href = videoUrl;
+    title.target = '_blank';
+    title?.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (typeof chrome !== 'undefined' && chrome.tabs && chrome.tabs.create) {
+        chrome.tabs.create({ url: videoUrl });
+      } else {
+        window.open(videoUrl, '_blank');
+      }
+    });
+  }
   
   const duration = document.createElement('div');
   duration.className = 'day-duration';
@@ -1096,7 +1253,7 @@ function createDayCard(dayData, index) {
       videoCheckbox.className = 'video-checkbox';
       videoCheckbox.id = `day-${index}-video-${videoIdx}-checkbox`;
       videoCheckbox.checked = video.completed || false;
-      videoCheckbox.addEventListener('change', (e) => handleVideoCompletion(index, videoIdx, e.target.checked));
+      videoCheckbox?.addEventListener('change', (e) => handleVideoCompletion(index, videoIdx, e.target.checked));
       
       videoItem.appendChild(videoCheckbox);
       
@@ -1104,9 +1261,27 @@ function createDayCard(dayData, index) {
       const contentContainer = document.createElement('div');
       contentContainer.className = 'video-content-container';
       
-      const titleSpan = document.createElement('span');
+      const vId = video.id || video.videoId;
+      const titleSpan = vId ? document.createElement('a') : document.createElement('span');
       titleSpan.className = 'video-title';
       titleSpan.textContent = video.title;
+      if (vId) {
+        let videoUrl = `https://www.youtube.com/watch?v=${vId}`;
+        if (video.startTime) {
+          videoUrl += `&t=${Math.floor(video.startTime * 60)}s`;
+        }
+        titleSpan.href = videoUrl;
+        titleSpan.target = '_blank';
+        titleSpan?.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          if (typeof chrome !== 'undefined' && chrome.tabs && chrome.tabs.create) {
+            chrome.tabs.create({ url: videoUrl });
+          } else {
+            window.open(videoUrl, '_blank');
+          }
+        });
+      }
       contentContainer.appendChild(titleSpan);
       
       const metaDiv = document.createElement('div');
@@ -1136,14 +1311,41 @@ function createDayCard(dayData, index) {
       videoItem.appendChild(contentContainer);
     } else {
       // Video-by-video mode
-      let videoText = video.title;
+      const vId = video.id || video.videoId;
+      
+      const titleLink = vId ? document.createElement('a') : document.createElement('span');
+      titleLink.className = vId ? 'playlist-title-link' : '';
+      titleLink.textContent = video.title;
+      if (vId) {
+        let videoUrl = `https://www.youtube.com/watch?v=${vId}`;
+        if (video.startTime) {
+          videoUrl += `&t=${Math.floor(video.startTime * 60)}s`;
+        }
+        titleLink.href = videoUrl;
+        titleLink.target = '_blank';
+        titleLink?.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          if (typeof chrome !== 'undefined' && chrome.tabs && chrome.tabs.create) {
+            chrome.tabs.create({ url: videoUrl });
+          } else {
+            window.open(videoUrl, '_blank');
+          }
+        });
+      }
+      videoItem.appendChild(titleLink);
+
+      let videoText = '';
       if (video.isPartial) {
         const startTimeStr = video.startTime ? formatMinutes(video.startTime) : '0:00';
         const endTimeStr = video.endTime ? formatMinutes(video.endTime) : 'end';
         videoText += ` (${startTimeStr} - ${endTimeStr})`;
       }
       videoText += ` [${formatMinutes(video.duration)}]`;
-      videoItem.textContent = videoText;
+      
+      const metaSpan = document.createElement('span');
+      metaSpan.textContent = videoText;
+      videoItem.appendChild(metaSpan);
     }
     
     videoList.appendChild(videoItem);
@@ -1159,7 +1361,7 @@ function createDayCard(dayData, index) {
   checkbox.type = 'checkbox';
   checkbox.id = `day-${index}-checkbox`;
   checkbox.checked = dayData.completed;
-  checkbox.addEventListener('change', (e) => handleDayCompletion(index, e.target.checked));
+  checkbox?.addEventListener('change', (e) => handleDayCompletion(index, e.target.checked));
   
   const label = document.createElement('label');
   label.htmlFor = `day-${index}-checkbox`;
@@ -1172,12 +1374,123 @@ function createDayCard(dayData, index) {
   return card;
 }
 
+// ========================================
+// Gamification Integration
+// ========================================
+async function getGamificationState(playlistId) {
+  const key = `gamification_${playlistId}`;
+  const result = await getFromStorage(key);
+  return result || {
+    playlistId,
+    title: appState.playlistData ? appState.playlistData.title : '',
+    dailyGoalMin: appState.dailyWatchTime || 60,
+    xp: 0,
+    level: 1,
+    streak: 0,
+    bestStreak: 0,
+    lastActiveDate: null,
+    minutesDate: null,
+    minutesWatchedToday: 0,
+    goalClaimedDate: null,
+    completedVideoIds: [],
+    rewardedSegmentIds: []
+  };
+}
+
+async function saveGamificationState(playlistId, state) {
+  await saveToStorage(`gamification_${playlistId}`, state);
+}
+
+async function syncAndRenderGamification() {
+  if (!appState.playlistData || !appState.playlistData.id) {
+    const sVal = document.getElementById('streakValue');
+    const xVal = document.getElementById('xpValue');
+    const lVal = document.getElementById('levelValue');
+    if (sVal) sVal.textContent = '0';
+    if (xVal) xVal.textContent = '0';
+    if (lVal) lVal.textContent = '1';
+    return;
+  }
+  
+  const playlistId = appState.playlistData.id;
+  let rawState = await getGamificationState(playlistId);
+  
+  if (window.Gamification) {
+    const { state: refreshedState, events } = window.Gamification.refreshStreak(rawState);
+    if (events.length > 0 || rawState.xp === undefined) {
+      await saveGamificationState(playlistId, refreshedState);
+    }
+    rawState = refreshedState;
+  }
+  
+  const sVal = document.getElementById('streakValue');
+  const xVal = document.getElementById('xpValue');
+  const lVal = document.getElementById('levelValue');
+  if (sVal) sVal.textContent = rawState.streak || 0;
+  if (xVal) xVal.textContent = rawState.xp || 0;
+  if (lVal) lVal.textContent = rawState.level || 1;
+}
+
+async function processGamificationForVideoSegment(video, completed) {
+  if (!completed || !window.Gamification || !appState.playlistData || !appState.playlistData.id) return;
+  const playlistId = appState.playlistData.id;
+  const state = await getGamificationState(playlistId);
+  
+  const segmentId = `${video.title}_${video.startTime || 0}_${video.endTime || 'end'}`;
+  if (!state.rewardedSegmentIds) state.rewardedSegmentIds = [];
+  
+  if (state.rewardedSegmentIds.includes(segmentId)) return; // already rewarded
+  
+  state.rewardedSegmentIds.push(segmentId);
+  
+  let { state: newState } = window.Gamification.addWatchMinutes(state, video.duration || 0);
+  
+  const videoId = video.id || video.title;
+  const result = window.Gamification.completeVideo(newState, videoId);
+  newState = result.state;
+  
+  await saveGamificationState(playlistId, newState);
+  await syncAndRenderGamification();
+}
+
+async function processGamificationForDay(dayData, completed) {
+  if (!completed || !window.Gamification || !appState.playlistData || !appState.playlistData.id) return;
+  const playlistId = appState.playlistData.id;
+  const state = await getGamificationState(playlistId);
+  
+  const daySegmentId = `day_${dayData.day}_${dayData.totalTime}`;
+  if (!state.rewardedSegmentIds) state.rewardedSegmentIds = [];
+  
+  if (state.rewardedSegmentIds.includes(daySegmentId)) return; // already rewarded
+  
+  state.rewardedSegmentIds.push(daySegmentId);
+  
+  let { state: newState } = window.Gamification.addWatchMinutes(state, dayData.totalTime || 0);
+  
+  if (Array.isArray(dayData.videos)) {
+    dayData.videos.forEach(v => {
+      const videoId = v.id || v.title;
+      const res = window.Gamification.completeVideo(newState, videoId);
+      newState = res.state;
+    });
+  }
+  
+  await saveGamificationState(playlistId, newState);
+  await syncAndRenderGamification();
+}
+
 async function handleVideoCompletion(dayIndex, videoIndex, completed) {
   if (appState.isUpdatingCompletion) return;
   if (!appState.plan[dayIndex] || !appState.plan[dayIndex].videos[videoIndex]) return;
 
   appState.isUpdatingCompletion = true;
   try {
+    const videoObj = appState.plan[dayIndex].videos[videoIndex];
+    // Gamification
+    if (completed && !videoObj.completed) {
+      processGamificationForVideoSegment(videoObj, true);
+    }
+    
     // Update local state
     appState.plan[dayIndex].videos[videoIndex].completed = completed;
     const allCompleted = appState.plan[dayIndex].videos.every(v => v.completed === true);
@@ -1212,6 +1525,12 @@ async function handleDayCompletion(dayIndex, completed) {
 
   appState.isUpdatingCompletion = true;
   try {
+    const dayData = appState.plan[dayIndex];
+    // Gamification
+    if (completed && !dayData.completed) {
+      processGamificationForDay(dayData, true);
+    }
+    
     // Update local state
     appState.plan[dayIndex].completed = completed;
     if (Array.isArray(appState.plan[dayIndex].videos)) {

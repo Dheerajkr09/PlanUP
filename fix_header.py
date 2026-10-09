@@ -1,0 +1,2 @@
+with open('popup/styles.css', 'a', encoding='utf-8') as f:
+    f.write("\n/* Fix Header Alignment */\n.header-content { justify-content: flex-start !important; padding-left: 10px; }\n.header-text { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; text-align: left; margin-left: 10px; }\n.glitch-title { text-align: left !important; }\n.subtitle { text-align: left !important; }\n")

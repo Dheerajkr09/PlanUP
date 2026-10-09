@@ -4,32 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PlanYT</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
   <div class="container">
     <!-- Header -->
     <header id="mainHeader">
       <div class="header-content">
-        <img src="../assets/icon128.png" alt="PlanYT" class="header-icon">
+        <img src="../assets/icon_human.jpg" alt="PlanUp" class="header-icon" style="border-radius: 12px; box-shadow: 0 0 10px var(--primary-glow); border: 1px solid var(--primary);">
         <div class="header-text">
-          <h1>PlanYT</h1>
-          <p class="subtitle" data-i18n="subtitle">Your Youtube, planned</p>
-        </div>
-        <div class="header-actions">
-          <a href="https://rzp.io/rzp/5Ar1csX" target="_blank" rel="noopener noreferrer" class="sponsor-link" aria-label="Support PlanYT on GitHub Sponsors" title="Support PlanYT">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-            </svg>
+          <a href="#" class="title-link" style="text-decoration: none;">
+            <h1 class="glitch-title">PLANUP</h1>
           </a>
-          <a href="https://github.com/Saaarthak0102/PlanYT" target="_blank" rel="noopener noreferrer" class="github-link" title="View on GitHub">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-            </svg>
-          </a>
+          <p class="subtitle">PLAN YOUR LEARNING</p>
         </div>
       </div>
     </header>
+
+    <!-- Gamification Header -->
+    <section id="gamificationStats" class="gamification-stats">
+      <div class="stat-item">
+        <img src="../assets/badges/fire.png" class="stat-icon" alt="Streak">
+        <div class="stat-value"><span id="streakValue">0</span> Days</div>
+      </div>
+      <div class="stat-item">
+        <img src="../assets/badges/star.png" class="stat-icon" alt="XP">
+        <div class="stat-value"><span id="xpValue">0</span> XP</div>
+      </div>
+      <div class="stat-item badge-item">
+        <img src="../assets/badges/badge.png" class="stat-icon badge-icon" alt="Level">
+        <div class="stat-level-text">
+          <span class="level-label">LEVEL</span>
+          <span id="levelValue" class="level-num">1</span>
+        </div>
+      </div>
+    </section>
 
     <!-- Rating Banner Section -->
     <section id="ratingBanner" class="rating-banner hidden">
@@ -56,21 +65,42 @@
     </div>
 
     <!-- Playlist Input Section -->
-    <section id="playlistSection" class="section hidden">
+    <section id="playlistSection" class="section hidden cyberpunk-panel">
       <div class="step-header">
-        <button class="btn-back" id="playlistSectionBackBtn" aria-label="Go back" data-i18n-aria="goBack">←</button>
-        <h2 data-i18n="addNewPlan">Add New Plan</h2>
+        <button class="btn-back" id="playlistSectionBackBtn" aria-label="Go back">←</button>
+        <h2>INITIATE PLAN</h2>
       </div>
+      
+      <!-- 1. Playlist URL Section -->
+      <div class="input-group" style="margin-bottom: 25px; border-bottom: 1px solid rgba(0,240,255,0.2); padding-bottom: 20px;">
+        <label for="playlistUrlInput" class="glitch-label">1. Playlist URL</label>
+        <div class="input-wrapper">
+          <input 
+            type="text" 
+            id="playlistUrlInput" 
+            class="neon-input"
+            placeholder="Paste YouTube Playlist URL..."
+            autocomplete="off"
+          >
+          <span class="input-focus-border"></span>
+        </div>
+        <button id="fetchPlaylistBtn" class="btn btn-primary neon-btn">FETCH PLAYLIST</button>
+      </div>
+
+      <!-- 2. One-Shot URL Section -->
       <div class="input-group">
-        <label for="playlistUrlInput" data-i18n="playlistUrl">Playlist URL</label>
-        <input 
-          type="text" 
-          id="playlistUrlInput" 
-          placeholder="https://www.youtube.com/playlist?list=..."
-          data-i18n-placeholder="playlistUrl"
-          autocomplete="off"
-        >
-        <button id="fetchPlaylistBtn" class="btn btn-primary" data-i18n="fetchPlaylist">Fetch Playlist</button>
+        <label for="oneShotUrlInput" class="glitch-label">2. One-Shot URL</label>
+        <div class="input-wrapper">
+          <input 
+            type="text" 
+            id="oneShotUrlInput" 
+            class="neon-input"
+            placeholder="Paste YouTube Video URL..."
+            autocomplete="off"
+          >
+          <span class="input-focus-border"></span>
+        </div>
+        <button id="fetchOneShotBtn" class="btn btn-primary neon-btn">FETCH ONE-SHOT VIDEO</button>
       </div>
     </section>
 
@@ -161,55 +191,21 @@
         <button class="btn-back" id="plannerInputBackBtn" aria-label="Go back" data-i18n-aria="goBack">←</button>
         <h2 data-i18n="dailyWatchTime">Daily Watch Time</h2>
       </div>
-      <div class="input-group">
-        <label for="dailyWatchTimeInput" data-i18n="dailyWatchTimeLabel">Daily Watch Time (minutes)</label>
-        <input 
-          type="number" 
-          id="dailyWatchTimeInput" 
-          placeholder="30"
-          min="1"
-          autocomplete="off"
-        >
-        <button id="plannerInputNextBtn" class="btn btn-primary" data-i18n="next">Next</button>
-      </div>
-    </section>
-
-    <!-- Speed Picker Section (Hidden by default) -->
-    <section id="speedPickerSection" class="section hidden">
-      <div class="step-header">
-        <button class="btn-back" id="speedPickerBackBtn" aria-label="Go back" data-i18n-aria="goBack">←</button>
-        <h2 data-i18n="selectPlaybackSpeed">Select Playback Speed</h2>
-      </div>
-      <div class="speed-picker-container">
-        <div class="speed-display" id="speedValueDisplay">1×</div>
-        
-        <div class="slider-container">
+      <div class="input-group" style="margin-bottom: 25px;">
+        <label for="dailyWatchTimeInput" class="glitch-label" style="font-size: 14px; margin-bottom: 15px; display: block; color: var(--accent-cyan);">DAILY WATCH TIME (MINUTES)</label>
+        <div class="input-wrapper" style="display: flex; gap: 15px; align-items: center;">
           <input 
-            type="range" 
-            id="speedSlider" 
-            min="0" 
-            max="7" 
-            value="3" 
-            step="1"
-            class="speed-slider"
+            type="number" 
+            id="dailyWatchTimeInput" 
+            class="neon-input"
+            placeholder="30"
+            min="1"
+            autocomplete="off"
+            style="flex: 1;"
           >
-          <div class="slider-ticks" id="sliderTicks">
-            <span class="tick-label" data-index="0">0.25</span>
-            <span class="tick-label" data-index="1">0.5</span>
-            <span class="tick-label" data-index="2">0.75</span>
-            <span class="tick-label active" data-index="3">1</span>
-            <span class="tick-label" data-index="4">1.25</span>
-            <span class="tick-label" data-index="5">1.5</span>
-            <span class="tick-label" data-index="6">1.75</span>
-            <span class="tick-label" data-index="7">2</span>
-          </div>
-        </div>
-        
-        <div class="speed-hint" id="speedHintText" data-i18n="speedHint">
-          Your plan duration will adjust accordingly.
+          <button id="plannerInputNextBtn" class="btn btn-primary" data-i18n="next" style="flex: 1; height: 50px; font-size: 16px; margin: 0; border-radius: var(--radius-md);">Next</button>
         </div>
       </div>
-      <button id="speedPickerNextBtn" class="btn btn-primary" data-i18n="next">Next</button>
     </section>
 
     <!-- Confirm Section (Hidden by default) -->
@@ -227,10 +223,7 @@
           <span class="label" data-i18n="labelDailyWatchTime">Daily Watch Time:</span>
           <span id="confirmDailyTime" class="value">-</span>
         </div>
-        <div class="confirm-item" id="confirmSpeedRow">
-          <span class="label" data-i18n="labelPlaybackSpeed">Playback Speed:</span>
-          <span id="confirmSpeed" class="value">-</span>
-        </div>
+
       </div>
       <button id="finalGenerateBtn" class="btn btn-primary" data-i18n="generatePlan">Generate Plan</button>
     </section>
@@ -246,15 +239,11 @@
       </div>
     </section>
 
-    <!-- Footer Credit -->
-    <footer id="mainFooter" class="footer">
-      <p><span data-i18n="madeWith">Made with ❤️ by</span> <a href="https://github.com/Saaarthak0102" target="_blank">Saaarthak0102</a></p>
-    </footer>
   </div>
 
-  <!-- External Scripts (Manifest V3 requires external JS) -->
   <script src="../core/storage.js"></script>
   <script src="../core/timeConverter.js"></script>
+  <script src="../core/gamification.js"></script>
   <script src="../core/api.js"></script>
   <script src="../core/planner.js"></script>
   <script src="../core/plans.js"></script>

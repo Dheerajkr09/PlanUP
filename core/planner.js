@@ -42,7 +42,7 @@ function generateDayWisePlan(videos, dailyWatchTimeMinutes, playbackSpeed = 1) {
       
       // Add video segment to current day
       currentDayVideos.push({
-        id: video.id,
+        id: video.id || video.videoId,
         title: video.title,
         startTime: videoStartTimeOriginal > 0.01 ? videoStartTimeOriginal : null, // null means watch from beginning
         endTime: videoEndTimeOriginal < video.durationMinutes - 0.01 ? videoEndTimeOriginal : null, // null means watch to end
@@ -105,7 +105,7 @@ function generateVideoByVideoplan(videos) {
     plan.push({
       day: i + 1,
       videos: [{
-        id: video.id,
+        id: video.id || video.videoId,
         title: video.title,
         startTime: null,
         endTime: null,
