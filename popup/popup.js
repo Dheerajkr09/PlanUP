@@ -912,7 +912,20 @@ async function handleOneShotGenerate() {
         if (typeof chrome === 'undefined' || !chrome.runtime || !chrome.runtime.sendMessage) {
           console.warn("Using mock duration because CORS proxy was blocked by YouTube in local testing mode.");
           durationSeconds = 9107; // 2 hr 31 min
-          if (videoTitle === "One-Shot Video") videoTitle = "Computer Network - Edulogy (Mock)";
+          
+          // Fetch real title dynamically for local testing
+          try {
+            const noembedRes = await fetch(`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${videoId}`);
+            const noembedData = await noembedRes.json();
+            if (noembedData && noembedData.title) {
+              videoTitle = noembedData.title;
+            } else {
+              videoTitle = "One-Shot Video (Mock)";
+            }
+          } catch(e) {
+            videoTitle = "One-Shot Video (Mock)";
+          }
+          
         } else {
           throw new Error("Could not find duration in YouTube HTML. Pattern not matched.");
         }
