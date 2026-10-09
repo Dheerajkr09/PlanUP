@@ -196,24 +196,34 @@ async function handlePendingPopupAction(pending) {
       hideSuccessScreen();
 
       const url = pending.playlistUrl || (pending.playlistId ? `https://www.youtube.com/playlist?list=${pending.playlistId}` : '');
-      elements.playlistUrlInput.value = url;
+      
+      const isOneShot = url.includes('watch?v=') && !url.includes('list=');
+      
+      if (!isOneShot) {
+        elements.playlistUrlInput.value = url;
+        
+        renderUI();
 
-      renderUI();
+        // Mark that after fetch we should focus the daily minutes input
+        appState.pendingAutoFocusDaily = true;
 
-      // Mark that after fetch we should focus the daily minutes input
-      appState.pendingAutoFocusDaily = true;
+        // Trigger existing fetch flow (reuse logic)
+        await handleFetchPlaylist();
 
-      // Trigger existing fetch flow (reuse logic)
-      await handleFetchPlaylist();
-
-      // After fetch completes, focus the daily input if available
-      try {
-        if (elements.dailyWatchTimeInput && appState.pendingAutoFocusDaily) {
-          elements.dailyWatchTimeInput.focus();
-          appState.pendingAutoFocusDaily = false;
+        // After fetch completes, focus the daily input if available
+        try {
+          if (elements.dailyWatchTimeInput && appState.pendingAutoFocusDaily) {
+            elements.dailyWatchTimeInput.focus();
+            appState.pendingAutoFocusDaily = false;
+          }
+        } catch (e) {
+          console.error('Could not focus daily input:', e);
         }
-      } catch (e) {
-        console.error('Could not focus daily input:', e);
+      } else {
+        // User requested to remove the default auto-fill for one-shot videos
+        elements.playlistUrlInput.value = '';
+        if (elements.oneShotUrlInput) elements.oneShotUrlInput.value = '';
+        renderUI();
       }
 
       return;
@@ -532,6 +542,9 @@ function handleAddNewPlan() {
   appState.wizardStep = 'enter-url';
   appState.mode = 'custom';
   elements.playlistUrlInput.value = '';
+  if (elements.oneShotUrlInput) {
+    elements.oneShotUrlInput.value = '';
+  }
   elements.dailyWatchTimeInput.value = '';
   hideError();
   hideSuccessScreen();
@@ -902,9 +915,28 @@ async function handleOneShotGenerate() {
         }
       }
       
-      const titleMatch = html.match(/<title>(.*?) - YouTube<\/title>/);
+      const titleMatch = html.match(/<title>(.*?)<\/title>/i);
       if (titleMatch) {
-        videoTitle = titleMatch[1];
+        let extractedTitle = titleMatch[1];
+        if (extractedTitle.endsWith(' - YouTube')) {
+          extractedTitle = extractedTitle.substring(0, extractedTitle.length - 10);
+        }
+        if (extractedTitle.trim() !== 'YouTube' && extractedTitle.trim() !== '') {
+          videoTitle = extractedTitle.trim();
+        }
+      }
+
+      // Ensure we have a valid topic name, fallback to noembed if needed
+      if (videoTitle === "One-Shot Video") {
+        try {
+          const noembedRes = await fetch(`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${videoId}`);
+          const noembedData = await noembedRes.json();
+          if (noembedData && noembedData.title) {
+            videoTitle = noembedData.title;
+          }
+        } catch (err) {
+          console.warn("Could not fetch fallback title from noembed", err);
+        }
       }
       
       if (durationSeconds <= 0) {
