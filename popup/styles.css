@@ -100,7 +100,6 @@ header h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: 2px;
-  text-transform: uppercase;
 }
 
 .title-link {
