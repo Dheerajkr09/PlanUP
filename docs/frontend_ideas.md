@@ -1,36 +1,36 @@
 # Frontend Redesign - The "Cyberpunk Gaming" Theme 🎮🚀
 
-Purana YouTube jaisa boring red theme gaya! Ab humne PlanYT ko ekdum naya, modern, aur unique "Gamified Cyberpunk" look diya hai jisse ye kisi pro-level gaming app jaisa lagta hai. 
+The old boring red YouTube theme is gone! Now we have given PlanUP a completely new, modern, and unique "Gamified Cyberpunk" look that makes it feel like a pro-level gaming app.
 
-Yahan dekho humne kya-kya changes kiye hain:
+Here is a look at what we've changed:
 
 ---
 
-## 1. Naya Color Scheme (Neon Cyan & Purple) 💜🩵
-Pehle sab kuch lal (Red) tha jo thoda simple lagta tha. Ab humne dark theme ko aur deep kar diya hai (`#0B0E14`) aur usme:
-- **Neon Cyan (`#00F0FF`)** aur **Electric Purple (`#8A2BE2`)** ka mix (Gradient) use kiya hai.
-- Buttons pe jab hover karoge toh wo neon glow marenge, bilkul kisi futuristic UI ki tarah!
+## 1. New Color Scheme (Neon Cyan & Purple) 💜🩵
+Previously everything was red which felt a bit simple. Now we have deepened the dark theme (`#0B0E14`) and added:
+- A mix (Gradient) of **Neon Cyan (`#00F0FF`)** and **Electric Purple (`#8A2BE2`)**.
+- Hovering over buttons will emit a neon glow, just like a futuristic UI!
 
-## 2. "Add New Plan" Button ka Makeover 🔘
-Pehle ye ek bada sa solid red button tha. Ab humne isko ek **Hollow Glowing Button** bana diya hai:
-- Iska background transparent hai.
-- Outline (border) chamkili Cyan color ki hai.
-- Mouse upar le jane pe (hover) isme ek mast Cyan neon glow aur glass effect aata hai.
+## 2. "Add New Plan" Button Makeover 🔘
+Earlier, this was a large solid red button. Now we have turned it into a **Hollow Glowing Button**:
+- Its background is transparent.
+- The outline (border) is a bright Cyan color.
+- Hovering the mouse over it creates an awesome Cyan neon glow and glass effect.
 
 ## 3. Glassmorphism + Futuristic Grid 🪟
-Background me ek halka sa grid pattern (square lines) lagaya gaya hai jo tech/hacker vibe deta hai. Uske upar saare boxes aur sections **Glassmorphism** (shishe jaise blur) wale hain.
+A subtle grid pattern (square lines) has been added to the background, giving off a tech/hacker vibe. Over this, all boxes and sections feature **Glassmorphism** (glass-like blur).
 
 ## 4. Gamification Header (Top Bar) 🔥⭐🛡️
-Sabse top pe ek cool dashboard laga diya gaya hai jisme tumhare diye hue exact icons ka use ho raha hai:
-- **Fire Icon:** Tumhari padhai ki "Streak" dikhane ke liye.
-- **Star Icon:** Tumhara XP (Experience) score.
-- **Shield Badge:** Tumhara current "Level".
-Kyunki tumhare icons dark the, humne CSS filter (`invert(1)`) use karke unhe glowy white/cyan banaya hai taaki wo dark screen par pop out hon!
+At the very top, a cool dashboard has been added using your exact provided icons:
+- **Fire Icon:** To display your study "Streak".
+- **Star Icon:** Your XP (Experience) score.
+- **Shield Badge:** Your current "Level".
+Since your icons were dark, we used a CSS filter (`invert(1)`) to make them glowy white/cyan so they pop out on the dark screen!
 
 ## 5. Sleek Checkmarks ✔️
-Boring box ki jagah humne custom checkboxes lagaye hain. Jab tum kisi video pe tick (✔) lagaoge, toh box me tumhara custom checkmark aayega aur ek neela/cyan glow chamkega, jisse ek "Task Completed" wali powerful feeling aayegi!
+Instead of boring boxes, we've implemented custom checkboxes. When you check off a video (✔), the box displays your custom checkmark and glows with a blue/cyan light, providing a powerful "Task Completed" feeling!
 
 ---
 
 **Summary:** 
-Ye naya interface ab original PlanYT jaisa bilkul nahi dikhta. Ye totally unique hai, padhai ko game ki tarah banata hai, aur aankhon ko ekdum fresh aur modern feel deta hai! 😎
+This new interface looks absolutely nothing like the original PlanYT. It is totally unique, turns studying into a game, and feels incredibly fresh and modern on the eyes! 😎
