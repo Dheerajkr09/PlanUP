@@ -56,7 +56,7 @@
 
         const playlistPanel = await waitForSidebar();
         if (!playlistPanel) {
-          console.warn('PlanYT: Playlist sidebar not found');
+          console.warn('PlanUp: Playlist sidebar not found');
           return;
         }
 
@@ -68,7 +68,7 @@
 
         const widget = createWidgetContainer();
         if (!widget) {
-          console.warn('PlanYT: Failed to create widget');
+          console.warn('PlanUp: Failed to create widget');
           return;
         }
 
@@ -81,11 +81,11 @@
             playlistPanel.appendChild(widget);
           }
         } catch (err) {
-          console.warn('PlanYT: insertBefore failed, using appendChild fallback', err);
+          console.warn('PlanUp: insertBefore failed, using appendChild fallback', err);
           try {
             playlistPanel.appendChild(widget);
           } catch (err2) {
-            console.warn('PlanYT: appendChild also failed', err2);
+            console.warn('PlanUp: appendChild also failed', err2);
             return;
           }
         }
@@ -176,14 +176,14 @@
       const plan = findMatchingPlan(playlistId, plansData);
 
       if (!plan) {
-        renderEmptyState(container, 'Plan this playlist with PlanYT');
+        renderEmptyState(container, 'Plan this playlist with PlanUP');
         return;
       }
 
       const progress = deriveProgressFromPlan(plan.planData || []);
 
       if (progress.totalDays === 0) {
-        renderEmptyState(container, 'Plan this playlist with PlanYT');
+        renderEmptyState(container, 'Plan this playlist with PlanUP');
         return;
       }
 
@@ -198,14 +198,14 @@
     }
   }
 
-  function renderEmptyState(container, message = 'Plan this playlist with PlanYT') {
+  function renderEmptyState(container, message = 'Plan this playlist with PlanUP') {
     container.innerHTML = `
       <div class="container">
         <section class="section section-compact">
           <h3 class="plans-title">Plan Progress</h3>
           <div class="progress-hero progress-hero-empty">
             <div class="progress-hero-percent">${message}</div>
-            <div class="progress-hero-subtext">Create a plan in PlanYT to track progress</div>
+            <div class="progress-hero-subtext">Create a plan in PlanUP to track progress</div>
           </div>
 
           <div class="plans-footer">
@@ -421,17 +421,17 @@
   function getWidgetStyles() {
     return `
       :host {
-        --yt-bg-primary: #0f0f0f;
-        --yt-bg-secondary: #212121;
-        --yt-bg-tertiary: #272727;
-        --yt-bg-hover: #3f3f3f;
+        --yt-bg-primary: #050510;
+        --yt-bg-secondary: #050510;
+        --yt-bg-tertiary: #11111f;
+        --yt-bg-hover: rgba(0, 243, 255, 0.1);
         --yt-text-primary: #ffffff;
         --yt-text-secondary: #e6e6e6;
         --yt-text-tertiary: #bfbfbf;
         --yt-brand-red: #ff0000;
         --yt-brand-red-hover: #cc0000;
-        --yt-accent: #ff0000;
-        --yt-accent-hover: #cc0000;
+        --yt-accent: #00f3ff;
+        --yt-accent-hover: #bc13fe;
         --yt-success: #0fb556;
         --yt-error: #ff4444;
         --yt-warning: #ff9800;
@@ -457,11 +457,12 @@
         display: block;
         width: 100%;
         color: var(--yt-text-primary);
-        font-family: "Roboto", "Arial", sans-serif;
+        font-family: "Space Grotesk", "Roboto", "Arial", sans-serif;
         font-size: 14px;
         line-height: 1.4;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        margin-bottom: 12px;
       }
 
       .container {
@@ -473,7 +474,8 @@
         padding: var(--yt-space-lg);
         background-color: var(--yt-bg-secondary);
         border-radius: var(--yt-radius-md);
-        border: none;
+        border: 1px solid var(--yt-accent);
+        box-shadow: 0 0 15px rgba(0, 243, 255, 0.15), inset 0 0 10px rgba(0, 243, 255, 0.05);
       }
 
       .section-compact {
@@ -606,12 +608,17 @@
 
       .btn-secondary {
         background-color: var(--yt-accent);
-        color: #ffffff;
+        color: #050510;
+        font-weight: 600;
         border: 1px solid var(--yt-accent);
+        box-shadow: 0 0 10px rgba(0, 243, 255, 0.4);
       }
 
       .btn-secondary:hover {
         background-color: var(--yt-accent-hover);
+        color: #ffffff;
+        border-color: var(--yt-accent-hover);
+        box-shadow: 0 0 15px rgba(188, 19, 254, 0.6);
       }
 
       .btn-secondary:active {

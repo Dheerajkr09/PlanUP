@@ -199,31 +199,28 @@ async function handlePendingPopupAction(pending) {
       
       const isOneShot = url.includes('watch?v=') && !url.includes('list=');
       
-      if (!isOneShot) {
-        elements.playlistUrlInput.value = url;
-        
-        renderUI();
-
-        // Mark that after fetch we should focus the daily minutes input
-        appState.pendingAutoFocusDaily = true;
-
-        // Trigger existing fetch flow (reuse logic)
-        await handleFetchPlaylist();
-
-        // After fetch completes, focus the daily input if available
-        try {
-          if (elements.dailyWatchTimeInput && appState.pendingAutoFocusDaily) {
-            elements.dailyWatchTimeInput.focus();
-            appState.pendingAutoFocusDaily = false;
-          }
-        } catch (e) {
-          console.error('Could not focus daily input:', e);
+      if (isOneShot) {
+        if (elements.oneShotUrlInput) {
+          elements.oneShotUrlInput.value = url;
         }
-      } else {
-        // User requested to remove the default auto-fill for one-shot videos
-        elements.playlistUrlInput.value = '';
-        if (elements.oneShotUrlInput) elements.oneShotUrlInput.value = '';
         renderUI();
+        appState.pendingAutoFocusDaily = true;
+        await handleOneShotGenerate();
+      } else {
+        elements.playlistUrlInput.value = url;
+        renderUI();
+        appState.pendingAutoFocusDaily = true;
+        await handleFetchPlaylist();
+      }
+
+      // After fetch completes, focus the daily input if available
+      try {
+        if (elements.dailyWatchTimeInput && appState.pendingAutoFocusDaily) {
+          elements.dailyWatchTimeInput.focus();
+          appState.pendingAutoFocusDaily = false;
+        }
+      } catch (e) {
+        console.error('Could not focus daily input:', e);
       }
 
       return;
@@ -792,14 +789,6 @@ async function handleFetchPlaylist() {
   // Extract playlist ID from URL
   const playlistId = extractPlaylistId(url);
   if (!playlistId) {
-    // Check if it might be a single video URL
-    const isVideo = url.includes('youtu.be/') || url.includes('?v=') || url.includes('&v=') || url.includes('/live/') || url.includes('/shorts/');
-    if (isVideo) {
-      // It's a video, pass it to one-shot handler
-      elements.oneShotUrlInput.value = url;
-      return handleOneShotGenerate();
-    }
-    
     showError('Invalid playlist URL. Use format: https://www.youtube.com/playlist?list=...');
     return;
   }
@@ -861,7 +850,7 @@ async function handleOneShotGenerate() {
   
   try {
     appState.isFetching = true;
-    showLoading(true);
+    showLoading(true, true);
     hideError();
     // Fetch video page HTML to parse duration and title
     let durationSeconds = 0;
@@ -872,13 +861,11 @@ async function handleOneShotGenerate() {
     try {
       const urlObj = new URL(url.startsWith('http') ? url : `https://${url}`);
       if (url.includes('youtu.be/')) {
-         videoId = url.split('youtu.be/')[1].split('?')[0];
+         videoId = urlObj.pathname.substring(1);
       } else if (urlObj.searchParams.has('v')) {
          videoId = urlObj.searchParams.get('v');
-      } else if (url.includes('/live/')) {
-         videoId = url.split('/live/')[1].split('?')[0];
-      } else if (url.includes('/shorts/')) {
-         videoId = url.split('/shorts/')[1].split('?')[0];
+      } else if (urlObj.pathname.startsWith('/live/') || urlObj.pathname.startsWith('/shorts/')) {
+         videoId = urlObj.pathname.split('/')[2];
       }
     } catch (e) {
       console.warn("Could not parse URL for video ID:", e);
@@ -1107,13 +1094,19 @@ async function handleReset() {
 // ========================================
 // UI Helper Functions
 // ========================================
-function showLoading(show = true) {
+function showLoading(show = true, isOneShot = false) {
+  const loadingText = elements.loadingIndicator.querySelector('p');
   if (show) {
+    if (loadingText) {
+      loadingText.textContent = isOneShot ? "Fetching oneshot data..." : (chrome.i18n.getMessage("fetchingData") || "Fetching playlist data...");
+    }
     elements.loadingIndicator.classList.remove('hidden');
     elements.fetchPlaylistBtn.disabled = true;
+    if (elements.fetchOneShotBtn) elements.fetchOneShotBtn.disabled = true;
   } else {
     elements.loadingIndicator.classList.add('hidden');
     elements.fetchPlaylistBtn.disabled = false;
+    if (elements.fetchOneShotBtn) elements.fetchOneShotBtn.disabled = false;
   }
 }
 
