@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "Gawing structured na learning plan ang anumang YouTube playlist na may time estimates, progress tracking, at playback speed control." },
-  "subtitle": { "message": "Ang YouTube mo, naplano na" },
-  "myPlans": { "message": "Mga Plano Ko" },
-  "addNewPlan": { "message": "Magdagdag ng bagong plano" },
-  "playlistUrl": { "message": "URL ng playlist" },
-  "fetchPlaylist": { "message": "Kunin ang playlist" },
-  "fetchingData": { "message": "Kinukuha ang data ng playlist..." },
-  "planGeneratedTitle": { "message": "Matagumpay na nagawa ang plano" },
-  "planGeneratedSub": { "message": "Aktibo na ang iyong plano." },
-  "closingAuto": { "message": "Awtomatikong nagsasara..." },
-  "playlistSummary": { "message": "Buod ng playlist" },
-  "labelTitle": { "message": "Pamagat:" },
-  "labelVideos": { "message": "Mga video:" },
-  "labelTotalDuration": { "message": "Kabuuang tagal:" },
-  "progress": { "message": "Progreso" },
-  "selectPlanMode": { "message": "Pumili ng mode ng plano" },
-  "modeVideoByVideoTitle": { "message": "Video sa bawat video" },
-  "modeVideoByVideoDesc": { "message": "Manood ng eksaktong isang video bawat araw. Walang paghahati." },
-  "modeCustomTitle": { "message": "Custom na iskedyul" },
-  "modeCustomDesc": { "message": "Magtakda ng araw-araw na oras ng panonood. Hinahati ang mga video." },
-  "dailyWatchTime": { "message": "Araw-araw na oras ng panonood" },
-  "dailyWatchTimeLabel": { "message": "Araw-araw na oras ng panonood (minuto)" },
-  "next": { "message": "Susunod" },
-  "selectPlaybackSpeed": { "message": "Pumili ng bilis ng playback" },
-  "speedHint": { "message": "Ang tagal ng plano ay ia-adjust nang naaayon." },
-  "confirmPlan": { "message": "Kumpirmahin ang plano" },
-  "labelPlanMode": { "message": "Mode ng plano:" },
-  "labelDailyWatchTime": { "message": "Araw-araw na oras:" },
-  "labelPlaybackSpeed": { "message": "Bilis ng playback:" },
-  "generatePlan": { "message": "Gumawa ng plano" },
-  "yourWatchPlan": { "message": "Ang iyong plano sa panonood" },
-  "reset": { "message": "I-reset" },
-  "madeWith": { "message": "Ginawa nang may ❤️ ni" },
-  "goBack": { "message": "Bumalik" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "Ang YouTube mo, naplano na"
+  },
+  "myPlans": {
+    "message": "Mga Plano Ko"
+  },
+  "addNewPlan": {
+    "message": "Magdagdag ng bagong plano"
+  },
+  "playlistUrl": {
+    "message": "URL ng playlist"
+  },
+  "fetchPlaylist": {
+    "message": "Kunin ang playlist"
+  },
+  "fetchingData": {
+    "message": "Kinukuha ang data ng playlist..."
+  },
+  "planGeneratedTitle": {
+    "message": "Matagumpay na nagawa ang plano"
+  },
+  "planGeneratedSub": {
+    "message": "Aktibo na ang iyong plano."
+  },
+  "closingAuto": {
+    "message": "Awtomatikong nagsasara..."
+  },
+  "playlistSummary": {
+    "message": "Buod ng playlist"
+  },
+  "labelTitle": {
+    "message": "Pamagat:"
+  },
+  "labelVideos": {
+    "message": "Mga video:"
+  },
+  "labelTotalDuration": {
+    "message": "Kabuuang tagal:"
+  },
+  "progress": {
+    "message": "Progreso"
+  },
+  "selectPlanMode": {
+    "message": "Pumili ng mode ng plano"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "Video sa bawat video"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "Manood ng eksaktong isang video bawat araw. Walang paghahati."
+  },
+  "modeCustomTitle": {
+    "message": "Custom na iskedyul"
+  },
+  "modeCustomDesc": {
+    "message": "Magtakda ng araw-araw na oras ng panonood. Hinahati ang mga video."
+  },
+  "dailyWatchTime": {
+    "message": "Araw-araw na oras ng panonood"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "Araw-araw na oras ng panonood (minuto)"
+  },
+  "next": {
+    "message": "Susunod"
+  },
+  "selectPlaybackSpeed": {
+    "message": "Pumili ng bilis ng playback"
+  },
+  "speedHint": {
+    "message": "Ang tagal ng plano ay ia-adjust nang naaayon."
+  },
+  "confirmPlan": {
+    "message": "Kumpirmahin ang plano"
+  },
+  "labelPlanMode": {
+    "message": "Mode ng plano:"
+  },
+  "labelDailyWatchTime": {
+    "message": "Araw-araw na oras:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "Bilis ng playback:"
+  },
+  "generatePlan": {
+    "message": "Gumawa ng plano"
+  },
+  "yourWatchPlan": {
+    "message": "Ang iyong plano sa panonood"
+  },
+  "reset": {
+    "message": "I-reset"
+  },
+  "madeWith": {
+    "message": "Ginawa nang may ❤️ ni"
+  },
+  "goBack": {
+    "message": "Bumalik"
+  }
 }

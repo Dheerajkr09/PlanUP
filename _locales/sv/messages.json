@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "Förvandla valfri YouTube-spellista till en strukturerad studieplan med tidsuppskattningar, framstegsspårning och uppspelningshastighetskontroll." },
-  "subtitle": { "message": "Din YouTube, planerad" },
-  "myPlans": { "message": "Mina planer" },
-  "addNewPlan": { "message": "Lägg till ny plan" },
-  "playlistUrl": { "message": "Spellistans URL" },
-  "fetchPlaylist": { "message": "Hämta spellista" },
-  "fetchingData": { "message": "Hämtar spellistdata..." },
-  "planGeneratedTitle": { "message": "Plan skapad" },
-  "planGeneratedSub": { "message": "Din plan är nu aktiv." },
-  "closingAuto": { "message": "Stänger automatiskt..." },
-  "playlistSummary": { "message": "Sammanfattning av spellista" },
-  "labelTitle": { "message": "Titel:" },
-  "labelVideos": { "message": "Videor:" },
-  "labelTotalDuration": { "message": "Total längd:" },
-  "progress": { "message": "Framsteg" },
-  "selectPlanMode": { "message": "Välj planläge" },
-  "modeVideoByVideoTitle": { "message": "Video för video" },
-  "modeVideoByVideoDesc": { "message": "Titta på exakt en video per dag. Ingen uppdelning." },
-  "modeCustomTitle": { "message": "Anpassat schema" },
-  "modeCustomDesc": { "message": "Ange en daglig tidskvot. Videor delas upp." },
-  "dailyWatchTime": { "message": "Daglig tittartid" },
-  "dailyWatchTimeLabel": { "message": "Daglig tittartid (minuter)" },
-  "next": { "message": "Nästa" },
-  "selectPlaybackSpeed": { "message": "Välj uppspelningshastighet" },
-  "speedHint": { "message": "Planens längd justeras därefter." },
-  "confirmPlan": { "message": "Bekräfta plan" },
-  "labelPlanMode": { "message": "Planläge:" },
-  "labelDailyWatchTime": { "message": "Daglig tittartid:" },
-  "labelPlaybackSpeed": { "message": "Uppspelningshastighet:" },
-  "generatePlan": { "message": "Skapa plan" },
-  "yourWatchPlan": { "message": "Din tittarplan" },
-  "reset": { "message": "Återställ" },
-  "madeWith": { "message": "Gjord med ❤️ av" },
-  "goBack": { "message": "Tillbaka" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "Din YouTube, planerad"
+  },
+  "myPlans": {
+    "message": "Mina planer"
+  },
+  "addNewPlan": {
+    "message": "Lägg till ny plan"
+  },
+  "playlistUrl": {
+    "message": "Spellistans URL"
+  },
+  "fetchPlaylist": {
+    "message": "Hämta spellista"
+  },
+  "fetchingData": {
+    "message": "Hämtar spellistdata..."
+  },
+  "planGeneratedTitle": {
+    "message": "Plan skapad"
+  },
+  "planGeneratedSub": {
+    "message": "Din plan är nu aktiv."
+  },
+  "closingAuto": {
+    "message": "Stänger automatiskt..."
+  },
+  "playlistSummary": {
+    "message": "Sammanfattning av spellista"
+  },
+  "labelTitle": {
+    "message": "Titel:"
+  },
+  "labelVideos": {
+    "message": "Videor:"
+  },
+  "labelTotalDuration": {
+    "message": "Total längd:"
+  },
+  "progress": {
+    "message": "Framsteg"
+  },
+  "selectPlanMode": {
+    "message": "Välj planläge"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "Video för video"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "Titta på exakt en video per dag. Ingen uppdelning."
+  },
+  "modeCustomTitle": {
+    "message": "Anpassat schema"
+  },
+  "modeCustomDesc": {
+    "message": "Ange en daglig tidskvot. Videor delas upp."
+  },
+  "dailyWatchTime": {
+    "message": "Daglig tittartid"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "Daglig tittartid (minuter)"
+  },
+  "next": {
+    "message": "Nästa"
+  },
+  "selectPlaybackSpeed": {
+    "message": "Välj uppspelningshastighet"
+  },
+  "speedHint": {
+    "message": "Planens längd justeras därefter."
+  },
+  "confirmPlan": {
+    "message": "Bekräfta plan"
+  },
+  "labelPlanMode": {
+    "message": "Planläge:"
+  },
+  "labelDailyWatchTime": {
+    "message": "Daglig tittartid:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "Uppspelningshastighet:"
+  },
+  "generatePlan": {
+    "message": "Skapa plan"
+  },
+  "yourWatchPlan": {
+    "message": "Din tittarplan"
+  },
+  "reset": {
+    "message": "Återställ"
+  },
+  "madeWith": {
+    "message": "Gjord med ❤️ av"
+  },
+  "goBack": {
+    "message": "Tillbaka"
+  }
 }

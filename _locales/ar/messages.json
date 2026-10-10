@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "حوّل أي قائمة تشغيل على YouTube إلى خطة تعلّم منظمة مع تقديرات الوقت وتتبع التقدم والتحكم في سرعة التشغيل." },
-  "subtitle": { "message": "يوتيوبك، مُخطط" },
-  "myPlans": { "message": "خططي" },
-  "addNewPlan": { "message": "إضافة خطة جديدة" },
-  "playlistUrl": { "message": "رابط قائمة التشغيل" },
-  "fetchPlaylist": { "message": "جلب قائمة التشغيل" },
-  "fetchingData": { "message": "جارٍ جلب بيانات القائمة..." },
-  "planGeneratedTitle": { "message": "تم إنشاء الخطة بنجاح" },
-  "planGeneratedSub": { "message": "خطتك نشطة الآن." },
-  "closingAuto": { "message": "إغلاق تلقائي..." },
-  "playlistSummary": { "message": "ملخص قائمة التشغيل" },
-  "labelTitle": { "message": "العنوان:" },
-  "labelVideos": { "message": "الفيديوهات:" },
-  "labelTotalDuration": { "message": "المدة الإجمالية:" },
-  "progress": { "message": "التقدم" },
-  "selectPlanMode": { "message": "اختر وضع الخطة" },
-  "modeVideoByVideoTitle": { "message": "فيديو بفيديو" },
-  "modeVideoByVideoDesc": { "message": "شاهد فيديو واحد بالضبط يومياً. بدون تقسيم." },
-  "modeCustomTitle": { "message": "جدول مخصص" },
-  "modeCustomDesc": { "message": "حدد حصة وقت المشاهدة اليومية. يتم تقسيم الفيديوهات." },
-  "dailyWatchTime": { "message": "وقت المشاهدة اليومي" },
-  "dailyWatchTimeLabel": { "message": "وقت المشاهدة اليومي (دقائق)" },
-  "next": { "message": "التالي" },
-  "selectPlaybackSpeed": { "message": "اختر سرعة التشغيل" },
-  "speedHint": { "message": "سيتم تعديل مدة الخطة وفقاً لذلك." },
-  "confirmPlan": { "message": "تأكيد الخطة" },
-  "labelPlanMode": { "message": "وضع الخطة:" },
-  "labelDailyWatchTime": { "message": "وقت المشاهدة اليومي:" },
-  "labelPlaybackSpeed": { "message": "سرعة التشغيل:" },
-  "generatePlan": { "message": "إنشاء الخطة" },
-  "yourWatchPlan": { "message": "خطة المشاهدة" },
-  "reset": { "message": "إعادة تعيين" },
-  "madeWith": { "message": "صُنع بـ ❤️ بواسطة" },
-  "goBack": { "message": "رجوع" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "يوتيوبك، مُخطط"
+  },
+  "myPlans": {
+    "message": "خططي"
+  },
+  "addNewPlan": {
+    "message": "إضافة خطة جديدة"
+  },
+  "playlistUrl": {
+    "message": "رابط قائمة التشغيل"
+  },
+  "fetchPlaylist": {
+    "message": "جلب قائمة التشغيل"
+  },
+  "fetchingData": {
+    "message": "جارٍ جلب بيانات القائمة..."
+  },
+  "planGeneratedTitle": {
+    "message": "تم إنشاء الخطة بنجاح"
+  },
+  "planGeneratedSub": {
+    "message": "خطتك نشطة الآن."
+  },
+  "closingAuto": {
+    "message": "إغلاق تلقائي..."
+  },
+  "playlistSummary": {
+    "message": "ملخص قائمة التشغيل"
+  },
+  "labelTitle": {
+    "message": "العنوان:"
+  },
+  "labelVideos": {
+    "message": "الفيديوهات:"
+  },
+  "labelTotalDuration": {
+    "message": "المدة الإجمالية:"
+  },
+  "progress": {
+    "message": "التقدم"
+  },
+  "selectPlanMode": {
+    "message": "اختر وضع الخطة"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "فيديو بفيديو"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "شاهد فيديو واحد بالضبط يومياً. بدون تقسيم."
+  },
+  "modeCustomTitle": {
+    "message": "جدول مخصص"
+  },
+  "modeCustomDesc": {
+    "message": "حدد حصة وقت المشاهدة اليومية. يتم تقسيم الفيديوهات."
+  },
+  "dailyWatchTime": {
+    "message": "وقت المشاهدة اليومي"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "وقت المشاهدة اليومي (دقائق)"
+  },
+  "next": {
+    "message": "التالي"
+  },
+  "selectPlaybackSpeed": {
+    "message": "اختر سرعة التشغيل"
+  },
+  "speedHint": {
+    "message": "سيتم تعديل مدة الخطة وفقاً لذلك."
+  },
+  "confirmPlan": {
+    "message": "تأكيد الخطة"
+  },
+  "labelPlanMode": {
+    "message": "وضع الخطة:"
+  },
+  "labelDailyWatchTime": {
+    "message": "وقت المشاهدة اليومي:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "سرعة التشغيل:"
+  },
+  "generatePlan": {
+    "message": "إنشاء الخطة"
+  },
+  "yourWatchPlan": {
+    "message": "خطة المشاهدة"
+  },
+  "reset": {
+    "message": "إعادة تعيين"
+  },
+  "madeWith": {
+    "message": "صُنع بـ ❤️ بواسطة"
+  },
+  "goBack": {
+    "message": "رجوع"
+  }
 }

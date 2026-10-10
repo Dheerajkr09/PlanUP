@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "Biến bất kỳ danh sách phát YouTube nào thành kế hoạch học tập có cấu trúc với ước tính thời gian, theo dõi tiến độ và điều khiển tốc độ phát." },
-  "subtitle": { "message": "YouTube của bạn, đã được lên kế hoạch" },
-  "myPlans": { "message": "Kế hoạch của tôi" },
-  "addNewPlan": { "message": "Thêm kế hoạch mới" },
-  "playlistUrl": { "message": "URL danh sách phát" },
-  "fetchPlaylist": { "message": "Tải danh sách phát" },
-  "fetchingData": { "message": "Đang tải dữ liệu danh sách phát..." },
-  "planGeneratedTitle": { "message": "Kế hoạch đã được tạo thành công" },
-  "planGeneratedSub": { "message": "Kế hoạch của bạn đã được kích hoạt." },
-  "closingAuto": { "message": "Tự động đóng..." },
-  "playlistSummary": { "message": "Tóm tắt danh sách phát" },
-  "labelTitle": { "message": "Tiêu đề:" },
-  "labelVideos": { "message": "Video:" },
-  "labelTotalDuration": { "message": "Tổng thời lượng:" },
-  "progress": { "message": "Tiến độ" },
-  "selectPlanMode": { "message": "Chọn chế độ kế hoạch" },
-  "modeVideoByVideoTitle": { "message": "Từng video một" },
-  "modeVideoByVideoDesc": { "message": "Xem đúng một video mỗi ngày. Không chia nhỏ." },
-  "modeCustomTitle": { "message": "Lịch trình tùy chỉnh" },
-  "modeCustomDesc": { "message": "Đặt hạn mức thời gian xem hàng ngày. Video được chia nhỏ." },
-  "dailyWatchTime": { "message": "Thời gian xem hàng ngày" },
-  "dailyWatchTimeLabel": { "message": "Thời gian xem hàng ngày (phút)" },
-  "next": { "message": "Tiếp theo" },
-  "selectPlaybackSpeed": { "message": "Chọn tốc độ phát" },
-  "speedHint": { "message": "Thời lượng kế hoạch sẽ được điều chỉnh tương ứng." },
-  "confirmPlan": { "message": "Xác nhận kế hoạch" },
-  "labelPlanMode": { "message": "Chế độ kế hoạch:" },
-  "labelDailyWatchTime": { "message": "Thời gian xem hàng ngày:" },
-  "labelPlaybackSpeed": { "message": "Tốc độ phát:" },
-  "generatePlan": { "message": "Tạo kế hoạch" },
-  "yourWatchPlan": { "message": "Kế hoạch xem của bạn" },
-  "reset": { "message": "Đặt lại" },
-  "madeWith": { "message": "Được tạo với ❤️ bởi" },
-  "goBack": { "message": "Quay lại" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "YouTube của bạn, đã được lên kế hoạch"
+  },
+  "myPlans": {
+    "message": "Kế hoạch của tôi"
+  },
+  "addNewPlan": {
+    "message": "Thêm kế hoạch mới"
+  },
+  "playlistUrl": {
+    "message": "URL danh sách phát"
+  },
+  "fetchPlaylist": {
+    "message": "Tải danh sách phát"
+  },
+  "fetchingData": {
+    "message": "Đang tải dữ liệu danh sách phát..."
+  },
+  "planGeneratedTitle": {
+    "message": "Kế hoạch đã được tạo thành công"
+  },
+  "planGeneratedSub": {
+    "message": "Kế hoạch của bạn đã được kích hoạt."
+  },
+  "closingAuto": {
+    "message": "Tự động đóng..."
+  },
+  "playlistSummary": {
+    "message": "Tóm tắt danh sách phát"
+  },
+  "labelTitle": {
+    "message": "Tiêu đề:"
+  },
+  "labelVideos": {
+    "message": "Video:"
+  },
+  "labelTotalDuration": {
+    "message": "Tổng thời lượng:"
+  },
+  "progress": {
+    "message": "Tiến độ"
+  },
+  "selectPlanMode": {
+    "message": "Chọn chế độ kế hoạch"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "Từng video một"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "Xem đúng một video mỗi ngày. Không chia nhỏ."
+  },
+  "modeCustomTitle": {
+    "message": "Lịch trình tùy chỉnh"
+  },
+  "modeCustomDesc": {
+    "message": "Đặt hạn mức thời gian xem hàng ngày. Video được chia nhỏ."
+  },
+  "dailyWatchTime": {
+    "message": "Thời gian xem hàng ngày"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "Thời gian xem hàng ngày (phút)"
+  },
+  "next": {
+    "message": "Tiếp theo"
+  },
+  "selectPlaybackSpeed": {
+    "message": "Chọn tốc độ phát"
+  },
+  "speedHint": {
+    "message": "Thời lượng kế hoạch sẽ được điều chỉnh tương ứng."
+  },
+  "confirmPlan": {
+    "message": "Xác nhận kế hoạch"
+  },
+  "labelPlanMode": {
+    "message": "Chế độ kế hoạch:"
+  },
+  "labelDailyWatchTime": {
+    "message": "Thời gian xem hàng ngày:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "Tốc độ phát:"
+  },
+  "generatePlan": {
+    "message": "Tạo kế hoạch"
+  },
+  "yourWatchPlan": {
+    "message": "Kế hoạch xem của bạn"
+  },
+  "reset": {
+    "message": "Đặt lại"
+  },
+  "madeWith": {
+    "message": "Được tạo với ❤️ bởi"
+  },
+  "goBack": {
+    "message": "Quay lại"
+  }
 }

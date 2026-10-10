@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "Gjør en hvilken som helst YouTube-spilleliste om til en strukturert læringsplan med tidsestimater, fremdriftssporing og avspillingshastighetskonroll." },
-  "subtitle": { "message": "Din YouTube, planlagt" },
-  "myPlans": { "message": "Mine planer" },
-  "addNewPlan": { "message": "Legg til ny plan" },
-  "playlistUrl": { "message": "Spilleliste-URL" },
-  "fetchPlaylist": { "message": "Hent spilleliste" },
-  "fetchingData": { "message": "Henter spillelistedata..." },
-  "planGeneratedTitle": { "message": "Plan opprettet" },
-  "planGeneratedSub": { "message": "Planen din er nå aktiv." },
-  "closingAuto": { "message": "Lukkes automatisk..." },
-  "playlistSummary": { "message": "Spillelisteoversikt" },
-  "labelTitle": { "message": "Tittel:" },
-  "labelVideos": { "message": "Videoer:" },
-  "labelTotalDuration": { "message": "Total varighet:" },
-  "progress": { "message": "Fremdrift" },
-  "selectPlanMode": { "message": "Velg planmodus" },
-  "modeVideoByVideoTitle": { "message": "Video for video" },
-  "modeVideoByVideoDesc": { "message": "Se nøyaktig én video per dag. Ingen deling." },
-  "modeCustomTitle": { "message": "Egendefinert timeplan" },
-  "modeCustomDesc": { "message": "Angi en daglig sekvote. Videoer deles opp." },
-  "dailyWatchTime": { "message": "Daglig setid" },
-  "dailyWatchTimeLabel": { "message": "Daglig setid (minutter)" },
-  "next": { "message": "Neste" },
-  "selectPlaybackSpeed": { "message": "Velg avspillingshastighet" },
-  "speedHint": { "message": "Planens varighet justeres deretter." },
-  "confirmPlan": { "message": "Bekreft plan" },
-  "labelPlanMode": { "message": "Planmodus:" },
-  "labelDailyWatchTime": { "message": "Daglig setid:" },
-  "labelPlaybackSpeed": { "message": "Avspillingshastighet:" },
-  "generatePlan": { "message": "Opprett plan" },
-  "yourWatchPlan": { "message": "Din seplan" },
-  "reset": { "message": "Tilbakestill" },
-  "madeWith": { "message": "Laget med ❤️ av" },
-  "goBack": { "message": "Tilbake" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "Din YouTube, planlagt"
+  },
+  "myPlans": {
+    "message": "Mine planer"
+  },
+  "addNewPlan": {
+    "message": "Legg til ny plan"
+  },
+  "playlistUrl": {
+    "message": "Spilleliste-URL"
+  },
+  "fetchPlaylist": {
+    "message": "Hent spilleliste"
+  },
+  "fetchingData": {
+    "message": "Henter spillelistedata..."
+  },
+  "planGeneratedTitle": {
+    "message": "Plan opprettet"
+  },
+  "planGeneratedSub": {
+    "message": "Planen din er nå aktiv."
+  },
+  "closingAuto": {
+    "message": "Lukkes automatisk..."
+  },
+  "playlistSummary": {
+    "message": "Spillelisteoversikt"
+  },
+  "labelTitle": {
+    "message": "Tittel:"
+  },
+  "labelVideos": {
+    "message": "Videoer:"
+  },
+  "labelTotalDuration": {
+    "message": "Total varighet:"
+  },
+  "progress": {
+    "message": "Fremdrift"
+  },
+  "selectPlanMode": {
+    "message": "Velg planmodus"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "Video for video"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "Se nøyaktig én video per dag. Ingen deling."
+  },
+  "modeCustomTitle": {
+    "message": "Egendefinert timeplan"
+  },
+  "modeCustomDesc": {
+    "message": "Angi en daglig sekvote. Videoer deles opp."
+  },
+  "dailyWatchTime": {
+    "message": "Daglig setid"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "Daglig setid (minutter)"
+  },
+  "next": {
+    "message": "Neste"
+  },
+  "selectPlaybackSpeed": {
+    "message": "Velg avspillingshastighet"
+  },
+  "speedHint": {
+    "message": "Planens varighet justeres deretter."
+  },
+  "confirmPlan": {
+    "message": "Bekreft plan"
+  },
+  "labelPlanMode": {
+    "message": "Planmodus:"
+  },
+  "labelDailyWatchTime": {
+    "message": "Daglig setid:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "Avspillingshastighet:"
+  },
+  "generatePlan": {
+    "message": "Opprett plan"
+  },
+  "yourWatchPlan": {
+    "message": "Din seplan"
+  },
+  "reset": {
+    "message": "Tilbakestill"
+  },
+  "madeWith": {
+    "message": "Laget med ❤️ av"
+  },
+  "goBack": {
+    "message": "Tilbake"
+  }
 }

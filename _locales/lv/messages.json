@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "Pārvērtiet jebkuru YouTube atskaņošanas sarakstu strukturētā mācību plānā ar laika aplēsēm, progresa izsekošanu un atskaņošanas ātruma kontroli." },
-  "subtitle": { "message": "Jūsu YouTube, ieplānots" },
-  "myPlans": { "message": "Mani plāni" },
-  "addNewPlan": { "message": "Pievienot jaunu plānu" },
-  "playlistUrl": { "message": "Atskaņošanas saraksta URL" },
-  "fetchPlaylist": { "message": "Ielādēt sarakstu" },
-  "fetchingData": { "message": "Ielādē saraksta datus..." },
-  "planGeneratedTitle": { "message": "Plāns veiksmīgi izveidots" },
-  "planGeneratedSub": { "message": "Jūsu plāns tagad ir aktīvs." },
-  "closingAuto": { "message": "Automātiska aizvēršana..." },
-  "playlistSummary": { "message": "Saraksta kopsavilkums" },
-  "labelTitle": { "message": "Nosaukums:" },
-  "labelVideos": { "message": "Video:" },
-  "labelTotalDuration": { "message": "Kopējais ilgums:" },
-  "progress": { "message": "Progress" },
-  "selectPlanMode": { "message": "Izvēlieties plāna režīmu" },
-  "modeVideoByVideoTitle": { "message": "Video pēc video" },
-  "modeVideoByVideoDesc": { "message": "Skatieties tieši vienu video dienā. Bez sadalīšanas." },
-  "modeCustomTitle": { "message": "Pielāgots grafiks" },
-  "modeCustomDesc": { "message": "Iestatiet ikdienas skatīšanās kvotu. Video tiek sadalīti." },
-  "dailyWatchTime": { "message": "Ikdienas skatīšanās laiks" },
-  "dailyWatchTimeLabel": { "message": "Ikdienas skatīšanās laiks (minūtes)" },
-  "next": { "message": "Tālāk" },
-  "selectPlaybackSpeed": { "message": "Izvēlieties atskaņošanas ātrumu" },
-  "speedHint": { "message": "Plāna ilgums tiks attiecīgi pielāgots." },
-  "confirmPlan": { "message": "Apstiprināt plānu" },
-  "labelPlanMode": { "message": "Plāna režīms:" },
-  "labelDailyWatchTime": { "message": "Ikdienas laiks:" },
-  "labelPlaybackSpeed": { "message": "Atskaņošanas ātrums:" },
-  "generatePlan": { "message": "Izveidot plānu" },
-  "yourWatchPlan": { "message": "Jūsu skatīšanās plāns" },
-  "reset": { "message": "Atiestatīt" },
-  "madeWith": { "message": "Veidots ar ❤️" },
-  "goBack": { "message": "Atpakaļ" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "Jūsu YouTube, ieplānots"
+  },
+  "myPlans": {
+    "message": "Mani plāni"
+  },
+  "addNewPlan": {
+    "message": "Pievienot jaunu plānu"
+  },
+  "playlistUrl": {
+    "message": "Atskaņošanas saraksta URL"
+  },
+  "fetchPlaylist": {
+    "message": "Ielādēt sarakstu"
+  },
+  "fetchingData": {
+    "message": "Ielādē saraksta datus..."
+  },
+  "planGeneratedTitle": {
+    "message": "Plāns veiksmīgi izveidots"
+  },
+  "planGeneratedSub": {
+    "message": "Jūsu plāns tagad ir aktīvs."
+  },
+  "closingAuto": {
+    "message": "Automātiska aizvēršana..."
+  },
+  "playlistSummary": {
+    "message": "Saraksta kopsavilkums"
+  },
+  "labelTitle": {
+    "message": "Nosaukums:"
+  },
+  "labelVideos": {
+    "message": "Video:"
+  },
+  "labelTotalDuration": {
+    "message": "Kopējais ilgums:"
+  },
+  "progress": {
+    "message": "Progress"
+  },
+  "selectPlanMode": {
+    "message": "Izvēlieties plāna režīmu"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "Video pēc video"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "Skatieties tieši vienu video dienā. Bez sadalīšanas."
+  },
+  "modeCustomTitle": {
+    "message": "Pielāgots grafiks"
+  },
+  "modeCustomDesc": {
+    "message": "Iestatiet ikdienas skatīšanās kvotu. Video tiek sadalīti."
+  },
+  "dailyWatchTime": {
+    "message": "Ikdienas skatīšanās laiks"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "Ikdienas skatīšanās laiks (minūtes)"
+  },
+  "next": {
+    "message": "Tālāk"
+  },
+  "selectPlaybackSpeed": {
+    "message": "Izvēlieties atskaņošanas ātrumu"
+  },
+  "speedHint": {
+    "message": "Plāna ilgums tiks attiecīgi pielāgots."
+  },
+  "confirmPlan": {
+    "message": "Apstiprināt plānu"
+  },
+  "labelPlanMode": {
+    "message": "Plāna režīms:"
+  },
+  "labelDailyWatchTime": {
+    "message": "Ikdienas laiks:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "Atskaņošanas ātrums:"
+  },
+  "generatePlan": {
+    "message": "Izveidot plānu"
+  },
+  "yourWatchPlan": {
+    "message": "Jūsu skatīšanās plāns"
+  },
+  "reset": {
+    "message": "Atiestatīt"
+  },
+  "madeWith": {
+    "message": "Veidots ar ❤️"
+  },
+  "goBack": {
+    "message": "Atpakaļ"
+  }
 }

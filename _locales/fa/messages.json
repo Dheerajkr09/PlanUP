@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "هر لیست پخش YouTube را به یک برنامه یادگیری ساختاریافته با تخمین زمان، پیگیری پیشرفت و کنترل سرعت پخش تبدیل کنید." },
-  "subtitle": { "message": "YouTube شما، برنامه‌ریزی شده" },
-  "myPlans": { "message": "برنامه‌های من" },
-  "addNewPlan": { "message": "افزودن برنامه جدید" },
-  "playlistUrl": { "message": "آدرس لیست پخش" },
-  "fetchPlaylist": { "message": "دریافت لیست پخش" },
-  "fetchingData": { "message": "در حال دریافت اطلاعات لیست پخش..." },
-  "planGeneratedTitle": { "message": "برنامه با موفقیت ایجاد شد" },
-  "planGeneratedSub": { "message": "برنامه شما اکنون فعال است." },
-  "closingAuto": { "message": "بسته شدن خودکار..." },
-  "playlistSummary": { "message": "خلاصه لیست پخش" },
-  "labelTitle": { "message": "عنوان:" },
-  "labelVideos": { "message": "ویدیوها:" },
-  "labelTotalDuration": { "message": "مدت کل:" },
-  "progress": { "message": "پیشرفت" },
-  "selectPlanMode": { "message": "انتخاب حالت برنامه" },
-  "modeVideoByVideoTitle": { "message": "ویدیو به ویدیو" },
-  "modeVideoByVideoDesc": { "message": "دقیقاً یک ویدیو در روز تماشا کنید. بدون تقسیم." },
-  "modeCustomTitle": { "message": "برنامه سفارشی" },
-  "modeCustomDesc": { "message": "سهمیه زمان تماشای روزانه تعیین کنید. ویدیوها تقسیم می‌شوند." },
-  "dailyWatchTime": { "message": "زمان تماشای روزانه" },
-  "dailyWatchTimeLabel": { "message": "زمان تماشای روزانه (دقیقه)" },
-  "next": { "message": "بعدی" },
-  "selectPlaybackSpeed": { "message": "انتخاب سرعت پخش" },
-  "speedHint": { "message": "مدت برنامه بر اساس آن تنظیم خواهد شد." },
-  "confirmPlan": { "message": "تأیید برنامه" },
-  "labelPlanMode": { "message": "حالت برنامه:" },
-  "labelDailyWatchTime": { "message": "زمان روزانه:" },
-  "labelPlaybackSpeed": { "message": "سرعت پخش:" },
-  "generatePlan": { "message": "ایجاد برنامه" },
-  "yourWatchPlan": { "message": "برنامه تماشای شما" },
-  "reset": { "message": "بازنشانی" },
-  "madeWith": { "message": "ساخته شده با ❤️ توسط" },
-  "goBack": { "message": "بازگشت" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "YouTube شما، برنامه‌ریزی شده"
+  },
+  "myPlans": {
+    "message": "برنامه‌های من"
+  },
+  "addNewPlan": {
+    "message": "افزودن برنامه جدید"
+  },
+  "playlistUrl": {
+    "message": "آدرس لیست پخش"
+  },
+  "fetchPlaylist": {
+    "message": "دریافت لیست پخش"
+  },
+  "fetchingData": {
+    "message": "در حال دریافت اطلاعات لیست پخش..."
+  },
+  "planGeneratedTitle": {
+    "message": "برنامه با موفقیت ایجاد شد"
+  },
+  "planGeneratedSub": {
+    "message": "برنامه شما اکنون فعال است."
+  },
+  "closingAuto": {
+    "message": "بسته شدن خودکار..."
+  },
+  "playlistSummary": {
+    "message": "خلاصه لیست پخش"
+  },
+  "labelTitle": {
+    "message": "عنوان:"
+  },
+  "labelVideos": {
+    "message": "ویدیوها:"
+  },
+  "labelTotalDuration": {
+    "message": "مدت کل:"
+  },
+  "progress": {
+    "message": "پیشرفت"
+  },
+  "selectPlanMode": {
+    "message": "انتخاب حالت برنامه"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "ویدیو به ویدیو"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "دقیقاً یک ویدیو در روز تماشا کنید. بدون تقسیم."
+  },
+  "modeCustomTitle": {
+    "message": "برنامه سفارشی"
+  },
+  "modeCustomDesc": {
+    "message": "سهمیه زمان تماشای روزانه تعیین کنید. ویدیوها تقسیم می‌شوند."
+  },
+  "dailyWatchTime": {
+    "message": "زمان تماشای روزانه"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "زمان تماشای روزانه (دقیقه)"
+  },
+  "next": {
+    "message": "بعدی"
+  },
+  "selectPlaybackSpeed": {
+    "message": "انتخاب سرعت پخش"
+  },
+  "speedHint": {
+    "message": "مدت برنامه بر اساس آن تنظیم خواهد شد."
+  },
+  "confirmPlan": {
+    "message": "تأیید برنامه"
+  },
+  "labelPlanMode": {
+    "message": "حالت برنامه:"
+  },
+  "labelDailyWatchTime": {
+    "message": "زمان روزانه:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "سرعت پخش:"
+  },
+  "generatePlan": {
+    "message": "ایجاد برنامه"
+  },
+  "yourWatchPlan": {
+    "message": "برنامه تماشای شما"
+  },
+  "reset": {
+    "message": "بازنشانی"
+  },
+  "madeWith": {
+    "message": "ساخته شده با ❤️ توسط"
+  },
+  "goBack": {
+    "message": "بازگشت"
+  }
 }

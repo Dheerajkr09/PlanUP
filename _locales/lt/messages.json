@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "Paverskite bet kurį YouTube grojaraštį į struktūrizuotą mokymosi planą su laiko sąmatomis, pažangos sekimu ir atkūrimo greičio valdymu." },
-  "subtitle": { "message": "Jūsų YouTube, suplanuotas" },
-  "myPlans": { "message": "Mano planai" },
-  "addNewPlan": { "message": "Pridėti naują planą" },
-  "playlistUrl": { "message": "Grojaraščio URL" },
-  "fetchPlaylist": { "message": "Gauti grojaraštį" },
-  "fetchingData": { "message": "Gaunami grojaraščio duomenys..." },
-  "planGeneratedTitle": { "message": "Planas sėkmingai sukurtas" },
-  "planGeneratedSub": { "message": "Jūsų planas dabar aktyvus." },
-  "closingAuto": { "message": "Automatinis uždarymas..." },
-  "playlistSummary": { "message": "Grojaraščio santrauka" },
-  "labelTitle": { "message": "Pavadinimas:" },
-  "labelVideos": { "message": "Vaizdo įrašai:" },
-  "labelTotalDuration": { "message": "Bendra trukmė:" },
-  "progress": { "message": "Pažanga" },
-  "selectPlanMode": { "message": "Pasirinkite plano režimą" },
-  "modeVideoByVideoTitle": { "message": "Vaizdo po vaizdo" },
-  "modeVideoByVideoDesc": { "message": "Žiūrėkite lygiai vieną vaizdo įrašą per dieną. Be skaidymo." },
-  "modeCustomTitle": { "message": "Individualus tvarkaraštis" },
-  "modeCustomDesc": { "message": "Nustatykite dienos žiūrėjimo kvotą. Vaizdo įrašai padalijami." },
-  "dailyWatchTime": { "message": "Dienos žiūrėjimo laikas" },
-  "dailyWatchTimeLabel": { "message": "Dienos žiūrėjimo laikas (minutės)" },
-  "next": { "message": "Toliau" },
-  "selectPlaybackSpeed": { "message": "Pasirinkite atkūrimo greitį" },
-  "speedHint": { "message": "Plano trukmė bus atitinkamai pakoreguota." },
-  "confirmPlan": { "message": "Patvirtinti planą" },
-  "labelPlanMode": { "message": "Plano režimas:" },
-  "labelDailyWatchTime": { "message": "Dienos žiūrėjimo laikas:" },
-  "labelPlaybackSpeed": { "message": "Atkūrimo greitis:" },
-  "generatePlan": { "message": "Sukurti planą" },
-  "yourWatchPlan": { "message": "Jūsų žiūrėjimo planas" },
-  "reset": { "message": "Atstatyti" },
-  "madeWith": { "message": "Sukurta su ❤️" },
-  "goBack": { "message": "Grįžti" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "Jūsų YouTube, suplanuotas"
+  },
+  "myPlans": {
+    "message": "Mano planai"
+  },
+  "addNewPlan": {
+    "message": "Pridėti naują planą"
+  },
+  "playlistUrl": {
+    "message": "Grojaraščio URL"
+  },
+  "fetchPlaylist": {
+    "message": "Gauti grojaraštį"
+  },
+  "fetchingData": {
+    "message": "Gaunami grojaraščio duomenys..."
+  },
+  "planGeneratedTitle": {
+    "message": "Planas sėkmingai sukurtas"
+  },
+  "planGeneratedSub": {
+    "message": "Jūsų planas dabar aktyvus."
+  },
+  "closingAuto": {
+    "message": "Automatinis uždarymas..."
+  },
+  "playlistSummary": {
+    "message": "Grojaraščio santrauka"
+  },
+  "labelTitle": {
+    "message": "Pavadinimas:"
+  },
+  "labelVideos": {
+    "message": "Vaizdo įrašai:"
+  },
+  "labelTotalDuration": {
+    "message": "Bendra trukmė:"
+  },
+  "progress": {
+    "message": "Pažanga"
+  },
+  "selectPlanMode": {
+    "message": "Pasirinkite plano režimą"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "Vaizdo po vaizdo"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "Žiūrėkite lygiai vieną vaizdo įrašą per dieną. Be skaidymo."
+  },
+  "modeCustomTitle": {
+    "message": "Individualus tvarkaraštis"
+  },
+  "modeCustomDesc": {
+    "message": "Nustatykite dienos žiūrėjimo kvotą. Vaizdo įrašai padalijami."
+  },
+  "dailyWatchTime": {
+    "message": "Dienos žiūrėjimo laikas"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "Dienos žiūrėjimo laikas (minutės)"
+  },
+  "next": {
+    "message": "Toliau"
+  },
+  "selectPlaybackSpeed": {
+    "message": "Pasirinkite atkūrimo greitį"
+  },
+  "speedHint": {
+    "message": "Plano trukmė bus atitinkamai pakoreguota."
+  },
+  "confirmPlan": {
+    "message": "Patvirtinti planą"
+  },
+  "labelPlanMode": {
+    "message": "Plano režimas:"
+  },
+  "labelDailyWatchTime": {
+    "message": "Dienos žiūrėjimo laikas:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "Atkūrimo greitis:"
+  },
+  "generatePlan": {
+    "message": "Sukurti planą"
+  },
+  "yourWatchPlan": {
+    "message": "Jūsų žiūrėjimo planas"
+  },
+  "reset": {
+    "message": "Atstatyti"
+  },
+  "madeWith": {
+    "message": "Sukurta su ❤️"
+  },
+  "goBack": {
+    "message": "Grįžti"
+  }
 }

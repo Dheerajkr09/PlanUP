@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "Muutke mis tahes YouTube'i esitusloend struktureeritud õppeplaaniks koos ajakalkulatsioonide, edenemise jälgimise ja taasesituse kiiruse juhtimisega." },
-  "subtitle": { "message": "Sinu YouTube, planeeritud" },
-  "myPlans": { "message": "Minu plaanid" },
-  "addNewPlan": { "message": "Lisa uus plaan" },
-  "playlistUrl": { "message": "Esitusloendi URL" },
-  "fetchPlaylist": { "message": "Laadi esitusloend" },
-  "fetchingData": { "message": "Esitusloendi andmete laadimine..." },
-  "planGeneratedTitle": { "message": "Plaan edukalt loodud" },
-  "planGeneratedSub": { "message": "Sinu plaan on nüüd aktiivne." },
-  "closingAuto": { "message": "Automaatne sulgemine..." },
-  "playlistSummary": { "message": "Esitusloendi kokkuvõte" },
-  "labelTitle": { "message": "Pealkiri:" },
-  "labelVideos": { "message": "Videod:" },
-  "labelTotalDuration": { "message": "Kogukestus:" },
-  "progress": { "message": "Edenemine" },
-  "selectPlanMode": { "message": "Vali plaani režiim" },
-  "modeVideoByVideoTitle": { "message": "Video kaupa" },
-  "modeVideoByVideoDesc": { "message": "Vaata päevas täpselt üks video. Ilma jagamiseta." },
-  "modeCustomTitle": { "message": "Kohandatud ajakava" },
-  "modeCustomDesc": { "message": "Määra päevane vaatamiskvoot. Videod jagatakse." },
-  "dailyWatchTime": { "message": "Päevane vaatamisaeg" },
-  "dailyWatchTimeLabel": { "message": "Päevane vaatamisaeg (minutid)" },
-  "next": { "message": "Edasi" },
-  "selectPlaybackSpeed": { "message": "Vali taasesituse kiirus" },
-  "speedHint": { "message": "Plaani kestus kohandatakse vastavalt." },
-  "confirmPlan": { "message": "Kinnita plaan" },
-  "labelPlanMode": { "message": "Plaani režiim:" },
-  "labelDailyWatchTime": { "message": "Päevane aeg:" },
-  "labelPlaybackSpeed": { "message": "Taasesituse kiirus:" },
-  "generatePlan": { "message": "Loo plaan" },
-  "yourWatchPlan": { "message": "Sinu vaatamisplaan" },
-  "reset": { "message": "Lähtesta" },
-  "madeWith": { "message": "Tehtud ❤️-ga" },
-  "goBack": { "message": "Tagasi" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "Sinu YouTube, planeeritud"
+  },
+  "myPlans": {
+    "message": "Minu plaanid"
+  },
+  "addNewPlan": {
+    "message": "Lisa uus plaan"
+  },
+  "playlistUrl": {
+    "message": "Esitusloendi URL"
+  },
+  "fetchPlaylist": {
+    "message": "Laadi esitusloend"
+  },
+  "fetchingData": {
+    "message": "Esitusloendi andmete laadimine..."
+  },
+  "planGeneratedTitle": {
+    "message": "Plaan edukalt loodud"
+  },
+  "planGeneratedSub": {
+    "message": "Sinu plaan on nüüd aktiivne."
+  },
+  "closingAuto": {
+    "message": "Automaatne sulgemine..."
+  },
+  "playlistSummary": {
+    "message": "Esitusloendi kokkuvõte"
+  },
+  "labelTitle": {
+    "message": "Pealkiri:"
+  },
+  "labelVideos": {
+    "message": "Videod:"
+  },
+  "labelTotalDuration": {
+    "message": "Kogukestus:"
+  },
+  "progress": {
+    "message": "Edenemine"
+  },
+  "selectPlanMode": {
+    "message": "Vali plaani režiim"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "Video kaupa"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "Vaata päevas täpselt üks video. Ilma jagamiseta."
+  },
+  "modeCustomTitle": {
+    "message": "Kohandatud ajakava"
+  },
+  "modeCustomDesc": {
+    "message": "Määra päevane vaatamiskvoot. Videod jagatakse."
+  },
+  "dailyWatchTime": {
+    "message": "Päevane vaatamisaeg"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "Päevane vaatamisaeg (minutid)"
+  },
+  "next": {
+    "message": "Edasi"
+  },
+  "selectPlaybackSpeed": {
+    "message": "Vali taasesituse kiirus"
+  },
+  "speedHint": {
+    "message": "Plaani kestus kohandatakse vastavalt."
+  },
+  "confirmPlan": {
+    "message": "Kinnita plaan"
+  },
+  "labelPlanMode": {
+    "message": "Plaani režiim:"
+  },
+  "labelDailyWatchTime": {
+    "message": "Päevane aeg:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "Taasesituse kiirus:"
+  },
+  "generatePlan": {
+    "message": "Loo plaan"
+  },
+  "yourWatchPlan": {
+    "message": "Sinu vaatamisplaan"
+  },
+  "reset": {
+    "message": "Lähtesta"
+  },
+  "madeWith": {
+    "message": "Tehtud ❤️-ga"
+  },
+  "goBack": {
+    "message": "Tagasi"
+  }
 }

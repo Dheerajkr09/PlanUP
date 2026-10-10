@@ -9,29 +9,47 @@
    "background": {
       "service_worker": "background/background.js"
    },
-   "content_scripts": [ {
-      "js": [ "content/progress-utils.js", "content/progress-widget.js", "content/youtube-integration.js" ],
-      "matches": [ "https://www.youtube.com/*" ],
-      "run_at": "document_end"
-   } ],
+   "content_scripts": [
+      {
+         "js": [
+            "content/progress-utils.js",
+            "content/progress-widget.js",
+            "content/youtube-integration.js"
+         ],
+         "matches": [
+            "https://www.youtube.com/*"
+         ],
+         "run_at": "document_end"
+      }
+   ],
    "default_locale": "en",
    "description": "__MSG_extensionDescription__",
-   "host_permissions": [ "https://www.youtube.com/*", "https://yt-extension-z6so.vercel.app/*" ],
+   "host_permissions": [
+      "https://www.youtube.com/*",
+      "https://yt-extension-z6so.vercel.app/*"
+   ],
    "icons": {
       "128": "assets/icon128.png",
       "16": "assets/icon16.png",
       "32": "assets/icon32.png",
       "48": "assets/icon48.png"
    },
-   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmBPL5f2tpBvbEX4ikUwSQa0Pr4ykcgAm05dt2PCLMnJFdhB8ry2T5O4b7WrFfs/LBv2v6BWduxvGM+m4nWKjkNXadwPd4tvdf/LgIMN1q6JUD5UJohgTrOPoRzyQQQIY0XF0I2KclqhLr7BsBasJgRMzOIhPHMV/JZ2jvJhu8auDE2wYe80QrM69/CFqGoc2x2IqAaBfjCxZfVZApoQ7ExLelPZoKIImQN7GKA4vbEms02+xc6MzkWFebi6BoGGwx9biehz2d+VSxFcOZZ0wmRgDR1ZAs6P4LIQ/GQHsgWFitCIm/sD1M390CfGv2dVUm7k+UnjXs4sY0TSjzUEUCwIDAQAB",
    "manifest_version": 3,
-   "name": "PlanYT - Youtube Playlist Planner & Progress Tracker",
-   "permissions": [ "storage" ],
-   "short_name": "PlanYT",
+   "name": "PlanUp - Youtube Playlist & One Shot Planner",
+   "permissions": [
+      "storage"
+   ],
+   "short_name": "PlanUp",
    "update_url": "https://clients2.google.com/service/update2/crx",
    "version": "1.3.3",
-   "web_accessible_resources": [ {
-      "matches": [ "https://www.youtube.com/*" ],
-      "resources": [ "assets/icon32.png" ]
-   } ]
+   "web_accessible_resources": [
+      {
+         "matches": [
+            "https://www.youtube.com/*"
+         ],
+         "resources": [
+            "assets/icon32.png"
+         ]
+      }
+   ]
 }

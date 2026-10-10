@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "যেকোনো YouTube প্লেলিস্টকে সময় অনুমান, অগ্রগতি ট্র্যাকিং এবং প্লেব্যাক স্পিড নিয়ন্ত্রণসহ একটি কাঠামোগত শিক্ষা পরিকল্পনায় রূপান্তর করুন।" },
-  "subtitle": { "message": "আপনার YouTube, পরিকল্পিত" },
-  "myPlans": { "message": "আমার পরিকল্পনা" },
-  "addNewPlan": { "message": "নতুন পরিকল্পনা যোগ করুন" },
-  "playlistUrl": { "message": "প্লেলিস্ট URL" },
-  "fetchPlaylist": { "message": "প্লেলিস্ট আনুন" },
-  "fetchingData": { "message": "প্লেলিস্ট ডেটা আনা হচ্ছে..." },
-  "planGeneratedTitle": { "message": "পরিকল্পনা সফলভাবে তৈরি হয়েছে" },
-  "planGeneratedSub": { "message": "আপনার পরিকল্পনা এখন সক্রিয়।" },
-  "closingAuto": { "message": "স্বয়ংক্রিয়ভাবে বন্ধ হচ্ছে..." },
-  "playlistSummary": { "message": "প্লেলিস্ট সারাংশ" },
-  "labelTitle": { "message": "শিরোনাম:" },
-  "labelVideos": { "message": "ভিডিও:" },
-  "labelTotalDuration": { "message": "মোট সময়কাল:" },
-  "progress": { "message": "অগ্রগতি" },
-  "selectPlanMode": { "message": "পরিকল্পনা মোড নির্বাচন করুন" },
-  "modeVideoByVideoTitle": { "message": "ভিডিও অনুযায়ী" },
-  "modeVideoByVideoDesc": { "message": "প্রতিদিন ঠিক একটি ভিডিও দেখুন। কোনো বিভাজন নেই।" },
-  "modeCustomTitle": { "message": "কাস্টম সূচি" },
-  "modeCustomDesc": { "message": "দৈনিক দেখার সময়ের কোটা সেট করুন। ভিডিও বিভক্ত হয়।" },
-  "dailyWatchTime": { "message": "দৈনিক দেখার সময়" },
-  "dailyWatchTimeLabel": { "message": "দৈনিক দেখার সময় (মিনিট)" },
-  "next": { "message": "পরবর্তী" },
-  "selectPlaybackSpeed": { "message": "প্লেব্যাক স্পিড নির্বাচন করুন" },
-  "speedHint": { "message": "আপনার পরিকল্পনার সময়কাল সেই অনুযায়ী সমন্বয় হবে।" },
-  "confirmPlan": { "message": "পরিকল্পনা নিশ্চিত করুন" },
-  "labelPlanMode": { "message": "পরিকল্পনা মোড:" },
-  "labelDailyWatchTime": { "message": "দৈনিক দেখার সময়:" },
-  "labelPlaybackSpeed": { "message": "প্লেব্যাক স্পিড:" },
-  "generatePlan": { "message": "পরিকল্পনা তৈরি করুন" },
-  "yourWatchPlan": { "message": "আপনার দেখার পরিকল্পনা" },
-  "reset": { "message": "রিসেট" },
-  "madeWith": { "message": "❤️ দিয়ে তৈরি" },
-  "goBack": { "message": "ফিরে যান" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "আপনার YouTube, পরিকল্পিত"
+  },
+  "myPlans": {
+    "message": "আমার পরিকল্পনা"
+  },
+  "addNewPlan": {
+    "message": "নতুন পরিকল্পনা যোগ করুন"
+  },
+  "playlistUrl": {
+    "message": "প্লেলিস্ট URL"
+  },
+  "fetchPlaylist": {
+    "message": "প্লেলিস্ট আনুন"
+  },
+  "fetchingData": {
+    "message": "প্লেলিস্ট ডেটা আনা হচ্ছে..."
+  },
+  "planGeneratedTitle": {
+    "message": "পরিকল্পনা সফলভাবে তৈরি হয়েছে"
+  },
+  "planGeneratedSub": {
+    "message": "আপনার পরিকল্পনা এখন সক্রিয়।"
+  },
+  "closingAuto": {
+    "message": "স্বয়ংক্রিয়ভাবে বন্ধ হচ্ছে..."
+  },
+  "playlistSummary": {
+    "message": "প্লেলিস্ট সারাংশ"
+  },
+  "labelTitle": {
+    "message": "শিরোনাম:"
+  },
+  "labelVideos": {
+    "message": "ভিডিও:"
+  },
+  "labelTotalDuration": {
+    "message": "মোট সময়কাল:"
+  },
+  "progress": {
+    "message": "অগ্রগতি"
+  },
+  "selectPlanMode": {
+    "message": "পরিকল্পনা মোড নির্বাচন করুন"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "ভিডিও অনুযায়ী"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "প্রতিদিন ঠিক একটি ভিডিও দেখুন। কোনো বিভাজন নেই।"
+  },
+  "modeCustomTitle": {
+    "message": "কাস্টম সূচি"
+  },
+  "modeCustomDesc": {
+    "message": "দৈনিক দেখার সময়ের কোটা সেট করুন। ভিডিও বিভক্ত হয়।"
+  },
+  "dailyWatchTime": {
+    "message": "দৈনিক দেখার সময়"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "দৈনিক দেখার সময় (মিনিট)"
+  },
+  "next": {
+    "message": "পরবর্তী"
+  },
+  "selectPlaybackSpeed": {
+    "message": "প্লেব্যাক স্পিড নির্বাচন করুন"
+  },
+  "speedHint": {
+    "message": "আপনার পরিকল্পনার সময়কাল সেই অনুযায়ী সমন্বয় হবে।"
+  },
+  "confirmPlan": {
+    "message": "পরিকল্পনা নিশ্চিত করুন"
+  },
+  "labelPlanMode": {
+    "message": "পরিকল্পনা মোড:"
+  },
+  "labelDailyWatchTime": {
+    "message": "দৈনিক দেখার সময়:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "প্লেব্যাক স্পিড:"
+  },
+  "generatePlan": {
+    "message": "পরিকল্পনা তৈরি করুন"
+  },
+  "yourWatchPlan": {
+    "message": "আপনার দেখার পরিকল্পনা"
+  },
+  "reset": {
+    "message": "রিসেট"
+  },
+  "madeWith": {
+    "message": "❤️ দিয়ে তৈরি"
+  },
+  "goBack": {
+    "message": "ফিরে যান"
+  }
 }

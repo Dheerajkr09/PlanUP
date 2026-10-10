@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "将任何 YouTube 播放列表转换为结构化学习计划，包含时间估算、进度跟踪和播放速度控制。" },
-  "subtitle": { "message": "你的 YouTube，已规划" },
-  "myPlans": { "message": "我的计划" },
-  "addNewPlan": { "message": "添加新计划" },
-  "playlistUrl": { "message": "播放列表网址" },
-  "fetchPlaylist": { "message": "获取播放列表" },
-  "fetchingData": { "message": "正在获取播放列表数据..." },
-  "planGeneratedTitle": { "message": "计划生成成功" },
-  "planGeneratedSub": { "message": "你的计划已激活。" },
-  "closingAuto": { "message": "自动关闭中..." },
-  "playlistSummary": { "message": "播放列表摘要" },
-  "labelTitle": { "message": "标题：" },
-  "labelVideos": { "message": "视频：" },
-  "labelTotalDuration": { "message": "总时长：" },
-  "progress": { "message": "进度" },
-  "selectPlanMode": { "message": "选择计划模式" },
-  "modeVideoByVideoTitle": { "message": "逐个视频" },
-  "modeVideoByVideoDesc": { "message": "每天只看一个视频，不拆分。" },
-  "modeCustomTitle": { "message": "自定义日程" },
-  "modeCustomDesc": { "message": "设定每日观看时间配额，视频将被拆分。" },
-  "dailyWatchTime": { "message": "每日观看时间" },
-  "dailyWatchTimeLabel": { "message": "每日观看时间（分钟）" },
-  "next": { "message": "下一步" },
-  "selectPlaybackSpeed": { "message": "选择播放速度" },
-  "speedHint": { "message": "计划时长将相应调整。" },
-  "confirmPlan": { "message": "确认计划" },
-  "labelPlanMode": { "message": "计划模式：" },
-  "labelDailyWatchTime": { "message": "每日观看时间：" },
-  "labelPlaybackSpeed": { "message": "播放速度：" },
-  "generatePlan": { "message": "生成计划" },
-  "yourWatchPlan": { "message": "你的观看计划" },
-  "reset": { "message": "重置" },
-  "madeWith": { "message": "用 ❤️ 制作" },
-  "goBack": { "message": "返回" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "你的 YouTube，已规划"
+  },
+  "myPlans": {
+    "message": "我的计划"
+  },
+  "addNewPlan": {
+    "message": "添加新计划"
+  },
+  "playlistUrl": {
+    "message": "播放列表网址"
+  },
+  "fetchPlaylist": {
+    "message": "获取播放列表"
+  },
+  "fetchingData": {
+    "message": "正在获取播放列表数据..."
+  },
+  "planGeneratedTitle": {
+    "message": "计划生成成功"
+  },
+  "planGeneratedSub": {
+    "message": "你的计划已激活。"
+  },
+  "closingAuto": {
+    "message": "自动关闭中..."
+  },
+  "playlistSummary": {
+    "message": "播放列表摘要"
+  },
+  "labelTitle": {
+    "message": "标题："
+  },
+  "labelVideos": {
+    "message": "视频："
+  },
+  "labelTotalDuration": {
+    "message": "总时长："
+  },
+  "progress": {
+    "message": "进度"
+  },
+  "selectPlanMode": {
+    "message": "选择计划模式"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "逐个视频"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "每天只看一个视频，不拆分。"
+  },
+  "modeCustomTitle": {
+    "message": "自定义日程"
+  },
+  "modeCustomDesc": {
+    "message": "设定每日观看时间配额，视频将被拆分。"
+  },
+  "dailyWatchTime": {
+    "message": "每日观看时间"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "每日观看时间（分钟）"
+  },
+  "next": {
+    "message": "下一步"
+  },
+  "selectPlaybackSpeed": {
+    "message": "选择播放速度"
+  },
+  "speedHint": {
+    "message": "计划时长将相应调整。"
+  },
+  "confirmPlan": {
+    "message": "确认计划"
+  },
+  "labelPlanMode": {
+    "message": "计划模式："
+  },
+  "labelDailyWatchTime": {
+    "message": "每日观看时间："
+  },
+  "labelPlaybackSpeed": {
+    "message": "播放速度："
+  },
+  "generatePlan": {
+    "message": "生成计划"
+  },
+  "yourWatchPlan": {
+    "message": "你的观看计划"
+  },
+  "reset": {
+    "message": "重置"
+  },
+  "madeWith": {
+    "message": "用 ❤️ 制作"
+  },
+  "goBack": {
+    "message": "返回"
+  }
 }

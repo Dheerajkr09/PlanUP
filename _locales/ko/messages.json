@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "모든 YouTube 재생목록을 시간 추정, 진행 상황 추적 및 재생 속도 제어 기능이 포함된 체계적인 학습 계획으로 변환하세요." },
-  "subtitle": { "message": "당신의 YouTube, 계획적으로" },
-  "myPlans": { "message": "내 계획" },
-  "addNewPlan": { "message": "새 계획 추가" },
-  "playlistUrl": { "message": "재생목록 URL" },
-  "fetchPlaylist": { "message": "재생목록 가져오기" },
-  "fetchingData": { "message": "재생목록 데이터 가져오는 중..." },
-  "planGeneratedTitle": { "message": "계획이 성공적으로 생성됨" },
-  "planGeneratedSub": { "message": "계획이 활성화되었습니다." },
-  "closingAuto": { "message": "자동으로 닫는 중..." },
-  "playlistSummary": { "message": "재생목록 요약" },
-  "labelTitle": { "message": "제목:" },
-  "labelVideos": { "message": "영상:" },
-  "labelTotalDuration": { "message": "총 재생시간:" },
-  "progress": { "message": "진행률" },
-  "selectPlanMode": { "message": "계획 모드 선택" },
-  "modeVideoByVideoTitle": { "message": "영상별 보기" },
-  "modeVideoByVideoDesc": { "message": "하루에 정확히 하나의 영상을 시청합니다. 분할 없음." },
-  "modeCustomTitle": { "message": "맞춤 일정" },
-  "modeCustomDesc": { "message": "일일 시청 시간 할당량을 설정합니다. 영상이 분할됩니다." },
-  "dailyWatchTime": { "message": "일일 시청 시간" },
-  "dailyWatchTimeLabel": { "message": "일일 시청 시간 (분)" },
-  "next": { "message": "다음" },
-  "selectPlaybackSpeed": { "message": "재생 속도 선택" },
-  "speedHint": { "message": "계획 기간이 그에 따라 조정됩니다." },
-  "confirmPlan": { "message": "계획 확인" },
-  "labelPlanMode": { "message": "계획 모드:" },
-  "labelDailyWatchTime": { "message": "일일 시청 시간:" },
-  "labelPlaybackSpeed": { "message": "재생 속도:" },
-  "generatePlan": { "message": "계획 생성" },
-  "yourWatchPlan": { "message": "내 시청 계획" },
-  "reset": { "message": "초기화" },
-  "madeWith": { "message": "❤️로 제작" },
-  "goBack": { "message": "뒤로 가기" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "당신의 YouTube, 계획적으로"
+  },
+  "myPlans": {
+    "message": "내 계획"
+  },
+  "addNewPlan": {
+    "message": "새 계획 추가"
+  },
+  "playlistUrl": {
+    "message": "재생목록 URL"
+  },
+  "fetchPlaylist": {
+    "message": "재생목록 가져오기"
+  },
+  "fetchingData": {
+    "message": "재생목록 데이터 가져오는 중..."
+  },
+  "planGeneratedTitle": {
+    "message": "계획이 성공적으로 생성됨"
+  },
+  "planGeneratedSub": {
+    "message": "계획이 활성화되었습니다."
+  },
+  "closingAuto": {
+    "message": "자동으로 닫는 중..."
+  },
+  "playlistSummary": {
+    "message": "재생목록 요약"
+  },
+  "labelTitle": {
+    "message": "제목:"
+  },
+  "labelVideos": {
+    "message": "영상:"
+  },
+  "labelTotalDuration": {
+    "message": "총 재생시간:"
+  },
+  "progress": {
+    "message": "진행률"
+  },
+  "selectPlanMode": {
+    "message": "계획 모드 선택"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "영상별 보기"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "하루에 정확히 하나의 영상을 시청합니다. 분할 없음."
+  },
+  "modeCustomTitle": {
+    "message": "맞춤 일정"
+  },
+  "modeCustomDesc": {
+    "message": "일일 시청 시간 할당량을 설정합니다. 영상이 분할됩니다."
+  },
+  "dailyWatchTime": {
+    "message": "일일 시청 시간"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "일일 시청 시간 (분)"
+  },
+  "next": {
+    "message": "다음"
+  },
+  "selectPlaybackSpeed": {
+    "message": "재생 속도 선택"
+  },
+  "speedHint": {
+    "message": "계획 기간이 그에 따라 조정됩니다."
+  },
+  "confirmPlan": {
+    "message": "계획 확인"
+  },
+  "labelPlanMode": {
+    "message": "계획 모드:"
+  },
+  "labelDailyWatchTime": {
+    "message": "일일 시청 시간:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "재생 속도:"
+  },
+  "generatePlan": {
+    "message": "계획 생성"
+  },
+  "yourWatchPlan": {
+    "message": "내 시청 계획"
+  },
+  "reset": {
+    "message": "초기화"
+  },
+  "madeWith": {
+    "message": "❤️로 제작"
+  },
+  "goBack": {
+    "message": "뒤로 가기"
+  }
 }

@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "Transformez n'importe quelle playlist YouTube en un plan d'apprentissage structuré avec des estimations de temps, un suivi de la progression et un contrôle de la vitesse de lecture." },
-  "subtitle": { "message": "Votre YouTube, planifié" },
-  "myPlans": { "message": "Mes plans" },
-  "addNewPlan": { "message": "Ajouter un nouveau plan" },
-  "playlistUrl": { "message": "URL de la playlist" },
-  "fetchPlaylist": { "message": "Récupérer la playlist" },
-  "fetchingData": { "message": "Récupération des données..." },
-  "planGeneratedTitle": { "message": "Plan généré avec succès" },
-  "planGeneratedSub": { "message": "Votre plan est maintenant actif." },
-  "closingAuto": { "message": "Fermeture automatique..." },
-  "playlistSummary": { "message": "Résumé de la playlist" },
-  "labelTitle": { "message": "Titre :" },
-  "labelVideos": { "message": "Vidéos :" },
-  "labelTotalDuration": { "message": "Durée totale :" },
-  "progress": { "message": "Progression" },
-  "selectPlanMode": { "message": "Sélectionner le mode du plan" },
-  "modeVideoByVideoTitle": { "message": "Vidéo par vidéo" },
-  "modeVideoByVideoDesc": { "message": "Regarder exactement une vidéo par jour. Pas de découpage." },
-  "modeCustomTitle": { "message": "Planning personnalisé" },
-  "modeCustomDesc": { "message": "Définir un quota de visionnage quotidien. Les vidéos sont découpées." },
-  "dailyWatchTime": { "message": "Temps de visionnage quotidien" },
-  "dailyWatchTimeLabel": { "message": "Temps de visionnage quotidien (minutes)" },
-  "next": { "message": "Suivant" },
-  "selectPlaybackSpeed": { "message": "Sélectionner la vitesse de lecture" },
-  "speedHint": { "message": "La durée de votre plan sera ajustée en conséquence." },
-  "confirmPlan": { "message": "Confirmer le plan" },
-  "labelPlanMode": { "message": "Mode du plan :" },
-  "labelDailyWatchTime": { "message": "Temps quotidien :" },
-  "labelPlaybackSpeed": { "message": "Vitesse de lecture :" },
-  "generatePlan": { "message": "Générer le plan" },
-  "yourWatchPlan": { "message": "Votre plan de visionnage" },
-  "reset": { "message": "Réinitialiser" },
-  "madeWith": { "message": "Fait avec ❤️ par" },
-  "goBack": { "message": "Retour" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "Votre YouTube, planifié"
+  },
+  "myPlans": {
+    "message": "Mes plans"
+  },
+  "addNewPlan": {
+    "message": "Ajouter un nouveau plan"
+  },
+  "playlistUrl": {
+    "message": "URL de la playlist"
+  },
+  "fetchPlaylist": {
+    "message": "Récupérer la playlist"
+  },
+  "fetchingData": {
+    "message": "Récupération des données..."
+  },
+  "planGeneratedTitle": {
+    "message": "Plan généré avec succès"
+  },
+  "planGeneratedSub": {
+    "message": "Votre plan est maintenant actif."
+  },
+  "closingAuto": {
+    "message": "Fermeture automatique..."
+  },
+  "playlistSummary": {
+    "message": "Résumé de la playlist"
+  },
+  "labelTitle": {
+    "message": "Titre :"
+  },
+  "labelVideos": {
+    "message": "Vidéos :"
+  },
+  "labelTotalDuration": {
+    "message": "Durée totale :"
+  },
+  "progress": {
+    "message": "Progression"
+  },
+  "selectPlanMode": {
+    "message": "Sélectionner le mode du plan"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "Vidéo par vidéo"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "Regarder exactement une vidéo par jour. Pas de découpage."
+  },
+  "modeCustomTitle": {
+    "message": "Planning personnalisé"
+  },
+  "modeCustomDesc": {
+    "message": "Définir un quota de visionnage quotidien. Les vidéos sont découpées."
+  },
+  "dailyWatchTime": {
+    "message": "Temps de visionnage quotidien"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "Temps de visionnage quotidien (minutes)"
+  },
+  "next": {
+    "message": "Suivant"
+  },
+  "selectPlaybackSpeed": {
+    "message": "Sélectionner la vitesse de lecture"
+  },
+  "speedHint": {
+    "message": "La durée de votre plan sera ajustée en conséquence."
+  },
+  "confirmPlan": {
+    "message": "Confirmer le plan"
+  },
+  "labelPlanMode": {
+    "message": "Mode du plan :"
+  },
+  "labelDailyWatchTime": {
+    "message": "Temps quotidien :"
+  },
+  "labelPlaybackSpeed": {
+    "message": "Vitesse de lecture :"
+  },
+  "generatePlan": {
+    "message": "Générer le plan"
+  },
+  "yourWatchPlan": {
+    "message": "Votre plan de visionnage"
+  },
+  "reset": {
+    "message": "Réinitialiser"
+  },
+  "madeWith": {
+    "message": "Fait avec ❤️ par"
+  },
+  "goBack": {
+    "message": "Retour"
+  }
 }

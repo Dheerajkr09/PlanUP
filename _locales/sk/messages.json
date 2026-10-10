@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "Premeňte akýkoľvek playlist na YouTube na štruktúrovaný študijný plán s odhadmi času, sledovaním pokroku a ovládaním rýchlosti prehrávania." },
-  "subtitle": { "message": "Váš YouTube, naplánovaný" },
-  "myPlans": { "message": "Moje plány" },
-  "addNewPlan": { "message": "Pridať nový plán" },
-  "playlistUrl": { "message": "URL playlistu" },
-  "fetchPlaylist": { "message": "Načítať playlist" },
-  "fetchingData": { "message": "Načítavanie údajov playlistu..." },
-  "planGeneratedTitle": { "message": "Plán úspešne vytvorený" },
-  "planGeneratedSub": { "message": "Váš plán je teraz aktívny." },
-  "closingAuto": { "message": "Automatické zatváranie..." },
-  "playlistSummary": { "message": "Zhrnutie playlistu" },
-  "labelTitle": { "message": "Názov:" },
-  "labelVideos": { "message": "Videá:" },
-  "labelTotalDuration": { "message": "Celková dĺžka:" },
-  "progress": { "message": "Priebeh" },
-  "selectPlanMode": { "message": "Vyberte režim plánu" },
-  "modeVideoByVideoTitle": { "message": "Video po videu" },
-  "modeVideoByVideoDesc": { "message": "Sledujte presne jedno video denne. Bez delenia." },
-  "modeCustomTitle": { "message": "Vlastný rozvrh" },
-  "modeCustomDesc": { "message": "Nastavte dennú kvótu sledovania. Videá sa rozdelia." },
-  "dailyWatchTime": { "message": "Denný čas sledovania" },
-  "dailyWatchTimeLabel": { "message": "Denný čas sledovania (minúty)" },
-  "next": { "message": "Ďalej" },
-  "selectPlaybackSpeed": { "message": "Vyberte rýchlosť prehrávania" },
-  "speedHint": { "message": "Dĺžka plánu sa zodpovedajúcim spôsobom upraví." },
-  "confirmPlan": { "message": "Potvrdiť plán" },
-  "labelPlanMode": { "message": "Režim plánu:" },
-  "labelDailyWatchTime": { "message": "Denný čas sledovania:" },
-  "labelPlaybackSpeed": { "message": "Rýchlosť prehrávania:" },
-  "generatePlan": { "message": "Vygenerovať plán" },
-  "yourWatchPlan": { "message": "Váš plán sledovania" },
-  "reset": { "message": "Resetovať" },
-  "madeWith": { "message": "Vytvorené s ❤️" },
-  "goBack": { "message": "Späť" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "Váš YouTube, naplánovaný"
+  },
+  "myPlans": {
+    "message": "Moje plány"
+  },
+  "addNewPlan": {
+    "message": "Pridať nový plán"
+  },
+  "playlistUrl": {
+    "message": "URL playlistu"
+  },
+  "fetchPlaylist": {
+    "message": "Načítať playlist"
+  },
+  "fetchingData": {
+    "message": "Načítavanie údajov playlistu..."
+  },
+  "planGeneratedTitle": {
+    "message": "Plán úspešne vytvorený"
+  },
+  "planGeneratedSub": {
+    "message": "Váš plán je teraz aktívny."
+  },
+  "closingAuto": {
+    "message": "Automatické zatváranie..."
+  },
+  "playlistSummary": {
+    "message": "Zhrnutie playlistu"
+  },
+  "labelTitle": {
+    "message": "Názov:"
+  },
+  "labelVideos": {
+    "message": "Videá:"
+  },
+  "labelTotalDuration": {
+    "message": "Celková dĺžka:"
+  },
+  "progress": {
+    "message": "Priebeh"
+  },
+  "selectPlanMode": {
+    "message": "Vyberte režim plánu"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "Video po videu"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "Sledujte presne jedno video denne. Bez delenia."
+  },
+  "modeCustomTitle": {
+    "message": "Vlastný rozvrh"
+  },
+  "modeCustomDesc": {
+    "message": "Nastavte dennú kvótu sledovania. Videá sa rozdelia."
+  },
+  "dailyWatchTime": {
+    "message": "Denný čas sledovania"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "Denný čas sledovania (minúty)"
+  },
+  "next": {
+    "message": "Ďalej"
+  },
+  "selectPlaybackSpeed": {
+    "message": "Vyberte rýchlosť prehrávania"
+  },
+  "speedHint": {
+    "message": "Dĺžka plánu sa zodpovedajúcim spôsobom upraví."
+  },
+  "confirmPlan": {
+    "message": "Potvrdiť plán"
+  },
+  "labelPlanMode": {
+    "message": "Režim plánu:"
+  },
+  "labelDailyWatchTime": {
+    "message": "Denný čas sledovania:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "Rýchlosť prehrávania:"
+  },
+  "generatePlan": {
+    "message": "Vygenerovať plán"
+  },
+  "yourWatchPlan": {
+    "message": "Váš plán sledovania"
+  },
+  "reset": {
+    "message": "Resetovať"
+  },
+  "madeWith": {
+    "message": "Vytvorené s ❤️"
+  },
+  "goBack": {
+    "message": "Späť"
+  }
 }

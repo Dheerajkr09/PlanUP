@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "किसी भी YouTube प्लेलिस्ट को समय अनुमान, प्रगति ट्रैकिंग और प्लेबैक स्पीड नियंत्रण के साथ एक संरचित शिक्षण योजना में बदलें।" },
-  "subtitle": { "message": "आपका YouTube, नियोजित" },
-  "myPlans": { "message": "मेरी योजनाएँ" },
-  "addNewPlan": { "message": "नई योजना जोड़ें" },
-  "playlistUrl": { "message": "प्लेलिस्ट URL" },
-  "fetchPlaylist": { "message": "प्लेलिस्ट लाएँ" },
-  "fetchingData": { "message": "प्लेलिस्ट डेटा लाया जा रहा है..." },
-  "planGeneratedTitle": { "message": "योजना सफलतापूर्वक बनाई गई" },
-  "planGeneratedSub": { "message": "आपकी योजना अब सक्रिय है।" },
-  "closingAuto": { "message": "स्वचालित रूप से बंद हो रहा है..." },
-  "playlistSummary": { "message": "प्लेलिस्ट सारांश" },
-  "labelTitle": { "message": "शीर्षक:" },
-  "labelVideos": { "message": "वीडियो:" },
-  "labelTotalDuration": { "message": "कुल अवधि:" },
-  "progress": { "message": "प्रगति" },
-  "selectPlanMode": { "message": "योजना मोड चुनें" },
-  "modeVideoByVideoTitle": { "message": "वीडियो दर वीडियो" },
-  "modeVideoByVideoDesc": { "message": "प्रतिदिन ठीक एक वीडियो देखें। कोई विभाजन नहीं।" },
-  "modeCustomTitle": { "message": "कस्टम शेड्यूल" },
-  "modeCustomDesc": { "message": "दैनिक देखने का समय कोटा सेट करें। वीडियो विभाजित होते हैं।" },
-  "dailyWatchTime": { "message": "दैनिक देखने का समय" },
-  "dailyWatchTimeLabel": { "message": "दैनिक देखने का समय (मिनट)" },
-  "next": { "message": "अगला" },
-  "selectPlaybackSpeed": { "message": "प्लेबैक स्पीड चुनें" },
-  "speedHint": { "message": "आपकी योजना की अवधि तदनुसार समायोजित होगी।" },
-  "confirmPlan": { "message": "योजना की पुष्टि करें" },
-  "labelPlanMode": { "message": "योजना मोड:" },
-  "labelDailyWatchTime": { "message": "दैनिक देखने का समय:" },
-  "labelPlaybackSpeed": { "message": "प्लेबैक स्पीड:" },
-  "generatePlan": { "message": "योजना बनाएँ" },
-  "yourWatchPlan": { "message": "आपकी देखने की योजना" },
-  "reset": { "message": "रीसेट" },
-  "madeWith": { "message": "❤️ से बनाया" },
-  "goBack": { "message": "वापस जाएँ" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "आपका YouTube, नियोजित"
+  },
+  "myPlans": {
+    "message": "मेरी योजनाएँ"
+  },
+  "addNewPlan": {
+    "message": "नई योजना जोड़ें"
+  },
+  "playlistUrl": {
+    "message": "प्लेलिस्ट URL"
+  },
+  "fetchPlaylist": {
+    "message": "प्लेलिस्ट लाएँ"
+  },
+  "fetchingData": {
+    "message": "प्लेलिस्ट डेटा लाया जा रहा है..."
+  },
+  "planGeneratedTitle": {
+    "message": "योजना सफलतापूर्वक बनाई गई"
+  },
+  "planGeneratedSub": {
+    "message": "आपकी योजना अब सक्रिय है।"
+  },
+  "closingAuto": {
+    "message": "स्वचालित रूप से बंद हो रहा है..."
+  },
+  "playlistSummary": {
+    "message": "प्लेलिस्ट सारांश"
+  },
+  "labelTitle": {
+    "message": "शीर्षक:"
+  },
+  "labelVideos": {
+    "message": "वीडियो:"
+  },
+  "labelTotalDuration": {
+    "message": "कुल अवधि:"
+  },
+  "progress": {
+    "message": "प्रगति"
+  },
+  "selectPlanMode": {
+    "message": "योजना मोड चुनें"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "वीडियो दर वीडियो"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "प्रतिदिन ठीक एक वीडियो देखें। कोई विभाजन नहीं।"
+  },
+  "modeCustomTitle": {
+    "message": "कस्टम शेड्यूल"
+  },
+  "modeCustomDesc": {
+    "message": "दैनिक देखने का समय कोटा सेट करें। वीडियो विभाजित होते हैं।"
+  },
+  "dailyWatchTime": {
+    "message": "दैनिक देखने का समय"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "दैनिक देखने का समय (मिनट)"
+  },
+  "next": {
+    "message": "अगला"
+  },
+  "selectPlaybackSpeed": {
+    "message": "प्लेबैक स्पीड चुनें"
+  },
+  "speedHint": {
+    "message": "आपकी योजना की अवधि तदनुसार समायोजित होगी।"
+  },
+  "confirmPlan": {
+    "message": "योजना की पुष्टि करें"
+  },
+  "labelPlanMode": {
+    "message": "योजना मोड:"
+  },
+  "labelDailyWatchTime": {
+    "message": "दैनिक देखने का समय:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "प्लेबैक स्पीड:"
+  },
+  "generatePlan": {
+    "message": "योजना बनाएँ"
+  },
+  "yourWatchPlan": {
+    "message": "आपकी देखने की योजना"
+  },
+  "reset": {
+    "message": "रीसेट"
+  },
+  "madeWith": {
+    "message": "❤️ से बनाया"
+  },
+  "goBack": {
+    "message": "वापस जाएँ"
+  }
 }

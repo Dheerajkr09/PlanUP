@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "Muunna mikä tahansa YouTube-soittolista jäsennellyksi oppimissuunnitelmaksi, jossa on aika-arviot, edistymisen seuranta ja toistonopeuden hallinta." },
-  "subtitle": { "message": "YouTube, suunniteltuna" },
-  "myPlans": { "message": "Omat suunnitelmat" },
-  "addNewPlan": { "message": "Lisää uusi suunnitelma" },
-  "playlistUrl": { "message": "Soittolistan URL" },
-  "fetchPlaylist": { "message": "Hae soittolista" },
-  "fetchingData": { "message": "Haetaan soittolistan tietoja..." },
-  "planGeneratedTitle": { "message": "Suunnitelma luotu onnistuneesti" },
-  "planGeneratedSub": { "message": "Suunnitelmasi on nyt aktiivinen." },
-  "closingAuto": { "message": "Sulkeutuu automaattisesti..." },
-  "playlistSummary": { "message": "Soittolistan yhteenveto" },
-  "labelTitle": { "message": "Otsikko:" },
-  "labelVideos": { "message": "Videot:" },
-  "labelTotalDuration": { "message": "Kokonaiskesto:" },
-  "progress": { "message": "Edistyminen" },
-  "selectPlanMode": { "message": "Valitse suunnitelmatila" },
-  "modeVideoByVideoTitle": { "message": "Video kerrallaan" },
-  "modeVideoByVideoDesc": { "message": "Katso tasan yksi video päivässä. Ei jakoa." },
-  "modeCustomTitle": { "message": "Mukautettu aikataulu" },
-  "modeCustomDesc": { "message": "Aseta päivittäinen katselukiintiö. Videot jaetaan." },
-  "dailyWatchTime": { "message": "Päivittäinen katseluaika" },
-  "dailyWatchTimeLabel": { "message": "Päivittäinen katseluaika (minuuttia)" },
-  "next": { "message": "Seuraava" },
-  "selectPlaybackSpeed": { "message": "Valitse toistonopeus" },
-  "speedHint": { "message": "Suunnitelman kesto mukautuu vastaavasti." },
-  "confirmPlan": { "message": "Vahvista suunnitelma" },
-  "labelPlanMode": { "message": "Suunnitelmatila:" },
-  "labelDailyWatchTime": { "message": "Päivittäinen katseluaika:" },
-  "labelPlaybackSpeed": { "message": "Toistonopeus:" },
-  "generatePlan": { "message": "Luo suunnitelma" },
-  "yourWatchPlan": { "message": "Katselusuunnitelmasi" },
-  "reset": { "message": "Nollaa" },
-  "madeWith": { "message": "Tehty ❤️ kanssa" },
-  "goBack": { "message": "Takaisin" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "YouTube, suunniteltuna"
+  },
+  "myPlans": {
+    "message": "Omat suunnitelmat"
+  },
+  "addNewPlan": {
+    "message": "Lisää uusi suunnitelma"
+  },
+  "playlistUrl": {
+    "message": "Soittolistan URL"
+  },
+  "fetchPlaylist": {
+    "message": "Hae soittolista"
+  },
+  "fetchingData": {
+    "message": "Haetaan soittolistan tietoja..."
+  },
+  "planGeneratedTitle": {
+    "message": "Suunnitelma luotu onnistuneesti"
+  },
+  "planGeneratedSub": {
+    "message": "Suunnitelmasi on nyt aktiivinen."
+  },
+  "closingAuto": {
+    "message": "Sulkeutuu automaattisesti..."
+  },
+  "playlistSummary": {
+    "message": "Soittolistan yhteenveto"
+  },
+  "labelTitle": {
+    "message": "Otsikko:"
+  },
+  "labelVideos": {
+    "message": "Videot:"
+  },
+  "labelTotalDuration": {
+    "message": "Kokonaiskesto:"
+  },
+  "progress": {
+    "message": "Edistyminen"
+  },
+  "selectPlanMode": {
+    "message": "Valitse suunnitelmatila"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "Video kerrallaan"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "Katso tasan yksi video päivässä. Ei jakoa."
+  },
+  "modeCustomTitle": {
+    "message": "Mukautettu aikataulu"
+  },
+  "modeCustomDesc": {
+    "message": "Aseta päivittäinen katselukiintiö. Videot jaetaan."
+  },
+  "dailyWatchTime": {
+    "message": "Päivittäinen katseluaika"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "Päivittäinen katseluaika (minuuttia)"
+  },
+  "next": {
+    "message": "Seuraava"
+  },
+  "selectPlaybackSpeed": {
+    "message": "Valitse toistonopeus"
+  },
+  "speedHint": {
+    "message": "Suunnitelman kesto mukautuu vastaavasti."
+  },
+  "confirmPlan": {
+    "message": "Vahvista suunnitelma"
+  },
+  "labelPlanMode": {
+    "message": "Suunnitelmatila:"
+  },
+  "labelDailyWatchTime": {
+    "message": "Päivittäinen katseluaika:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "Toistonopeus:"
+  },
+  "generatePlan": {
+    "message": "Luo suunnitelma"
+  },
+  "yourWatchPlan": {
+    "message": "Katselusuunnitelmasi"
+  },
+  "reset": {
+    "message": "Nollaa"
+  },
+  "madeWith": {
+    "message": "Tehty ❤️ kanssa"
+  },
+  "goBack": {
+    "message": "Takaisin"
+  }
 }

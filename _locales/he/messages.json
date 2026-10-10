@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "הפכו כל רשימת השמעה ב-YouTube לתוכנית לימוד מובנית עם הערכות זמן, מעקב אחר התקדמות ובקרת מהירות השמעה." },
-  "subtitle": { "message": "ה-YouTube שלך, מתוכנן" },
-  "myPlans": { "message": "התוכניות שלי" },
-  "addNewPlan": { "message": "הוסף תוכנית חדשה" },
-  "playlistUrl": { "message": "URL של רשימת ההשמעה" },
-  "fetchPlaylist": { "message": "טען רשימת השמעה" },
-  "fetchingData": { "message": "טוען נתוני רשימת השמעה..." },
-  "planGeneratedTitle": { "message": "התוכנית נוצרה בהצלחה" },
-  "planGeneratedSub": { "message": "התוכנית שלך פעילה כעת." },
-  "closingAuto": { "message": "נסגר אוטומטית..." },
-  "playlistSummary": { "message": "סיכום רשימת השמעה" },
-  "labelTitle": { "message": "כותרת:" },
-  "labelVideos": { "message": "סרטונים:" },
-  "labelTotalDuration": { "message": "משך כולל:" },
-  "progress": { "message": "התקדמות" },
-  "selectPlanMode": { "message": "בחר מצב תוכנית" },
-  "modeVideoByVideoTitle": { "message": "סרטון אחר סרטון" },
-  "modeVideoByVideoDesc": { "message": "צפה בדיוק בסרטון אחד ביום. ללא פיצול." },
-  "modeCustomTitle": { "message": "לוח זמנים מותאם" },
-  "modeCustomDesc": { "message": "הגדר מכסת צפייה יומית. סרטונים מפוצלים." },
-  "dailyWatchTime": { "message": "זמן צפייה יומי" },
-  "dailyWatchTimeLabel": { "message": "זמן צפייה יומי (דקות)" },
-  "next": { "message": "הבא" },
-  "selectPlaybackSpeed": { "message": "בחר מהירות השמעה" },
-  "speedHint": { "message": "משך התוכנית יותאם בהתאם." },
-  "confirmPlan": { "message": "אשר תוכנית" },
-  "labelPlanMode": { "message": "מצב תוכנית:" },
-  "labelDailyWatchTime": { "message": "זמן צפייה יומי:" },
-  "labelPlaybackSpeed": { "message": "מהירות השמעה:" },
-  "generatePlan": { "message": "צור תוכנית" },
-  "yourWatchPlan": { "message": "תוכנית הצפייה שלך" },
-  "reset": { "message": "אפס" },
-  "madeWith": { "message": "נבנה עם ❤️ על ידי" },
-  "goBack": { "message": "חזרה" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "ה-YouTube שלך, מתוכנן"
+  },
+  "myPlans": {
+    "message": "התוכניות שלי"
+  },
+  "addNewPlan": {
+    "message": "הוסף תוכנית חדשה"
+  },
+  "playlistUrl": {
+    "message": "URL של רשימת ההשמעה"
+  },
+  "fetchPlaylist": {
+    "message": "טען רשימת השמעה"
+  },
+  "fetchingData": {
+    "message": "טוען נתוני רשימת השמעה..."
+  },
+  "planGeneratedTitle": {
+    "message": "התוכנית נוצרה בהצלחה"
+  },
+  "planGeneratedSub": {
+    "message": "התוכנית שלך פעילה כעת."
+  },
+  "closingAuto": {
+    "message": "נסגר אוטומטית..."
+  },
+  "playlistSummary": {
+    "message": "סיכום רשימת השמעה"
+  },
+  "labelTitle": {
+    "message": "כותרת:"
+  },
+  "labelVideos": {
+    "message": "סרטונים:"
+  },
+  "labelTotalDuration": {
+    "message": "משך כולל:"
+  },
+  "progress": {
+    "message": "התקדמות"
+  },
+  "selectPlanMode": {
+    "message": "בחר מצב תוכנית"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "סרטון אחר סרטון"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "צפה בדיוק בסרטון אחד ביום. ללא פיצול."
+  },
+  "modeCustomTitle": {
+    "message": "לוח זמנים מותאם"
+  },
+  "modeCustomDesc": {
+    "message": "הגדר מכסת צפייה יומית. סרטונים מפוצלים."
+  },
+  "dailyWatchTime": {
+    "message": "זמן צפייה יומי"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "זמן צפייה יומי (דקות)"
+  },
+  "next": {
+    "message": "הבא"
+  },
+  "selectPlaybackSpeed": {
+    "message": "בחר מהירות השמעה"
+  },
+  "speedHint": {
+    "message": "משך התוכנית יותאם בהתאם."
+  },
+  "confirmPlan": {
+    "message": "אשר תוכנית"
+  },
+  "labelPlanMode": {
+    "message": "מצב תוכנית:"
+  },
+  "labelDailyWatchTime": {
+    "message": "זמן צפייה יומי:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "מהירות השמעה:"
+  },
+  "generatePlan": {
+    "message": "צור תוכנית"
+  },
+  "yourWatchPlan": {
+    "message": "תוכנית הצפייה שלך"
+  },
+  "reset": {
+    "message": "אפס"
+  },
+  "madeWith": {
+    "message": "נבנה עם ❤️ על ידי"
+  },
+  "goBack": {
+    "message": "חזרה"
+  }
 }

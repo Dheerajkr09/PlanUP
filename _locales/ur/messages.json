@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "کسی بھی YouTube پلے لسٹ کو وقت کے تخمینے، پیشرفت کی ٹریکنگ اور پلے بیک اسپیڈ کنٹرول کے ساتھ ایک منظم سیکھنے کے منصوبے میں تبدیل کریں۔" },
-  "subtitle": { "message": "آپ کا YouTube، منصوبہ بند" },
-  "myPlans": { "message": "میرے منصوبے" },
-  "addNewPlan": { "message": "نیا منصوبہ شامل کریں" },
-  "playlistUrl": { "message": "پلے لسٹ URL" },
-  "fetchPlaylist": { "message": "پلے لسٹ حاصل کریں" },
-  "fetchingData": { "message": "پلے لسٹ ڈیٹا حاصل ہو رہا ہے..." },
-  "planGeneratedTitle": { "message": "منصوبہ کامیابی سے بنایا گیا" },
-  "planGeneratedSub": { "message": "آپ کا منصوبہ اب فعال ہے۔" },
-  "closingAuto": { "message": "خودکار طور پر بند ہو رہا ہے..." },
-  "playlistSummary": { "message": "پلے لسٹ کا خلاصہ" },
-  "labelTitle": { "message": "عنوان:" },
-  "labelVideos": { "message": "ویڈیوز:" },
-  "labelTotalDuration": { "message": "کل دورانیہ:" },
-  "progress": { "message": "پیشرفت" },
-  "selectPlanMode": { "message": "منصوبے کا موڈ منتخب کریں" },
-  "modeVideoByVideoTitle": { "message": "ویڈیو بہ ویڈیو" },
-  "modeVideoByVideoDesc": { "message": "روزانہ بالکل ایک ویڈیو دیکھیں۔ کوئی تقسیم نہیں۔" },
-  "modeCustomTitle": { "message": "حسب ضرورت شیڈول" },
-  "modeCustomDesc": { "message": "روزانہ دیکھنے کے وقت کا کوٹہ مقرر کریں۔ ویڈیوز تقسیم ہوتے ہیں۔" },
-  "dailyWatchTime": { "message": "روزانہ دیکھنے کا وقت" },
-  "dailyWatchTimeLabel": { "message": "روزانہ دیکھنے کا وقت (منٹ)" },
-  "next": { "message": "اگلا" },
-  "selectPlaybackSpeed": { "message": "پلے بیک اسپیڈ منتخب کریں" },
-  "speedHint": { "message": "آپ کے منصوبے کی مدت اس کے مطابق ایڈجسٹ ہوگی۔" },
-  "confirmPlan": { "message": "منصوبے کی تصدیق کریں" },
-  "labelPlanMode": { "message": "منصوبے کا موڈ:" },
-  "labelDailyWatchTime": { "message": "روزانہ دیکھنے کا وقت:" },
-  "labelPlaybackSpeed": { "message": "پلے بیک اسپیڈ:" },
-  "generatePlan": { "message": "منصوبہ بنائیں" },
-  "yourWatchPlan": { "message": "آپ کا دیکھنے کا منصوبہ" },
-  "reset": { "message": "ری سیٹ" },
-  "madeWith": { "message": "❤️ سے بنایا گیا" },
-  "goBack": { "message": "واپس جائیں" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "آپ کا YouTube، منصوبہ بند"
+  },
+  "myPlans": {
+    "message": "میرے منصوبے"
+  },
+  "addNewPlan": {
+    "message": "نیا منصوبہ شامل کریں"
+  },
+  "playlistUrl": {
+    "message": "پلے لسٹ URL"
+  },
+  "fetchPlaylist": {
+    "message": "پلے لسٹ حاصل کریں"
+  },
+  "fetchingData": {
+    "message": "پلے لسٹ ڈیٹا حاصل ہو رہا ہے..."
+  },
+  "planGeneratedTitle": {
+    "message": "منصوبہ کامیابی سے بنایا گیا"
+  },
+  "planGeneratedSub": {
+    "message": "آپ کا منصوبہ اب فعال ہے۔"
+  },
+  "closingAuto": {
+    "message": "خودکار طور پر بند ہو رہا ہے..."
+  },
+  "playlistSummary": {
+    "message": "پلے لسٹ کا خلاصہ"
+  },
+  "labelTitle": {
+    "message": "عنوان:"
+  },
+  "labelVideos": {
+    "message": "ویڈیوز:"
+  },
+  "labelTotalDuration": {
+    "message": "کل دورانیہ:"
+  },
+  "progress": {
+    "message": "پیشرفت"
+  },
+  "selectPlanMode": {
+    "message": "منصوبے کا موڈ منتخب کریں"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "ویڈیو بہ ویڈیو"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "روزانہ بالکل ایک ویڈیو دیکھیں۔ کوئی تقسیم نہیں۔"
+  },
+  "modeCustomTitle": {
+    "message": "حسب ضرورت شیڈول"
+  },
+  "modeCustomDesc": {
+    "message": "روزانہ دیکھنے کے وقت کا کوٹہ مقرر کریں۔ ویڈیوز تقسیم ہوتے ہیں۔"
+  },
+  "dailyWatchTime": {
+    "message": "روزانہ دیکھنے کا وقت"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "روزانہ دیکھنے کا وقت (منٹ)"
+  },
+  "next": {
+    "message": "اگلا"
+  },
+  "selectPlaybackSpeed": {
+    "message": "پلے بیک اسپیڈ منتخب کریں"
+  },
+  "speedHint": {
+    "message": "آپ کے منصوبے کی مدت اس کے مطابق ایڈجسٹ ہوگی۔"
+  },
+  "confirmPlan": {
+    "message": "منصوبے کی تصدیق کریں"
+  },
+  "labelPlanMode": {
+    "message": "منصوبے کا موڈ:"
+  },
+  "labelDailyWatchTime": {
+    "message": "روزانہ دیکھنے کا وقت:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "پلے بیک اسپیڈ:"
+  },
+  "generatePlan": {
+    "message": "منصوبہ بنائیں"
+  },
+  "yourWatchPlan": {
+    "message": "آپ کا دیکھنے کا منصوبہ"
+  },
+  "reset": {
+    "message": "ری سیٹ"
+  },
+  "madeWith": {
+    "message": "❤️ سے بنایا گیا"
+  },
+  "goBack": {
+    "message": "واپس جائیں"
+  }
 }

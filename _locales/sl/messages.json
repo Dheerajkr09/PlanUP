@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "Pretvorite katerikoli YouTube seznam predvajanja v strukturiran učni načrt z ocenami časa, sledenjem napredka in nadzorom hitrosti predvajanja." },
-  "subtitle": { "message": "Vaš YouTube, načrtovan" },
-  "myPlans": { "message": "Moji načrti" },
-  "addNewPlan": { "message": "Dodaj nov načrt" },
-  "playlistUrl": { "message": "URL seznama predvajanja" },
-  "fetchPlaylist": { "message": "Pridobi seznam" },
-  "fetchingData": { "message": "Pridobivanje podatkov seznama..." },
-  "planGeneratedTitle": { "message": "Načrt uspešno ustvarjen" },
-  "planGeneratedSub": { "message": "Vaš načrt je zdaj aktiven." },
-  "closingAuto": { "message": "Samodejno zapiranje..." },
-  "playlistSummary": { "message": "Povzetek seznama" },
-  "labelTitle": { "message": "Naslov:" },
-  "labelVideos": { "message": "Videi:" },
-  "labelTotalDuration": { "message": "Skupno trajanje:" },
-  "progress": { "message": "Napredek" },
-  "selectPlanMode": { "message": "Izberite način načrta" },
-  "modeVideoByVideoTitle": { "message": "Video za videom" },
-  "modeVideoByVideoDesc": { "message": "Oglejte si natanko en video na dan. Brez delitve." },
-  "modeCustomTitle": { "message": "Prilagojen urnik" },
-  "modeCustomDesc": { "message": "Nastavite dnevno kvoto ogleda. Videi se razdelijo." },
-  "dailyWatchTime": { "message": "Dnevni čas ogleda" },
-  "dailyWatchTimeLabel": { "message": "Dnevni čas ogleda (minute)" },
-  "next": { "message": "Naprej" },
-  "selectPlaybackSpeed": { "message": "Izberite hitrost predvajanja" },
-  "speedHint": { "message": "Trajanje načrta se bo ustrezno prilagodilo." },
-  "confirmPlan": { "message": "Potrdite načrt" },
-  "labelPlanMode": { "message": "Način načrta:" },
-  "labelDailyWatchTime": { "message": "Dnevni čas:" },
-  "labelPlaybackSpeed": { "message": "Hitrost predvajanja:" },
-  "generatePlan": { "message": "Ustvari načrt" },
-  "yourWatchPlan": { "message": "Vaš načrt ogledov" },
-  "reset": { "message": "Ponastavi" },
-  "madeWith": { "message": "Narejeno z ❤️" },
-  "goBack": { "message": "Nazaj" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "Vaš YouTube, načrtovan"
+  },
+  "myPlans": {
+    "message": "Moji načrti"
+  },
+  "addNewPlan": {
+    "message": "Dodaj nov načrt"
+  },
+  "playlistUrl": {
+    "message": "URL seznama predvajanja"
+  },
+  "fetchPlaylist": {
+    "message": "Pridobi seznam"
+  },
+  "fetchingData": {
+    "message": "Pridobivanje podatkov seznama..."
+  },
+  "planGeneratedTitle": {
+    "message": "Načrt uspešno ustvarjen"
+  },
+  "planGeneratedSub": {
+    "message": "Vaš načrt je zdaj aktiven."
+  },
+  "closingAuto": {
+    "message": "Samodejno zapiranje..."
+  },
+  "playlistSummary": {
+    "message": "Povzetek seznama"
+  },
+  "labelTitle": {
+    "message": "Naslov:"
+  },
+  "labelVideos": {
+    "message": "Videi:"
+  },
+  "labelTotalDuration": {
+    "message": "Skupno trajanje:"
+  },
+  "progress": {
+    "message": "Napredek"
+  },
+  "selectPlanMode": {
+    "message": "Izberite način načrta"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "Video za videom"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "Oglejte si natanko en video na dan. Brez delitve."
+  },
+  "modeCustomTitle": {
+    "message": "Prilagojen urnik"
+  },
+  "modeCustomDesc": {
+    "message": "Nastavite dnevno kvoto ogleda. Videi se razdelijo."
+  },
+  "dailyWatchTime": {
+    "message": "Dnevni čas ogleda"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "Dnevni čas ogleda (minute)"
+  },
+  "next": {
+    "message": "Naprej"
+  },
+  "selectPlaybackSpeed": {
+    "message": "Izberite hitrost predvajanja"
+  },
+  "speedHint": {
+    "message": "Trajanje načrta se bo ustrezno prilagodilo."
+  },
+  "confirmPlan": {
+    "message": "Potrdite načrt"
+  },
+  "labelPlanMode": {
+    "message": "Način načrta:"
+  },
+  "labelDailyWatchTime": {
+    "message": "Dnevni čas:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "Hitrost predvajanja:"
+  },
+  "generatePlan": {
+    "message": "Ustvari načrt"
+  },
+  "yourWatchPlan": {
+    "message": "Vaš načrt ogledov"
+  },
+  "reset": {
+    "message": "Ponastavi"
+  },
+  "madeWith": {
+    "message": "Narejeno z ❤️"
+  },
+  "goBack": {
+    "message": "Nazaj"
+  }
 }

@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "เปลี่ยนเพลย์ลิสต์ YouTube ใดก็ได้ให้เป็นแผนการเรียนรู้ที่มีโครงสร้าง พร้อมการประมาณเวลา การติดตามความคืบหน้า และการควบคุมความเร็วในการเล่น" },
-  "subtitle": { "message": "YouTube ของคุณ วางแผนแล้ว" },
-  "myPlans": { "message": "แผนของฉัน" },
-  "addNewPlan": { "message": "เพิ่มแผนใหม่" },
-  "playlistUrl": { "message": "URL เพลย์ลิสต์" },
-  "fetchPlaylist": { "message": "ดึงเพลย์ลิสต์" },
-  "fetchingData": { "message": "กำลังดึงข้อมูลเพลย์ลิสต์..." },
-  "planGeneratedTitle": { "message": "สร้างแผนสำเร็จ" },
-  "planGeneratedSub": { "message": "แผนของคุณพร้อมใช้งานแล้ว" },
-  "closingAuto": { "message": "กำลังปิดอัตโนมัติ..." },
-  "playlistSummary": { "message": "สรุปเพลย์ลิสต์" },
-  "labelTitle": { "message": "ชื่อ:" },
-  "labelVideos": { "message": "วิดีโอ:" },
-  "labelTotalDuration": { "message": "ระยะเวลารวม:" },
-  "progress": { "message": "ความคืบหน้า" },
-  "selectPlanMode": { "message": "เลือกโหมดแผน" },
-  "modeVideoByVideoTitle": { "message": "ทีละวิดีโอ" },
-  "modeVideoByVideoDesc": { "message": "ดูวิดีโอหนึ่งรายการต่อวัน ไม่แบ่ง" },
-  "modeCustomTitle": { "message": "กำหนดตารางเอง" },
-  "modeCustomDesc": { "message": "ตั้งโควตาเวลาดูรายวัน วิดีโอจะถูกแบ่ง" },
-  "dailyWatchTime": { "message": "เวลาดูรายวัน" },
-  "dailyWatchTimeLabel": { "message": "เวลาดูรายวัน (นาที)" },
-  "next": { "message": "ถัดไป" },
-  "selectPlaybackSpeed": { "message": "เลือกความเร็วการเล่น" },
-  "speedHint": { "message": "ระยะเวลาแผนจะถูกปรับตามความเหมาะสม" },
-  "confirmPlan": { "message": "ยืนยันแผน" },
-  "labelPlanMode": { "message": "โหมดแผน:" },
-  "labelDailyWatchTime": { "message": "เวลาดูรายวัน:" },
-  "labelPlaybackSpeed": { "message": "ความเร็วการเล่น:" },
-  "generatePlan": { "message": "สร้างแผน" },
-  "yourWatchPlan": { "message": "แผนการดูของคุณ" },
-  "reset": { "message": "รีเซ็ต" },
-  "madeWith": { "message": "สร้างด้วย ❤️ โดย" },
-  "goBack": { "message": "ย้อนกลับ" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "YouTube ของคุณ วางแผนแล้ว"
+  },
+  "myPlans": {
+    "message": "แผนของฉัน"
+  },
+  "addNewPlan": {
+    "message": "เพิ่มแผนใหม่"
+  },
+  "playlistUrl": {
+    "message": "URL เพลย์ลิสต์"
+  },
+  "fetchPlaylist": {
+    "message": "ดึงเพลย์ลิสต์"
+  },
+  "fetchingData": {
+    "message": "กำลังดึงข้อมูลเพลย์ลิสต์..."
+  },
+  "planGeneratedTitle": {
+    "message": "สร้างแผนสำเร็จ"
+  },
+  "planGeneratedSub": {
+    "message": "แผนของคุณพร้อมใช้งานแล้ว"
+  },
+  "closingAuto": {
+    "message": "กำลังปิดอัตโนมัติ..."
+  },
+  "playlistSummary": {
+    "message": "สรุปเพลย์ลิสต์"
+  },
+  "labelTitle": {
+    "message": "ชื่อ:"
+  },
+  "labelVideos": {
+    "message": "วิดีโอ:"
+  },
+  "labelTotalDuration": {
+    "message": "ระยะเวลารวม:"
+  },
+  "progress": {
+    "message": "ความคืบหน้า"
+  },
+  "selectPlanMode": {
+    "message": "เลือกโหมดแผน"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "ทีละวิดีโอ"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "ดูวิดีโอหนึ่งรายการต่อวัน ไม่แบ่ง"
+  },
+  "modeCustomTitle": {
+    "message": "กำหนดตารางเอง"
+  },
+  "modeCustomDesc": {
+    "message": "ตั้งโควตาเวลาดูรายวัน วิดีโอจะถูกแบ่ง"
+  },
+  "dailyWatchTime": {
+    "message": "เวลาดูรายวัน"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "เวลาดูรายวัน (นาที)"
+  },
+  "next": {
+    "message": "ถัดไป"
+  },
+  "selectPlaybackSpeed": {
+    "message": "เลือกความเร็วการเล่น"
+  },
+  "speedHint": {
+    "message": "ระยะเวลาแผนจะถูกปรับตามความเหมาะสม"
+  },
+  "confirmPlan": {
+    "message": "ยืนยันแผน"
+  },
+  "labelPlanMode": {
+    "message": "โหมดแผน:"
+  },
+  "labelDailyWatchTime": {
+    "message": "เวลาดูรายวัน:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "ความเร็วการเล่น:"
+  },
+  "generatePlan": {
+    "message": "สร้างแผน"
+  },
+  "yourWatchPlan": {
+    "message": "แผนการดูของคุณ"
+  },
+  "reset": {
+    "message": "รีเซ็ต"
+  },
+  "madeWith": {
+    "message": "สร้างด้วย ❤️ โดย"
+  },
+  "goBack": {
+    "message": "ย้อนกลับ"
+  }
 }

@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "Guqula noma iyiphi i-playlist ye-YouTube ibe yisu lokufunda elihlelekile elinohlelo lwesikhathi, ukuqapha inqubekela phambili nokulawula ijubane lokuphinda udlale." },
-  "subtitle": { "message": "I-YouTube yakho, ihleliwe" },
-  "myPlans": { "message": "Amasu ami" },
-  "addNewPlan": { "message": "Engeza isu elisha" },
-  "playlistUrl": { "message": "I-URL ye-playlist" },
-  "fetchPlaylist": { "message": "Landa i-playlist" },
-  "fetchingData": { "message": "Kulandwa idatha ye-playlist..." },
-  "planGeneratedTitle": { "message": "Isu lakhiwe ngempumelelo" },
-  "planGeneratedSub": { "message": "Isu lakho selisebenza." },
-  "closingAuto": { "message": "Kuvala ngokuzenzakalelayo..." },
-  "playlistSummary": { "message": "Isifinyezo se-playlist" },
-  "labelTitle": { "message": "Isihloko:" },
-  "labelVideos": { "message": "Amavidiyo:" },
-  "labelTotalDuration": { "message": "Isikhathi esiphelele:" },
-  "progress": { "message": "Inqubekela phambili" },
-  "selectPlanMode": { "message": "Khetha imodi yesu" },
-  "modeVideoByVideoTitle": { "message": "Ividiyo ngevidiyo" },
-  "modeVideoByVideoDesc": { "message": "Bukela ividiyo eyodwa ngosuku. Ayikho ukuhlukanisa." },
-  "modeCustomTitle": { "message": "Isheduli ekhethekile" },
-  "modeCustomDesc": { "message": "Setha isikhathi sokubuka nsuku zonke. Amavidiyo ayahlukaniswa." },
-  "dailyWatchTime": { "message": "Isikhathi sokubuka nsuku zonke" },
-  "dailyWatchTimeLabel": { "message": "Isikhathi sokubuka nsuku zonke (imizuzu)" },
-  "next": { "message": "Okulandelayo" },
-  "selectPlaybackSpeed": { "message": "Khetha ijubane lokudlala" },
-  "speedHint": { "message": "Ubude besu buzolungiswa ngokufanele." },
-  "confirmPlan": { "message": "Qinisekisa isu" },
-  "labelPlanMode": { "message": "Imodi yesu:" },
-  "labelDailyWatchTime": { "message": "Isikhathi sansuku zonke:" },
-  "labelPlaybackSpeed": { "message": "Ijubane lokudlala:" },
-  "generatePlan": { "message": "Yakha isu" },
-  "yourWatchPlan": { "message": "Isu lakho lokubuka" },
-  "reset": { "message": "Setha kabusha" },
-  "madeWith": { "message": "Kwenziwe nge ❤️" },
-  "goBack": { "message": "Buyela emuva" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "I-YouTube yakho, ihleliwe"
+  },
+  "myPlans": {
+    "message": "Amasu ami"
+  },
+  "addNewPlan": {
+    "message": "Engeza isu elisha"
+  },
+  "playlistUrl": {
+    "message": "I-URL ye-playlist"
+  },
+  "fetchPlaylist": {
+    "message": "Landa i-playlist"
+  },
+  "fetchingData": {
+    "message": "Kulandwa idatha ye-playlist..."
+  },
+  "planGeneratedTitle": {
+    "message": "Isu lakhiwe ngempumelelo"
+  },
+  "planGeneratedSub": {
+    "message": "Isu lakho selisebenza."
+  },
+  "closingAuto": {
+    "message": "Kuvala ngokuzenzakalelayo..."
+  },
+  "playlistSummary": {
+    "message": "Isifinyezo se-playlist"
+  },
+  "labelTitle": {
+    "message": "Isihloko:"
+  },
+  "labelVideos": {
+    "message": "Amavidiyo:"
+  },
+  "labelTotalDuration": {
+    "message": "Isikhathi esiphelele:"
+  },
+  "progress": {
+    "message": "Inqubekela phambili"
+  },
+  "selectPlanMode": {
+    "message": "Khetha imodi yesu"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "Ividiyo ngevidiyo"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "Bukela ividiyo eyodwa ngosuku. Ayikho ukuhlukanisa."
+  },
+  "modeCustomTitle": {
+    "message": "Isheduli ekhethekile"
+  },
+  "modeCustomDesc": {
+    "message": "Setha isikhathi sokubuka nsuku zonke. Amavidiyo ayahlukaniswa."
+  },
+  "dailyWatchTime": {
+    "message": "Isikhathi sokubuka nsuku zonke"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "Isikhathi sokubuka nsuku zonke (imizuzu)"
+  },
+  "next": {
+    "message": "Okulandelayo"
+  },
+  "selectPlaybackSpeed": {
+    "message": "Khetha ijubane lokudlala"
+  },
+  "speedHint": {
+    "message": "Ubude besu buzolungiswa ngokufanele."
+  },
+  "confirmPlan": {
+    "message": "Qinisekisa isu"
+  },
+  "labelPlanMode": {
+    "message": "Imodi yesu:"
+  },
+  "labelDailyWatchTime": {
+    "message": "Isikhathi sansuku zonke:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "Ijubane lokudlala:"
+  },
+  "generatePlan": {
+    "message": "Yakha isu"
+  },
+  "yourWatchPlan": {
+    "message": "Isu lakho lokubuka"
+  },
+  "reset": {
+    "message": "Setha kabusha"
+  },
+  "madeWith": {
+    "message": "Kwenziwe nge ❤️"
+  },
+  "goBack": {
+    "message": "Buyela emuva"
+  }
 }

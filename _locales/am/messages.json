@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "ማንኛውንም የYouTube ማጫወቻ ዝርዝር ወደ የተዋቀረ የትምህርት ዕቅድ ይቀይሩ ከጊዜ ግምቶች፣ የሂደት ክትትል እና የማጫወት ፍጥነት ቁጥጥር ጋር።" },
-  "subtitle": { "message": "YouTube-ህ፣ የታቀደ" },
-  "myPlans": { "message": "ዕቅዶቼ" },
-  "addNewPlan": { "message": "አዲስ ዕቅድ ጨምር" },
-  "playlistUrl": { "message": "የማጫወቻ ዝርዝር URL" },
-  "fetchPlaylist": { "message": "ዝርዝር አምጣ" },
-  "fetchingData": { "message": "የዝርዝር ውሂብ በማምጣት ላይ..." },
-  "planGeneratedTitle": { "message": "ዕቅድ በተሳካ ሁኔታ ተፈጠረ" },
-  "planGeneratedSub": { "message": "ዕቅድህ አሁን ንቁ ነው።" },
-  "closingAuto": { "message": "በራስ-ሰር በመዝጋት ላይ..." },
-  "playlistSummary": { "message": "የዝርዝር ማጠቃለያ" },
-  "labelTitle": { "message": "ርዕስ:" },
-  "labelVideos": { "message": "ቪዲዮዎች:" },
-  "labelTotalDuration": { "message": "ጠቅላላ ቆይታ:" },
-  "progress": { "message": "ሂደት" },
-  "selectPlanMode": { "message": "የዕቅድ ሁነታ ይምረጡ" },
-  "modeVideoByVideoTitle": { "message": "ቪዲዮ በቪዲዮ" },
-  "modeVideoByVideoDesc": { "message": "በቀን አንድ ቪዲዮ ብቻ ይመልከቱ። መከፋፈል የለም።" },
-  "modeCustomTitle": { "message": "ብጁ መርሃ ግብር" },
-  "modeCustomDesc": { "message": "ዕለታዊ የመመልከቻ ጊዜ ድርሻ ያዘጋጁ። ቪዲዮዎች ይከፋፈላሉ።" },
-  "dailyWatchTime": { "message": "ዕለታዊ የመመልከቻ ጊዜ" },
-  "dailyWatchTimeLabel": { "message": "ዕለታዊ የመመልከቻ ጊዜ (ደቂቃዎች)" },
-  "next": { "message": "ቀጣይ" },
-  "selectPlaybackSpeed": { "message": "የማጫወት ፍጥነት ይምረጡ" },
-  "speedHint": { "message": "የዕቅድ ቆይታ በዚሁ መሠረት ይስተካከላል።" },
-  "confirmPlan": { "message": "ዕቅድ ያረጋግጡ" },
-  "labelPlanMode": { "message": "የዕቅድ ሁነታ:" },
-  "labelDailyWatchTime": { "message": "ዕለታዊ ጊዜ:" },
-  "labelPlaybackSpeed": { "message": "የማጫወት ፍጥነት:" },
-  "generatePlan": { "message": "ዕቅድ ይፍጠሩ" },
-  "yourWatchPlan": { "message": "የመመልከቻ ዕቅድዎ" },
-  "reset": { "message": "ዳግም አስጀምር" },
-  "madeWith": { "message": "በ ❤️ የተሰራ" },
-  "goBack": { "message": "ተመለስ" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "YouTube-ህ፣ የታቀደ"
+  },
+  "myPlans": {
+    "message": "ዕቅዶቼ"
+  },
+  "addNewPlan": {
+    "message": "አዲስ ዕቅድ ጨምር"
+  },
+  "playlistUrl": {
+    "message": "የማጫወቻ ዝርዝር URL"
+  },
+  "fetchPlaylist": {
+    "message": "ዝርዝር አምጣ"
+  },
+  "fetchingData": {
+    "message": "የዝርዝር ውሂብ በማምጣት ላይ..."
+  },
+  "planGeneratedTitle": {
+    "message": "ዕቅድ በተሳካ ሁኔታ ተፈጠረ"
+  },
+  "planGeneratedSub": {
+    "message": "ዕቅድህ አሁን ንቁ ነው።"
+  },
+  "closingAuto": {
+    "message": "በራስ-ሰር በመዝጋት ላይ..."
+  },
+  "playlistSummary": {
+    "message": "የዝርዝር ማጠቃለያ"
+  },
+  "labelTitle": {
+    "message": "ርዕስ:"
+  },
+  "labelVideos": {
+    "message": "ቪዲዮዎች:"
+  },
+  "labelTotalDuration": {
+    "message": "ጠቅላላ ቆይታ:"
+  },
+  "progress": {
+    "message": "ሂደት"
+  },
+  "selectPlanMode": {
+    "message": "የዕቅድ ሁነታ ይምረጡ"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "ቪዲዮ በቪዲዮ"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "በቀን አንድ ቪዲዮ ብቻ ይመልከቱ። መከፋፈል የለም።"
+  },
+  "modeCustomTitle": {
+    "message": "ብጁ መርሃ ግብር"
+  },
+  "modeCustomDesc": {
+    "message": "ዕለታዊ የመመልከቻ ጊዜ ድርሻ ያዘጋጁ። ቪዲዮዎች ይከፋፈላሉ።"
+  },
+  "dailyWatchTime": {
+    "message": "ዕለታዊ የመመልከቻ ጊዜ"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "ዕለታዊ የመመልከቻ ጊዜ (ደቂቃዎች)"
+  },
+  "next": {
+    "message": "ቀጣይ"
+  },
+  "selectPlaybackSpeed": {
+    "message": "የማጫወት ፍጥነት ይምረጡ"
+  },
+  "speedHint": {
+    "message": "የዕቅድ ቆይታ በዚሁ መሠረት ይስተካከላል።"
+  },
+  "confirmPlan": {
+    "message": "ዕቅድ ያረጋግጡ"
+  },
+  "labelPlanMode": {
+    "message": "የዕቅድ ሁነታ:"
+  },
+  "labelDailyWatchTime": {
+    "message": "ዕለታዊ ጊዜ:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "የማጫወት ፍጥነት:"
+  },
+  "generatePlan": {
+    "message": "ዕቅድ ይፍጠሩ"
+  },
+  "yourWatchPlan": {
+    "message": "የመመልከቻ ዕቅድዎ"
+  },
+  "reset": {
+    "message": "ዳግም አስጀምር"
+  },
+  "madeWith": {
+    "message": "በ ❤️ የተሰራ"
+  },
+  "goBack": {
+    "message": "ተመለስ"
+  }
 }

@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "Přeměňte jakýkoli playlist na YouTube na strukturovaný studijní plán s odhady času, sledováním pokroku a ovládáním rychlosti přehrávání." },
-  "subtitle": { "message": "Váš YouTube, naplánovaný" },
-  "myPlans": { "message": "Moje plány" },
-  "addNewPlan": { "message": "Přidat nový plán" },
-  "playlistUrl": { "message": "URL playlistu" },
-  "fetchPlaylist": { "message": "Načíst playlist" },
-  "fetchingData": { "message": "Načítání dat playlistu..." },
-  "planGeneratedTitle": { "message": "Plán úspěšně vytvořen" },
-  "planGeneratedSub": { "message": "Váš plán je nyní aktivní." },
-  "closingAuto": { "message": "Automatické zavírání..." },
-  "playlistSummary": { "message": "Shrnutí playlistu" },
-  "labelTitle": { "message": "Název:" },
-  "labelVideos": { "message": "Videa:" },
-  "labelTotalDuration": { "message": "Celková délka:" },
-  "progress": { "message": "Průběh" },
-  "selectPlanMode": { "message": "Vyberte režim plánu" },
-  "modeVideoByVideoTitle": { "message": "Video po videu" },
-  "modeVideoByVideoDesc": { "message": "Sledujte přesně jedno video denně. Bez dělení." },
-  "modeCustomTitle": { "message": "Vlastní rozvrh" },
-  "modeCustomDesc": { "message": "Nastavte denní kvótu sledování. Videa se rozdělí." },
-  "dailyWatchTime": { "message": "Denní čas sledování" },
-  "dailyWatchTimeLabel": { "message": "Denní čas sledování (minuty)" },
-  "next": { "message": "Další" },
-  "selectPlaybackSpeed": { "message": "Vyberte rychlost přehrávání" },
-  "speedHint": { "message": "Délka plánu se odpovídajícím způsobem upraví." },
-  "confirmPlan": { "message": "Potvrdit plán" },
-  "labelPlanMode": { "message": "Režim plánu:" },
-  "labelDailyWatchTime": { "message": "Denní čas sledování:" },
-  "labelPlaybackSpeed": { "message": "Rychlost přehrávání:" },
-  "generatePlan": { "message": "Vygenerovat plán" },
-  "yourWatchPlan": { "message": "Váš plán sledování" },
-  "reset": { "message": "Resetovat" },
-  "madeWith": { "message": "Vytvořeno s ❤️" },
-  "goBack": { "message": "Zpět" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "Váš YouTube, naplánovaný"
+  },
+  "myPlans": {
+    "message": "Moje plány"
+  },
+  "addNewPlan": {
+    "message": "Přidat nový plán"
+  },
+  "playlistUrl": {
+    "message": "URL playlistu"
+  },
+  "fetchPlaylist": {
+    "message": "Načíst playlist"
+  },
+  "fetchingData": {
+    "message": "Načítání dat playlistu..."
+  },
+  "planGeneratedTitle": {
+    "message": "Plán úspěšně vytvořen"
+  },
+  "planGeneratedSub": {
+    "message": "Váš plán je nyní aktivní."
+  },
+  "closingAuto": {
+    "message": "Automatické zavírání..."
+  },
+  "playlistSummary": {
+    "message": "Shrnutí playlistu"
+  },
+  "labelTitle": {
+    "message": "Název:"
+  },
+  "labelVideos": {
+    "message": "Videa:"
+  },
+  "labelTotalDuration": {
+    "message": "Celková délka:"
+  },
+  "progress": {
+    "message": "Průběh"
+  },
+  "selectPlanMode": {
+    "message": "Vyberte režim plánu"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "Video po videu"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "Sledujte přesně jedno video denně. Bez dělení."
+  },
+  "modeCustomTitle": {
+    "message": "Vlastní rozvrh"
+  },
+  "modeCustomDesc": {
+    "message": "Nastavte denní kvótu sledování. Videa se rozdělí."
+  },
+  "dailyWatchTime": {
+    "message": "Denní čas sledování"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "Denní čas sledování (minuty)"
+  },
+  "next": {
+    "message": "Další"
+  },
+  "selectPlaybackSpeed": {
+    "message": "Vyberte rychlost přehrávání"
+  },
+  "speedHint": {
+    "message": "Délka plánu se odpovídajícím způsobem upraví."
+  },
+  "confirmPlan": {
+    "message": "Potvrdit plán"
+  },
+  "labelPlanMode": {
+    "message": "Režim plánu:"
+  },
+  "labelDailyWatchTime": {
+    "message": "Denní čas sledování:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "Rychlost přehrávání:"
+  },
+  "generatePlan": {
+    "message": "Vygenerovat plán"
+  },
+  "yourWatchPlan": {
+    "message": "Váš plán sledování"
+  },
+  "reset": {
+    "message": "Resetovat"
+  },
+  "madeWith": {
+    "message": "Vytvořeno s ❤️"
+  },
+  "goBack": {
+    "message": "Zpět"
+  }
 }

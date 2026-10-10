@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "Tukarkan mana-mana senarai main YouTube kepada pelan pembelajaran berstruktur dengan anggaran masa, penjejakan kemajuan dan kawalan kelajuan main balik." },
-  "subtitle": { "message": "YouTube anda, dirancang" },
-  "myPlans": { "message": "Pelan Saya" },
-  "addNewPlan": { "message": "Tambah pelan baharu" },
-  "playlistUrl": { "message": "URL senarai main" },
-  "fetchPlaylist": { "message": "Dapatkan senarai main" },
-  "fetchingData": { "message": "Mendapatkan data senarai main..." },
-  "planGeneratedTitle": { "message": "Pelan berjaya dihasilkan" },
-  "planGeneratedSub": { "message": "Pelan anda kini aktif." },
-  "closingAuto": { "message": "Menutup secara automatik..." },
-  "playlistSummary": { "message": "Ringkasan senarai main" },
-  "labelTitle": { "message": "Tajuk:" },
-  "labelVideos": { "message": "Video:" },
-  "labelTotalDuration": { "message": "Jumlah tempoh:" },
-  "progress": { "message": "Kemajuan" },
-  "selectPlanMode": { "message": "Pilih mod pelan" },
-  "modeVideoByVideoTitle": { "message": "Video demi video" },
-  "modeVideoByVideoDesc": { "message": "Tonton tepat satu video sehari. Tiada pemisahan." },
-  "modeCustomTitle": { "message": "Jadual tersuai" },
-  "modeCustomDesc": { "message": "Tetapkan kuota masa menonton harian. Video dipecahkan." },
-  "dailyWatchTime": { "message": "Masa menonton harian" },
-  "dailyWatchTimeLabel": { "message": "Masa menonton harian (minit)" },
-  "next": { "message": "Seterusnya" },
-  "selectPlaybackSpeed": { "message": "Pilih kelajuan main balik" },
-  "speedHint": { "message": "Tempoh pelan anda akan diselaraskan." },
-  "confirmPlan": { "message": "Sahkan pelan" },
-  "labelPlanMode": { "message": "Mod pelan:" },
-  "labelDailyWatchTime": { "message": "Masa menonton harian:" },
-  "labelPlaybackSpeed": { "message": "Kelajuan main balik:" },
-  "generatePlan": { "message": "Hasilkan pelan" },
-  "yourWatchPlan": { "message": "Pelan tontonan anda" },
-  "reset": { "message": "Set semula" },
-  "madeWith": { "message": "Dibuat dengan ❤️ oleh" },
-  "goBack": { "message": "Kembali" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "YouTube anda, dirancang"
+  },
+  "myPlans": {
+    "message": "Pelan Saya"
+  },
+  "addNewPlan": {
+    "message": "Tambah pelan baharu"
+  },
+  "playlistUrl": {
+    "message": "URL senarai main"
+  },
+  "fetchPlaylist": {
+    "message": "Dapatkan senarai main"
+  },
+  "fetchingData": {
+    "message": "Mendapatkan data senarai main..."
+  },
+  "planGeneratedTitle": {
+    "message": "Pelan berjaya dihasilkan"
+  },
+  "planGeneratedSub": {
+    "message": "Pelan anda kini aktif."
+  },
+  "closingAuto": {
+    "message": "Menutup secara automatik..."
+  },
+  "playlistSummary": {
+    "message": "Ringkasan senarai main"
+  },
+  "labelTitle": {
+    "message": "Tajuk:"
+  },
+  "labelVideos": {
+    "message": "Video:"
+  },
+  "labelTotalDuration": {
+    "message": "Jumlah tempoh:"
+  },
+  "progress": {
+    "message": "Kemajuan"
+  },
+  "selectPlanMode": {
+    "message": "Pilih mod pelan"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "Video demi video"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "Tonton tepat satu video sehari. Tiada pemisahan."
+  },
+  "modeCustomTitle": {
+    "message": "Jadual tersuai"
+  },
+  "modeCustomDesc": {
+    "message": "Tetapkan kuota masa menonton harian. Video dipecahkan."
+  },
+  "dailyWatchTime": {
+    "message": "Masa menonton harian"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "Masa menonton harian (minit)"
+  },
+  "next": {
+    "message": "Seterusnya"
+  },
+  "selectPlaybackSpeed": {
+    "message": "Pilih kelajuan main balik"
+  },
+  "speedHint": {
+    "message": "Tempoh pelan anda akan diselaraskan."
+  },
+  "confirmPlan": {
+    "message": "Sahkan pelan"
+  },
+  "labelPlanMode": {
+    "message": "Mod pelan:"
+  },
+  "labelDailyWatchTime": {
+    "message": "Masa menonton harian:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "Kelajuan main balik:"
+  },
+  "generatePlan": {
+    "message": "Hasilkan pelan"
+  },
+  "yourWatchPlan": {
+    "message": "Pelan tontonan anda"
+  },
+  "reset": {
+    "message": "Set semula"
+  },
+  "madeWith": {
+    "message": "Dibuat dengan ❤️ oleh"
+  },
+  "goBack": {
+    "message": "Kembali"
+  }
 }

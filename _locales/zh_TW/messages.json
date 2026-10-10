@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "將任何 YouTube 播放清單轉換為結構化學習計劃，包含時間估算、進度追蹤和播放速度控制。" },
-  "subtitle": { "message": "你的 YouTube，已規劃" },
-  "myPlans": { "message": "我的計劃" },
-  "addNewPlan": { "message": "新增計劃" },
-  "playlistUrl": { "message": "播放清單網址" },
-  "fetchPlaylist": { "message": "取得播放清單" },
-  "fetchingData": { "message": "正在取得播放清單資料..." },
-  "planGeneratedTitle": { "message": "計劃建立成功" },
-  "planGeneratedSub": { "message": "你的計劃已啟用。" },
-  "closingAuto": { "message": "自動關閉中..." },
-  "playlistSummary": { "message": "播放清單摘要" },
-  "labelTitle": { "message": "標題：" },
-  "labelVideos": { "message": "影片：" },
-  "labelTotalDuration": { "message": "總時長：" },
-  "progress": { "message": "進度" },
-  "selectPlanMode": { "message": "選擇計劃模式" },
-  "modeVideoByVideoTitle": { "message": "逐個影片" },
-  "modeVideoByVideoDesc": { "message": "每天觀看一部影片，不拆分。" },
-  "modeCustomTitle": { "message": "自訂排程" },
-  "modeCustomDesc": { "message": "設定每日觀看時間配額，影片將被拆分。" },
-  "dailyWatchTime": { "message": "每日觀看時間" },
-  "dailyWatchTimeLabel": { "message": "每日觀看時間（分鐘）" },
-  "next": { "message": "下一步" },
-  "selectPlaybackSpeed": { "message": "選擇播放速度" },
-  "speedHint": { "message": "計劃時長將相應調整。" },
-  "confirmPlan": { "message": "確認計劃" },
-  "labelPlanMode": { "message": "計劃模式：" },
-  "labelDailyWatchTime": { "message": "每日觀看時間：" },
-  "labelPlaybackSpeed": { "message": "播放速度：" },
-  "generatePlan": { "message": "產生計劃" },
-  "yourWatchPlan": { "message": "你的觀看計劃" },
-  "reset": { "message": "重設" },
-  "madeWith": { "message": "用 ❤️ 製作" },
-  "goBack": { "message": "返回" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "你的 YouTube，已規劃"
+  },
+  "myPlans": {
+    "message": "我的計劃"
+  },
+  "addNewPlan": {
+    "message": "新增計劃"
+  },
+  "playlistUrl": {
+    "message": "播放清單網址"
+  },
+  "fetchPlaylist": {
+    "message": "取得播放清單"
+  },
+  "fetchingData": {
+    "message": "正在取得播放清單資料..."
+  },
+  "planGeneratedTitle": {
+    "message": "計劃建立成功"
+  },
+  "planGeneratedSub": {
+    "message": "你的計劃已啟用。"
+  },
+  "closingAuto": {
+    "message": "自動關閉中..."
+  },
+  "playlistSummary": {
+    "message": "播放清單摘要"
+  },
+  "labelTitle": {
+    "message": "標題："
+  },
+  "labelVideos": {
+    "message": "影片："
+  },
+  "labelTotalDuration": {
+    "message": "總時長："
+  },
+  "progress": {
+    "message": "進度"
+  },
+  "selectPlanMode": {
+    "message": "選擇計劃模式"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "逐個影片"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "每天觀看一部影片，不拆分。"
+  },
+  "modeCustomTitle": {
+    "message": "自訂排程"
+  },
+  "modeCustomDesc": {
+    "message": "設定每日觀看時間配額，影片將被拆分。"
+  },
+  "dailyWatchTime": {
+    "message": "每日觀看時間"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "每日觀看時間（分鐘）"
+  },
+  "next": {
+    "message": "下一步"
+  },
+  "selectPlaybackSpeed": {
+    "message": "選擇播放速度"
+  },
+  "speedHint": {
+    "message": "計劃時長將相應調整。"
+  },
+  "confirmPlan": {
+    "message": "確認計劃"
+  },
+  "labelPlanMode": {
+    "message": "計劃模式："
+  },
+  "labelDailyWatchTime": {
+    "message": "每日觀看時間："
+  },
+  "labelPlaybackSpeed": {
+    "message": "播放速度："
+  },
+  "generatePlan": {
+    "message": "產生計劃"
+  },
+  "yourWatchPlan": {
+    "message": "你的觀看計劃"
+  },
+  "reset": {
+    "message": "重設"
+  },
+  "madeWith": {
+    "message": "用 ❤️ 製作"
+  },
+  "goBack": {
+    "message": "返回"
+  }
 }

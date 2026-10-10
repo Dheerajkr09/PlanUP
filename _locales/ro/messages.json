@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "Transformă orice playlist YouTube într-un plan de învățare structurat cu estimări de timp, urmărirea progresului și controlul vitezei de redare." },
-  "subtitle": { "message": "YouTube-ul tău, planificat" },
-  "myPlans": { "message": "Planurile mele" },
-  "addNewPlan": { "message": "Adaugă plan nou" },
-  "playlistUrl": { "message": "URL-ul playlistului" },
-  "fetchPlaylist": { "message": "Încarcă playlist" },
-  "fetchingData": { "message": "Se încarcă datele playlistului..." },
-  "planGeneratedTitle": { "message": "Plan creat cu succes" },
-  "planGeneratedSub": { "message": "Planul tău este acum activ." },
-  "closingAuto": { "message": "Se închide automat..." },
-  "playlistSummary": { "message": "Rezumat playlist" },
-  "labelTitle": { "message": "Titlu:" },
-  "labelVideos": { "message": "Videoclipuri:" },
-  "labelTotalDuration": { "message": "Durată totală:" },
-  "progress": { "message": "Progres" },
-  "selectPlanMode": { "message": "Selectează modul planului" },
-  "modeVideoByVideoTitle": { "message": "Video cu video" },
-  "modeVideoByVideoDesc": { "message": "Urmărește exact un videoclip pe zi. Fără împărțire." },
-  "modeCustomTitle": { "message": "Program personalizat" },
-  "modeCustomDesc": { "message": "Setează o cotă zilnică de vizionare. Videoclipurile sunt împărțite." },
-  "dailyWatchTime": { "message": "Timp de vizionare zilnic" },
-  "dailyWatchTimeLabel": { "message": "Timp de vizionare zilnic (minute)" },
-  "next": { "message": "Următorul" },
-  "selectPlaybackSpeed": { "message": "Selectează viteza de redare" },
-  "speedHint": { "message": "Durata planului se va ajusta în consecință." },
-  "confirmPlan": { "message": "Confirmă planul" },
-  "labelPlanMode": { "message": "Mod plan:" },
-  "labelDailyWatchTime": { "message": "Timp zilnic:" },
-  "labelPlaybackSpeed": { "message": "Viteza de redare:" },
-  "generatePlan": { "message": "Generează plan" },
-  "yourWatchPlan": { "message": "Planul tău de vizionare" },
-  "reset": { "message": "Resetează" },
-  "madeWith": { "message": "Făcut cu ❤️ de" },
-  "goBack": { "message": "Înapoi" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "YouTube-ul tău, planificat"
+  },
+  "myPlans": {
+    "message": "Planurile mele"
+  },
+  "addNewPlan": {
+    "message": "Adaugă plan nou"
+  },
+  "playlistUrl": {
+    "message": "URL-ul playlistului"
+  },
+  "fetchPlaylist": {
+    "message": "Încarcă playlist"
+  },
+  "fetchingData": {
+    "message": "Se încarcă datele playlistului..."
+  },
+  "planGeneratedTitle": {
+    "message": "Plan creat cu succes"
+  },
+  "planGeneratedSub": {
+    "message": "Planul tău este acum activ."
+  },
+  "closingAuto": {
+    "message": "Se închide automat..."
+  },
+  "playlistSummary": {
+    "message": "Rezumat playlist"
+  },
+  "labelTitle": {
+    "message": "Titlu:"
+  },
+  "labelVideos": {
+    "message": "Videoclipuri:"
+  },
+  "labelTotalDuration": {
+    "message": "Durată totală:"
+  },
+  "progress": {
+    "message": "Progres"
+  },
+  "selectPlanMode": {
+    "message": "Selectează modul planului"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "Video cu video"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "Urmărește exact un videoclip pe zi. Fără împărțire."
+  },
+  "modeCustomTitle": {
+    "message": "Program personalizat"
+  },
+  "modeCustomDesc": {
+    "message": "Setează o cotă zilnică de vizionare. Videoclipurile sunt împărțite."
+  },
+  "dailyWatchTime": {
+    "message": "Timp de vizionare zilnic"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "Timp de vizionare zilnic (minute)"
+  },
+  "next": {
+    "message": "Următorul"
+  },
+  "selectPlaybackSpeed": {
+    "message": "Selectează viteza de redare"
+  },
+  "speedHint": {
+    "message": "Durata planului se va ajusta în consecință."
+  },
+  "confirmPlan": {
+    "message": "Confirmă planul"
+  },
+  "labelPlanMode": {
+    "message": "Mod plan:"
+  },
+  "labelDailyWatchTime": {
+    "message": "Timp zilnic:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "Viteza de redare:"
+  },
+  "generatePlan": {
+    "message": "Generează plan"
+  },
+  "yourWatchPlan": {
+    "message": "Planul tău de vizionare"
+  },
+  "reset": {
+    "message": "Resetează"
+  },
+  "madeWith": {
+    "message": "Făcut cu ❤️ de"
+  },
+  "goBack": {
+    "message": "Înapoi"
+  }
 }

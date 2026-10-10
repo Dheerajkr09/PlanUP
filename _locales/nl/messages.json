@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "Verander elke YouTube-afspeellijst in een gestructureerd leerplan met tijdschattingen, voortgangsregistratie en afspeelsnelheidsregeling." },
-  "subtitle": { "message": "Jouw YouTube, gepland" },
-  "myPlans": { "message": "Mijn plannen" },
-  "addNewPlan": { "message": "Nieuw plan toevoegen" },
-  "playlistUrl": { "message": "Afspeellijst-URL" },
-  "fetchPlaylist": { "message": "Afspeellijst ophalen" },
-  "fetchingData": { "message": "Afspeellijstgegevens ophalen..." },
-  "planGeneratedTitle": { "message": "Plan succesvol aangemaakt" },
-  "planGeneratedSub": { "message": "Je plan is nu actief." },
-  "closingAuto": { "message": "Automatisch sluiten..." },
-  "playlistSummary": { "message": "Samenvatting afspeellijst" },
-  "labelTitle": { "message": "Titel:" },
-  "labelVideos": { "message": "Video's:" },
-  "labelTotalDuration": { "message": "Totale duur:" },
-  "progress": { "message": "Voortgang" },
-  "selectPlanMode": { "message": "Planmodus selecteren" },
-  "modeVideoByVideoTitle": { "message": "Video voor video" },
-  "modeVideoByVideoDesc": { "message": "Bekijk precies één video per dag. Geen splitsing." },
-  "modeCustomTitle": { "message": "Aangepast schema" },
-  "modeCustomDesc": { "message": "Stel een dagelijks kijktijdquotum in. Video's worden gesplitst." },
-  "dailyWatchTime": { "message": "Dagelijkse kijktijd" },
-  "dailyWatchTimeLabel": { "message": "Dagelijkse kijktijd (minuten)" },
-  "next": { "message": "Volgende" },
-  "selectPlaybackSpeed": { "message": "Afspeelsnelheid selecteren" },
-  "speedHint": { "message": "De planduur wordt dienovereenkomstig aangepast." },
-  "confirmPlan": { "message": "Plan bevestigen" },
-  "labelPlanMode": { "message": "Planmodus:" },
-  "labelDailyWatchTime": { "message": "Dagelijkse kijktijd:" },
-  "labelPlaybackSpeed": { "message": "Afspeelsnelheid:" },
-  "generatePlan": { "message": "Plan genereren" },
-  "yourWatchPlan": { "message": "Jouw kijkplan" },
-  "reset": { "message": "Resetten" },
-  "madeWith": { "message": "Gemaakt met ❤️ door" },
-  "goBack": { "message": "Terug" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "Jouw YouTube, gepland"
+  },
+  "myPlans": {
+    "message": "Mijn plannen"
+  },
+  "addNewPlan": {
+    "message": "Nieuw plan toevoegen"
+  },
+  "playlistUrl": {
+    "message": "Afspeellijst-URL"
+  },
+  "fetchPlaylist": {
+    "message": "Afspeellijst ophalen"
+  },
+  "fetchingData": {
+    "message": "Afspeellijstgegevens ophalen..."
+  },
+  "planGeneratedTitle": {
+    "message": "Plan succesvol aangemaakt"
+  },
+  "planGeneratedSub": {
+    "message": "Je plan is nu actief."
+  },
+  "closingAuto": {
+    "message": "Automatisch sluiten..."
+  },
+  "playlistSummary": {
+    "message": "Samenvatting afspeellijst"
+  },
+  "labelTitle": {
+    "message": "Titel:"
+  },
+  "labelVideos": {
+    "message": "Video's:"
+  },
+  "labelTotalDuration": {
+    "message": "Totale duur:"
+  },
+  "progress": {
+    "message": "Voortgang"
+  },
+  "selectPlanMode": {
+    "message": "Planmodus selecteren"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "Video voor video"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "Bekijk precies één video per dag. Geen splitsing."
+  },
+  "modeCustomTitle": {
+    "message": "Aangepast schema"
+  },
+  "modeCustomDesc": {
+    "message": "Stel een dagelijks kijktijdquotum in. Video's worden gesplitst."
+  },
+  "dailyWatchTime": {
+    "message": "Dagelijkse kijktijd"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "Dagelijkse kijktijd (minuten)"
+  },
+  "next": {
+    "message": "Volgende"
+  },
+  "selectPlaybackSpeed": {
+    "message": "Afspeelsnelheid selecteren"
+  },
+  "speedHint": {
+    "message": "De planduur wordt dienovereenkomstig aangepast."
+  },
+  "confirmPlan": {
+    "message": "Plan bevestigen"
+  },
+  "labelPlanMode": {
+    "message": "Planmodus:"
+  },
+  "labelDailyWatchTime": {
+    "message": "Dagelijkse kijktijd:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "Afspeelsnelheid:"
+  },
+  "generatePlan": {
+    "message": "Plan genereren"
+  },
+  "yourWatchPlan": {
+    "message": "Jouw kijkplan"
+  },
+  "reset": {
+    "message": "Resetten"
+  },
+  "madeWith": {
+    "message": "Gemaakt met ❤️ door"
+  },
+  "goBack": {
+    "message": "Terug"
+  }
 }

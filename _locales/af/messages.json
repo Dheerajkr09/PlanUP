@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "Verander enige YouTube-speellys in 'n gestruktureerde leerplan met tydskattings, vorderingsopsporing en terugspeelspoedbeheer." },
-  "subtitle": { "message": "Jou YouTube, beplan" },
-  "myPlans": { "message": "My planne" },
-  "addNewPlan": { "message": "Voeg nuwe plan by" },
-  "playlistUrl": { "message": "Speellys-URL" },
-  "fetchPlaylist": { "message": "Haal speellys" },
-  "fetchingData": { "message": "Besig om speellysdata te haal..." },
-  "planGeneratedTitle": { "message": "Plan suksesvol geskep" },
-  "planGeneratedSub": { "message": "Jou plan is nou aktief." },
-  "closingAuto": { "message": "Sluit outomaties..." },
-  "playlistSummary": { "message": "Speellys-opsomming" },
-  "labelTitle": { "message": "Titel:" },
-  "labelVideos": { "message": "Video's:" },
-  "labelTotalDuration": { "message": "Totale duur:" },
-  "progress": { "message": "Vordering" },
-  "selectPlanMode": { "message": "Kies planmodus" },
-  "modeVideoByVideoTitle": { "message": "Video vir video" },
-  "modeVideoByVideoDesc": { "message": "Kyk presies een video per dag. Geen verdeling nie." },
-  "modeCustomTitle": { "message": "Pasgemaakte skedule" },
-  "modeCustomDesc": { "message": "Stel 'n daaglikse kyktydkwota. Video's word verdeel." },
-  "dailyWatchTime": { "message": "Daaglikse kyktyd" },
-  "dailyWatchTimeLabel": { "message": "Daaglikse kyktyd (minute)" },
-  "next": { "message": "Volgende" },
-  "selectPlaybackSpeed": { "message": "Kies terugspeelspoed" },
-  "speedHint": { "message": "Die planduur sal dienooreenkomstig aangepas word." },
-  "confirmPlan": { "message": "Bevestig plan" },
-  "labelPlanMode": { "message": "Planmodus:" },
-  "labelDailyWatchTime": { "message": "Daaglikse kyktyd:" },
-  "labelPlaybackSpeed": { "message": "Terugspeelspoed:" },
-  "generatePlan": { "message": "Genereer plan" },
-  "yourWatchPlan": { "message": "Jou kykplan" },
-  "reset": { "message": "Herstel" },
-  "madeWith": { "message": "Gemaak met ❤️ deur" },
-  "goBack": { "message": "Gaan terug" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "Jou YouTube, beplan"
+  },
+  "myPlans": {
+    "message": "My planne"
+  },
+  "addNewPlan": {
+    "message": "Voeg nuwe plan by"
+  },
+  "playlistUrl": {
+    "message": "Speellys-URL"
+  },
+  "fetchPlaylist": {
+    "message": "Haal speellys"
+  },
+  "fetchingData": {
+    "message": "Besig om speellysdata te haal..."
+  },
+  "planGeneratedTitle": {
+    "message": "Plan suksesvol geskep"
+  },
+  "planGeneratedSub": {
+    "message": "Jou plan is nou aktief."
+  },
+  "closingAuto": {
+    "message": "Sluit outomaties..."
+  },
+  "playlistSummary": {
+    "message": "Speellys-opsomming"
+  },
+  "labelTitle": {
+    "message": "Titel:"
+  },
+  "labelVideos": {
+    "message": "Video's:"
+  },
+  "labelTotalDuration": {
+    "message": "Totale duur:"
+  },
+  "progress": {
+    "message": "Vordering"
+  },
+  "selectPlanMode": {
+    "message": "Kies planmodus"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "Video vir video"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "Kyk presies een video per dag. Geen verdeling nie."
+  },
+  "modeCustomTitle": {
+    "message": "Pasgemaakte skedule"
+  },
+  "modeCustomDesc": {
+    "message": "Stel 'n daaglikse kyktydkwota. Video's word verdeel."
+  },
+  "dailyWatchTime": {
+    "message": "Daaglikse kyktyd"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "Daaglikse kyktyd (minute)"
+  },
+  "next": {
+    "message": "Volgende"
+  },
+  "selectPlaybackSpeed": {
+    "message": "Kies terugspeelspoed"
+  },
+  "speedHint": {
+    "message": "Die planduur sal dienooreenkomstig aangepas word."
+  },
+  "confirmPlan": {
+    "message": "Bevestig plan"
+  },
+  "labelPlanMode": {
+    "message": "Planmodus:"
+  },
+  "labelDailyWatchTime": {
+    "message": "Daaglikse kyktyd:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "Terugspeelspoed:"
+  },
+  "generatePlan": {
+    "message": "Genereer plan"
+  },
+  "yourWatchPlan": {
+    "message": "Jou kykplan"
+  },
+  "reset": {
+    "message": "Herstel"
+  },
+  "madeWith": {
+    "message": "Gemaak met ❤️ deur"
+  },
+  "goBack": {
+    "message": "Gaan terug"
+  }
 }

@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "Omdann enhver YouTube-playliste til en struktureret læringsplan med tidsestimater, fremskridtssporing og afspilningshastighedskontrol." },
-  "subtitle": { "message": "Din YouTube, planlagt" },
-  "myPlans": { "message": "Mine planer" },
-  "addNewPlan": { "message": "Tilføj ny plan" },
-  "playlistUrl": { "message": "Playliste-URL" },
-  "fetchPlaylist": { "message": "Hent playliste" },
-  "fetchingData": { "message": "Henter playlistedata..." },
-  "planGeneratedTitle": { "message": "Plan oprettet" },
-  "planGeneratedSub": { "message": "Din plan er nu aktiv." },
-  "closingAuto": { "message": "Lukker automatisk..." },
-  "playlistSummary": { "message": "Playlisteoversigt" },
-  "labelTitle": { "message": "Titel:" },
-  "labelVideos": { "message": "Videoer:" },
-  "labelTotalDuration": { "message": "Samlet varighed:" },
-  "progress": { "message": "Fremskridt" },
-  "selectPlanMode": { "message": "Vælg plantilstand" },
-  "modeVideoByVideoTitle": { "message": "Video for video" },
-  "modeVideoByVideoDesc": { "message": "Se præcis én video om dagen. Ingen opdeling." },
-  "modeCustomTitle": { "message": "Brugerdefineret tidsplan" },
-  "modeCustomDesc": { "message": "Angiv en daglig sekvota. Videoer opdeles." },
-  "dailyWatchTime": { "message": "Daglig setid" },
-  "dailyWatchTimeLabel": { "message": "Daglig setid (minutter)" },
-  "next": { "message": "Næste" },
-  "selectPlaybackSpeed": { "message": "Vælg afspilningshastighed" },
-  "speedHint": { "message": "Planens varighed justeres tilsvarende." },
-  "confirmPlan": { "message": "Bekræft plan" },
-  "labelPlanMode": { "message": "Plantilstand:" },
-  "labelDailyWatchTime": { "message": "Daglig setid:" },
-  "labelPlaybackSpeed": { "message": "Afspilningshastighed:" },
-  "generatePlan": { "message": "Opret plan" },
-  "yourWatchPlan": { "message": "Din seplan" },
-  "reset": { "message": "Nulstil" },
-  "madeWith": { "message": "Lavet med ❤️ af" },
-  "goBack": { "message": "Tilbage" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "Din YouTube, planlagt"
+  },
+  "myPlans": {
+    "message": "Mine planer"
+  },
+  "addNewPlan": {
+    "message": "Tilføj ny plan"
+  },
+  "playlistUrl": {
+    "message": "Playliste-URL"
+  },
+  "fetchPlaylist": {
+    "message": "Hent playliste"
+  },
+  "fetchingData": {
+    "message": "Henter playlistedata..."
+  },
+  "planGeneratedTitle": {
+    "message": "Plan oprettet"
+  },
+  "planGeneratedSub": {
+    "message": "Din plan er nu aktiv."
+  },
+  "closingAuto": {
+    "message": "Lukker automatisk..."
+  },
+  "playlistSummary": {
+    "message": "Playlisteoversigt"
+  },
+  "labelTitle": {
+    "message": "Titel:"
+  },
+  "labelVideos": {
+    "message": "Videoer:"
+  },
+  "labelTotalDuration": {
+    "message": "Samlet varighed:"
+  },
+  "progress": {
+    "message": "Fremskridt"
+  },
+  "selectPlanMode": {
+    "message": "Vælg plantilstand"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "Video for video"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "Se præcis én video om dagen. Ingen opdeling."
+  },
+  "modeCustomTitle": {
+    "message": "Brugerdefineret tidsplan"
+  },
+  "modeCustomDesc": {
+    "message": "Angiv en daglig sekvota. Videoer opdeles."
+  },
+  "dailyWatchTime": {
+    "message": "Daglig setid"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "Daglig setid (minutter)"
+  },
+  "next": {
+    "message": "Næste"
+  },
+  "selectPlaybackSpeed": {
+    "message": "Vælg afspilningshastighed"
+  },
+  "speedHint": {
+    "message": "Planens varighed justeres tilsvarende."
+  },
+  "confirmPlan": {
+    "message": "Bekræft plan"
+  },
+  "labelPlanMode": {
+    "message": "Plantilstand:"
+  },
+  "labelDailyWatchTime": {
+    "message": "Daglig setid:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "Afspilningshastighed:"
+  },
+  "generatePlan": {
+    "message": "Opret plan"
+  },
+  "yourWatchPlan": {
+    "message": "Din seplan"
+  },
+  "reset": {
+    "message": "Nulstil"
+  },
+  "madeWith": {
+    "message": "Lavet med ❤️ af"
+  },
+  "goBack": {
+    "message": "Tilbage"
+  }
 }

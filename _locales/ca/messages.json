@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "Transforma qualsevol llista de reproducció de YouTube en un pla d'aprenentatge estructurat amb estimacions de temps, seguiment del progrés i control de la velocitat de reproducció." },
-  "subtitle": { "message": "El teu YouTube, planificat" },
-  "myPlans": { "message": "Els meus plans" },
-  "addNewPlan": { "message": "Afegir nou pla" },
-  "playlistUrl": { "message": "URL de la llista" },
-  "fetchPlaylist": { "message": "Obtenir llista" },
-  "fetchingData": { "message": "Obtenint dades de la llista..." },
-  "planGeneratedTitle": { "message": "Pla generat amb èxit" },
-  "planGeneratedSub": { "message": "El teu pla és ara actiu." },
-  "closingAuto": { "message": "Tancant automàticament..." },
-  "playlistSummary": { "message": "Resum de la llista" },
-  "labelTitle": { "message": "Títol:" },
-  "labelVideos": { "message": "Vídeos:" },
-  "labelTotalDuration": { "message": "Durada total:" },
-  "progress": { "message": "Progrés" },
-  "selectPlanMode": { "message": "Selecciona mode del pla" },
-  "modeVideoByVideoTitle": { "message": "Vídeo a vídeo" },
-  "modeVideoByVideoDesc": { "message": "Mira exactament un vídeo al dia. Sense divisió." },
-  "modeCustomTitle": { "message": "Horari personalitzat" },
-  "modeCustomDesc": { "message": "Estableix una quota de temps diari. Els vídeos es divideixen." },
-  "dailyWatchTime": { "message": "Temps de visualització diari" },
-  "dailyWatchTimeLabel": { "message": "Temps de visualització diari (minuts)" },
-  "next": { "message": "Següent" },
-  "selectPlaybackSpeed": { "message": "Selecciona velocitat de reproducció" },
-  "speedHint": { "message": "La durada del pla s'ajustarà en conseqüència." },
-  "confirmPlan": { "message": "Confirmar pla" },
-  "labelPlanMode": { "message": "Mode del pla:" },
-  "labelDailyWatchTime": { "message": "Temps diari:" },
-  "labelPlaybackSpeed": { "message": "Velocitat de reproducció:" },
-  "generatePlan": { "message": "Generar pla" },
-  "yourWatchPlan": { "message": "El teu pla de visualització" },
-  "reset": { "message": "Reiniciar" },
-  "madeWith": { "message": "Fet amb ❤️ per" },
-  "goBack": { "message": "Tornar" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "El teu YouTube, planificat"
+  },
+  "myPlans": {
+    "message": "Els meus plans"
+  },
+  "addNewPlan": {
+    "message": "Afegir nou pla"
+  },
+  "playlistUrl": {
+    "message": "URL de la llista"
+  },
+  "fetchPlaylist": {
+    "message": "Obtenir llista"
+  },
+  "fetchingData": {
+    "message": "Obtenint dades de la llista..."
+  },
+  "planGeneratedTitle": {
+    "message": "Pla generat amb èxit"
+  },
+  "planGeneratedSub": {
+    "message": "El teu pla és ara actiu."
+  },
+  "closingAuto": {
+    "message": "Tancant automàticament..."
+  },
+  "playlistSummary": {
+    "message": "Resum de la llista"
+  },
+  "labelTitle": {
+    "message": "Títol:"
+  },
+  "labelVideos": {
+    "message": "Vídeos:"
+  },
+  "labelTotalDuration": {
+    "message": "Durada total:"
+  },
+  "progress": {
+    "message": "Progrés"
+  },
+  "selectPlanMode": {
+    "message": "Selecciona mode del pla"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "Vídeo a vídeo"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "Mira exactament un vídeo al dia. Sense divisió."
+  },
+  "modeCustomTitle": {
+    "message": "Horari personalitzat"
+  },
+  "modeCustomDesc": {
+    "message": "Estableix una quota de temps diari. Els vídeos es divideixen."
+  },
+  "dailyWatchTime": {
+    "message": "Temps de visualització diari"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "Temps de visualització diari (minuts)"
+  },
+  "next": {
+    "message": "Següent"
+  },
+  "selectPlaybackSpeed": {
+    "message": "Selecciona velocitat de reproducció"
+  },
+  "speedHint": {
+    "message": "La durada del pla s'ajustarà en conseqüència."
+  },
+  "confirmPlan": {
+    "message": "Confirmar pla"
+  },
+  "labelPlanMode": {
+    "message": "Mode del pla:"
+  },
+  "labelDailyWatchTime": {
+    "message": "Temps diari:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "Velocitat de reproducció:"
+  },
+  "generatePlan": {
+    "message": "Generar pla"
+  },
+  "yourWatchPlan": {
+    "message": "El teu pla de visualització"
+  },
+  "reset": {
+    "message": "Reiniciar"
+  },
+  "madeWith": {
+    "message": "Fet amb ❤️ per"
+  },
+  "goBack": {
+    "message": "Tornar"
+  }
 }

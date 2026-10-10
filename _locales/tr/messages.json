@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "Herhangi bir YouTube oynatma listesini zaman tahminleri, ilerleme takibi ve oynatma hızı kontrolü ile yapılandırılmış bir öğrenme planına dönüştürün." },
-  "subtitle": { "message": "YouTube'un, planlanmış" },
-  "myPlans": { "message": "Planlarım" },
-  "addNewPlan": { "message": "Yeni plan ekle" },
-  "playlistUrl": { "message": "Oynatma listesi URL'si" },
-  "fetchPlaylist": { "message": "Oynatma listesini getir" },
-  "fetchingData": { "message": "Oynatma listesi verileri getiriliyor..." },
-  "planGeneratedTitle": { "message": "Plan başarıyla oluşturuldu" },
-  "planGeneratedSub": { "message": "Planınız artık aktif." },
-  "closingAuto": { "message": "Otomatik olarak kapanıyor..." },
-  "playlistSummary": { "message": "Oynatma listesi özeti" },
-  "labelTitle": { "message": "Başlık:" },
-  "labelVideos": { "message": "Videolar:" },
-  "labelTotalDuration": { "message": "Toplam süre:" },
-  "progress": { "message": "İlerleme" },
-  "selectPlanMode": { "message": "Plan modunu seçin" },
-  "modeVideoByVideoTitle": { "message": "Video video" },
-  "modeVideoByVideoDesc": { "message": "Günde tam olarak bir video izleyin. Bölme yok." },
-  "modeCustomTitle": { "message": "Özel zamanlama" },
-  "modeCustomDesc": { "message": "Günlük izleme süresi kotası belirleyin. Videolar bölünür." },
-  "dailyWatchTime": { "message": "Günlük izleme süresi" },
-  "dailyWatchTimeLabel": { "message": "Günlük izleme süresi (dakika)" },
-  "next": { "message": "İleri" },
-  "selectPlaybackSpeed": { "message": "Oynatma hızını seçin" },
-  "speedHint": { "message": "Plan süreniz buna göre ayarlanacaktır." },
-  "confirmPlan": { "message": "Planı onayla" },
-  "labelPlanMode": { "message": "Plan modu:" },
-  "labelDailyWatchTime": { "message": "Günlük izleme süresi:" },
-  "labelPlaybackSpeed": { "message": "Oynatma hızı:" },
-  "generatePlan": { "message": "Plan oluştur" },
-  "yourWatchPlan": { "message": "İzleme planınız" },
-  "reset": { "message": "Sıfırla" },
-  "madeWith": { "message": "❤️ ile yapıldı" },
-  "goBack": { "message": "Geri dön" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "YouTube'un, planlanmış"
+  },
+  "myPlans": {
+    "message": "Planlarım"
+  },
+  "addNewPlan": {
+    "message": "Yeni plan ekle"
+  },
+  "playlistUrl": {
+    "message": "Oynatma listesi URL'si"
+  },
+  "fetchPlaylist": {
+    "message": "Oynatma listesini getir"
+  },
+  "fetchingData": {
+    "message": "Oynatma listesi verileri getiriliyor..."
+  },
+  "planGeneratedTitle": {
+    "message": "Plan başarıyla oluşturuldu"
+  },
+  "planGeneratedSub": {
+    "message": "Planınız artık aktif."
+  },
+  "closingAuto": {
+    "message": "Otomatik olarak kapanıyor..."
+  },
+  "playlistSummary": {
+    "message": "Oynatma listesi özeti"
+  },
+  "labelTitle": {
+    "message": "Başlık:"
+  },
+  "labelVideos": {
+    "message": "Videolar:"
+  },
+  "labelTotalDuration": {
+    "message": "Toplam süre:"
+  },
+  "progress": {
+    "message": "İlerleme"
+  },
+  "selectPlanMode": {
+    "message": "Plan modunu seçin"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "Video video"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "Günde tam olarak bir video izleyin. Bölme yok."
+  },
+  "modeCustomTitle": {
+    "message": "Özel zamanlama"
+  },
+  "modeCustomDesc": {
+    "message": "Günlük izleme süresi kotası belirleyin. Videolar bölünür."
+  },
+  "dailyWatchTime": {
+    "message": "Günlük izleme süresi"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "Günlük izleme süresi (dakika)"
+  },
+  "next": {
+    "message": "İleri"
+  },
+  "selectPlaybackSpeed": {
+    "message": "Oynatma hızını seçin"
+  },
+  "speedHint": {
+    "message": "Plan süreniz buna göre ayarlanacaktır."
+  },
+  "confirmPlan": {
+    "message": "Planı onayla"
+  },
+  "labelPlanMode": {
+    "message": "Plan modu:"
+  },
+  "labelDailyWatchTime": {
+    "message": "Günlük izleme süresi:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "Oynatma hızı:"
+  },
+  "generatePlan": {
+    "message": "Plan oluştur"
+  },
+  "yourWatchPlan": {
+    "message": "İzleme planınız"
+  },
+  "reset": {
+    "message": "Sıfırla"
+  },
+  "madeWith": {
+    "message": "❤️ ile yapıldı"
+  },
+  "goBack": {
+    "message": "Geri dön"
+  }
 }

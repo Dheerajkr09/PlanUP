@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "Превърнете всеки плейлист в YouTube в структуриран учебен план с оценки на времето, проследяване на напредъка и контрол на скоростта на възпроизвеждане." },
-  "subtitle": { "message": "Вашият YouTube, планиран" },
-  "myPlans": { "message": "Моите планове" },
-  "addNewPlan": { "message": "Добавяне на нов план" },
-  "playlistUrl": { "message": "URL на плейлист" },
-  "fetchPlaylist": { "message": "Зареждане на плейлист" },
-  "fetchingData": { "message": "Зареждане на данни..." },
-  "planGeneratedTitle": { "message": "Планът е създаден успешно" },
-  "planGeneratedSub": { "message": "Планът ви е активен." },
-  "closingAuto": { "message": "Автоматично затваряне..." },
-  "playlistSummary": { "message": "Обобщение на плейлист" },
-  "labelTitle": { "message": "Заглавие:" },
-  "labelVideos": { "message": "Видеа:" },
-  "labelTotalDuration": { "message": "Обща продължителност:" },
-  "progress": { "message": "Напредък" },
-  "selectPlanMode": { "message": "Изберете режим на план" },
-  "modeVideoByVideoTitle": { "message": "Видео по видео" },
-  "modeVideoByVideoDesc": { "message": "Гледайте точно едно видео на ден. Без разделяне." },
-  "modeCustomTitle": { "message": "Персонализиран график" },
-  "modeCustomDesc": { "message": "Задайте дневна квота за гледане. Видеата се разделят." },
-  "dailyWatchTime": { "message": "Дневно време за гледане" },
-  "dailyWatchTimeLabel": { "message": "Дневно време за гледане (минути)" },
-  "next": { "message": "Напред" },
-  "selectPlaybackSpeed": { "message": "Изберете скорост на възпроизвеждане" },
-  "speedHint": { "message": "Продължителността на плана ще се коригира съответно." },
-  "confirmPlan": { "message": "Потвърдете плана" },
-  "labelPlanMode": { "message": "Режим на план:" },
-  "labelDailyWatchTime": { "message": "Дневно време:" },
-  "labelPlaybackSpeed": { "message": "Скорост на възпроизвеждане:" },
-  "generatePlan": { "message": "Създаване на план" },
-  "yourWatchPlan": { "message": "Вашият план за гледане" },
-  "reset": { "message": "Нулиране" },
-  "madeWith": { "message": "Направено с ❤️ от" },
-  "goBack": { "message": "Назад" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "Вашият YouTube, планиран"
+  },
+  "myPlans": {
+    "message": "Моите планове"
+  },
+  "addNewPlan": {
+    "message": "Добавяне на нов план"
+  },
+  "playlistUrl": {
+    "message": "URL на плейлист"
+  },
+  "fetchPlaylist": {
+    "message": "Зареждане на плейлист"
+  },
+  "fetchingData": {
+    "message": "Зареждане на данни..."
+  },
+  "planGeneratedTitle": {
+    "message": "Планът е създаден успешно"
+  },
+  "planGeneratedSub": {
+    "message": "Планът ви е активен."
+  },
+  "closingAuto": {
+    "message": "Автоматично затваряне..."
+  },
+  "playlistSummary": {
+    "message": "Обобщение на плейлист"
+  },
+  "labelTitle": {
+    "message": "Заглавие:"
+  },
+  "labelVideos": {
+    "message": "Видеа:"
+  },
+  "labelTotalDuration": {
+    "message": "Обща продължителност:"
+  },
+  "progress": {
+    "message": "Напредък"
+  },
+  "selectPlanMode": {
+    "message": "Изберете режим на план"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "Видео по видео"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "Гледайте точно едно видео на ден. Без разделяне."
+  },
+  "modeCustomTitle": {
+    "message": "Персонализиран график"
+  },
+  "modeCustomDesc": {
+    "message": "Задайте дневна квота за гледане. Видеата се разделят."
+  },
+  "dailyWatchTime": {
+    "message": "Дневно време за гледане"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "Дневно време за гледане (минути)"
+  },
+  "next": {
+    "message": "Напред"
+  },
+  "selectPlaybackSpeed": {
+    "message": "Изберете скорост на възпроизвеждане"
+  },
+  "speedHint": {
+    "message": "Продължителността на плана ще се коригира съответно."
+  },
+  "confirmPlan": {
+    "message": "Потвърдете плана"
+  },
+  "labelPlanMode": {
+    "message": "Режим на план:"
+  },
+  "labelDailyWatchTime": {
+    "message": "Дневно време:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "Скорост на възпроизвеждане:"
+  },
+  "generatePlan": {
+    "message": "Създаване на план"
+  },
+  "yourWatchPlan": {
+    "message": "Вашият план за гледане"
+  },
+  "reset": {
+    "message": "Нулиране"
+  },
+  "madeWith": {
+    "message": "Направено с ❤️ от"
+  },
+  "goBack": {
+    "message": "Назад"
+  }
 }

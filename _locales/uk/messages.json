@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "Перетворіть будь-який плейлист YouTube на структурований навчальний план з оцінками часу, відстеженням прогресу та керуванням швидкістю відтворення." },
-  "subtitle": { "message": "Ваш YouTube, сплановано" },
-  "myPlans": { "message": "Мої плани" },
-  "addNewPlan": { "message": "Додати новий план" },
-  "playlistUrl": { "message": "URL плейлиста" },
-  "fetchPlaylist": { "message": "Завантажити плейлист" },
-  "fetchingData": { "message": "Завантаження даних плейлиста..." },
-  "planGeneratedTitle": { "message": "План успішно створено" },
-  "planGeneratedSub": { "message": "Ваш план тепер активний." },
-  "closingAuto": { "message": "Автоматичне закриття..." },
-  "playlistSummary": { "message": "Підсумок плейлиста" },
-  "labelTitle": { "message": "Назва:" },
-  "labelVideos": { "message": "Відео:" },
-  "labelTotalDuration": { "message": "Загальна тривалість:" },
-  "progress": { "message": "Прогрес" },
-  "selectPlanMode": { "message": "Обрати режим плану" },
-  "modeVideoByVideoTitle": { "message": "Відео за відео" },
-  "modeVideoByVideoDesc": { "message": "Дивіться рівно одне відео на день. Без поділу." },
-  "modeCustomTitle": { "message": "Індивідуальний розклад" },
-  "modeCustomDesc": { "message": "Встановіть денну квоту перегляду. Відео розділяються." },
-  "dailyWatchTime": { "message": "Щоденний час перегляду" },
-  "dailyWatchTimeLabel": { "message": "Щоденний час перегляду (хвилини)" },
-  "next": { "message": "Далі" },
-  "selectPlaybackSpeed": { "message": "Обрати швидкість відтворення" },
-  "speedHint": { "message": "Тривалість плану буде скоригована відповідно." },
-  "confirmPlan": { "message": "Підтвердити план" },
-  "labelPlanMode": { "message": "Режим плану:" },
-  "labelDailyWatchTime": { "message": "Щоденний час:" },
-  "labelPlaybackSpeed": { "message": "Швидкість відтворення:" },
-  "generatePlan": { "message": "Створити план" },
-  "yourWatchPlan": { "message": "Ваш план перегляду" },
-  "reset": { "message": "Скинути" },
-  "madeWith": { "message": "Зроблено з ❤️" },
-  "goBack": { "message": "Назад" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "Ваш YouTube, сплановано"
+  },
+  "myPlans": {
+    "message": "Мої плани"
+  },
+  "addNewPlan": {
+    "message": "Додати новий план"
+  },
+  "playlistUrl": {
+    "message": "URL плейлиста"
+  },
+  "fetchPlaylist": {
+    "message": "Завантажити плейлист"
+  },
+  "fetchingData": {
+    "message": "Завантаження даних плейлиста..."
+  },
+  "planGeneratedTitle": {
+    "message": "План успішно створено"
+  },
+  "planGeneratedSub": {
+    "message": "Ваш план тепер активний."
+  },
+  "closingAuto": {
+    "message": "Автоматичне закриття..."
+  },
+  "playlistSummary": {
+    "message": "Підсумок плейлиста"
+  },
+  "labelTitle": {
+    "message": "Назва:"
+  },
+  "labelVideos": {
+    "message": "Відео:"
+  },
+  "labelTotalDuration": {
+    "message": "Загальна тривалість:"
+  },
+  "progress": {
+    "message": "Прогрес"
+  },
+  "selectPlanMode": {
+    "message": "Обрати режим плану"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "Відео за відео"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "Дивіться рівно одне відео на день. Без поділу."
+  },
+  "modeCustomTitle": {
+    "message": "Індивідуальний розклад"
+  },
+  "modeCustomDesc": {
+    "message": "Встановіть денну квоту перегляду. Відео розділяються."
+  },
+  "dailyWatchTime": {
+    "message": "Щоденний час перегляду"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "Щоденний час перегляду (хвилини)"
+  },
+  "next": {
+    "message": "Далі"
+  },
+  "selectPlaybackSpeed": {
+    "message": "Обрати швидкість відтворення"
+  },
+  "speedHint": {
+    "message": "Тривалість плану буде скоригована відповідно."
+  },
+  "confirmPlan": {
+    "message": "Підтвердити план"
+  },
+  "labelPlanMode": {
+    "message": "Режим плану:"
+  },
+  "labelDailyWatchTime": {
+    "message": "Щоденний час:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "Швидкість відтворення:"
+  },
+  "generatePlan": {
+    "message": "Створити план"
+  },
+  "yourWatchPlan": {
+    "message": "Ваш план перегляду"
+  },
+  "reset": {
+    "message": "Скинути"
+  },
+  "madeWith": {
+    "message": "Зроблено з ❤️"
+  },
+  "goBack": {
+    "message": "Назад"
+  }
 }

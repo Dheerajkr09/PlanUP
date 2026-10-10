@@ -792,6 +792,14 @@ async function handleFetchPlaylist() {
   // Extract playlist ID from URL
   const playlistId = extractPlaylistId(url);
   if (!playlistId) {
+    // Check if it might be a single video URL
+    const isVideo = url.includes('youtu.be/') || url.includes('?v=') || url.includes('&v=') || url.includes('/live/') || url.includes('/shorts/');
+    if (isVideo) {
+      // It's a video, pass it to one-shot handler
+      elements.oneShotUrlInput.value = url;
+      return handleOneShotGenerate();
+    }
+    
     showError('Invalid playlist URL. Use format: https://www.youtube.com/playlist?list=...');
     return;
   }
@@ -867,6 +875,10 @@ async function handleOneShotGenerate() {
          videoId = url.split('youtu.be/')[1].split('?')[0];
       } else if (urlObj.searchParams.has('v')) {
          videoId = urlObj.searchParams.get('v');
+      } else if (url.includes('/live/')) {
+         videoId = url.split('/live/')[1].split('?')[0];
+      } else if (url.includes('/shorts/')) {
+         videoId = url.split('/shorts/')[1].split('?')[0];
       }
     } catch (e) {
       console.warn("Could not parse URL for video ID:", e);

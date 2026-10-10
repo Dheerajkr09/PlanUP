@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "გადააქციეთ ნებისმიერი YouTube პლეილისტი სტრუქტურირებულ სასწავლო გეგმად დროის შეფასებებით, პროგრესის თვალყურის დევნებით და დაკვრის სიჩქარის კონტროლით." },
-  "subtitle": { "message": "შენი YouTube, დაგეგმილი" },
-  "myPlans": { "message": "ჩემი გეგმები" },
-  "addNewPlan": { "message": "ახალი გეგმის დამატება" },
-  "playlistUrl": { "message": "პლეილისტის URL" },
-  "fetchPlaylist": { "message": "პლეილისტის ჩატვირთვა" },
-  "fetchingData": { "message": "პლეილისტის მონაცემები იტვირთება..." },
-  "planGeneratedTitle": { "message": "გეგმა წარმატებით შეიქმნა" },
-  "planGeneratedSub": { "message": "თქვენი გეგმა ახლა აქტიურია." },
-  "closingAuto": { "message": "ავტომატურად იხურება..." },
-  "playlistSummary": { "message": "პლეილისტის შეჯამება" },
-  "labelTitle": { "message": "სათაური:" },
-  "labelVideos": { "message": "ვიდეოები:" },
-  "labelTotalDuration": { "message": "ჯამური ხანგრძლივობა:" },
-  "progress": { "message": "პროგრესი" },
-  "selectPlanMode": { "message": "აირჩიეთ გეგმის რეჟიმი" },
-  "modeVideoByVideoTitle": { "message": "ვიდეო ვიდეოს მიხედვით" },
-  "modeVideoByVideoDesc": { "message": "დღეში ზუსტად ერთი ვიდეოს ყურება. გაყოფის გარეშე." },
-  "modeCustomTitle": { "message": "მორგებული გრაფიკი" },
-  "modeCustomDesc": { "message": "დააყენეთ ყოველდღიური ყურების კვოტა. ვიდეოები იყოფა." },
-  "dailyWatchTime": { "message": "ყოველდღიური ყურების დრო" },
-  "dailyWatchTimeLabel": { "message": "ყოველდღიური ყურების დრო (წუთი)" },
-  "next": { "message": "შემდეგი" },
-  "selectPlaybackSpeed": { "message": "აირჩიეთ დაკვრის სიჩქარე" },
-  "speedHint": { "message": "გეგმის ხანგრძლივობა შესაბამისად შეიცვლება." },
-  "confirmPlan": { "message": "გეგმის დადასტურება" },
-  "labelPlanMode": { "message": "გეგმის რეჟიმი:" },
-  "labelDailyWatchTime": { "message": "ყოველდღიური დრო:" },
-  "labelPlaybackSpeed": { "message": "დაკვრის სიჩქარე:" },
-  "generatePlan": { "message": "გეგმის შექმნა" },
-  "yourWatchPlan": { "message": "თქვენი ყურების გეგმა" },
-  "reset": { "message": "გადატვირთვა" },
-  "madeWith": { "message": "შექმნილია ❤️-ით" },
-  "goBack": { "message": "უკან" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "შენი YouTube, დაგეგმილი"
+  },
+  "myPlans": {
+    "message": "ჩემი გეგმები"
+  },
+  "addNewPlan": {
+    "message": "ახალი გეგმის დამატება"
+  },
+  "playlistUrl": {
+    "message": "პლეილისტის URL"
+  },
+  "fetchPlaylist": {
+    "message": "პლეილისტის ჩატვირთვა"
+  },
+  "fetchingData": {
+    "message": "პლეილისტის მონაცემები იტვირთება..."
+  },
+  "planGeneratedTitle": {
+    "message": "გეგმა წარმატებით შეიქმნა"
+  },
+  "planGeneratedSub": {
+    "message": "თქვენი გეგმა ახლა აქტიურია."
+  },
+  "closingAuto": {
+    "message": "ავტომატურად იხურება..."
+  },
+  "playlistSummary": {
+    "message": "პლეილისტის შეჯამება"
+  },
+  "labelTitle": {
+    "message": "სათაური:"
+  },
+  "labelVideos": {
+    "message": "ვიდეოები:"
+  },
+  "labelTotalDuration": {
+    "message": "ჯამური ხანგრძლივობა:"
+  },
+  "progress": {
+    "message": "პროგრესი"
+  },
+  "selectPlanMode": {
+    "message": "აირჩიეთ გეგმის რეჟიმი"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "ვიდეო ვიდეოს მიხედვით"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "დღეში ზუსტად ერთი ვიდეოს ყურება. გაყოფის გარეშე."
+  },
+  "modeCustomTitle": {
+    "message": "მორგებული გრაფიკი"
+  },
+  "modeCustomDesc": {
+    "message": "დააყენეთ ყოველდღიური ყურების კვოტა. ვიდეოები იყოფა."
+  },
+  "dailyWatchTime": {
+    "message": "ყოველდღიური ყურების დრო"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "ყოველდღიური ყურების დრო (წუთი)"
+  },
+  "next": {
+    "message": "შემდეგი"
+  },
+  "selectPlaybackSpeed": {
+    "message": "აირჩიეთ დაკვრის სიჩქარე"
+  },
+  "speedHint": {
+    "message": "გეგმის ხანგრძლივობა შესაბამისად შეიცვლება."
+  },
+  "confirmPlan": {
+    "message": "გეგმის დადასტურება"
+  },
+  "labelPlanMode": {
+    "message": "გეგმის რეჟიმი:"
+  },
+  "labelDailyWatchTime": {
+    "message": "ყოველდღიური დრო:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "დაკვრის სიჩქარე:"
+  },
+  "generatePlan": {
+    "message": "გეგმის შექმნა"
+  },
+  "yourWatchPlan": {
+    "message": "თქვენი ყურების გეგმა"
+  },
+  "reset": {
+    "message": "გადატვირთვა"
+  },
+  "madeWith": {
+    "message": "შექმნილია ❤️-ით"
+  },
+  "goBack": {
+    "message": "უკან"
+  }
 }

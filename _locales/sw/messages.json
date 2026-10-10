@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "Badilisha orodha yoyote ya kucheza ya YouTube kuwa mpango wa kujifunza wenye muundo na makadirio ya muda, ufuatiliaji wa maendeleo na udhibiti wa kasi ya kucheza." },
-  "subtitle": { "message": "YouTube yako, imepangwa" },
-  "myPlans": { "message": "Mipango yangu" },
-  "addNewPlan": { "message": "Ongeza mpango mpya" },
-  "playlistUrl": { "message": "URL ya orodha ya kucheza" },
-  "fetchPlaylist": { "message": "Pata orodha" },
-  "fetchingData": { "message": "Inapata data ya orodha..." },
-  "planGeneratedTitle": { "message": "Mpango umeundwa kwa mafanikio" },
-  "planGeneratedSub": { "message": "Mpango wako sasa umetumika." },
-  "closingAuto": { "message": "Inafunga kiotomatiki..." },
-  "playlistSummary": { "message": "Muhtasari wa orodha" },
-  "labelTitle": { "message": "Kichwa:" },
-  "labelVideos": { "message": "Video:" },
-  "labelTotalDuration": { "message": "Muda wa jumla:" },
-  "progress": { "message": "Maendeleo" },
-  "selectPlanMode": { "message": "Chagua hali ya mpango" },
-  "modeVideoByVideoTitle": { "message": "Video kwa video" },
-  "modeVideoByVideoDesc": { "message": "Tazama video moja kwa siku. Bila kugawanya." },
-  "modeCustomTitle": { "message": "Ratiba maalum" },
-  "modeCustomDesc": { "message": "Weka kiwango cha kutazama kwa siku. Video zinagawanywa." },
-  "dailyWatchTime": { "message": "Muda wa kutazama kwa siku" },
-  "dailyWatchTimeLabel": { "message": "Muda wa kutazama kwa siku (dakika)" },
-  "next": { "message": "Ifuatayo" },
-  "selectPlaybackSpeed": { "message": "Chagua kasi ya kucheza" },
-  "speedHint": { "message": "Muda wa mpango utarekebishwa ipasavyo." },
-  "confirmPlan": { "message": "Thibitisha mpango" },
-  "labelPlanMode": { "message": "Hali ya mpango:" },
-  "labelDailyWatchTime": { "message": "Muda wa kila siku:" },
-  "labelPlaybackSpeed": { "message": "Kasi ya kucheza:" },
-  "generatePlan": { "message": "Tengeneza mpango" },
-  "yourWatchPlan": { "message": "Mpango wako wa kutazama" },
-  "reset": { "message": "Weka upya" },
-  "madeWith": { "message": "Imetengenezwa kwa ❤️ na" },
-  "goBack": { "message": "Rudi nyuma" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "YouTube yako, imepangwa"
+  },
+  "myPlans": {
+    "message": "Mipango yangu"
+  },
+  "addNewPlan": {
+    "message": "Ongeza mpango mpya"
+  },
+  "playlistUrl": {
+    "message": "URL ya orodha ya kucheza"
+  },
+  "fetchPlaylist": {
+    "message": "Pata orodha"
+  },
+  "fetchingData": {
+    "message": "Inapata data ya orodha..."
+  },
+  "planGeneratedTitle": {
+    "message": "Mpango umeundwa kwa mafanikio"
+  },
+  "planGeneratedSub": {
+    "message": "Mpango wako sasa umetumika."
+  },
+  "closingAuto": {
+    "message": "Inafunga kiotomatiki..."
+  },
+  "playlistSummary": {
+    "message": "Muhtasari wa orodha"
+  },
+  "labelTitle": {
+    "message": "Kichwa:"
+  },
+  "labelVideos": {
+    "message": "Video:"
+  },
+  "labelTotalDuration": {
+    "message": "Muda wa jumla:"
+  },
+  "progress": {
+    "message": "Maendeleo"
+  },
+  "selectPlanMode": {
+    "message": "Chagua hali ya mpango"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "Video kwa video"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "Tazama video moja kwa siku. Bila kugawanya."
+  },
+  "modeCustomTitle": {
+    "message": "Ratiba maalum"
+  },
+  "modeCustomDesc": {
+    "message": "Weka kiwango cha kutazama kwa siku. Video zinagawanywa."
+  },
+  "dailyWatchTime": {
+    "message": "Muda wa kutazama kwa siku"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "Muda wa kutazama kwa siku (dakika)"
+  },
+  "next": {
+    "message": "Ifuatayo"
+  },
+  "selectPlaybackSpeed": {
+    "message": "Chagua kasi ya kucheza"
+  },
+  "speedHint": {
+    "message": "Muda wa mpango utarekebishwa ipasavyo."
+  },
+  "confirmPlan": {
+    "message": "Thibitisha mpango"
+  },
+  "labelPlanMode": {
+    "message": "Hali ya mpango:"
+  },
+  "labelDailyWatchTime": {
+    "message": "Muda wa kila siku:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "Kasi ya kucheza:"
+  },
+  "generatePlan": {
+    "message": "Tengeneza mpango"
+  },
+  "yourWatchPlan": {
+    "message": "Mpango wako wa kutazama"
+  },
+  "reset": {
+    "message": "Weka upya"
+  },
+  "madeWith": {
+    "message": "Imetengenezwa kwa ❤️ na"
+  },
+  "goBack": {
+    "message": "Rudi nyuma"
+  }
 }

@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "YouTubeのプレイリストを、時間見積もり、進捗トラッキング、再生速度コントロール付きの構造化された学習プランに変換します。" },
-  "subtitle": { "message": "あなたのYouTube、計画的に" },
-  "myPlans": { "message": "マイプラン" },
-  "addNewPlan": { "message": "新しいプランを追加" },
-  "playlistUrl": { "message": "プレイリストURL" },
-  "fetchPlaylist": { "message": "プレイリストを取得" },
-  "fetchingData": { "message": "プレイリストデータを取得中..." },
-  "planGeneratedTitle": { "message": "プラン作成完了" },
-  "planGeneratedSub": { "message": "プランが有効になりました。" },
-  "closingAuto": { "message": "自動的に閉じます..." },
-  "playlistSummary": { "message": "プレイリスト概要" },
-  "labelTitle": { "message": "タイトル：" },
-  "labelVideos": { "message": "動画数：" },
-  "labelTotalDuration": { "message": "合計時間：" },
-  "progress": { "message": "進捗" },
-  "selectPlanMode": { "message": "プランモードを選択" },
-  "modeVideoByVideoTitle": { "message": "動画ごと" },
-  "modeVideoByVideoDesc": { "message": "1日1本の動画を視聴。分割なし。" },
-  "modeCustomTitle": { "message": "カスタムスケジュール" },
-  "modeCustomDesc": { "message": "1日の視聴時間枠を設定。動画は分割されます。" },
-  "dailyWatchTime": { "message": "1日の視聴時間" },
-  "dailyWatchTimeLabel": { "message": "1日の視聴時間（分）" },
-  "next": { "message": "次へ" },
-  "selectPlaybackSpeed": { "message": "再生速度を選択" },
-  "speedHint": { "message": "プランの期間はそれに応じて調整されます。" },
-  "confirmPlan": { "message": "プランを確認" },
-  "labelPlanMode": { "message": "プランモード：" },
-  "labelDailyWatchTime": { "message": "1日の視聴時間：" },
-  "labelPlaybackSpeed": { "message": "再生速度：" },
-  "generatePlan": { "message": "プランを作成" },
-  "yourWatchPlan": { "message": "あなたの視聴プラン" },
-  "reset": { "message": "リセット" },
-  "madeWith": { "message": "❤️ を込めて作成" },
-  "goBack": { "message": "戻る" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "あなたのYouTube、計画的に"
+  },
+  "myPlans": {
+    "message": "マイプラン"
+  },
+  "addNewPlan": {
+    "message": "新しいプランを追加"
+  },
+  "playlistUrl": {
+    "message": "プレイリストURL"
+  },
+  "fetchPlaylist": {
+    "message": "プレイリストを取得"
+  },
+  "fetchingData": {
+    "message": "プレイリストデータを取得中..."
+  },
+  "planGeneratedTitle": {
+    "message": "プラン作成完了"
+  },
+  "planGeneratedSub": {
+    "message": "プランが有効になりました。"
+  },
+  "closingAuto": {
+    "message": "自動的に閉じます..."
+  },
+  "playlistSummary": {
+    "message": "プレイリスト概要"
+  },
+  "labelTitle": {
+    "message": "タイトル："
+  },
+  "labelVideos": {
+    "message": "動画数："
+  },
+  "labelTotalDuration": {
+    "message": "合計時間："
+  },
+  "progress": {
+    "message": "進捗"
+  },
+  "selectPlanMode": {
+    "message": "プランモードを選択"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "動画ごと"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "1日1本の動画を視聴。分割なし。"
+  },
+  "modeCustomTitle": {
+    "message": "カスタムスケジュール"
+  },
+  "modeCustomDesc": {
+    "message": "1日の視聴時間枠を設定。動画は分割されます。"
+  },
+  "dailyWatchTime": {
+    "message": "1日の視聴時間"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "1日の視聴時間（分）"
+  },
+  "next": {
+    "message": "次へ"
+  },
+  "selectPlaybackSpeed": {
+    "message": "再生速度を選択"
+  },
+  "speedHint": {
+    "message": "プランの期間はそれに応じて調整されます。"
+  },
+  "confirmPlan": {
+    "message": "プランを確認"
+  },
+  "labelPlanMode": {
+    "message": "プランモード："
+  },
+  "labelDailyWatchTime": {
+    "message": "1日の視聴時間："
+  },
+  "labelPlaybackSpeed": {
+    "message": "再生速度："
+  },
+  "generatePlan": {
+    "message": "プランを作成"
+  },
+  "yourWatchPlan": {
+    "message": "あなたの視聴プラン"
+  },
+  "reset": {
+    "message": "リセット"
+  },
+  "madeWith": {
+    "message": "❤️ を込めて作成"
+  },
+  "goBack": {
+    "message": "戻る"
+  }
 }

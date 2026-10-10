@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "Transform any YouTube playlist into a structured learning plan with time estimates, progress tracking, and playback speed control." },
-  "subtitle": { "message": "Your Youtube, planned" },
-  "myPlans": { "message": "My Plans" },
-  "addNewPlan": { "message": "Add New Plan" },
-  "playlistUrl": { "message": "Playlist URL" },
-  "fetchPlaylist": { "message": "Fetch Playlist" },
-  "fetchingData": { "message": "Fetching playlist data..." },
-  "planGeneratedTitle": { "message": "Plan Generated Successfully" },
-  "planGeneratedSub": { "message": "Your plan is now active." },
-  "closingAuto": { "message": "Closing automatically..." },
-  "playlistSummary": { "message": "Playlist Summary" },
-  "labelTitle": { "message": "Title:" },
-  "labelVideos": { "message": "Videos:" },
-  "labelTotalDuration": { "message": "Total Duration:" },
-  "progress": { "message": "Progress" },
-  "selectPlanMode": { "message": "Select Plan Mode" },
-  "modeVideoByVideoTitle": { "message": "Video by Video" },
-  "modeVideoByVideoDesc": { "message": "Watch exactly one video per day. No splitting." },
-  "modeCustomTitle": { "message": "Custom Schedule" },
-  "modeCustomDesc": { "message": "Set a daily watch time quota. Videos are split." },
-  "dailyWatchTime": { "message": "Daily Watch Time" },
-  "dailyWatchTimeLabel": { "message": "Daily Watch Time (minutes)" },
-  "next": { "message": "Next" },
-  "selectPlaybackSpeed": { "message": "Select Playback Speed" },
-  "speedHint": { "message": "Your plan duration will adjust accordingly." },
-  "confirmPlan": { "message": "Confirm Plan" },
-  "labelPlanMode": { "message": "Plan Mode:" },
-  "labelDailyWatchTime": { "message": "Daily Watch Time:" },
-  "labelPlaybackSpeed": { "message": "Playback Speed:" },
-  "generatePlan": { "message": "Generate Plan" },
-  "yourWatchPlan": { "message": "Your Watch Plan" },
-  "reset": { "message": "Reset" },
-  "madeWith": { "message": "Made with ❤️ by" },
-  "goBack": { "message": "Go back" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "Your Youtube, planned"
+  },
+  "myPlans": {
+    "message": "My Plans"
+  },
+  "addNewPlan": {
+    "message": "Add New Plan"
+  },
+  "playlistUrl": {
+    "message": "Playlist URL"
+  },
+  "fetchPlaylist": {
+    "message": "Fetch Playlist"
+  },
+  "fetchingData": {
+    "message": "Fetching playlist data..."
+  },
+  "planGeneratedTitle": {
+    "message": "Plan Generated Successfully"
+  },
+  "planGeneratedSub": {
+    "message": "Your plan is now active."
+  },
+  "closingAuto": {
+    "message": "Closing automatically..."
+  },
+  "playlistSummary": {
+    "message": "Playlist Summary"
+  },
+  "labelTitle": {
+    "message": "Title:"
+  },
+  "labelVideos": {
+    "message": "Videos:"
+  },
+  "labelTotalDuration": {
+    "message": "Total Duration:"
+  },
+  "progress": {
+    "message": "Progress"
+  },
+  "selectPlanMode": {
+    "message": "Select Plan Mode"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "Video by Video"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "Watch exactly one video per day. No splitting."
+  },
+  "modeCustomTitle": {
+    "message": "Custom Schedule"
+  },
+  "modeCustomDesc": {
+    "message": "Set a daily watch time quota. Videos are split."
+  },
+  "dailyWatchTime": {
+    "message": "Daily Watch Time"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "Daily Watch Time (minutes)"
+  },
+  "next": {
+    "message": "Next"
+  },
+  "selectPlaybackSpeed": {
+    "message": "Select Playback Speed"
+  },
+  "speedHint": {
+    "message": "Your plan duration will adjust accordingly."
+  },
+  "confirmPlan": {
+    "message": "Confirm Plan"
+  },
+  "labelPlanMode": {
+    "message": "Plan Mode:"
+  },
+  "labelDailyWatchTime": {
+    "message": "Daily Watch Time:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "Playback Speed:"
+  },
+  "generatePlan": {
+    "message": "Generate Plan"
+  },
+  "yourWatchPlan": {
+    "message": "Your Watch Plan"
+  },
+  "reset": {
+    "message": "Reset"
+  },
+  "madeWith": {
+    "message": "Made with ❤️ by"
+  },
+  "goBack": {
+    "message": "Go back"
+  }
 }

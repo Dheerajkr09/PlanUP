@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "Alakítson át bármely YouTube-lejátszási listát strukturált tanulási tervvé időbecslésekkel, haladáskövetéssel és lejátszási sebesség szabályozással." },
-  "subtitle": { "message": "A YouTube-od, megtervezve" },
-  "myPlans": { "message": "Terveim" },
-  "addNewPlan": { "message": "Új terv hozzáadása" },
-  "playlistUrl": { "message": "Lejátszási lista URL" },
-  "fetchPlaylist": { "message": "Lista betöltése" },
-  "fetchingData": { "message": "Lejátszási lista betöltése..." },
-  "planGeneratedTitle": { "message": "Terv sikeresen létrehozva" },
-  "planGeneratedSub": { "message": "A terved most aktív." },
-  "closingAuto": { "message": "Automatikus bezárás..." },
-  "playlistSummary": { "message": "Lista összefoglalás" },
-  "labelTitle": { "message": "Cím:" },
-  "labelVideos": { "message": "Videók:" },
-  "labelTotalDuration": { "message": "Teljes időtartam:" },
-  "progress": { "message": "Haladás" },
-  "selectPlanMode": { "message": "Terv mód kiválasztása" },
-  "modeVideoByVideoTitle": { "message": "Videóról videóra" },
-  "modeVideoByVideoDesc": { "message": "Naponta pontosan egy videót nézz. Nincs felosztás." },
-  "modeCustomTitle": { "message": "Egyéni ütemezés" },
-  "modeCustomDesc": { "message": "Napi nézési idő kvóta beállítása. A videók felosztásra kerülnek." },
-  "dailyWatchTime": { "message": "Napi nézési idő" },
-  "dailyWatchTimeLabel": { "message": "Napi nézési idő (perc)" },
-  "next": { "message": "Tovább" },
-  "selectPlaybackSpeed": { "message": "Lejátszási sebesség kiválasztása" },
-  "speedHint": { "message": "A terv időtartama ennek megfelelően módosul." },
-  "confirmPlan": { "message": "Terv megerősítése" },
-  "labelPlanMode": { "message": "Terv mód:" },
-  "labelDailyWatchTime": { "message": "Napi nézési idő:" },
-  "labelPlaybackSpeed": { "message": "Lejátszási sebesség:" },
-  "generatePlan": { "message": "Terv létrehozása" },
-  "yourWatchPlan": { "message": "Nézési terved" },
-  "reset": { "message": "Visszaállítás" },
-  "madeWith": { "message": "❤️-vel készítette" },
-  "goBack": { "message": "Vissza" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "A YouTube-od, megtervezve"
+  },
+  "myPlans": {
+    "message": "Terveim"
+  },
+  "addNewPlan": {
+    "message": "Új terv hozzáadása"
+  },
+  "playlistUrl": {
+    "message": "Lejátszási lista URL"
+  },
+  "fetchPlaylist": {
+    "message": "Lista betöltése"
+  },
+  "fetchingData": {
+    "message": "Lejátszási lista betöltése..."
+  },
+  "planGeneratedTitle": {
+    "message": "Terv sikeresen létrehozva"
+  },
+  "planGeneratedSub": {
+    "message": "A terved most aktív."
+  },
+  "closingAuto": {
+    "message": "Automatikus bezárás..."
+  },
+  "playlistSummary": {
+    "message": "Lista összefoglalás"
+  },
+  "labelTitle": {
+    "message": "Cím:"
+  },
+  "labelVideos": {
+    "message": "Videók:"
+  },
+  "labelTotalDuration": {
+    "message": "Teljes időtartam:"
+  },
+  "progress": {
+    "message": "Haladás"
+  },
+  "selectPlanMode": {
+    "message": "Terv mód kiválasztása"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "Videóról videóra"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "Naponta pontosan egy videót nézz. Nincs felosztás."
+  },
+  "modeCustomTitle": {
+    "message": "Egyéni ütemezés"
+  },
+  "modeCustomDesc": {
+    "message": "Napi nézési idő kvóta beállítása. A videók felosztásra kerülnek."
+  },
+  "dailyWatchTime": {
+    "message": "Napi nézési idő"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "Napi nézési idő (perc)"
+  },
+  "next": {
+    "message": "Tovább"
+  },
+  "selectPlaybackSpeed": {
+    "message": "Lejátszási sebesség kiválasztása"
+  },
+  "speedHint": {
+    "message": "A terv időtartama ennek megfelelően módosul."
+  },
+  "confirmPlan": {
+    "message": "Terv megerősítése"
+  },
+  "labelPlanMode": {
+    "message": "Terv mód:"
+  },
+  "labelDailyWatchTime": {
+    "message": "Napi nézési idő:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "Lejátszási sebesség:"
+  },
+  "generatePlan": {
+    "message": "Terv létrehozása"
+  },
+  "yourWatchPlan": {
+    "message": "Nézési terved"
+  },
+  "reset": {
+    "message": "Visszaállítás"
+  },
+  "madeWith": {
+    "message": "❤️-vel készítette"
+  },
+  "goBack": {
+    "message": "Vissza"
+  }
 }

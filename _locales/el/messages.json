@@ -1,37 +1,107 @@
 {
-  "extensionName": { "message": "PlanYT" },
-  "extensionDescription": { "message": "Μετατρέψτε οποιαδήποτε λίστα αναπαραγωγής YouTube σε δομημένο σχέδιο μάθησης με εκτιμήσεις χρόνου, παρακολούθηση προόδου και έλεγχο ταχύτητας αναπαραγωγής." },
-  "subtitle": { "message": "Το YouTube σου, σχεδιασμένο" },
-  "myPlans": { "message": "Τα σχέδιά μου" },
-  "addNewPlan": { "message": "Προσθήκη νέου σχεδίου" },
-  "playlistUrl": { "message": "URL λίστας αναπαραγωγής" },
-  "fetchPlaylist": { "message": "Ανάκτηση λίστας" },
-  "fetchingData": { "message": "Ανάκτηση δεδομένων λίστας..." },
-  "planGeneratedTitle": { "message": "Το σχέδιο δημιουργήθηκε" },
-  "planGeneratedSub": { "message": "Το σχέδιό σου είναι ενεργό." },
-  "closingAuto": { "message": "Αυτόματο κλείσιμο..." },
-  "playlistSummary": { "message": "Περίληψη λίστας" },
-  "labelTitle": { "message": "Τίτλος:" },
-  "labelVideos": { "message": "Βίντεο:" },
-  "labelTotalDuration": { "message": "Συνολική διάρκεια:" },
-  "progress": { "message": "Πρόοδος" },
-  "selectPlanMode": { "message": "Επιλογή λειτουργίας σχεδίου" },
-  "modeVideoByVideoTitle": { "message": "Βίντεο προς βίντεο" },
-  "modeVideoByVideoDesc": { "message": "Παρακολουθήστε ακριβώς ένα βίντεο την ημέρα. Χωρίς διαχωρισμό." },
-  "modeCustomTitle": { "message": "Προσαρμοσμένο πρόγραμμα" },
-  "modeCustomDesc": { "message": "Ορίστε ημερήσια ποσόστωση θέασης. Τα βίντεο χωρίζονται." },
-  "dailyWatchTime": { "message": "Ημερήσιος χρόνος θέασης" },
-  "dailyWatchTimeLabel": { "message": "Ημερήσιος χρόνος θέασης (λεπτά)" },
-  "next": { "message": "Επόμενο" },
-  "selectPlaybackSpeed": { "message": "Επιλογή ταχύτητας αναπαραγωγής" },
-  "speedHint": { "message": "Η διάρκεια του σχεδίου θα προσαρμοστεί ανάλογα." },
-  "confirmPlan": { "message": "Επιβεβαίωση σχεδίου" },
-  "labelPlanMode": { "message": "Λειτουργία σχεδίου:" },
-  "labelDailyWatchTime": { "message": "Ημερήσιος χρόνος:" },
-  "labelPlaybackSpeed": { "message": "Ταχύτητα αναπαραγωγής:" },
-  "generatePlan": { "message": "Δημιουργία σχεδίου" },
-  "yourWatchPlan": { "message": "Το σχέδιο θέασής σου" },
-  "reset": { "message": "Επαναφορά" },
-  "madeWith": { "message": "Φτιαγμένο με ❤️ από" },
-  "goBack": { "message": "Πίσω" }
+  "extensionName": {
+    "message": "PlanUp"
+  },
+  "extensionDescription": {
+    "message": "Your playlists. Your plan. Your progress. Make every video count."
+  },
+  "subtitle": {
+    "message": "Το YouTube σου, σχεδιασμένο"
+  },
+  "myPlans": {
+    "message": "Τα σχέδιά μου"
+  },
+  "addNewPlan": {
+    "message": "Προσθήκη νέου σχεδίου"
+  },
+  "playlistUrl": {
+    "message": "URL λίστας αναπαραγωγής"
+  },
+  "fetchPlaylist": {
+    "message": "Ανάκτηση λίστας"
+  },
+  "fetchingData": {
+    "message": "Ανάκτηση δεδομένων λίστας..."
+  },
+  "planGeneratedTitle": {
+    "message": "Το σχέδιο δημιουργήθηκε"
+  },
+  "planGeneratedSub": {
+    "message": "Το σχέδιό σου είναι ενεργό."
+  },
+  "closingAuto": {
+    "message": "Αυτόματο κλείσιμο..."
+  },
+  "playlistSummary": {
+    "message": "Περίληψη λίστας"
+  },
+  "labelTitle": {
+    "message": "Τίτλος:"
+  },
+  "labelVideos": {
+    "message": "Βίντεο:"
+  },
+  "labelTotalDuration": {
+    "message": "Συνολική διάρκεια:"
+  },
+  "progress": {
+    "message": "Πρόοδος"
+  },
+  "selectPlanMode": {
+    "message": "Επιλογή λειτουργίας σχεδίου"
+  },
+  "modeVideoByVideoTitle": {
+    "message": "Βίντεο προς βίντεο"
+  },
+  "modeVideoByVideoDesc": {
+    "message": "Παρακολουθήστε ακριβώς ένα βίντεο την ημέρα. Χωρίς διαχωρισμό."
+  },
+  "modeCustomTitle": {
+    "message": "Προσαρμοσμένο πρόγραμμα"
+  },
+  "modeCustomDesc": {
+    "message": "Ορίστε ημερήσια ποσόστωση θέασης. Τα βίντεο χωρίζονται."
+  },
+  "dailyWatchTime": {
+    "message": "Ημερήσιος χρόνος θέασης"
+  },
+  "dailyWatchTimeLabel": {
+    "message": "Ημερήσιος χρόνος θέασης (λεπτά)"
+  },
+  "next": {
+    "message": "Επόμενο"
+  },
+  "selectPlaybackSpeed": {
+    "message": "Επιλογή ταχύτητας αναπαραγωγής"
+  },
+  "speedHint": {
+    "message": "Η διάρκεια του σχεδίου θα προσαρμοστεί ανάλογα."
+  },
+  "confirmPlan": {
+    "message": "Επιβεβαίωση σχεδίου"
+  },
+  "labelPlanMode": {
+    "message": "Λειτουργία σχεδίου:"
+  },
+  "labelDailyWatchTime": {
+    "message": "Ημερήσιος χρόνος:"
+  },
+  "labelPlaybackSpeed": {
+    "message": "Ταχύτητα αναπαραγωγής:"
+  },
+  "generatePlan": {
+    "message": "Δημιουργία σχεδίου"
+  },
+  "yourWatchPlan": {
+    "message": "Το σχέδιο θέασής σου"
+  },
+  "reset": {
+    "message": "Επαναφορά"
+  },
+  "madeWith": {
+    "message": "Φτιαγμένο με ❤️ από"
+  },
+  "goBack": {
+    "message": "Πίσω"
+  }
 }
