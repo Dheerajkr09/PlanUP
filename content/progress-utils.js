@@ -100,7 +100,9 @@ function deriveProgressFromPlan(planData) {
       percent: 0,
       completedDays: 0,
       totalDays: 0,
-      currentDay: 1
+      currentDay: 1,
+      completedVideos: 0,
+      totalVideos: 0
     };
   }
 
@@ -145,7 +147,9 @@ function deriveProgressFromPlan(planData) {
     percent,
     completedDays,
     totalDays,
-    currentDay
+    currentDay,
+    completedVideos,
+    totalVideos
   };
 }
 

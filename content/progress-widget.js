@@ -274,10 +274,24 @@
     const todayTarget = getTodayTarget(plan.planData || [], progress.currentDay);
     const daysRemaining = calculateDaysRemaining(progress.currentDay, progress.totalDays);
     const minutesRemaining = calculateRemainingMinutes(plan.planData || [], progress.currentDay);
-
-    const todayStatus = todayTarget.completed ? 'completed' : '';
-    const todayLabel = todayTarget.completed ? "Today's target completed" : `${todayTarget.videosCount} video${todayTarget.videosCount !== 1 ? 's' : ''}`;
     const todayTime = formatMinutes(todayTarget.totalMinutes);
+
+    // Calculate completed vs total videos accurately
+    let completedVideos = progress.completedVideos;
+    let totalVideos = progress.totalVideos;
+
+    if (completedVideos === undefined || totalVideos === undefined) {
+      completedVideos = 0;
+      totalVideos = 0;
+      (plan.planData || []).forEach(day => {
+        (day.videos || []).forEach(v => {
+          totalVideos++;
+          if (v.completed) completedVideos++;
+        });
+      });
+    }
+
+    const videosDoneLabel = `${completedVideos} / ${totalVideos}`;
 
     container.innerHTML = `
       <div class="container">
@@ -296,8 +310,8 @@
 
           <div class="stats-grid" id="progressSection">
             <div class="stat-card">
-              <span class="stat-label">Today</span>
-              <span class="stat-value ${todayStatus}">${todayLabel}</span>
+              <span class="stat-label">Videos Done</span>
+              <span class="stat-value">${videosDoneLabel}</span>
             </div>
             <div class="stat-card">
               <span class="stat-label">Remaining</span>
