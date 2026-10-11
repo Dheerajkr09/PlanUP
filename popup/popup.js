@@ -245,6 +245,20 @@ function attachEventListeners() {
   // Add New Plan
   elements.addPlanBtn?.addEventListener('click', handleAddNewPlan);
 
+  // Support PlanUP Heart Button
+  const supportBtn = document.getElementById('supportBtn');
+  if (supportBtn) {
+    supportBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const supportUrl = 'https://plan-up-jade.vercel.app/support';
+      if (typeof chrome !== 'undefined' && chrome.tabs && chrome.tabs.create) {
+        chrome.tabs.create({ url: supportUrl });
+      } else {
+        window.open(supportUrl, '_blank');
+      }
+    });
+  }
+
   // Fetch Playlist
   elements.fetchPlaylistBtn?.addEventListener('click', handleFetchPlaylist);
   

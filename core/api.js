@@ -7,7 +7,7 @@
 // Backend API endpoints (production only)
 // Replace the production URL with your deployed backend domain
 const BACKEND_API_URLS = [
-  'https://yt-extension-z6so.vercel.app/api/playlist-info'
+  'https://plan-up-jade.vercel.app/api/playlist-info'
 ];
 
 /**

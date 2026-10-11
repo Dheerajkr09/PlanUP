@@ -26,7 +26,7 @@
    "description": "__MSG_extensionDescription__",
    "host_permissions": [
       "https://www.youtube.com/*",
-      "https://yt-extension-z6so.vercel.app/*"
+      "https://plan-up-jade.vercel.app/*"
    ],
    "icons": {
       "128": "assets/icon128.png",

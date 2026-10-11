@@ -122,9 +122,46 @@ header h1 {
   letter-spacing: 2px;
 }
 
-.header-actions { margin-left: auto; display: flex; gap: 12px; }
-.github-link svg, .sponsor-link svg { fill: var(--text-secondary); color: var(--text-secondary); transition: var(--transition); }
-.github-link:hover svg, .sponsor-link:hover svg { fill: var(--accent-cyan); color: var(--accent-cyan); filter: drop-shadow(0 0 5px var(--accent-cyan)); }
+.header-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  padding-right: 4px;
+}
+
+.sponsor-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 4px;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), filter 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.sponsor-link svg {
+  color: var(--accent-cyan);
+  fill: none;
+  stroke: var(--accent-cyan);
+  stroke-width: 2.2;
+  transition: all 0.25s ease;
+  filter: drop-shadow(0 0 6px rgba(0, 240, 255, 0.5));
+}
+
+.sponsor-link:hover {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  transform: scale(1.18);
+}
+
+.sponsor-link:hover svg {
+  fill: rgba(0, 240, 255, 0.25);
+  stroke: var(--accent-cyan);
+  filter: drop-shadow(0 0 12px rgba(0, 240, 255, 0.95));
+}
 
 /* ========================================
    Gamification Stats (Gaming Dashboard)

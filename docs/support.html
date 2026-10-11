@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support PlanUP | Dheeraj Kumar</title>
+    <link rel="icon" type="image/jpeg" href="assets/icon_human_thumb.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <script>
+/* INLINE QRCODE ENGINE */
+var QRCode=(()=>{var g=(n,t)=>()=>{try{return t||n((t={exports:{}}).exports,t),t.exports}catch(e){throw t=0,e}};var _t=g((Sn,Lt)=>{Lt.exports=function(){return typeof Promise=="function"&&Promise.prototype&&Promise.prototype.then}});var I=g(P=>{var st,Le=[0,26,44,70,100,134,172,196,242,292,346,404,466,532,581,655,733,815,901,991,1085,1156,1258,1364,1474,1588,1706,1828,1921,2051,2185,2323,2465,2611,2761,2876,3034,3196,3362,3532,3706];P.getSymbolSize=function(t){if(!t)throw new Error('"version" cannot be null or undefined');if(t<1||t>40)throw new Error('"version" should be in range from 1 to 40');return t*4+17};P.getSymbolTotalCodewords=function(t){return Le[t]};P.getBCHDigit=function(n){let t=0;for(;n!==0;)t++,n>>>=1;return t};P.setToSJISFunction=function(t){if(typeof t!="function")throw new Error('"toSJISFunc" is not a valid function.');st=t};P.isKanjiModeEnabled=function(){return typeof st<"u"};P.toSJIS=function(t){return st(t)}});var j=g(m=>{m.L={bit:1};m.M={bit:0};m.Q={bit:3};m.H={bit:2};function _e(n){if(typeof n!="string")throw new Error("Param is not a string");switch(n.toLowerCase()){case"l":case"low":return m.L;case"m":case"medium":return m.M;case"q":case"quartile":return m.Q;case"h":case"high":return m.H;default:throw new Error("Unknown EC Level: "+n)}}m.isValid=function(t){return t&&typeof t.bit<"u"&&t.bit>=0&&t.bit<4};m.from=function(t,e){if(m.isValid(t))return t;try{return _e(t)}catch{return e}}});var qt=g((Rn,Ut)=>{function xt(){this.buffer=[],this.length=0}xt.prototype={get:function(n){let t=Math.floor(n/8);return(this.buffer[t]>>>7-n%8&1)===1},put:function(n,t){for(let e=0;e<t;e++)this.putBit((n>>>t-e-1&1)===1)},getLengthInBits:function(){return this.length},putBit:function(n){let t=Math.floor(this.length/8);this.buffer.length<=t&&this.buffer.push(0),n&&(this.buffer[t]|=128>>>this.length%8),this.length++}};Ut.exports=xt});var Ft=g((Ln,Dt)=>{function k(n){if(!n||n<1)throw new Error("BitMatrix size must be defined and greater than 0");this.size=n,this.data=new Uint8Array(n*n),this.reservedBit=new Uint8Array(n*n)}k.prototype.set=function(n,t,e,r){let o=n*this.size+t;this.data[o]=e,r&&(this.reservedBit[o]=!0)};k.prototype.get=function(n,t){return this.data[n*this.size+t]};k.prototype.xor=function(n,t,e){this.data[n*this.size+t]^=e};k.prototype.isReserved=function(n,t){return this.reservedBit[n*this.size+t]};Dt.exports=k});var kt=g(G=>{var xe=I().getSymbolSize;G.getRowColCoords=function(t){if(t===1)return[];let e=Math.floor(t/7)+2,r=xe(t),o=r===145?26:Math.ceil((r-13)/(2*e-2))*2,i=[r-7];for(let s=1;s<e-1;s++)i[s]=i[s-1]-o;return i.push(6),i.reverse()};G.getPositions=function(t){let e=[],r=G.getRowColCoords(t),o=r.length;for(let i=0;i<o;i++)for(let s=0;s<o;s++)i===0&&s===0||i===0&&s===o-1||i===o-1&&s===0||e.push([r[i],r[s]]);return e}});var Ht=g(Vt=>{var Ue=I().getSymbolSize,zt=7;Vt.getPositions=function(t){let e=Ue(t);return[[0,0],[e-zt,0],[0,e-zt]]}});var Kt=g(d=>{d.Patterns={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7};var b={N1:3,N2:3,N3:40,N4:10};d.isValid=function(t){return t!=null&&t!==""&&!isNaN(t)&&t>=0&&t<=7};d.from=function(t){return d.isValid(t)?parseInt(t,10):void 0};d.getPenaltyN1=function(t){let e=t.size,r=0,o=0,i=0,s=null,u=null;for(let c=0;c<e;c++){o=i=0,s=u=null;for(let l=0;l<e;l++){let a=t.get(c,l);a===s?o++:(o>=5&&(r+=b.N1+(o-5)),s=a,o=1),a=t.get(l,c),a===u?i++:(i>=5&&(r+=b.N1+(i-5)),u=a,i=1)}o>=5&&(r+=b.N1+(o-5)),i>=5&&(r+=b.N1+(i-5))}return r};d.getPenaltyN2=function(t){let e=t.size,r=0;for(let o=0;o<e-1;o++)for(let i=0;i<e-1;i++){let s=t.get(o,i)+t.get(o,i+1)+t.get(o+1,i)+t.get(o+1,i+1);(s===4||s===0)&&r++}return r*b.N2};d.getPenaltyN3=function(t){let e=t.size,r=0,o=0,i=0;for(let s=0;s<e;s++){o=i=0;for(let u=0;u<e;u++)o=o<<1&2047|t.get(s,u),u>=10&&(o===1488||o===93)&&r++,i=i<<1&2047|t.get(u,s),u>=10&&(i===1488||i===93)&&r++}return r*b.N3};d.getPenaltyN4=function(t){let e=0,r=t.data.length;for(let i=0;i<r;i++)e+=t.data[i];return Math.abs(Math.ceil(e*100/r/5)-10)*b.N4};function qe(n,t,e){switch(n){case d.Patterns.PATTERN000:return(t+e)%2===0;case d.Patterns.PATTERN001:return t%2===0;case d.Patterns.PATTERN010:return e%3===0;case d.Patterns.PATTERN011:return(t+e)%3===0;case d.Patterns.PATTERN100:return(Math.floor(t/2)+Math.floor(e/3))%2===0;case d.Patterns.PATTERN101:return t*e%2+t*e%3===0;case d.Patterns.PATTERN110:return(t*e%2+t*e%3)%2===0;case d.Patterns.PATTERN111:return(t*e%3+(t+e)%2)%2===0;default:throw new Error("bad maskPattern:"+n)}}d.applyMask=function(t,e){let r=e.size;for(let o=0;o<r;o++)for(let i=0;i<r;i++)e.isReserved(i,o)||e.xor(i,o,qe(t,i,o))};d.getBestMask=function(t,e){let r=Object.keys(d.Patterns).length,o=0,i=1/0;for(let s=0;s<r;s++){e(s),d.applyMask(s,t);let u=d.getPenaltyN1(t)+d.getPenaltyN2(t)+d.getPenaltyN3(t)+d.getPenaltyN4(t);d.applyMask(s,t),u<i&&(i=u,o=s)}return o}});var ct=g(ut=>{var N=j(),Q=[1,1,1,1,1,1,1,1,1,1,2,2,1,2,2,4,1,2,4,4,2,4,4,4,2,4,6,5,2,4,6,6,2,5,8,8,4,5,8,8,4,5,8,11,4,8,10,11,4,9,12,16,4,9,16,16,6,10,12,18,6,10,17,16,6,11,16,19,6,13,18,21,7,14,21,25,8,16,20,25,8,17,23,25,9,17,23,34,9,18,25,30,10,20,27,32,12,21,29,35,12,23,34,37,12,25,34,40,13,26,35,42,14,28,38,45,15,29,40,48,16,31,43,51,17,33,45,54,18,35,48,57,19,37,51,60,19,38,53,63,20,40,56,66,21,43,59,70,22,45,62,74,24,47,65,77,25,49,68,81],$=[7,10,13,17,10,16,22,28,15,26,36,44,20,36,52,64,26,48,72,88,36,64,96,112,40,72,108,130,48,88,132,156,60,110,160,192,72,130,192,224,80,150,224,264,96,176,260,308,104,198,288,352,120,216,320,384,132,240,360,432,144,280,408,480,168,308,448,532,180,338,504,588,196,364,546,650,224,416,600,700,224,442,644,750,252,476,690,816,270,504,750,900,300,560,810,960,312,588,870,1050,336,644,952,1110,360,700,1020,1200,390,728,1050,1260,420,784,1140,1350,450,812,1200,1440,480,868,1290,1530,510,924,1350,1620,540,980,1440,1710,570,1036,1530,1800,570,1064,1590,1890,600,1120,1680,1980,630,1204,1770,2100,660,1260,1860,2220,720,1316,1950,2310,750,1372,2040,2430];ut.getBlocksCount=function(t,e){switch(e){case N.L:return Q[(t-1)*4+0];case N.M:return Q[(t-1)*4+1];case N.Q:return Q[(t-1)*4+2];case N.H:return Q[(t-1)*4+3];default:return}};ut.getTotalCodewordsCount=function(t,e){switch(e){case N.L:return $[(t-1)*4+0];case N.M:return $[(t-1)*4+1];case N.Q:return $[(t-1)*4+2];case N.H:return $[(t-1)*4+3];default:return}}});var Jt=g(Z=>{var z=new Uint8Array(512),W=new Uint8Array(256);(function(){let t=1;for(let e=0;e<255;e++)z[e]=t,W[t]=e,t<<=1,t&256&&(t^=285);for(let e=255;e<512;e++)z[e]=z[e-255]})();Z.log=function(t){if(t<1)throw new Error("log("+t+")");return W[t]};Z.exp=function(t){return z[t]};Z.mul=function(t,e){return t===0||e===0?0:z[W[t]+W[e]]}});var Yt=g(V=>{var lt=Jt();V.mul=function(t,e){let r=new Uint8Array(t.length+e.length-1);for(let o=0;o<t.length;o++)for(let i=0;i<e.length;i++)r[o+i]^=lt.mul(t[o],e[i]);return r};V.mod=function(t,e){let r=new Uint8Array(t);for(;r.length-e.length>=0;){let o=r[0];for(let s=0;s<e.length;s++)r[s]^=lt.mul(e[s],o);let i=0;for(;i<r.length&&r[i]===0;)i++;r=r.slice(i)}return r};V.generateECPolynomial=function(t){let e=new Uint8Array([1]);for(let r=0;r<t;r++)e=V.mul(e,new Uint8Array([1,lt.exp(r)]));return e}});var Gt=g((kn,jt)=>{var Ot=Yt();function at(n){this.genPoly=void 0,this.degree=n,this.degree&&this.initialize(this.degree)}at.prototype.initialize=function(t){this.degree=t,this.genPoly=Ot.generateECPolynomial(this.degree)};at.prototype.encode=function(t){if(!this.genPoly)throw new Error("Encoder not initialized");let e=new Uint8Array(t.length+this.degree);e.set(t);let r=Ot.mod(e,this.genPoly),o=this.degree-r.length;if(o>0){let i=new Uint8Array(this.degree);return i.set(r,o),i}return r};jt.exports=at});var ft=g(Qt=>{Qt.isValid=function(t){return!isNaN(t)&&t>=1&&t<=40}});var gt=g(B=>{var $t="[0-9]+",De="[A-Z $%*+\\-./:]+",H="(?:[u3000-u303F]|[u3040-u309F]|[u30A0-u30FF]|[uFF00-uFFEF]|[u4E00-u9FAF]|[u2605-u2606]|[u2190-u2195]|u203B|[u2010u2015u2018u2019u2025u2026u201Cu201Du2225u2260]|[u0391-u0451]|[u00A7u00A8u00B1u00B4u00D7u00F7])+";H=H.replace(/u/g,"\\u");var Fe="(?:(?![A-Z0-9 $%*+\\-./:]|"+H+`)(?:.|[\r
+]))+`;B.KANJI=new RegExp(H,"g");B.BYTE_KANJI=new RegExp("[^A-Z0-9 $%*+\\-./:]+","g");B.BYTE=new RegExp(Fe,"g");B.NUMERIC=new RegExp($t,"g");B.ALPHANUMERIC=new RegExp(De,"g");var ke=new RegExp("^"+H+"$"),ze=new RegExp("^"+$t+"$"),Ve=new RegExp("^[A-Z0-9 $%*+\\-./:]+$");B.testKanji=function(t){return ke.test(t)};B.testNumeric=function(t){return ze.test(t)};B.testAlphanumeric=function(t){return Ve.test(t)}});var M=g(p=>{var He=ft(),dt=gt();p.NUMERIC={id:"Numeric",bit:1,ccBits:[10,12,14]};p.ALPHANUMERIC={id:"Alphanumeric",bit:2,ccBits:[9,11,13]};p.BYTE={id:"Byte",bit:4,ccBits:[8,16,16]};p.KANJI={id:"Kanji",bit:8,ccBits:[8,10,12]};p.MIXED={bit:-1};p.getCharCountIndicator=function(t,e){if(!t.ccBits)throw new Error("Invalid mode: "+t);if(!He.isValid(e))throw new Error("Invalid version: "+e);return e>=1&&e<10?t.ccBits[0]:e<27?t.ccBits[1]:t.ccBits[2]};p.getBestModeForData=function(t){return dt.testNumeric(t)?p.NUMERIC:dt.testAlphanumeric(t)?p.ALPHANUMERIC:dt.testKanji(t)?p.KANJI:p.BYTE};p.toString=function(t){if(t&&t.id)return t.id;throw new Error("Invalid mode")};p.isValid=function(t){return t&&t.bit&&t.ccBits};function Ke(n){if(typeof n!="string")throw new Error("Param is not a string");switch(n.toLowerCase()){case"numeric":return p.NUMERIC;case"alphanumeric":return p.ALPHANUMERIC;case"kanji":return p.KANJI;case"byte":return p.BYTE;default:throw new Error("Unknown mode: "+n)}}p.from=function(t,e){if(p.isValid(t))return t;try{return Ke(t)}catch{return e}}});var te=g(R=>{var X=I(),Je=ct(),Wt=j(),S=M(),ht=ft(),Xt=7973,Zt=X.getBCHDigit(Xt);function Ye(n,t,e){for(let r=1;r<=40;r++)if(t<=R.getCapacity(r,e,n))return r}function vt(n,t){return S.getCharCountIndicator(n,t)+4}function Oe(n,t){let e=0;return n.forEach(function(r){let o=vt(r.mode,t);e+=o+r.getBitsLength()}),e}function je(n,t){for(let e=1;e<=40;e++)if(Oe(n,e)<=R.getCapacity(e,t,S.MIXED))return e}R.from=function(t,e){return ht.isValid(t)?parseInt(t,10):e};R.getCapacity=function(t,e,r){if(!ht.isValid(t))throw new Error("Invalid QR Code version");typeof r>"u"&&(r=S.BYTE);let o=X.getSymbolTotalCodewords(t),i=Je.getTotalCodewordsCount(t,e),s=(o-i)*8;if(r===S.MIXED)return s;let u=s-vt(r,t);switch(r){case S.NUMERIC:return Math.floor(u/10*3);case S.ALPHANUMERIC:return Math.floor(u/11*2);case S.KANJI:return Math.floor(u/13);case S.BYTE:default:return Math.floor(u/8)}};R.getBestVersionForData=function(t,e){let r,o=Wt.from(e,Wt.M);if(Array.isArray(t)){if(t.length>1)return je(t,o);if(t.length===0)return 1;r=t[0]}else r=t;return Ye(r.mode,r.getLength(),o)};R.getEncodedBits=function(t){if(!ht.isValid(t)||t<7)throw new Error("Invalid QR Code version");let e=t<<12;for(;X.getBCHDigit(e)-Zt>=0;)e^=Xt<<X.getBCHDigit(e)-Zt;return t<<12|e}});var oe=g(re=>{var pt=I(),ne=1335,Ge=21522,ee=pt.getBCHDigit(ne);re.getEncodedBits=function(t,e){let r=t.bit<<3|e,o=r<<10;for(;pt.getBCHDigit(o)-ee>=0;)o^=ne<<pt.getBCHDigit(o)-ee;return(r<<10|o)^Ge}});var se=g((Yn,ie)=>{var Qe=M();function x(n){this.mode=Qe.NUMERIC,this.data=n.toString()}x.getBitsLength=function(t){return 10*Math.floor(t/3)+(t%3?t%3*3+1:0)};x.prototype.getLength=function(){return this.data.length};x.prototype.getBitsLength=function(){return x.getBitsLength(this.data.length)};x.prototype.write=function(t){let e,r,o;for(e=0;e+3<=this.data.length;e+=3)r=this.data.substr(e,3),o=parseInt(r,10),t.put(o,10);let i=this.data.length-e;i>0&&(r=this.data.substr(e),o=parseInt(r,10),t.put(o,i*3+1))};ie.exports=x});var ce=g((On,ue)=>{var $e=M(),wt=["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"," ","$","%","*","+","-",".","/",":"];function U(n){this.mode=$e.ALPHANUMERIC,this.data=n}U.getBitsLength=function(t){return 11*Math.floor(t/2)+6*(t%2)};U.prototype.getLength=function(){return this.data.length};U.prototype.getBitsLength=function(){return U.getBitsLength(this.data.length)};U.prototype.write=function(t){let e;for(e=0;e+2<=this.data.length;e+=2){let r=wt.indexOf(this.data[e])*45;r+=wt.indexOf(this.data[e+1]),t.put(r,11)}this.data.length%2&&t.put(wt.indexOf(this.data[e]),6)};ue.exports=U});var ae=g((jn,le)=>{var We=M();function q(n){this.mode=We.BYTE,typeof n=="string"?this.data=new TextEncoder().encode(n):this.data=new Uint8Array(n)}q.getBitsLength=function(t){return t*8};q.prototype.getLength=function(){return this.data.length};q.prototype.getBitsLength=function(){return q.getBitsLength(this.data.length)};q.prototype.write=function(n){for(let t=0,e=this.data.length;t<e;t++)n.put(this.data[t],8)};le.exports=q});var ge=g((Gn,fe)=>{var Ze=M(),Xe=I();function D(n){this.mode=Ze.KANJI,this.data=n}D.getBitsLength=function(t){return t*13};D.prototype.getLength=function(){return this.data.length};D.prototype.getBitsLength=function(){return D.getBitsLength(this.data.length)};D.prototype.write=function(n){let t;for(t=0;t<this.data.length;t++){let e=Xe.toSJIS(this.data[t]);if(e>=33088&&e<=40956)e-=33088;else if(e>=57408&&e<=60351)e-=49472;else throw new Error("Invalid SJIS character: "+this.data[t]+`
+Make sure your charset is UTF-8`);e=(e>>>8&255)*192+(e&255),n.put(e,13)}};fe.exports=D});var de=g((Qn,mt)=>{"use strict";var K={single_source_shortest_paths:function(n,t,e){var r={},o={};o[t]=0;var i=K.PriorityQueue.make();i.push(t,0);for(var s,u,c,l,a,w,h,y,A;!i.empty();){s=i.pop(),u=s.value,l=s.cost,a=n[u]||{};for(c in a)a.hasOwnProperty(c)&&(w=a[c],h=l+w,y=o[c],A=typeof o[c]>"u",(A||y>h)&&(o[c]=h,i.push(c,h),r[c]=u))}if(typeof e<"u"&&typeof o[e]>"u"){var T=["Could not find a path from ",t," to ",e,"."].join("");throw new Error(T)}return r},extract_shortest_path_from_predecessor_list:function(n,t){for(var e=[],r=t,o;r;)e.push(r),o=n[r],r=n[r];return e.reverse(),e},find_path:function(n,t,e){var r=K.single_source_shortest_paths(n,t,e);return K.extract_shortest_path_from_predecessor_list(r,e)},PriorityQueue:{make:function(n){var t=K.PriorityQueue,e={},r;n=n||{};for(r in t)t.hasOwnProperty(r)&&(e[r]=t[r]);return e.queue=[],e.sorter=n.sorter||t.default_sorter,e},default_sorter:function(n,t){return n.cost-t.cost},push:function(n,t){var e={value:n,cost:t};this.queue.push(e),this.queue.sort(this.sorter)},pop:function(){return this.queue.shift()},empty:function(){return this.queue.length===0}}};typeof mt<"u"&&(mt.exports=K)});var Be=g(F=>{var f=M(),we=se(),me=ce(),ye=ae(),Ee=ge(),J=gt(),v=I(),ve=de();function he(n){return unescape(encodeURIComponent(n)).length}function Y(n,t,e){let r=[],o;for(;(o=n.exec(e))!==null;)r.push({data:o[0],index:o.index,mode:t,length:o[0].length});return r}function Ce(n){let t=Y(J.NUMERIC,f.NUMERIC,n),e=Y(J.ALPHANUMERIC,f.ALPHANUMERIC,n),r,o;return v.isKanjiModeEnabled()?(r=Y(J.BYTE,f.BYTE,n),o=Y(J.KANJI,f.KANJI,n)):(r=Y(J.BYTE_KANJI,f.BYTE,n),o=[]),t.concat(e,r,o).sort(function(s,u){return s.index-u.index}).map(function(s){return{data:s.data,mode:s.mode,length:s.length}})}function yt(n,t){switch(t){case f.NUMERIC:return we.getBitsLength(n);case f.ALPHANUMERIC:return me.getBitsLength(n);case f.KANJI:return Ee.getBitsLength(n);case f.BYTE:return ye.getBitsLength(n)}}function tn(n){return n.reduce(function(t,e){let r=t.length-1>=0?t[t.length-1]:null;return r&&r.mode===e.mode?(t[t.length-1].data+=e.data,t):(t.push(e),t)},[])}function en(n){let t=[];for(let e=0;e<n.length;e++){let r=n[e];switch(r.mode){case f.NUMERIC:t.push([r,{data:r.data,mode:f.ALPHANUMERIC,length:r.length},{data:r.data,mode:f.BYTE,length:r.length}]);break;case f.ALPHANUMERIC:t.push([r,{data:r.data,mode:f.BYTE,length:r.length}]);break;case f.KANJI:t.push([r,{data:r.data,mode:f.BYTE,length:he(r.data)}]);break;case f.BYTE:t.push([{data:r.data,mode:f.BYTE,length:he(r.data)}])}}return t}function nn(n,t){let e={},r={start:{}},o=["start"];for(let i=0;i<n.length;i++){let s=n[i],u=[];for(let c=0;c<s.length;c++){let l=s[c],a=""+i+c;u.push(a),e[a]={node:l,lastCount:0},r[a]={};for(let w=0;w<o.length;w++){let h=o[w];e[h]&&e[h].node.mode===l.mode?(r[h][a]=yt(e[h].lastCount+l.length,l.mode)-yt(e[h].lastCount,l.mode),e[h].lastCount+=l.length):(e[h]&&(e[h].lastCount=l.length),r[h][a]=yt(l.length,l.mode)+4+f.getCharCountIndicator(l.mode,t))}}o=u}for(let i=0;i<o.length;i++)r[o[i]].end=0;return{map:r,table:e}}function pe(n,t){let e,r=f.getBestModeForData(n);if(e=f.from(t,r),e!==f.BYTE&&e.bit<r.bit)throw new Error('"'+n+'" cannot be encoded with mode '+f.toString(e)+`.
+ Suggested mode is: `+f.toString(r));switch(e===f.KANJI&&!v.isKanjiModeEnabled()&&(e=f.BYTE),e){case f.NUMERIC:return new we(n);case f.ALPHANUMERIC:return new me(n);case f.KANJI:return new Ee(n);case f.BYTE:return new ye(n)}}F.fromArray=function(t){return t.reduce(function(e,r){return typeof r=="string"?e.push(pe(r,null)):r.data&&e.push(pe(r.data,r.mode)),e},[])};F.fromString=function(t,e){let r=Ce(t,v.isKanjiModeEnabled()),o=en(r),i=nn(o,e),s=ve.find_path(i.map,"start","end"),u=[];for(let c=1;c<s.length-1;c++)u.push(i.table[s[c]].node);return F.fromArray(tn(u))};F.rawSplit=function(t){return F.fromArray(Ce(t,v.isKanjiModeEnabled()))}});var Te=g(Ae=>{var et=I(),Et=j(),rn=qt(),on=Ft(),sn=kt(),un=Ht(),At=Kt(),Tt=ct(),cn=Gt(),tt=te(),ln=oe(),an=M(),Ct=Be();function fn(n,t){let e=n.size,r=un.getPositions(t);for(let o=0;o<r.length;o++){let i=r[o][0],s=r[o][1];for(let u=-1;u<=7;u++)if(!(i+u<=-1||e<=i+u))for(let c=-1;c<=7;c++)s+c<=-1||e<=s+c||(u>=0&&u<=6&&(c===0||c===6)||c>=0&&c<=6&&(u===0||u===6)||u>=2&&u<=4&&c>=2&&c<=4?n.set(i+u,s+c,!0,!0):n.set(i+u,s+c,!1,!0))}}function gn(n){let t=n.size;for(let e=8;e<t-8;e++){let r=e%2===0;n.set(e,6,r,!0),n.set(6,e,r,!0)}}function dn(n,t){let e=sn.getPositions(t);for(let r=0;r<e.length;r++){let o=e[r][0],i=e[r][1];for(let s=-2;s<=2;s++)for(let u=-2;u<=2;u++)s===-2||s===2||u===-2||u===2||s===0&&u===0?n.set(o+s,i+u,!0,!0):n.set(o+s,i+u,!1,!0)}}function hn(n,t){let e=n.size,r=tt.getEncodedBits(t),o,i,s;for(let u=0;u<18;u++)o=Math.floor(u/3),i=u%3+e-8-3,s=(r>>u&1)===1,n.set(o,i,s,!0),n.set(i,o,s,!0)}function Bt(n,t,e){let r=n.size,o=ln.getEncodedBits(t,e),i,s;for(i=0;i<15;i++)s=(o>>i&1)===1,i<6?n.set(i,8,s,!0):i<8?n.set(i+1,8,s,!0):n.set(r-15+i,8,s,!0),i<8?n.set(8,r-i-1,s,!0):i<9?n.set(8,15-i-1+1,s,!0):n.set(8,15-i-1,s,!0);n.set(r-8,8,1,!0)}function pn(n,t){let e=n.size,r=-1,o=e-1,i=7,s=0;for(let u=e-1;u>0;u-=2)for(u===6&&u--;;){for(let c=0;c<2;c++)if(!n.isReserved(o,u-c)){let l=!1;s<t.length&&(l=(t[s]>>>i&1)===1),n.set(o,u-c,l),i--,i===-1&&(s++,i=7)}if(o+=r,o<0||e<=o){o-=r,r=-r;break}}}function wn(n,t,e){let r=new rn;e.forEach(function(c){r.put(c.mode.bit,4),r.put(c.getLength(),an.getCharCountIndicator(c.mode,n)),c.write(r)});let o=et.getSymbolTotalCodewords(n),i=Tt.getTotalCodewordsCount(n,t),s=(o-i)*8;for(r.getLengthInBits()+4<=s&&r.put(0,4);r.getLengthInBits()%8!==0;)r.putBit(0);let u=(s-r.getLengthInBits())/8;for(let c=0;c<u;c++)r.put(c%2?17:236,8);return mn(r,n,t)}function mn(n,t,e){let r=et.getSymbolTotalCodewords(t),o=Tt.getTotalCodewordsCount(t,e),i=r-o,s=Tt.getBlocksCount(t,e),u=r%s,c=s-u,l=Math.floor(r/s),a=Math.floor(i/s),w=a+1,h=l-a,y=new cn(h),A=0,T=new Array(s),bt=new Array(s),rt=0,Re=new Uint8Array(n.buffer);for(let _=0;_<s;_++){let it=_<c?a:w;T[_]=Re.slice(A,A+it),bt[_]=y.encode(T[_]),A+=it,rt=Math.max(rt,it)}let ot=new Uint8Array(r),Rt=0,E,C;for(E=0;E<rt;E++)for(C=0;C<s;C++)E<T[C].length&&(ot[Rt++]=T[C][E]);for(E=0;E<h;E++)for(C=0;C<s;C++)ot[Rt++]=bt[C][E];return ot}function yn(n,t,e,r){let o;if(Array.isArray(n))o=Ct.fromArray(n);else if(typeof n=="string"){let l=t;if(!l){let a=Ct.rawSplit(n);l=tt.getBestVersionForData(a,e)}o=Ct.fromString(n,l||40)}else throw new Error("Invalid data");let i=tt.getBestVersionForData(o,e);if(!i)throw new Error("The amount of data is too big to be stored in a QR Code");if(!t)t=i;else if(t<i)throw new Error(`
+The chosen QR Code version cannot contain this amount of data.
+Minimum version required to store current data is: `+i+`.
+`);let s=wn(t,e,o),u=et.getSymbolSize(t),c=new on(u);return fn(c,t),gn(c),dn(c,t),Bt(c,e,0),t>=7&&hn(c,t),pn(c,s),isNaN(r)&&(r=At.getBestMask(c,Bt.bind(null,c,e))),At.applyMask(r,c),Bt(c,e,r),{modules:c,version:t,errorCorrectionLevel:e,maskPattern:r,segments:o}}Ae.create=function(t,e){if(typeof t>"u"||t==="")throw new Error("No input text");let r=Et.M,o,i;return typeof e<"u"&&(r=Et.from(e.errorCorrectionLevel,Et.M),o=tt.from(e.version),i=At.from(e.maskPattern),e.toSJISFunc&&et.setToSJISFunction(e.toSJISFunc)),yn(t,o,r,i)}});var It=g(L=>{function Ie(n){if(typeof n=="number"&&(n=n.toString()),typeof n!="string")throw new Error("Color should be defined as hex string");let t=n.slice().replace("#","").split("");if(t.length<3||t.length===5||t.length>8)throw new Error("Invalid hex color: "+n);(t.length===3||t.length===4)&&(t=Array.prototype.concat.apply([],t.map(function(r){return[r,r]}))),t.length===6&&t.push("F","F");let e=parseInt(t.join(""),16);return{r:e>>24&255,g:e>>16&255,b:e>>8&255,a:e&255,hex:"#"+t.slice(0,6).join("")}}L.getOptions=function(t){t||(t={}),t.color||(t.color={});let e=typeof t.margin>"u"||t.margin===null||t.margin<0?4:t.margin,r=t.width&&t.width>=21?t.width:void 0,o=t.scale||4;return{width:r,scale:r?4:o,margin:e,color:{dark:Ie(t.color.dark||"#000000ff"),light:Ie(t.color.light||"#ffffffff")},type:t.type,rendererOpts:t.rendererOpts||{}}};L.getScale=function(t,e){return e.width&&e.width>=t+e.margin*2?e.width/(t+e.margin*2):e.scale};L.getImageWidth=function(t,e){let r=L.getScale(t,e);return Math.floor((t+e.margin*2)*r)};L.qrToImageData=function(t,e,r){let o=e.modules.size,i=e.modules.data,s=L.getScale(o,r),u=Math.floor((o+r.margin*2)*s),c=r.margin*s,l=[r.color.light,r.color.dark];for(let a=0;a<u;a++)for(let w=0;w<u;w++){let h=(a*u+w)*4,y=r.color.light;if(a>=c&&w>=c&&a<u-c&&w<u-c){let A=Math.floor((a-c)/s),T=Math.floor((w-c)/s);y=l[i[A*o+T]?1:0]}t[h++]=y.r,t[h++]=y.g,t[h++]=y.b,t[h]=y.a}}});var Ne=g(nt=>{var Nt=It();function En(n,t,e){n.clearRect(0,0,t.width,t.height),t.style||(t.style={}),t.height=e,t.width=e,t.style.height=e+"px",t.style.width=e+"px"}function Cn(){try{return document.createElement("canvas")}catch{throw new Error("You need to specify a canvas element")}}nt.render=function(t,e,r){let o=r,i=e;typeof o>"u"&&(!e||!e.getContext)&&(o=e,e=void 0),e||(i=Cn()),o=Nt.getOptions(o);let s=Nt.getImageWidth(t.modules.size,o),u=i.getContext("2d"),c=u.createImageData(s,s);return Nt.qrToImageData(c.data,t,o),En(u,i,s),u.putImageData(c,0,0),i};nt.renderToDataURL=function(t,e,r){let o=r;typeof o>"u"&&(!e||!e.getContext)&&(o=e,e=void 0),o||(o={});let i=nt.render(t,e,o),s=o.type||"image/png",u=o.rendererOpts||{};return i.toDataURL(s,u.quality)}});var Pe=g(Se=>{var Bn=It();function Me(n,t){let e=n.a/255,r=t+'="'+n.hex+'"';return e<1?r+" "+t+'-opacity="'+e.toFixed(2).slice(1)+'"':r}function Mt(n,t,e){let r=n+t;return typeof e<"u"&&(r+=" "+e),r}function An(n,t,e){let r="",o=0,i=!1,s=0;for(let u=0;u<n.length;u++){let c=Math.floor(u%t),l=Math.floor(u/t);!c&&!i&&(i=!0),n[u]?(s++,u>0&&c>0&&n[u-1]||(r+=i?Mt("M",c+e,.5+l+e):Mt("m",o,0),o=0,i=!1),c+1<t&&n[u+1]||(r+=Mt("h",s),s=0)):o++}return r}Se.render=function(t,e,r){let o=Bn.getOptions(e),i=t.modules.size,s=t.modules.data,u=i+o.margin*2,c=o.color.light.a?"<path "+Me(o.color.light,"fill")+' d="M0 0h'+u+"v"+u+'H0z"/>':"",l="<path "+Me(o.color.dark,"stroke")+' d="'+An(s,i,o.margin)+'"/>',a='viewBox="0 0 '+u+" "+u+'"',h='<svg xmlns="http://www.w3.org/2000/svg" '+(o.width?'width="'+o.width+'" height="'+o.width+'" ':"")+a+' shape-rendering="crispEdges">'+c+l+`</svg>
+`;return typeof r=="function"&&r(null,h),h}});var Nn=g(O=>{var Tn=_t(),St=Te(),be=Ne(),In=Pe();function Pt(n,t,e,r,o){let i=[].slice.call(arguments,1),s=i.length,u=typeof i[s-1]=="function";if(!u&&!Tn())throw new Error("Callback required as last argument");if(u){if(s<2)throw new Error("Too few arguments provided");s===2?(o=e,e=t,t=r=void 0):s===3&&(t.getContext&&typeof o>"u"?(o=r,r=void 0):(o=r,r=e,e=t,t=void 0))}else{if(s<1)throw new Error("Too few arguments provided");return s===1?(e=t,t=r=void 0):s===2&&!t.getContext&&(r=e,e=t,t=void 0),new Promise(function(c,l){try{let a=St.create(e,r);c(n(a,t,r))}catch(a){l(a)}})}try{let c=St.create(e,r);o(null,n(c,t,r))}catch(c){o(c)}}O.create=St.create;O.toCanvas=Pt.bind(null,be.render);O.toDataURL=Pt.bind(null,be.renderToDataURL);O.toString=Pt.bind(null,function(n,t,e){return In.render(n,e)})});return Nn();})();
+
+</script>
+    <style>
+        :root {
+            --bg-dark: #07090e;
+            --bg-card: rgba(15, 20, 31, 0.9);
+            --bg-card-border: rgba(0, 240, 255, 0.2);
+            --cyan-primary: #00f0ff;
+            --blue-accent: #38bdf8;
+            --blue-glow: rgba(0, 240, 255, 0.35);
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
+            --surface-alt: #131926;
+            --accent-gradient: linear-gradient(135deg, #00f0ff 0%, #3b82f6 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(0, 240, 255, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+        }
+
+        /* Top Bar */
+        .top-nav {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(7, 9, 14, 0.85);
+            backdrop-filter: blur(12px);
+        }
+
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .brand-logo {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            border: 1px solid var(--cyan-primary);
+            box-shadow: 0 0 12px var(--blue-glow);
+        }
+
+        .brand-name {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-back-btn {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.2s ease;
+        }
+
+        .nav-back-btn:hover {
+            color: var(--cyan-primary);
+            border-color: var(--cyan-primary);
+            background: rgba(0, 240, 255, 0.05);
+        }
+
+        /* Main Container */
+        .main-container {
+            max-width: 1160px;
+            margin: 40px auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 1.15fr 0.95fr;
+            gap: 48px;
+            align-items: start;
+            flex: 1;
+        }
+
+        /* Left Side */
+        .details-col {
+            padding-right: 12px;
+        }
+
+        .dev-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            background: rgba(0, 240, 255, 0.08);
+            border: 1px solid rgba(0, 240, 255, 0.25);
+            border-radius: 20px;
+            color: var(--cyan-primary);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .dev-badge .dot {
+            width: 7px;
+            height: 7px;
+            background: var(--cyan-primary);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--cyan-primary);
+        }
+
+        .page-title {
+            font-size: 38px;
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .blue-heart-svg {
+            display: inline-block;
+            vertical-align: middle;
+            color: var(--cyan-primary);
+            filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.7));
+            animation: pulse-heart 2s infinite ease-in-out;
+            flex-shrink: 0;
+        }
+
+        @keyframes pulse-heart {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .lead-text {
+            color: var(--text-muted);
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+
+        .value-props {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .prop-item {
+            background: rgba(22, 30, 46, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .prop-icon-svg {
+            width: 22px;
+            height: 22px;
+            color: var(--cyan-primary);
+            flex-shrink: 0;
+        }
+
+        .prop-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .prop-sub {
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        /* Contact Box */
+        .contact-box {
+            background: rgba(15, 20, 31, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 20px 24px;
+            margin-bottom: 28px;
+        }
+
+        .contact-title {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--cyan-primary);
+            margin-bottom: 14px;
+        }
+
+        .contact-items {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contact-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-muted);
+            font-size: 14px;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .contact-row:hover {
+            color: var(--cyan-primary);
+        }
+
+        .contact-icon {
+            width: 18px;
+            height: 18px;
+            color: var(--cyan-primary);
+            flex-shrink: 0;
+        }
+
+        /* Terms & Conditions */
+        .terms-box {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 20px;
+            font-size: 12.5px;
+            color: var(--text-dim);
+            line-height: 1.65;
+        }
+
+        .terms-heading {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        /* Right Side - Payment Card */
+        .payment-card {
+            background: var(--bg-card);
+            border: 1px solid var(--bg-card-border);
+            border-radius: 20px;
+            padding: 32px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 240, 255, 0.05);
+            backdrop-filter: blur(20px);
+            position: sticky;
+            top: 24px;
+        }
+
+        .card-header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .card-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .card-subtitle {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Amount Presets */
+        .amount-section-title {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-dim);
+            margin-bottom: 12px;
+        }
+
+        .preset-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .preset-btn {
+            background: var(--surface-alt);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--text-muted);
+            padding: 14px 6px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+            outline: none;
+        }
+
+        .preset-btn:hover {
+            border-color: rgba(0, 240, 255, 0.4);
+            color: #fff;
+            background: rgba(0, 240, 255, 0.04);
+        }
+
+        .preset-btn.active {
+            border-color: var(--cyan-primary);
+            background: rgba(0, 240, 255, 0.14);
+            color: var(--cyan-primary);
+            box-shadow: 0 0 16px rgba(0, 240, 255, 0.3);
+        }
+
+        /* Custom Input */
+        .custom-input-wrap {
+            position: relative;
+            margin-bottom: 24px;
+        }
+
+        .currency-symbol {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: 700;
+            color: var(--cyan-primary);
+            font-size: 16px;
+        }
+
+        .custom-amount-input {
+            width: 100%;
+            background: var(--surface-alt);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 12px 16px 12px 34px;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 600;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        .custom-amount-input:focus {
+            border-color: var(--cyan-primary);
+            box-shadow: 0 0 12px rgba(0, 240, 255, 0.2);
+        }
+
+        /* QR Code Container */
+        .qr-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+        }
+
+        .qr-image {
+            width: 210px;
+            height: 210px;
+            display: block;
+            margin: 0 auto;
+            border-radius: 10px;
+            object-fit: contain;
+        }
+
+        .qr-caption {
+            color: #0f172a;
+            font-size: 14px;
+            font-weight: 700;
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .qr-amount-tag {
+            color: #0284c7;
+            font-weight: 800;
+            font-size: 16px;
+        }
+
+        /* UPI ID Copy Field */
+        .upi-copy-wrap {
+            background: var(--surface-alt);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 10px 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .upi-text-col {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .upi-label {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-dim);
+        }
+
+        .upi-id-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--cyan-primary);
+        }
+
+        .copy-btn {
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            color: var(--cyan-primary);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .copy-btn:hover {
+            background: var(--cyan-primary);
+            color: #000;
+            box-shadow: 0 0 10px var(--blue-glow);
+        }
+
+        /* Pay via UPI Mobile Button */
+        .pay-cta-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            background: var(--accent-gradient);
+            color: #050810;
+            padding: 14px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 800;
+            text-decoration: none;
+            box-shadow: 0 4px 20px var(--blue-glow);
+            transition: all 0.2s ease;
+            margin-bottom: 20px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .pay-cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 26px rgba(0, 240, 255, 0.5);
+            filter: brightness(1.08);
+        }
+
+        /* Supported Apps Row */
+        .apps-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .app-badge {
+            font-size: 11px;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            color: var(--text-muted);
+        }
+
+        /* Footer Badges */
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 11px;
+            color: var(--text-dim);
+            text-align: center;
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #00f0ff;
+            color: #000;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 14px;
+            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.5);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 1000;
+            pointer-events: none;
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        @media (max-width: 880px) {
+            .main-container {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+            .page-title {
+                font-size: 32px;
+            }
+            .payment-card {
+                position: static;
+            }
+            .top-nav {
+                padding: 16px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <a href="/" class="brand-link">
+            <img src="assets/icon_human_thumb.jpg" alt="PlanUP Logo" class="brand-logo">
+            <span class="brand-name">PlanUP</span>
+        </a>
+        <a href="/" class="nav-back-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back to Home
+        </a>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="main-container">
+        
+        <!-- Left Column: Details -->
+        <div class="details-col">
+            <div class="dev-badge">
+                <span class="dot"></span>
+                DHEERAJ KUMAR
+            </div>
+
+            <h1 class="page-title">
+                <span>Support PlanUP</span>
+                <svg class="blue-heart-svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" fill="var(--cyan-primary)"></path>
+                </svg>
+            </h1>
+
+            <p class="lead-text">
+                PlanUP is an independent, 100% free Chrome extension designed to transform disorganized YouTube playlists and marathon lectures into clear, actionable daily study goals.
+                <br><br>
+                All your progress, streak data, and notes remain private on your device. If PlanUP has helped you finish courses and study with discipline, consider supporting its development to cover hosting and keep it ad-free for everyone. Thank you!
+            </p>
+
+            <div class="value-props">
+                <div class="prop-item">
+                    <svg class="prop-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                    <div>
+                        <div class="prop-title">100% Free Forever</div>
+                        <div class="prop-sub">No paywalls or hidden fees</div>
+                    </div>
+                </div>
+                <div class="prop-item">
+                    <svg class="prop-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                    <div>
+                        <div class="prop-title">Privacy-First</div>
+                        <div class="prop-sub">Local storage only, zero trackers</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Box -->
+            <div class="contact-box">
+                <div class="contact-title">Contact Details</div>
+                <div class="contact-items">
+                    <a href="mailto:nishukumar75321@gmail.com" class="contact-row">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <span>nishukumar75321@gmail.com</span>
+                    </a>
+                    <a href="tel:+916205921811" class="contact-row">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <span>+91 6205921811</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Terms & Conditions -->
+            <div class="terms-box">
+                <div class="terms-heading">Terms & Conditions</div>
+                <p>
+                    Payments made through this page are voluntary contributions intended to support the ongoing development, server maintenance, and improvement of PlanUP. Making a contribution does not constitute the purchase of a product or commercial service and does not provide proprietary rights or commercial guarantees.
+                    <br><br>
+                    All contributions are processed directly peer-to-peer via standard UPI protocols to <strong>Dheeraj Kumar</strong> and are non-refundable.
+                </p>
+            </div>
+        </div>
+
+        <!-- Right Column: Interactive Payment Card -->
+        <div class="payment-card">
+            <div class="card-header">
+                <h2 class="card-title">Contribute with UPI</h2>
+                <p class="card-subtitle">Zero gateway fees • Direct instant bank transfer</p>
+            </div>
+
+            <div class="amount-section-title">Select Amount</div>
+            <div class="preset-grid">
+                <button type="button" class="preset-btn active" data-amount="49">₹49</button>
+                <button type="button" class="preset-btn" data-amount="99">₹99</button>
+                <button type="button" class="preset-btn" data-amount="199">₹199</button>
+                <button type="button" class="preset-btn" data-amount="499">₹499</button>
+            </div>
+
+            <div class="custom-input-wrap">
+                <span class="currency-symbol">₹</span>
+                <input type="number" id="customAmountInput" class="custom-amount-input" placeholder="Or enter custom amount" min="1" value="49">
+            </div>
+
+            <!-- Dynamic Live UPI QR Code -->
+            <div class="qr-card">
+                <canvas id="qrCanvas" width="210" height="210" class="qr-image" style="width:210px; height:210px; display:block; margin:0 auto; background:#ffffff; border-radius:10px;"></canvas>
+                <div class="qr-caption">
+                    Scan with PhonePe / any UPI App for <span id="qrAmountDisplay" class="qr-amount-tag">₹49</span>
+                </div>
+            </div>
+
+            <!-- UPI ID Copy Bar -->
+            <div class="upi-copy-wrap">
+                <div class="upi-text-col">
+                    <span class="upi-label">UPI ID</span>
+                    <span class="upi-id-value" id="upiIdValue">6205921811@axl</span>
+                </div>
+                <button type="button" class="copy-btn" id="copyUpiBtn">Copy ID</button>
+            </div>
+
+            <!-- 1-Tap Pay for Mobile / Desktop UPI Clients -->
+            <a id="payAppBtn" href="upi://pay?pa=6205921811@axl&pn=Dheeraj%20Kumar&am=49&cu=INR&tn=Support%20PlanUP" class="pay-cta-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                    <line x1="10" y1="10" x2="22" y2="10"></line>
+                </svg>
+                <span id="payBtnText">Pay ₹49 via UPI App</span>
+            </a>
+
+            <!-- Supported Apps -->
+            <div class="apps-row">
+                <span class="app-badge">PhonePe</span>
+                <span class="app-badge">Google Pay</span>
+                <span class="app-badge">Paytm</span>
+                <span class="app-badge">BHIM</span>
+                <span class="app-badge">CRED</span>
+            </div>
+
+            <div class="trust-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <span>Verified Direct UPI • Beneficiary: Dheeraj Kumar</span>
+            </div>
+
+            <!-- Supporter Confirmation Box -->
+            <div style="margin-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 18px;">
+                <button type="button" id="toggleConfirmBtn" style="width: 100%; background: rgba(0, 240, 255, 0.08); border: 1px dashed rgba(0, 240, 255, 0.35); color: var(--cyan-primary); padding: 12px; border-radius: 10px; font-weight: 700; font-size: 13px; cursor: pointer; transition: all 0.2s ease;">
+                    Payment Done? Verify & Confirm Support
+                </button>
+
+                <form id="confirmForm" style="display: none; margin-top: 14px; background: var(--surface-alt); border: 1px solid rgba(0, 240, 255, 0.2); border-radius: 12px; padding: 16px;">
+                    <div style="font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 12px;">Confirm Contribution</div>
+                    
+                    <div style="margin-bottom: 10px;">
+                        <input type="text" id="supporterName" placeholder="Your Name" required style="width: 100%; background: #0c111c; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 10px 12px; color: #fff; font-size: 13px; outline: none;">
+                    </div>
+
+                    <div style="margin-bottom: 12px;">
+                        <input type="text" id="supporterUtr" placeholder="UPI Ref / UTR No. (from PhonePe/GPay)" required style="width: 100%; background: #0c111c; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 10px 12px; color: #fff; font-size: 13px; outline: none;">
+                    </div>
+
+                    <button type="submit" id="submitConfirmBtn" style="width: 100%; background: var(--accent-gradient); color: #000; font-weight: 800; border: none; padding: 11px; border-radius: 8px; font-size: 13px; cursor: pointer;">
+                        Verify & Submit
+                    </button>
+                    
+                    <div id="confirmFeedback" style="display: none; margin-top: 12px; font-size: 13px; text-align: center; line-height: 1.5;"></div>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">UPI ID copied to clipboard!</div>
+
+    <script>
+        const UPI_ID = '6205921811@axl';
+        const PAYEE_NAME = 'Dheeraj Kumar';
+
+        let currentAmount = 49;
+
+        const presetBtns = document.querySelectorAll('.preset-btn');
+        const customInput = document.getElementById('customAmountInput');
+        const qrCanvas = document.getElementById('qrCanvas');
+        const qrAmountDisplay = document.getElementById('qrAmountDisplay');
+        const payAppBtn = document.getElementById('payAppBtn');
+        const payBtnText = document.getElementById('payBtnText');
+        const copyUpiBtn = document.getElementById('copyUpiBtn');
+        const toast = document.getElementById('toast');
+
+        function updateAmount(amount) {
+            currentAmount = Math.max(1, parseInt(amount) || 1);
+            if (qrAmountDisplay) qrAmountDisplay.textContent = '₹' + currentAmount;
+            if (payBtnText) payBtnText.textContent = 'Pay ₹' + currentAmount + ' via UPI App';
+
+            // Generate clean mobile UPI deep link
+            const upiUrl = `upi://pay?pa=${encodeURIComponent(UPI_ID)}&pn=${encodeURIComponent(PAYEE_NAME)}&am=${currentAmount}&cu=INR&tn=${encodeURIComponent('Support PlanUP')}`;
+            if (payAppBtn) payAppBtn.href = upiUrl;
+
+            // Render live dynamic QR Code directly on canvas
+            if (qrCanvas && typeof QRCode !== 'undefined') {
+                QRCode.toCanvas(qrCanvas, upiUrl, {
+                    width: 210,
+                    margin: 1,
+                    color: {
+                        dark: '#000000',
+                        light: '#ffffff'
+                    }
+                }, function(err) {
+                    if (err) console.error('QR render error:', err);
+                });
+            }
+        }
+
+        // Preset button click handling
+        presetBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                presetBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                const amt = parseInt(this.getAttribute('data-amount'));
+                if (customInput) customInput.value = amt;
+                updateAmount(amt);
+            });
+        });
+
+        // Custom amount input handling
+        if (customInput) {
+            ['input', 'change', 'keyup'].forEach(evt => {
+                customInput.addEventListener(evt, function(e) {
+                    const val = parseInt(e.target.value) || 0;
+                    presetBtns.forEach(b => {
+                        const bAmt = parseInt(b.getAttribute('data-amount'));
+                        b.classList.toggle('active', bAmt === val);
+                    });
+                    if (val > 0) {
+                        updateAmount(val);
+                    }
+                });
+            });
+        }
+
+        // Copy UPI ID button
+        if (copyUpiBtn) {
+            copyUpiBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                navigator.clipboard.writeText(UPI_ID).then(() => {
+                    toast.classList.add('show');
+                    copyUpiBtn.textContent = 'Copied!';
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                        copyUpiBtn.textContent = 'Copy ID';
+                    }, 2000);
+                }).catch(() => {
+                    const temp = document.createElement('input');
+                    temp.value = UPI_ID;
+                    document.body.appendChild(temp);
+                    temp.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(temp);
+                    toast.classList.add('show');
+                    copyUpiBtn.textContent = 'Copied!';
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                        copyUpiBtn.textContent = 'Copy ID';
+                    }, 2000);
+                });
+            });
+        }
+
+        // Confirmation Form Toggle & Submit
+        const toggleConfirmBtn = document.getElementById('toggleConfirmBtn');
+        const confirmForm = document.getElementById('confirmForm');
+        const confirmFeedback = document.getElementById('confirmFeedback');
+
+        if (toggleConfirmBtn && confirmForm) {
+            toggleConfirmBtn.addEventListener('click', function() {
+                confirmForm.style.display = 'block';
+                toggleConfirmBtn.style.display = 'none';
+            });
+        }
+
+        if (confirmForm) {
+            confirmForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const nameInput = document.getElementById('supporterName');
+                const utrInput = document.getElementById('supporterUtr');
+                const submitBtn = document.getElementById('submitConfirmBtn');
+
+                const name = nameInput ? nameInput.value : '';
+                const utr = utrInput ? utrInput.value : '';
+
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Verifying with server...';
+
+                try {
+                    const res = await fetch('/api/support/confirm', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ name, utr, amount: currentAmount })
+                    });
+                    const data = await res.json();
+                    if (data.success) {
+                        confirmFeedback.style.display = 'block';
+                        confirmFeedback.style.color = '#00f0ff';
+                        confirmFeedback.innerHTML = `<strong>Thank You, ${name}!</strong><br>Your contribution of ₹${currentAmount} has been recorded. You are an official PlanUP Supporter!`;
+                        submitBtn.textContent = 'Verified!';
+                    } else {
+                        confirmFeedback.style.display = 'block';
+                        confirmFeedback.style.color = '#ff6b6b';
+                        confirmFeedback.textContent = data.error || 'Verification failed. Please check UTR.';
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Verify & Submit';
+                    }
+                } catch (err) {
+                    confirmFeedback.style.display = 'block';
+                    confirmFeedback.style.color = '#00f0ff';
+                    confirmFeedback.innerHTML = `<strong>Thank You, ${name}!</strong><br>Contribution of ₹${currentAmount} recorded.`;
+                    submitBtn.textContent = 'Submitted!';
+                }
+            });
+        }
+
+        // Initialize state reliably across local files and deployed hosts
+        updateAmount(49);
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => updateAmount(currentAmount));
+        }
+        window.addEventListener('load', () => updateAmount(currentAmount));
+        setTimeout(() => updateAmount(currentAmount), 50);
+        setTimeout(() => updateAmount(currentAmount), 300);
+    </script>
+</body>
+</html>

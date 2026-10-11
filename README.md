@@ -1,101 +1,77 @@
-<p align="center">
-  <img src="assets/icon128.png" alt="PlanUp Icon" width="96" />
-</p>
+<div align="center">
+  <img src="assets/icon128.png" alt="PlanUP Logo" width="100" />
+  <h1>PlanUP</h1>
+  <p><b>Plan Your Learning. Study Smart on YouTube.</b></p>
+  <p>A privacy-first Chrome extension that transforms overwhelming YouTube playlists and marathon lectures into structured, achievable daily study goals directly inside YouTube.</p>
 
-<h1 align="center">PlanUP</h1>
-
-<p align="center">
-  <b>Your playlists. Your plan. Your progress. Make every video count.</b><br/>
-  It lives inside YouTube.
-</p>
-
----
-
-# PlanUP - YouTube Playlist & One-Shot Planner
-One-Shot Planner · Live VOD Support · Dual Plan Modes
-
-PlanUP is a lightweight Chrome extension that transforms overwhelming YouTube playlists (and long single videos) into structured, realistic daily plans — directly inside YouTube.
-
-No spreadsheets.  
-No manual tracking.  
-No switching tabs.  
-
-Just open YouTube and follow your plan.
+  <p>
+    <a href="https://plan-up-jade.vercel.app"><img src="https://img.shields.io/badge/Website-plan--up-00f0ff?style=flat-square" alt="Website" /></a>
+    <a href="https://plan-up-jade.vercel.app/support"><img src="https://img.shields.io/badge/Support-UPI%20%26%20Contribute-38bdf8?style=flat-square" alt="Support" /></a>
+    <img src="https://img.shields.io/badge/Manifest-V3-10b981?style=flat-square" alt="Manifest V3" />
+    <img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="License" />
+  </p>
+</div>
 
 ---
 
-## What's New
+## ⚡ Overview
 
-### Cyberpunk UI & Branding Redesign
-Welcome to the new **PlanUP**. We've completely overhauled the interface with a sleek, vibrant Cyberpunk aesthetic. Enjoy neon cyan accents, dynamic glow effects, and modern typography for a premium planning experience.
+Self-studying on YouTube is powerful, but long playlists and 6-hour marathon courses are easy to abandon. **PlanUP** embeds directly into YouTube to give you an actionable roadmap:
 
-### Dedicated One-Shot & Live VOD Support
-PlanUP now supports single YouTube videos, including past Live Streams (VODs) and Shorts! 
-- The UI now features dedicated input fields for **Playlists** and **One-Shot Videos** to prevent confusion.
-- Perfect for those 4-hour long single-video courses or podcasts.
-
-### Per-Video Sub-Checkboxes 
-Day cards in Custom (time-based) mode now show individual checkboxes for every video segment inside a day.
-- Check off individual video segments as you finish them
-- Completing all segments automatically marks the whole day as done
-- Partial video segments are labeled clearly with a `partial` badge
-
-### Plan Mode Selection
-Two distinct modes now available when creating a plan:
-#### Video-by-Video Mode
-One video per day. No splitting, no time math. Best for consistency-focused goals.
-#### Custom Schedule Mode  
-Set your daily watch time budget and let PlanUP distribute videos (with partial splits for long videos) across your timeline.
+- **No spreadsheets** or manual note-taking
+- **No tab switching** — track progress right on the video page
+- **No data collection** — all progress stays 100% on your device
 
 ---
 
-## Core Features
+## ✨ Features
 
-### Multi-Plan Management
-Manage multiple playlists and one-shot videos simultaneously and switch between them instantly.
-
-### Accurate Duration Calculation
-Fetches real playlist duration using a backend proxy.
-
-### Partial Video Splitting
-Long videos are automatically split across multiple days when needed (in Custom mode).
-
-### Persistent Storage
-Plans and progress are saved locally in your browser.
-
-### Privacy-First
-PlanUP:
-- Does not collect personal data  
-- Does not track usage  
-- Stores everything locally in your browser  
-
-Your data never leaves your system.
+- **In-Page Sidebar Tracker:** Live progress bar, current day target, and next video cues integrated directly into the YouTube playlist sidebar.
+- **Dual Planning Modes:**
+  - **Video-by-Video:** Complete a fixed number of videos each day. Best for short, structured courses.
+  - **Custom Time Schedule:** Set a daily watch budget (e.g., 45 mins/day). Long lectures are automatically divided across days.
+- **One-Shot & Livestream Support:** Plan multi-hour marathon videos and archived livestreams as structured multi-day modules.
+- **Gamified Discipline:** Maintain daily study streaks and earn XP levels as you complete your syllabus.
+- **100% Privacy-First:** Stores all study plans, progress, and streaks in your browser’s local storage (`chrome.storage.local`). Zero analytics, zero trackers.
 
 ---
 
-## Installation
+## 🚀 Installation
 
-1. Clone or download this repository (or use the provided `PlanUP_Extension.zip`)
-2. Open Chrome and go to `chrome://extensions`
-3. Enable **Developer Mode** at the top right.
-4. Click **Load Unpacked**
-5. Select the extracted folder
+### Option 1: Chrome Web Store
+> *Currently submitted and under official review.* Once approved, install directly with one click from the Chrome Web Store.
 
----
+### Option 2: Load Unpacked (Developer Mode)
 
-## Usage
-
-1. Open YouTube  
-2. Click the PlanUP icon inside YouTube (or the Extension popup)
-3. Click **Add New Plan**
-4. Paste a YouTube Playlist URL **OR** a Single Video URL (including `/live/`)
-5. Click **Fetch Playlist** (or Fetch One-Shot)
-6. Choose your planning mode (Video-by-Video or Custom Schedule)
-7. Generate your plan and start learning!
+1. Clone or download this repository.
+2. Open Google Chrome and navigate to `chrome://extensions`.
+3. Enable **Developer mode** (toggle in the top-right corner).
+4. Click **Load unpacked** (top-left) and select the `my_project` folder:
+   ```text
+   C:\Users\HP\Desktop\yt plan\project\my_project
+   ```
+5. Open any YouTube playlist and click **Add New Plan** to get started!
 
 ---
 
-## Support the Project
+## 🛠️ Tech Stack
 
-If PlanUP helps you stay consistent with your learning, don't forget to star the repository!
-https://github.com/Dheerajkr09/PlanUp
+- **Extension:** Chrome Extensions Manifest V3, Vanilla JavaScript, CSS3
+- **Backend API:** Node.js, Express, Vercel Serverless Functions
+- **Storage:** Chrome Local Storage API (`chrome.storage.local`)
+
+---
+
+## 💙 Support & Community
+
+PlanUP is an independent, 100% free tool built for students and self-learners. If it helps you study with consistency, consider supporting its development:
+
+- **Contribute / Support:** [Support PlanUP](https://plan-up-jade.vercel.app/support)
+- **Live Landing Page:** [plan-up-jade.vercel.app](https://plan-up-jade.vercel.app)
+- **Privacy Policy:** [Privacy Policy](https://plan-up-jade.vercel.app/privacy-policy)
+
+---
+
+## 📄 License
+
+This project is open-source under the [MIT License](LICENSE).

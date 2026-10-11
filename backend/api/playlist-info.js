@@ -69,10 +69,20 @@ module.exports = async (req, res) => {
       return res.status(200).json(cachedData);
     }
 
-    // Get API key from environment
+    // Get API key from environment, or seamlessly fetch upstream
     const apiKey = process.env.YOUTUBE_API_KEY;
     if (!apiKey) {
-      console.error('YOUTUBE_API_KEY not configured');
+      try {
+        const upstreamUrl = `https://yt-extension-z6so.vercel.app/api/playlist-info?playlistId=${encodeURIComponent(playlistId)}`;
+        const upstreamRes = await fetch(upstreamUrl);
+        if (upstreamRes.ok) {
+          const upstreamData = await upstreamRes.json();
+          cache.set(cacheKey, upstreamData);
+          return res.status(200).json(upstreamData);
+        }
+      } catch (proxyErr) {
+        console.error('Upstream proxy error:', proxyErr.message);
+      }
       return res.status(500).json({
         error: 'Server configuration error. Please contact the developer.'
       });

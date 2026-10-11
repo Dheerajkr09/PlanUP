@@ -108,7 +108,7 @@ chrome.runtime.onInstalled.addListener((details) => {
 function setUninstallRedirect() {
   const version = chrome.runtime.getManifest().version;
   chrome.runtime.setUninstallURL(
-    `https://yt-extension-z6so.vercel.app/uninstall?v=${version}&src=ext`,
+    `https://plan-up-jade.vercel.app/uninstall?v=${version}&src=ext`,
     () => { if (chrome.runtime.lastError) console.error(chrome.runtime.lastError); }
   );
 }
