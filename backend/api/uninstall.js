@@ -3,7 +3,9 @@
  * Serves the modern, concise PlanUP uninstall feedback page
  */
 
-const HTML_CONTENT = `<!DOCTYPE html>
+const LOGO_BASE64 = require('./logoBase64');
+
+const getHtmlContent = () => `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -68,18 +70,13 @@ const HTML_CONTENT = `<!DOCTYPE html>
       backdrop-filter: blur(8px);
     }
 
-    .brand-icon {
-      width: 20px;
-      height: 20px;
-      border-radius: 6px;
-      background: linear-gradient(135deg, #00f0ff, #8b5cf6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-      font-weight: 800;
-      color: #050811;
-      box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+    .brand-avatar-img {
+      width: 24px;
+      height: 24px;
+      border-radius: 7px;
+      object-fit: cover;
+      border: 1px solid rgba(0, 240, 255, 0.45);
+      box-shadow: 0 0 10px rgba(0, 240, 255, 0.35);
     }
 
     .brand-name {
@@ -415,7 +412,7 @@ const HTML_CONTENT = `<!DOCTYPE html>
   <div class="wrapper">
     <div class="brand-bar">
       <div class="brand-logo">
-        <div class="brand-icon">⚡</div>
+        <img src="${LOGO_BASE64}" alt="PlanUP" class="brand-avatar-img">
         <div class="brand-name">Plan<span>UP</span></div>
       </div>
       <div class="badge-uninstalled">Extension Removed</div>
@@ -432,29 +429,29 @@ const HTML_CONTENT = `<!DOCTYPE html>
         <div class="q-block">
           <div class="q-title">1. What made you uninstall PlanUP?</div>
           <div class="chips-grid">
-            <div class="chip" data-name="reason" data-val="Finished Course">
+            <div class="chip" data-name="reason" data-val="Couldnt Fetch">
               <span class="chip-radio"></span>
-              <span>🎯 Finished my course / goals</span>
+              <span>Couldn't fetch my playlist or video</span>
             </div>
-            <div class="chip" data-name="reason" data-val="One-Shot Issue">
+            <div class="chip" data-name="reason" data-val="Slow Lagging">
               <span class="chip-radio"></span>
-              <span>📺 One-Shot (2hr+) planner issue</span>
+              <span>YouTube felt slow or lagging</span>
             </div>
-            <div class="chip" data-name="reason" data-val="Daily Quota">
+            <div class="chip" data-name="reason" data-val="Sidebar Distracting">
               <span class="chip-radio"></span>
-              <span>⏱️ Daily watch pace didn't fit</span>
+              <span>Sidebar widget was distracting or in the way</span>
             </div>
-            <div class="chip" data-name="reason" data-val="Sidebar Conflict">
+            <div class="chip" data-name="reason" data-val="Confusing UI">
               <span class="chip-radio"></span>
-              <span>🔄 YouTube sidebar widget issue</span>
+              <span>Interface was confusing to use</span>
             </div>
-            <div class="chip" data-name="reason" data-val="Too Complex">
+            <div class="chip" data-name="reason" data-val="Manual Notes">
               <span class="chip-radio"></span>
-              <span>⚡ Too complex / difficult</span>
+              <span>Prefer manual planning (Notion / Notes)</span>
             </div>
-            <div class="chip" data-name="reason" data-val="Temporary">
+            <div class="chip" data-name="reason" data-val="Temporary Test">
               <span class="chip-radio"></span>
-              <span>🛠️ Temporary break / testing</span>
+              <span>Just testing / Temporary install</span>
             </div>
           </div>
         </div>
@@ -463,12 +460,12 @@ const HTML_CONTENT = `<!DOCTYPE html>
         <div class="q-block">
           <div class="q-title">2. Which PlanUP feature could be improved?</div>
           <div class="feature-grid">
+            <div class="feature-card" data-feat="Playlist Planner">Playlist Planner</div>
             <div class="feature-card" data-feat="One-Shot Planner">One-Shot (>2h) Planner</div>
-            <div class="feature-card" data-feat="Sidebar Progress">YouTube Sidebar Widget</div>
-            <div class="feature-card" data-feat="Daily Quota">Daily Watch Quota</div>
-            <div class="feature-card" data-feat="Speed Adjustment">Playback Speed Sync</div>
-            <div class="feature-card" data-feat="Habit Streaks">Habits & Streaks</div>
-            <div class="feature-card" data-feat="Everything Good">Loved All Features</div>
+            <div class="feature-card" data-feat="Sidebar Widget">YouTube Sidebar Widget</div>
+            <div class="feature-card" data-feat="Daily Quota">Daily Watch Quota & Pace</div>
+            <div class="feature-card" data-feat="Gamification">Streaks & XP Gamification</div>
+            <div class="feature-card" data-feat="Checklist">Day-wise Checklist & Tracking</div>
           </div>
         </div>
 
@@ -553,5 +550,5 @@ const HTML_CONTENT = `<!DOCTYPE html>
 
 module.exports = (req, res) => {
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
-  res.status(200).send(HTML_CONTENT);
+  res.status(200).send(getHtmlContent());
 };
