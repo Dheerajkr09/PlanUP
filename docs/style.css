@@ -4,29 +4,30 @@
    ========================================================================== */
 
 :root {
-  /* Color Palette */
-  --bg-primary: #06080e;
-  --bg-secondary: #0b0f19;
-  --bg-tertiary: #111726;
-  --card-bg: rgba(15, 23, 42, 0.7);
-  --card-bg-hover: rgba(20, 30, 55, 0.85);
+  /* Authentic PlanUP Gaming/Productivity Palette */
+  --bg-primary: #0B0E14;
+  --bg-secondary: rgba(22, 27, 40, 0.7);
+  --bg-hover: rgba(35, 45, 65, 0.8);
+  --card-bg: linear-gradient(160deg, rgba(17, 24, 39, 0.92) 0%, rgba(10, 14, 23, 0.96) 100%);
+  --card-bg-hover: linear-gradient(160deg, rgba(22, 31, 50, 0.95) 0%, rgba(13, 18, 30, 0.98) 100%);
   
-  --cyan: #00f0ff;
-  --cyan-glow: rgba(0, 240, 255, 0.4);
-  --cyan-dim: rgba(0, 240, 255, 0.12);
-  --cyan-border: rgba(0, 240, 255, 0.22);
+  --cyan: #00F0FF;
+  --cyan-glow: rgba(0, 240, 255, 0.35);
+  --cyan-dim: rgba(0, 240, 255, 0.1);
+  --cyan-border: rgba(0, 240, 255, 0.2);
+  --cyan-border-hover: rgba(0, 240, 255, 0.45);
   
-  --purple: #8b5cf6;
-  --purple-glow: rgba(139, 92, 246, 0.4);
-  --purple-dim: rgba(139, 92, 246, 0.12);
-  --purple-border: rgba(139, 92, 246, 0.25);
+  --purple: #8A2BE2;
+  --purple-glow: rgba(138, 43, 226, 0.35);
+  --purple-dim: rgba(138, 43, 226, 0.12);
+  --purple-border: rgba(138, 43, 226, 0.25);
   
-  --mint: #00ff85;
-  --mint-dim: rgba(0, 255, 133, 0.12);
+  --mint: #00FF85;
+  --mint-dim: rgba(0, 255, 133, 0.1);
   
-  --text-main: #f8fafc;
-  --text-sub: #94a3b8;
-  --text-muted: #64748b;
+  --text-main: #FFFFFF;
+  --text-sub: #94A3B8;
+  --text-muted: #64748B;
   --border-subtle: rgba(255, 255, 255, 0.08);
   
   /* Fonts */
@@ -67,12 +68,9 @@ body {
   overflow-x: hidden;
   position: relative;
   background-image: 
-    radial-gradient(circle at 10% 15%, rgba(0, 240, 255, 0.07) 0%, transparent 45%),
-    radial-gradient(circle at 90% 40%, rgba(139, 92, 246, 0.08) 0%, transparent 45%),
-    radial-gradient(circle at 50% 85%, rgba(0, 240, 255, 0.05) 0%, transparent 50%),
-    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+    linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
 /* Custom Scrollbar */
@@ -99,10 +97,11 @@ h1, h2, h3, h4 {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #00f0ff 0%, #a855f7 100%);
+  background: linear-gradient(135deg, #00F0FF 0%, #38bdf8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
+  text-shadow: 0 0 24px rgba(0, 240, 255, 0.2);
 }
 
 .container {
@@ -132,15 +131,17 @@ h1, h2, h3, h4 {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #00f0ff 0%, #00b4d8 60%, #7000ff 100%);
-  color: #050811;
-  box-shadow: 0 4px 22px var(--cyan-glow);
+  background: #00F0FF;
+  color: #0B0E14;
+  font-weight: 700;
+  box-shadow: 0 0 16px rgba(0, 240, 255, 0.35);
+  border: 1px solid rgba(0, 240, 255, 0.5);
 }
 
 .btn-primary:hover {
+  background: #33f3ff;
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(0, 240, 255, 0.65);
-  filter: brightness(1.08);
+  box-shadow: 0 0 26px rgba(0, 240, 255, 0.55);
 }
 
 .btn-outline {
