@@ -1,6 +1,6 @@
 /**
  * progress-widget.js
- * PlanYT Progress Widget - YouTube Playlist Sidebar Integration
+ * PlanUP Progress Widget - YouTube Playlist Sidebar Integration
  * Injects a native-looking progress card into YouTube playlist pages
  */
 
@@ -8,8 +8,8 @@
   'use strict';
 
   const CONFIG = {
-    WIDGET_ID: 'planyt-progress-widget-container',
-    WIDGET_HOST_ID: 'planyt-progress-widget-host',
+    WIDGET_ID: 'planup-progress-widget-container',
+    WIDGET_HOST_ID: 'planup-progress-widget-host',
     SIDEBAR_SELECTOR: 'ytd-playlist-panel-renderer',
     SECONDARY_SELECTOR: '#secondary',
     CHECK_INTERVAL: 300,
@@ -163,7 +163,7 @@
         widget.remove();
       }
     } catch (err) {
-      console.warn('PlanYT: Error removing widget', err);
+      console.warn('PlanUP: Error removing widget', err);
     }
 
     STATE.shadowRoot = null;
@@ -180,7 +180,7 @@
     style.textContent = getWidgetStyles();
 
     const container = document.createElement('div');
-    container.className = 'planyt-widget-container';
+    container.className = 'planup-widget-container';
 
     shadow.appendChild(style);
     shadow.appendChild(container);
@@ -270,7 +270,7 @@
           </div>
 
           <div class="plans-footer">
-            <button class="btn btn-primary" id="planyt-empty-cta">
+            <button class="btn btn-primary" id="planup-empty-cta">
               <span>Create Study Plan</span>
               <svg class="btn-arrow" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M3 8h10M9 4l4 4-4 4"/>
@@ -281,9 +281,9 @@
       </div>
     `;
 
-    const btn = container.querySelector('#planyt-empty-cta');
+    const btn = container.querySelector('#planup-empty-cta');
     if (btn) {
-      btn.addEventListener('click', () => openPlanYTPopup('create'));
+      btn.addEventListener('click', () => openPlanUPPopup('create'));
     }
   }
 
@@ -305,7 +305,7 @@
           </div>
 
           <div class="plans-footer">
-            <button class="btn btn-primary" id="planyt-view-cta">
+            <button class="btn btn-primary" id="planup-view-cta">
               <span>Review Plan</span>
               <svg class="btn-arrow" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M3 8h10M9 4l4 4-4 4"/>
@@ -316,9 +316,9 @@
       </div>
     `;
 
-    const btn = container.querySelector('#planyt-view-cta');
+    const btn = container.querySelector('#planup-view-cta');
     if (btn) {
-      btn.addEventListener('click', () => openPlanYTPopup('open'));
+      btn.addEventListener('click', () => openPlanUPPopup('open'));
     }
   }
 
@@ -376,7 +376,7 @@
           </div>
 
           <div class="plans-footer">
-            <button class="btn btn-primary" id="planyt-open-cta">
+            <button class="btn btn-primary" id="planup-open-cta">
               <span>Open Plan Dashboard</span>
               <svg class="btn-arrow" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M3 8h10M9 4l4 4-4 4"/>
@@ -387,9 +387,9 @@
       </div>
     `;
 
-    const btn = container.querySelector('#planyt-open-cta');
+    const btn = container.querySelector('#planup-open-cta');
     if (btn) {
-      btn.addEventListener('click', () => openPlanYTPopup('open'));
+      btn.addEventListener('click', () => openPlanUPPopup('open'));
     }
   }
 
@@ -397,7 +397,7 @@
     return new Promise((resolve) => {
       chrome.storage.local.get([CONFIG.STORAGE_KEY], (result) => {
         if (chrome.runtime.lastError) {
-          console.warn('PlanYT widget: Storage error', chrome.runtime.lastError);
+          console.warn('PlanUP widget: Storage error', chrome.runtime.lastError);
           resolve({ plans: [] });
         } else {
           const data = result[CONFIG.STORAGE_KEY] || { plans: [], activePlanId: null };
@@ -427,7 +427,7 @@
           stale.remove();
         }
       } catch (err) {
-        console.warn('PlanYT: Error removing stale widget on navigation', err);
+        console.warn('PlanUP: Error removing stale widget on navigation', err);
       }
       handlePageChangeDebounced();
     });
@@ -472,7 +472,7 @@
     }
   }
 
-  function openPlanYTPopup(action) {
+  function openPlanUPPopup(action) {
     // action: 'open' -> open existing plan; 'create' -> create new plan for current playlist/one-shot
     const targetId = extractTargetIdFromPage();
     const currentUrl = window.location.href;
@@ -492,7 +492,7 @@
     }
 
     // Fallback
-    chrome.runtime.sendMessage({ type: 'OPEN_PLANYT_POPUP' });
+    chrome.runtime.sendMessage({ type: 'OPEN_PLANUP_POPUP' });
   }
 
   async function initialize() {
@@ -530,7 +530,7 @@
         box-sizing: border-box;
       }
 
-      .planyt-widget-container {
+      .planup-widget-container {
         display: block;
         width: 100%;
         color: var(--yt-text-primary);

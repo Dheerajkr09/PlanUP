@@ -1,6 +1,6 @@
 /**
  * youtube-integration.js
- * PlanYT YouTube Integration - Toolbar Icon
+ * PlanUP YouTube Integration - Toolbar Icon
  * Injects a native-looking icon into YouTube's top toolbar
  */
 
@@ -11,7 +11,7 @@
   // Configuration
   // ========================================
   const CONFIG = {
-    ICON_ID: 'planyt-toolbar-icon',
+    ICON_ID: 'planup-toolbar-icon',
     HEADER_SELECTOR: 'ytd-masthead #end',
     CHECK_INTERVAL: 250,
     MAX_WAIT_TIME: 10000
@@ -58,9 +58,9 @@
     const iconButton = document.createElement('div');
     iconButton.id = CONFIG.ICON_ID;
     iconButton.setAttribute('role', 'button');
-    iconButton.setAttribute('aria-label', 'PlanYT');
+    iconButton.setAttribute('aria-label', 'PlanUP');
     iconButton.setAttribute('tabindex', '0');
-    iconButton.title = 'PlanYT';
+    iconButton.title = 'PlanUP';
 
     iconButton.style.cssText = `
       display: inline-flex;
@@ -77,7 +77,7 @@
 
     const icon = document.createElement('img');
     icon.src = chrome.runtime.getURL('assets/icon32.png');
-    icon.alt = 'PlanYT';
+    icon.alt = 'PlanUP';
     icon.style.cssText = `
       width: 24px;
       height: 24px;
@@ -122,12 +122,12 @@
   // ========================================
   function handleIconClick() {
     chrome.runtime.sendMessage(
-      { type: 'OPEN_PLANYT_POPUP' },
+      { type: 'OPEN_PLANUP_POPUP' },
       (response) => {
         if (chrome.runtime.lastError) {
-          console.error('PlanYT: Error opening popup', chrome.runtime.lastError);
+          console.error('PlanUP: Error opening popup', chrome.runtime.lastError);
         } else if (response && !response.success) {
-          console.error('PlanYT: Popup failed to open', response.error);
+          console.error('PlanUP: Popup failed to open', response.error);
         }
       }
     );
@@ -172,7 +172,7 @@
       const headerEnd = await waitForYouTubeHeader();
       injectToolbarIcon(headerEnd);
     } catch (error) {
-      console.error('PlanYT: Failed to initialize toolbar icon', error);
+      console.error('PlanUP: Failed to initialize toolbar icon', error);
     }
   }
 

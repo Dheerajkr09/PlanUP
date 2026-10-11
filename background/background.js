@@ -1,21 +1,21 @@
 /**
  * background.js
- * PlanYT Background Service Worker
+ * PlanUP Background Service Worker
  * Handles messages from content scripts to open the extension popup
  */
 
 // Listen for messages from content scripts
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  // Handle request to open PlanYT popup
-  if (message.type === 'OPEN_PLANYT_POPUP') {
+  // Handle request to open PlanUP popup
+  if (message.type === 'OPEN_PLANUP_POPUP') {
     // Open the extension popup (legacy simple open)
     chrome.action.openPopup()
       .then(() => {
-        console.log('PlanYT: Popup opened successfully');
+        console.log('PlanUP: Popup opened successfully');
         sendResponse({ success: true });
       })
       .catch((error) => {
-        console.error('PlanYT: Failed to open popup', error);
+        console.error('PlanUP: Failed to open popup', error);
         sendResponse({ success: false, error: error.message });
       });
     return true;
@@ -26,7 +26,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     const playlistId = message.playlistId || null;
     const pending = { type: 'openPlan', playlistId };
     chrome.storage.local.set({ pendingPopupAction: pending }, () => {
-      chrome.action.openPopup().catch(err => console.error('PlanYT: Failed to open popup', err));
+      chrome.action.openPopup().catch(err => console.error('PlanUP: Failed to open popup', err));
       sendResponse({ success: true });
     });
     return true;
@@ -38,7 +38,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     const playlistId = message.playlistId || null;
     const pending = { type: 'createPlan', playlistUrl, playlistId };
     chrome.storage.local.set({ pendingPopupAction: pending }, () => {
-      chrome.action.openPopup().catch(err => console.error('PlanYT: Failed to open popup', err));
+      chrome.action.openPopup().catch(err => console.error('PlanUP: Failed to open popup', err));
       sendResponse({ success: true });
     });
   }
@@ -56,7 +56,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         sendResponse({ success: true, data: text });
       })
       .catch(error => {
-        console.error('PlanYT Fetch error:', error);
+        console.error('PlanUP Fetch error:', error);
         sendResponse({ success: false, error: error.message });
       });
     return true; // Indicates async response
@@ -64,7 +64,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 });
 
 // Optional: Log when service worker starts
-console.log('PlanYT: Background service worker initialized');
+console.log('PlanUP: Background service worker initialized');
 
 // Handle installation and updates for rating prompt feature
 chrome.runtime.onInstalled.addListener((details) => {
@@ -108,7 +108,7 @@ chrome.runtime.onInstalled.addListener((details) => {
 function setUninstallRedirect() {
   const version = chrome.runtime.getManifest().version;
   chrome.runtime.setUninstallURL(
-    `https://planyt.vercel.app/uninstall?v=${version}&src=ext`,
+    `https://yt-extension-z6so.vercel.app/uninstall?v=${version}&src=ext`,
     () => { if (chrome.runtime.lastError) console.error(chrome.runtime.lastError); }
   );
 }
