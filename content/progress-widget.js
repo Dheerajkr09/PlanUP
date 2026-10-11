@@ -29,8 +29,49 @@
     activeInjectionPromise: null
   };
 
+  async function checkPageEligibility() {
+    if (isPlaylistPage()) return true;
+    if (!isWatchPage()) return false;
+
+    // Single video watch page:
+    const targetId = extractTargetIdFromPage();
+    if (!targetId) return false;
+
+    // 1. If an active plan already exists in storage for this video -> ELIGIBLE!
+    const plansData = await getPlansFromStorage();
+    const existingPlan = findMatchingPlan(targetId, plansData);
+    if (existingPlan) return true;
+
+    // 2. Otherwise check One-Shot criteria: > 2 hours (7200s) AND study keywords in title
+    let title = getYouTubeVideoTitle();
+    let hasKeywords = hasStudyKeywords(title);
+
+    // If keywords not found immediately, give a brief 300ms pause in case YouTube SPA DOM is updating
+    if (!hasKeywords) {
+      await new Promise(r => setTimeout(r, 300));
+      title = getYouTubeVideoTitle();
+      hasKeywords = hasStudyKeywords(title);
+    }
+
+    if (!hasKeywords) return false;
+
+    // Keywords matched! Check duration (with brief retries if player duration is still 0)
+    let dur = getYouTubeVideoDuration();
+    if (dur <= 0) {
+      for (let i = 0; i < 5; i++) {
+        await new Promise(r => setTimeout(r, 300));
+        dur = getYouTubeVideoDuration();
+        if (dur > 0) break;
+      }
+    }
+
+    return dur > 7200;
+  }
+
   async function injectWidgetSafely() {
-    if (!isPlaylistPage()) {
+    const isEligible = await checkPageEligibility();
+    if (!isEligible) {
+      removeWidget();
       return;
     }
 
@@ -45,18 +86,14 @@
 
     STATE.activeInjectionPromise = (async () => {
       try {
-        try {
-          const staleWidget = document.getElementById(CONFIG.WIDGET_HOST_ID);
-          if (staleWidget) {
-            staleWidget.remove();
-          }
-        } catch (err) {
-          console.warn('PlanYT: Could not remove stale widget', err);
+        const staleWidget = document.getElementById(CONFIG.WIDGET_HOST_ID);
+        if (staleWidget) {
+          staleWidget.remove();
         }
 
-        const playlistPanel = await waitForSidebar();
-        if (!playlistPanel) {
-          console.warn('PlanUp: Playlist sidebar not found');
+        const panel = await waitForSidebar();
+        if (!panel) {
+          console.warn('PlanUp: Sidebar container not found');
           return;
         }
 
@@ -72,21 +109,19 @@
           return;
         }
 
-        const referenceElement = playlistPanel.querySelector('#header-description');
-
-        try {
-          if (referenceElement && referenceElement.parentNode === playlistPanel) {
-            playlistPanel.insertBefore(widget, referenceElement);
+        if (isPlaylistPage()) {
+          const referenceElement = panel.querySelector('#header-description');
+          if (referenceElement && referenceElement.parentNode === panel) {
+            panel.insertBefore(widget, referenceElement);
           } else {
-            playlistPanel.appendChild(widget);
+            panel.appendChild(widget);
           }
-        } catch (err) {
-          console.warn('PlanUp: insertBefore failed, using appendChild fallback', err);
-          try {
-            playlistPanel.appendChild(widget);
-          } catch (err2) {
-            console.warn('PlanUp: appendChild also failed', err2);
-            return;
+        } else {
+          // Single video page: inject at top of #secondary-inner
+          if (panel.firstElementChild) {
+            panel.insertBefore(widget, panel.firstElementChild);
+          } else {
+            panel.appendChild(widget);
           }
         }
 
@@ -100,10 +135,19 @@
   }
 
   async function waitForSidebar(maxAttempts = CONFIG.MAX_INIT_ATTEMPTS) {
+    const isPlaylist = isPlaylistPage();
+
     for (let i = 0; i < maxAttempts; i++) {
-      const sidebar = document.querySelector(CONFIG.SIDEBAR_SELECTOR);
-      if (sidebar && sidebar.isConnected) {
-        return sidebar;
+      if (isPlaylist) {
+        const sidebar = document.querySelector(CONFIG.SIDEBAR_SELECTOR);
+        if (sidebar && sidebar.isConnected) {
+          return sidebar;
+        }
+      } else {
+        const secondary = document.querySelector('#secondary-inner') || document.querySelector('#secondary');
+        if (secondary && secondary.isConnected) {
+          return secondary;
+        }
       }
 
       await new Promise((resolve) => setTimeout(resolve, CONFIG.CHECK_INTERVAL));
@@ -148,10 +192,15 @@
   }
 
   async function renderWidget() {
+    const isEligible = await checkPageEligibility();
+    if (!isEligible) {
+      removeWidget();
+      return;
+    }
+
     let widgetHost = document.getElementById(CONFIG.WIDGET_HOST_ID);
 
     if (!STATE.shadowRoot || !STATE.shadowRoot.widgetContainer || !widgetHost || !widgetHost.isConnected) {
-      console.warn('PlanYT: Widget detached during render, reinjecting safely');
       STATE.initialized = false;
       await injectWidgetSafely();
       
@@ -162,28 +211,31 @@
     }
 
     const container = STATE.shadowRoot.widgetContainer;
-    const playlistId = extractPlaylistIdFromPage();
+    const targetId = extractTargetIdFromPage();
 
-    if (!playlistId) {
-      renderEmptyState(container, 'Unable to detect playlist');
+    if (!targetId) {
+      removeWidget();
       return;
     }
 
-    STATE.currentPlaylistId = playlistId;
+    STATE.currentPlaylistId = targetId;
 
     try {
       const plansData = await getPlansFromStorage();
-      const plan = findMatchingPlan(playlistId, plansData);
+      const plan = findMatchingPlan(targetId, plansData);
+
+      const isPlaylist = isPlaylistPage();
+      const emptyHeading = isPlaylist ? 'Master This Playlist with Daily Goals' : 'Master This One-Shot with Daily Goals';
 
       if (!plan) {
-        renderEmptyState(container, 'Plan this playlist with PlanUP');
+        renderEmptyState(container, emptyHeading);
         return;
       }
 
       const progress = deriveProgressFromPlan(plan.planData || []);
 
       if (progress.totalDays === 0) {
-        renderEmptyState(container, 'Plan this playlist with PlanUP');
+        renderEmptyState(container, emptyHeading);
         return;
       }
 
@@ -193,14 +245,14 @@
         renderActivePlan(container, plan, progress);
       }
     } catch (error) {
-      console.warn('PlanYT widget: Error rendering', error);
-      renderEmptyState(container, 'Error loading plan');
+      console.warn('PlanUP widget: Error rendering', error);
+      removeWidget();
     }
   }
 
-  function renderEmptyState(container, message = 'Plan this playlist with PlanUP') {
-    const isDefaultMessage = message === 'Plan this playlist with PlanUP';
-    const displayHeading = isDefaultMessage ? 'Master This Playlist with Daily Goals' : message;
+  function renderEmptyState(container, message) {
+    const isPlaylist = isPlaylistPage();
+    const displayHeading = message || (isPlaylist ? 'Master This Playlist with Daily Goals' : 'Master This One-Shot with Daily Goals');
 
     container.innerHTML = `
       <div class="container">
@@ -395,57 +447,46 @@
     }, 250);
   }
 
-  function handlePageChange() {
-    const wasPreviouslyPlaylist = STATE.currentPlaylistId !== null;
-    const isNowPlaylist = isPlaylistPage();
+  async function handlePageChange() {
+    const isEligible = await checkPageEligibility();
+    const targetId = extractTargetIdFromPage();
 
-    if (!isNowPlaylist && wasPreviouslyPlaylist) {
+    if (!isEligible || !targetId) {
       removeWidget();
       STATE.initialized = false;
-    } else if (isNowPlaylist) {
-      const newPlaylistId = extractPlaylistIdFromPage();
+      STATE.currentPlaylistId = null;
+      return;
+    }
 
-      if (newPlaylistId !== STATE.currentPlaylistId) {
-        removeWidget();
-        STATE.initialized = false;
-        initialize();
-      } else {
-        if (STATE.shadowRoot && STATE.shadowRoot.widgetContainer) {
-          renderWidget();
-        } else if (!STATE.initialized) {
-          injectWidgetSafely();
-        }
+    if (targetId !== STATE.currentPlaylistId) {
+      removeWidget();
+      STATE.initialized = false;
+      await initialize();
+    } else {
+      if (STATE.shadowRoot && STATE.shadowRoot.widgetContainer) {
+        await renderWidget();
+      } else if (!STATE.initialized) {
+        await injectWidgetSafely();
+        await renderWidget();
       }
     }
   }
 
-  function openPlanYTPopup() {
-    // Backwards-compatible simple open
-    chrome.runtime.sendMessage(
-      { type: 'OPEN_PLANYT_POPUP' },
-      () => {
-        if (chrome.runtime.lastError) {
-          console.warn('PlanYT widget: Error opening popup', chrome.runtime.lastError);
-        }
-      }
-    );
-  }
-
   function openPlanYTPopup(action) {
-    // action: 'open' -> open existing plan; 'create' -> create new plan for current playlist
-    const playlistId = extractPlaylistIdFromPage();
-    const playlistUrl = window.location.href;
+    // action: 'open' -> open existing plan; 'create' -> create new plan for current playlist/one-shot
+    const targetId = extractTargetIdFromPage();
+    const currentUrl = window.location.href;
 
     if (action === 'open') {
-      chrome.runtime.sendMessage({ type: 'OPEN_SPECIFIC_PLAN', playlistId }, () => {
-        if (chrome.runtime.lastError) console.warn('PlanYT widget: OPEN_SPECIFIC_PLAN error', chrome.runtime.lastError);
+      chrome.runtime.sendMessage({ type: 'OPEN_SPECIFIC_PLAN', playlistId: targetId }, () => {
+        if (chrome.runtime.lastError) console.warn('PlanUp widget: OPEN_SPECIFIC_PLAN error', chrome.runtime.lastError);
       });
       return;
     }
 
     if (action === 'create') {
-      chrome.runtime.sendMessage({ type: 'CREATE_PLAN_FOR_PLAYLIST', playlistUrl, playlistId }, () => {
-        if (chrome.runtime.lastError) console.warn('PlanYT widget: CREATE_PLAN_FOR_PLAYLIST error', chrome.runtime.lastError);
+      chrome.runtime.sendMessage({ type: 'CREATE_PLAN_FOR_PLAYLIST', playlistUrl: currentUrl, playlistId: targetId }, () => {
+        if (chrome.runtime.lastError) console.warn('PlanUp widget: CREATE_PLAN_FOR_PLAYLIST error', chrome.runtime.lastError);
       });
       return;
     }
@@ -459,7 +500,8 @@
       return;
     }
 
-    if (!isPlaylistPage()) {
+    const isEligible = await checkPageEligibility();
+    if (!isEligible) {
       return;
     }
 
@@ -745,8 +787,10 @@
   }
 
   function setupHealthCheck() {
-    setInterval(() => {
-      if (!isPlaylistPage()) {
+    setInterval(async () => {
+      const isEligible = await checkPageEligibility();
+      if (!isEligible) {
+        removeWidget();
         return;
       }
 
@@ -754,14 +798,18 @@
 
       // Only reinject if genuinely missing OR detached from live DOM tree
       if (!widgetHost || !widgetHost.isConnected) {
-        console.warn('PlanYT: Widget missing or detached, reinjecting');
+        console.warn('PlanUp: Widget missing or detached, reinjecting');
         STATE.initialized = false;
         initialize();
       }
-    }, 2000);
+    }, 2500);
   }
 
-  if (isPlaylistPage()) {
+  function isEligiblePage() {
+    return isPlaylistPage() || isWatchPage();
+  }
+
+  if (isEligiblePage()) {
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', () => {
         initialize();

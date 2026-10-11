@@ -154,25 +154,33 @@ function deriveProgressFromPlan(planData) {
 }
 
 /**
- * Find plan matching current playlist
- * @param {string} playlistId - Current playlist ID
+ * Find plan matching current playlist or One-Shot video
+ * @param {string} targetId - Current playlist ID or video ID
  * @param {Array} allPlans - All saved plans
  * @returns {object|null} Matching plan or null
  */
-function findMatchingPlan(playlistId, allPlans) {
-  if (!playlistId || !Array.isArray(allPlans) || allPlans.length === 0) {
+function findMatchingPlan(targetId, allPlans) {
+  if (!targetId || !Array.isArray(allPlans) || allPlans.length === 0) {
     return null;
   }
 
-  // Extract playlistId from plan's playlistUrl
-  const planMatches = allPlans.filter(plan => {
-    if (!plan.playlistUrl) return false;
-    const planPlaylistId = extractPlaylistIdFromUrl(plan.playlistUrl);
-    return planPlaylistId === playlistId;
-  });
+  return allPlans.find(plan => {
+    if (!plan) return false;
 
-  // Return first matching plan
-  return planMatches.length > 0 ? planMatches[0] : null;
+    // 1. Match playlist ID
+    const planPlaylistId = extractPlaylistIdFromUrl(plan.playlistUrl || '');
+    if (planPlaylistId && planPlaylistId === targetId) return true;
+
+    // 2. Match video ID for One-Shot
+    const planVideoId = extractVideoIdFromUrl(plan.playlistUrl || '') || (plan.id && plan.id.replace('oneshot_', ''));
+    if (planVideoId && planVideoId === targetId) return true;
+
+    // 3. Fallback URL contains match
+    if (plan.playlistUrl && plan.playlistUrl.includes(targetId)) return true;
+    if (plan.id && plan.id === targetId) return true;
+
+    return false;
+  }) || null;
 }
 
 /**
@@ -184,6 +192,28 @@ function extractPlaylistIdFromUrl(url) {
   if (!url) return null;
   const match = url.match(/[?&]list=([a-zA-Z0-9_-]+)/);
   return match ? match[1] : null;
+}
+
+/**
+ * Extract video ID from URL
+ * @param {string} url - YouTube URL
+ * @returns {string|null} Video ID or null
+ */
+function extractVideoIdFromUrl(url) {
+  if (!url) return null;
+  const match = url.match(/(?:youtu\.be\/|v=|\/live\/|\/shorts\/)([a-zA-Z0-9_-]{11})/);
+  return match ? match[1] : null;
+}
+
+/**
+ * Extract current target ID from page (playlistId if in playlist, else videoId)
+ * @returns {string|null}
+ */
+function extractTargetIdFromPage() {
+  const url = window.location.href;
+  const listMatch = url.match(/[?&]list=([a-zA-Z0-9_-]+)/);
+  if (listMatch) return listMatch[1];
+  return extractVideoIdFromUrl(url);
 }
 
 /**
@@ -209,5 +239,86 @@ function debounce(func, wait) {
  * @returns {boolean} True if on playlist page
  */
 function isPlaylistPage() {
-  return /\/playlist\?|&list=/.test(window.location.href);
+  return /\/playlist\?|[?&]list=/.test(window.location.href);
+}
+
+/**
+ * Check if current page is a single video watch page
+ * @returns {boolean}
+ */
+function isWatchPage() {
+  return window.location.pathname.startsWith('/watch') || window.location.href.includes('/watch?v=');
+}
+
+/**
+ * Get current YouTube video title from DOM
+ * @returns {string}
+ */
+function getYouTubeVideoTitle() {
+  const titleEl = document.querySelector('h1.ytd-watch-metadata yt-formatted-string, ytd-watch-metadata #title h1, #title h1 yt-formatted-string');
+  if (titleEl && titleEl.textContent && titleEl.textContent.trim()) {
+    return titleEl.textContent.trim();
+  }
+  let t = document.title || '';
+  if (t.endsWith(' - YouTube')) t = t.substring(0, t.length - 10);
+  return t.trim();
+}
+
+/**
+ * Parse string duration (e.g. "2:34:15" or "45:10") into seconds
+ * @param {string} text
+ * @returns {number}
+ */
+function parseDurationTextToSeconds(text) {
+  if (!text) return 0;
+  const parts = text.split(':').map(p => parseInt(p.trim(), 10) || 0);
+  if (parts.length === 3) {
+    return parts[0] * 3600 + parts[1] * 60 + parts[2];
+  } else if (parts.length === 2) {
+    return parts[0] * 60 + parts[1];
+  }
+  return 0;
+}
+
+/**
+ * Get current YouTube video duration in seconds from DOM
+ * @returns {number}
+ */
+function getYouTubeVideoDuration() {
+  const videoEl = document.querySelector('video.html5-main-video, video');
+  if (videoEl && !isNaN(videoEl.duration) && videoEl.duration > 0) {
+    return videoEl.duration;
+  }
+  const timeDurationEl = document.querySelector('.ytp-time-duration');
+  if (timeDurationEl && timeDurationEl.textContent) {
+    return parseDurationTextToSeconds(timeDurationEl.textContent.trim());
+  }
+  return 0;
+}
+
+/**
+ * Check if title contains study keywords:
+ * One Shot, Oneshot, Full Course, Complete Course, Lecture, Tutorial, Revision
+ * @param {string} title
+ * @returns {boolean}
+ */
+function hasStudyKeywords(title) {
+  if (!title) return false;
+  const regex = /\b(one[\s-_]?shot|full[\s-_]?course|complete[\s-_]?course|lecture|tutorial|revision)\b/i;
+  return regex.test(title);
+}
+
+/**
+ * Check if current single video satisfies One-Shot conditions:
+ * Title contains study keywords AND duration is greater than 2 hours (7200 seconds)
+ * @returns {boolean}
+ */
+function isEligibleOneShotVideo() {
+  const title = getYouTubeVideoTitle();
+  const durationSec = getYouTubeVideoDuration();
+
+  const hasKeywords = hasStudyKeywords(title);
+  const isOver2Hours = durationSec > 7200; // > 2 hours
+
+  return hasKeywords && isOver2Hours;
 }

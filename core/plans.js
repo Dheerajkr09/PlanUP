@@ -109,6 +109,7 @@ async function createPlan(playlistData, dailyWatchTime, plan, playbackSpeed = 1.
     dailyMinutes: mode === 'video-by-video' ? null : dailyWatchTime,
     playbackSpeed: mode === 'video-by-video' ? null : playbackSpeed,
     mode: mode,
+    isOneShot: !!(playlistData.isOneShot || (playlistData.url && playlistData.url.includes('watch?v=') && !playlistData.url.includes('list='))),
     videosPerDay: mode === 'video-by-video' ? 1 : (plan[0]?.videos?.length || 0),
     createdAt: Date.now(),
     totalDays: totalDays,

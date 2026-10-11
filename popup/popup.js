@@ -60,6 +60,7 @@ const elements = {
   
   // Results Section
   resultsSection: document.getElementById('resultsSection'),
+  resultsSummaryHeading: document.getElementById('resultsSummaryHeading'),
   playlistTitle: document.getElementById('playlistTitle'),
   videoCount: document.getElementById('videoCount'),
   totalDuration: document.getElementById('totalDuration'),
@@ -166,11 +167,14 @@ async function handlePendingPopupAction(pending) {
       const playlistId = pending.playlistId || null;
       if (!playlistId) return await restoreActivePlan();
 
-      // Try to find a matching saved plan by playlistId
+      // Try to find a matching saved plan by playlistId or videoId
       const match = (appState.plansCache || []).find(p => {
         try {
-          const pid = extractPlaylistId(p.playlistUrl || p.playlistUrl || '');
-          return pid === playlistId;
+          const pid = extractPlaylistId(p.playlistUrl || '');
+          if (pid && pid === playlistId) return true;
+          if (p.playlistUrl && p.playlistUrl.includes(playlistId)) return true;
+          if (p.id && (p.id === playlistId || p.id === `oneshot_${playlistId}`)) return true;
+          return false;
         } catch (e) {
           return false;
         }
@@ -515,13 +519,16 @@ function applyPlanToState(plan) {
     }, 0);
   }
   
+  const isOneShot = !!(plan.isOneShot || (plan.playlistUrl && plan.playlistUrl.includes('watch?v=') && !plan.playlistUrl.includes('list=')) || (plan.id && String(plan.id).startsWith('oneshot_')));
+  
   appState.playlistData = {
     id: plan.playlistUrl || '',
     url: plan.playlistUrl || '',
     title: plan.title,
     videoCount: plan.totalVideos,
     totalDuration: totalDuration,
-    videos: []
+    videos: [],
+    isOneShot: isOneShot
   };
   appState.plan = Array.isArray(plan.planData) ? plan.planData.map(day => ({
     ...day,
@@ -981,7 +988,8 @@ async function handleOneShotGenerate() {
       title: videoData.title,
       videoCount: 1,
       totalDuration: videoData.durationMinutes,
-      videos: [videoData]
+      videos: [videoData],
+      isOneShot: true
     };
     
     // Force Custom mode for One-Shot
@@ -1165,6 +1173,13 @@ function hideSection(section) {
 // Data Display Functions
 // ========================================
 function displayPlaylistSummary(data) {
+  // Update section heading dynamically (Playlist Summary vs One-Shot Summary)
+  const isOneShot = !!(data && (data.isOneShot || (data.id && String(data.id).startsWith('oneshot_')) || (data.url && data.url.includes('watch?v=') && !data.url.includes('list='))));
+  const summaryHeading = elements.resultsSummaryHeading || document.getElementById('resultsSummaryHeading') || document.querySelector('#resultsSection h2');
+  if (summaryHeading) {
+    summaryHeading.textContent = isOneShot ? 'One-Shot Summary' : 'Playlist Summary';
+  }
+
   // Clear previous content
   elements.playlistTitle.innerHTML = '';
   
