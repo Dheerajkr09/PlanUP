@@ -46,6 +46,9 @@ app.use(compression());
 app.use(express.json());
 app.use(morgan('tiny'));
 
+// Root route redirects to uninstall preview
+app.get('/', (req, res) => res.redirect('/uninstall'));
+
 // Health check
 app.get('/health', (req, res) => res.json({ ok: true }));
 
