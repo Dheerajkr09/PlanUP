@@ -11,6 +11,8 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const compression = require('compression');
 
+const path = require('path');
+
 const playlistInfo = require('./api/playlist-info');
 const uninstallHandler = require('./api/uninstall');
 
@@ -39,15 +41,22 @@ app.use(cors({
 }));
 
 app.use((req, res, next) => {
-  if (req.path === '/uninstall') return next();
+  if (req.path === '/uninstall' || req.path === '/' || req.path.startsWith('/assets') || req.path.endsWith('.css') || req.path.endsWith('.js') || req.path.endsWith('.png') || req.path.endsWith('.jpg')) {
+    return next();
+  }
   helmet()(req, res, next);
 });
 app.use(compression());
 app.use(express.json());
 app.use(morgan('tiny'));
 
-// Root route redirects to uninstall preview
-app.get('/', (req, res) => res.redirect('/uninstall'));
+// Serve static frontend from docs/
+app.use(express.static(path.join(__dirname, '../docs')));
+
+// Root route serves docs/index.html
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../docs/index.html'));
+});
 
 // Health check
 app.get('/health', (req, res) => res.json({ ok: true }));

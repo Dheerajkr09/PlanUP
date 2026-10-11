@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PlanUP – YouTube Playlist & One-Shot Study Planner</title>
+  <meta name="description" content="Transform long YouTube playlists and marathon one-shot lectures into structured daily study plans with native in-page progress tracking, streaks, and XP.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/icon_human_thumb.jpg" type="image/jpeg">
+</head>
+<body>
+
+  <!-- Sticky Glassmorphic Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#hero" class="brand">
+        <img src="assets/icon_human_thumb.jpg" alt="PlanUP Logo" class="brand-avatar">
+        <div class="brand-info">
+          <span class="brand-title">Plan<span>UP</span></span>
+          <span class="brand-tagline">PLAN YOUR LEARNING</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="#hero" class="nav-link">Home</a>
+        <a href="#in-action" class="nav-link">In Action</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://github.com/Dheerajkr09/PlanUP" target="_blank" rel="noopener noreferrer" class="github-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          <span>GitHub</span>
+        </a>
+        <a href="https://chromewebstore.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v10m0 0l4-4m-4 4L8 8"/>
+            <path d="M20 16v4a2 2 0 01-2 2H6a2 2 0 01-2-2v-4"/>
+          </svg>
+          <span>Add to Chrome</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          <span>PlanUP v1.3.3 • YouTube Study Operating System</span>
+        </div>
+        <h1 class="hero-title">
+          Stop Hoarding Playlists.<br>
+          <span class="gradient-text">Start Finishing Courses.</span>
+        </h1>
+        <p class="hero-desc">
+          Transform overwhelming YouTube playlists and marathon one-shot lectures into clear, daily actionable sessions. Track progress, maintain streaks, and study with discipline without leaving YouTube.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="https://chromewebstore.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v10m0 0l4-4m-4 4L8 8"/>
+              <path d="M20 16v4a2 2 0 01-2 2H6a2 2 0 01-2-2v-4"/>
+            </svg>
+            <span>Add to Chrome — It's Free</span>
+          </a>
+          <a href="#in-action" class="btn btn-outline">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polygon points="10 8 16 12 10 16 10 8"/>
+            </svg>
+            <span>Explore In Action</span>
+          </a>
+        </div>
+
+        <div class="trust-strip">
+          <div class="trust-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <span>100% Free Forever</span>
+          </div>
+          <div class="trust-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            <span>Privacy-First (Local Storage)</span>
+          </div>
+          <div class="trust-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+            <span>No Account or Login Required</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Showcase -->
+      <div class="hero-visual">
+        <div class="hero-card-stack">
+          <div class="hero-main-card">
+            <img src="assets/ui_popup_dashboard.png" alt="PlanUP Popup Dashboard with Gamification" class="hero-img-main">
+          </div>
+          <div class="hero-floating-card">
+            <img src="assets/ui_widget_active.png" alt="PlanUP In-Page YouTube Sidebar Widget" class="hero-floating-img">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase Section: "PlanUP in Action" (The 3 Wide Reference Cards) -->
+  <section class="showcase-section" id="in-action">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Visual Experience</span>
+        <h2 class="section-title">PlanUP in Action</h2>
+        <p class="section-desc">Experience how PlanUP transforms YouTube into your personal structured learning environment.</p>
+      </div>
+
+      <div class="action-cards-grid">
+        
+        <!-- Action Card 1: In-Page YouTube Tracker -->
+        <div class="action-card">
+          <div class="action-content">
+            <span class="action-tag">Native YouTube Experience</span>
+            <h3 class="action-title">Your Study Plan. Right Inside YouTube.</h3>
+            <p class="action-desc">
+              No dashboards to sign into. No tab hopping. PlanUP injects directly into the YouTube watch page next to the video player, displaying active completion percentage, days remaining, and total watch time in real-time.
+            </p>
+            <div class="action-pills">
+              <span class="action-pill-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                In-Video Sidebar Widget
+              </span>
+              <span class="action-pill-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Live Watch-Time Counter
+              </span>
+              <span class="action-pill-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Zero Distraction Overlay
+              </span>
+            </div>
+          </div>
+          <div class="action-visual">
+            <div class="mockup-window">
+              <div class="mockup-header">
+                <span class="mockup-dot red"></span>
+                <span class="mockup-dot yellow"></span>
+                <span class="mockup-dot green"></span>
+                <div class="mockup-url-bar">youtube.com/watch?v=...</div>
+              </div>
+              <div class="mockup-body">
+                <div class="dual-mockup-stack">
+                  <img src="assets/ui_widget_active.png" alt="Active Plan YouTube Widget">
+                  <img src="assets/ui_widget_idle.png" alt="Ready State YouTube Widget">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Card 2: Dual Mode Planning (Playlists + Long One-Shots) -->
+        <div class="action-card reverse">
+          <div class="action-content">
+            <span class="action-tag purple-tag">Dual Initiation Engine</span>
+            <h3 class="action-title">Plan Playlists or 5-Hour Marathon Lectures.</h3>
+            <p class="action-desc">
+              Whether you are working through a curated 40-video bootcamp playlist or tackling a single 6-hour one-shot tutorial video, PlanUP handles both seamlessly. Select your pace and let the algorithm calculate balanced daily targets.
+            </p>
+            <div class="action-pills">
+              <span class="action-pill-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                1. YouTube Playlist URLs
+              </span>
+              <span class="action-pill-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                2. One-Shot (&gt;2h) Lectures
+              </span>
+              <span class="action-pill-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Custom Daily Watch Quotas
+              </span>
+            </div>
+          </div>
+          <div class="action-visual">
+            <div class="mockup-window">
+              <div class="mockup-header">
+                <span class="mockup-dot red"></span>
+                <span class="mockup-dot yellow"></span>
+                <span class="mockup-dot green"></span>
+                <div class="mockup-url-bar">chrome-extension://planup/popup</div>
+              </div>
+              <div class="mockup-body">
+                <img src="assets/ui_initiate_plan.png" alt="PlanUP Initiate Plan Screen with Playlist and One-Shot options">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Card 3: Gamified Consistency & Streaks -->
+        <div class="action-card">
+          <div class="action-content">
+            <span class="action-tag mint-tag">Consistency Engine</span>
+            <h3 class="action-title">Turn Study Fatigue Into Daily Momentum.</h3>
+            <p class="action-desc">
+              Staying disciplined day after day is tough. PlanUP gamifies your learning journey: maintain daily fire streaks, earn XP points for every video completed, and level up your learner rank from beginner to master.
+            </p>
+            <div class="action-pills">
+              <span class="action-pill-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Daily Streak Tracking
+              </span>
+              <span class="action-pill-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                XP Rewarding System
+              </span>
+              <span class="action-pill-item">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Level Progression Shields
+              </span>
+            </div>
+          </div>
+          <div class="action-visual">
+            <div class="mockup-window">
+              <div class="mockup-header">
+                <span class="mockup-dot red"></span>
+                <span class="mockup-dot yellow"></span>
+                <span class="mockup-dot green"></span>
+                <div class="mockup-url-bar">chrome-extension://planup/dashboard</div>
+              </div>
+              <div class="mockup-body">
+                <img src="assets/ui_popup_dashboard.png" alt="PlanUP Gamification Dashboard">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Features Grid -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Engineered For Productivity</span>
+        <h2 class="section-title">Built for Serious Learners</h2>
+        <p class="section-desc">Everything you need to turn unorganized YouTube playlists into clear, structured accomplishments.</p>
+      </div>
+
+      <div class="features-grid">
+        
+        <!-- Feature 1 -->
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+              <polyline points="2 17 12 22 22 17"/>
+              <polyline points="2 12 12 17 22 12"/>
+            </svg>
+          </div>
+          <h3 class="feature-heading">Dual Planning Modes</h3>
+          <p class="feature-body">
+            Choose Video-by-Video mode for daily consistency, or set a Custom Schedule with exact daily watch minutes (e.g. 45 min/day).
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card">
+          <div class="feature-icon-box purple-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <h3 class="feature-heading">One-Shot (&gt;2h) Planner</h3>
+          <p class="feature-body">
+            Marathon lectures and single multi-hour tutorials are broken down into manageable daily watch sessions with exact timestamps.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card">
+          <div class="feature-icon-box mint-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+              <path d="M13.73 21a2 2 0 01-3.46 0"/>
+            </svg>
+          </div>
+          <h3 class="feature-heading">Injected Sidebar Tracker</h3>
+          <p class="feature-body">
+            Live progress bars and session stats appear right on YouTube's watch page next to the video. No third-party tabs needed.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <h3 class="feature-heading">Gamification & XP Streaks</h3>
+          <p class="feature-body">
+            Level up your learner rank and build fire streaks. Completing lessons earns XP to keep your study momentum unbreakable.
+          </p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card">
+          <div class="feature-icon-box purple-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 11l3 3L22 4"/>
+              <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+            </svg>
+          </div>
+          <h3 class="feature-heading">Interactive Checklists</h3>
+          <p class="feature-body">
+            Tick off watched videos day by day. PlanUP automatically calculates and displays your projected completion date.
+          </p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-card">
+          <div class="feature-icon-box mint-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3 class="feature-heading">100% Private & Local</h3>
+          <p class="feature-body">
+            All plans are stored locally in your browser via Chrome Storage API. No user tracking, no third-party telemetry, no cloud accounts.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="how-section" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Simplicity by Design</span>
+        <h2 class="section-title">Get Started in 3 Steps</h2>
+        <p class="section-desc">Create your first custom study roadmap in less than 30 seconds.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <h3 class="step-title">Paste URL</h3>
+          <p class="step-desc">
+            Copy any YouTube playlist URL or long marathon lecture (&gt;2h) link and paste it into PlanUP's input field.
+          </p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <h3 class="step-title">Choose Your Pace</h3>
+          <p class="step-desc">
+            Select Video-by-Video mode or define your daily watch target in minutes. PlanUP automatically computes your daily schedule.
+          </p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <h3 class="step-title">Study on YouTube</h3>
+          <p class="step-desc">
+            Open YouTube and watch comfortably. The in-page tracker records your completion, protects your streak, and keeps you on target.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Audience Section -->
+  <section class="audience-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Designed For Learners</span>
+        <h2 class="section-title">Built for Dedicated Achievers</h2>
+        <p class="section-desc">Whether you are learning to code, preparing for exams, or mastering new skills.</p>
+      </div>
+
+      <div class="audience-grid">
+        <div class="audience-card">
+          <img src="assets/badges/badge.png" alt="Developer Badge" class="audience-badge-icon">
+          <h3 class="audience-name">Self-Taught Developers</h3>
+          <p class="audience-text">
+            Conquer full-stack roadmaps, DSA series, and backend bootcamps systematically without burnout.
+          </p>
+        </div>
+        <div class="audience-card">
+          <img src="assets/badges/star.png" alt="Student Star" class="audience-badge-icon">
+          <h3 class="audience-name">College & Exam Students</h3>
+          <p class="audience-text">
+            Finish semester syllabi, GATE, JEE, or competitive exam playlists well before deadline dates.
+          </p>
+        </div>
+        <div class="audience-card">
+          <img src="assets/badges/fire.png" alt="Focus Fire" class="audience-badge-icon">
+          <h3 class="audience-name">Deep-Focus & ADHD Learners</h3>
+          <p class="audience-text">
+            Break massive 10-hour courses into bite-sized daily chunks with clear boundaries and rewards.
+          </p>
+        </div>
+        <div class="audience-card">
+          <img src="assets/badges/Trophy.png" alt="Achievement Trophy" class="audience-badge-icon">
+          <h3 class="audience-name">Skill Upgraders</h3>
+          <p class="audience-text">
+            Transform YouTube into your personalized learning academy for design, business, and finance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section (Accordion) -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Got Questions?</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-desc">Clear answers about how PlanUP works and respects your workflow.</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item active">
+          <button class="faq-question">
+            <span>Does PlanUP collect or store my personal data?</span>
+            <svg class="faq-icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            No. PlanUP runs 100% locally on your computer. All playlist data, daily quotas, and progress statistics are stored exclusively in your browser via the Chrome Storage API. No account or login is ever required.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How does the One-Shot (&gt;2h) Planner work?</span>
+            <svg class="faq-icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            Instead of multiple playlist videos, the One-Shot planner analyzes single marathon videos that exceed 2 hours (such as comprehensive crash courses) and divides them into balanced daily watch durations based on your target pace.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Do I need to create an API key or configure anything?</span>
+            <svg class="faq-icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            Zero setup required. Just install the Chrome extension, paste any YouTube playlist or long video link, and PlanUP instantly retrieves the metadata and creates your daily schedule.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Does the YouTube sidebar widget slow down my browser?</span>
+            <svg class="faq-icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            No. The sidebar widget is engineered using lightweight vanilla JavaScript with zero heavy frameworks, ensuring smooth 60fps video playback with negligible memory overhead.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA Banner -->
+  <section class="bottom-cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Stop "Watching Later." <span class="gradient-text">Start Finishing.</span></h2>
+        <p>Turn YouTube into your structured personal learning academy. Build consistent habits and achieve your study goals today.</p>
+        <a href="https://chromewebstore.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v10m0 0l4-4m-4 4L8 8"/>
+            <path d="M20 16v4a2 2 0 01-2 2H6a2 2 0 01-2-2v-4"/>
+          </svg>
+          <span>Add PlanUP to Chrome — It's Free</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <a href="#hero" class="brand">
+          <img src="assets/icon_human_thumb.jpg" alt="PlanUP" class="brand-avatar" style="width:28px; height:28px;">
+          <span class="brand-title" style="font-size:16px;">Plan<span>UP</span></span>
+        </a>
+
+        <ul class="footer-nav">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#in-action">In Action</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="/uninstall">Feedback</a></li>
+          <li><a href="https://github.com/Dheerajkr09/PlanUP" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
+        <div>PlanUP &copy; 2026. All rights reserved. Free & Open Source.</div>
+        <div>
+          Built with <span>✦</span> by <a href="https://github.com/Dheerajkr09" target="_blank" rel="noopener noreferrer" class="author-link">Dheerajkr09</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
