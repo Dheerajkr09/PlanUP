@@ -199,17 +199,31 @@
   }
 
   function renderEmptyState(container, message = 'Plan this playlist with PlanUP') {
+    const isDefaultMessage = message === 'Plan this playlist with PlanUP';
+    const displayHeading = isDefaultMessage ? 'Master This Playlist with Daily Goals' : message;
+
     container.innerHTML = `
       <div class="container">
         <section class="section section-compact">
-          <h3 class="plans-title">Plan Progress</h3>
-          <div class="progress-hero progress-hero-empty">
-            <div class="progress-hero-percent">${message}</div>
-            <div class="progress-hero-subtext">Create a plan in PlanUP to track progress</div>
+          <div class="widget-header">
+            <div class="brand-tag">
+              <span class="brand-dot"></span>
+              <span class="brand-name">PlanUP Tracker</span>
+            </div>
+          </div>
+
+          <div class="widget-body">
+            <h2 class="widget-heading">${displayHeading}</h2>
+            <p class="widget-subtext">Set your daily watch pace, conquer target dates, and build consistent habits.</p>
           </div>
 
           <div class="plans-footer">
-            <button class="btn btn-secondary" id="planyt-empty-cta">Create Plan</button>
+            <button class="btn btn-primary" id="planyt-empty-cta">
+              <span>Create Study Plan</span>
+              <svg class="btn-arrow" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 8h10M9 4l4 4-4 4"/>
+              </svg>
+            </button>
           </div>
         </section>
       </div>
@@ -225,14 +239,26 @@
     container.innerHTML = `
       <div class="container">
         <section class="section section-compact">
-          <h3 class="plans-title">Plan Progress</h3>
-          <div class="progress-hero progress-hero-complete">
-            <div class="progress-hero-percent">Playlist Completed</div>
-            <div class="progress-hero-subtext">Great job! You've finished this playlist.</div>
+          <div class="widget-header">
+            <div class="brand-tag">
+              <span class="brand-dot completed"></span>
+              <span class="brand-name">Plan Finished</span>
+            </div>
+            <div class="progress-pill completed">100%</div>
+          </div>
+
+          <div class="widget-body">
+            <h2 class="widget-heading">Playlist Completed!</h2>
+            <p class="widget-subtext">Excellent work! You have finished all target sessions in this playlist.</p>
           </div>
 
           <div class="plans-footer">
-            <button class="btn btn-secondary" id="planyt-view-cta">View Plan</button>
+            <button class="btn btn-primary" id="planyt-view-cta">
+              <span>Review Plan</span>
+              <svg class="btn-arrow" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 8h10M9 4l4 4-4 4"/>
+              </svg>
+            </button>
           </div>
         </section>
       </div>
@@ -250,37 +276,46 @@
     const minutesRemaining = calculateRemainingMinutes(plan.planData || [], progress.currentDay);
 
     const todayStatus = todayTarget.completed ? 'completed' : '';
-    const todayLabel = todayTarget.completed ? "Today's target completed ✓" : `${todayTarget.videosCount} video${todayTarget.videosCount !== 1 ? 's' : ''}`;
+    const todayLabel = todayTarget.completed ? "Today's target completed" : `${todayTarget.videosCount} video${todayTarget.videosCount !== 1 ? 's' : ''}`;
     const todayTime = formatMinutes(todayTarget.totalMinutes);
 
     container.innerHTML = `
       <div class="container">
         <section class="section section-compact">
-          <h3 class="plans-title">Plan Progress</h3>
-          <div class="progress-hero">
-            <div class="progress-hero-percent">${progress.percent}% Complete</div>
-            <div class="progress-bar-container progress-bar-container-hero">
-              <div class="progress-bar" style="width: ${progress.percent}%"></div>
+          <div class="widget-header">
+            <div class="brand-tag">
+              <span class="brand-dot active"></span>
+              <span class="brand-name">Active Plan</span>
             </div>
+            <div class="progress-pill">${progress.percent}% Completed</div>
           </div>
 
-          <div class="meta-list" id="progressSection">
-            <div class="meta-row">
-              <span class="meta-label">Today</span>
-              <span class="meta-value ${todayStatus}">${todayLabel}</span>
+          <div class="progress-bar-wrapper">
+            <div class="progress-bar-fill" style="width: ${progress.percent}%"></div>
+          </div>
+
+          <div class="stats-grid" id="progressSection">
+            <div class="stat-card">
+              <span class="stat-label">Today</span>
+              <span class="stat-value ${todayStatus}">${todayLabel}</span>
             </div>
-            <div class="meta-row">
-              <span class="meta-label">Remaining</span>
-              <span class="meta-value">${daysRemaining} day${daysRemaining !== 1 ? 's' : ''}</span>
+            <div class="stat-card">
+              <span class="stat-label">Remaining</span>
+              <span class="stat-value">${daysRemaining} day${daysRemaining !== 1 ? 's' : ''}</span>
             </div>
-            <div class="meta-row">
-              <span class="meta-label">Watch time</span>
-              <span class="meta-value">${todayTime || formatMinutes(minutesRemaining)}</span>
+            <div class="stat-card">
+              <span class="stat-label">Watch Time</span>
+              <span class="stat-value">${todayTime || formatMinutes(minutesRemaining)}</span>
             </div>
           </div>
 
           <div class="plans-footer">
-            <button class="btn btn-secondary" id="planyt-open-cta">Open Plan</button>
+            <button class="btn btn-primary" id="planyt-open-cta">
+              <span>Open Plan Dashboard</span>
+              <svg class="btn-arrow" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 8h10M9 4l4 4-4 4"/>
+              </svg>
+            </button>
           </div>
         </section>
       </div>
@@ -421,30 +456,16 @@
   function getWidgetStyles() {
     return `
       :host {
-        --yt-bg-primary: #050510;
-        --yt-bg-secondary: #050510;
-        --yt-bg-tertiary: #11111f;
-        --yt-bg-hover: rgba(0, 243, 255, 0.1);
+        --yt-bg-card: rgba(14, 18, 27, 0.92);
+        --yt-border-card: rgba(0, 240, 255, 0.22);
+        --yt-border-card-hover: rgba(0, 240, 255, 0.45);
         --yt-text-primary: #ffffff;
-        --yt-text-secondary: #e6e6e6;
-        --yt-text-tertiary: #bfbfbf;
-        --yt-brand-red: #ff0000;
-        --yt-brand-red-hover: #cc0000;
-        --yt-accent: #00f3ff;
-        --yt-accent-hover: #bc13fe;
-        --yt-success: #0fb556;
-        --yt-error: #ff4444;
-        --yt-warning: #ff9800;
-        --yt-space-xs: 4px;
-        --yt-space-sm: 8px;
-        --yt-space-md: 12px;
-        --yt-space-lg: 16px;
-        --yt-space-xl: 24px;
-        --yt-radius-sm: 2px;
-        --yt-radius-md: 8px;
-        --yt-radius-lg: 12px;
-        --yt-radius-full: 999px;
-        --yt-transition: 0.1s cubic-bezier(0.05, 0, 0, 1);
+        --yt-text-secondary: #94a3b8;
+        --yt-text-muted: #64748b;
+        --yt-accent: #00f0ff;
+        --yt-accent-glow: rgba(0, 240, 255, 0.35);
+        --yt-success: #00ff85;
+        --yt-success-glow: rgba(0, 255, 133, 0.35);
       }
 
       * {
@@ -457,208 +478,253 @@
         display: block;
         width: 100%;
         color: var(--yt-text-primary);
-        font-family: "Space Grotesk", "Roboto", "Arial", sans-serif;
+        font-family: "Inter", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         font-size: 14px;
         line-height: 1.4;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        margin-bottom: 12px;
+        margin-bottom: 14px;
       }
 
       .container {
-        padding: var(--yt-space-lg);
+        padding: 0;
       }
 
       .section {
-        margin-bottom: var(--yt-space-md);
-        padding: var(--yt-space-lg);
-        background-color: var(--yt-bg-secondary);
-        border-radius: var(--yt-radius-md);
-        border: 1px solid var(--yt-accent);
-        box-shadow: 0 0 15px rgba(0, 243, 255, 0.15), inset 0 0 10px rgba(0, 243, 255, 0.05);
+        position: relative;
+        padding: 16px 18px;
+        background: linear-gradient(160deg, rgba(17, 24, 39, 0.95) 0%, rgba(10, 14, 23, 0.98) 100%);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid var(--yt-border-card);
+        border-radius: 14px;
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45), 0 0 1px rgba(0, 240, 255, 0.2);
+        transition: border-color 0.25s ease, box-shadow 0.25s ease;
+        overflow: hidden;
+      }
+
+      .section:hover {
+        border-color: var(--yt-border-card-hover);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55), 0 0 16px rgba(0, 240, 255, 0.15);
+      }
+
+      .section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 24px;
+        right: 24px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.55), transparent);
+        pointer-events: none;
       }
 
       .section-compact {
-        padding: var(--yt-space-md);
-        margin-bottom: var(--yt-space-xs);
+        padding: 16px 18px;
       }
 
-      .plans-title {
-        font-size: 13px;
-        font-weight: 500;
-        color: var(--yt-text-primary);
-        letter-spacing: 0.2px;
-        margin-bottom: var(--yt-space-sm);
-        display: block;
-      }
-
-      .progress-hero {
+      .widget-header {
         display: flex;
-        flex-direction: column;
-        gap: var(--yt-space-sm);
-        margin-bottom: var(--yt-space-md);
-      }
-
-      .progress-hero-empty,
-      .progress-hero-complete {
-        gap: var(--yt-space-xs);
-      }
-
-      .progress-hero-percent {
-        font-size: 20px;
-        font-weight: 500;
-        color: var(--yt-text-primary);
-        letter-spacing: -0.2px;
-      }
-
-      .progress-hero-empty .progress-hero-percent,
-      .progress-hero-complete .progress-hero-percent {
-        font-size: 15px;
-      }
-
-      .progress-hero-subtext {
-        font-size: 12px;
-        color: var(--yt-text-secondary);
-        font-weight: 400;
-      }
-
-      .progress-bar-container-hero {
-        height: 10px;
-        margin-top: var(--yt-space-xs);
-      }
-
-      .progress-bar-container {
-        width: 100%;
-        height: 4px;
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 2px;
-        overflow: hidden;
-      }
-
-      .progress-bar {
-        height: 100%;
-        background-color: var(--yt-accent);
-        transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        border-radius: 2px;
-      }
-
-      .meta-list {
-        display: flex;
-        flex-direction: column;
-        gap: var(--yt-space-xs);
-        margin-top: var(--yt-space-sm);
-      }
-
-      .meta-row {
-        display: flex;
-        align-items: baseline;
+        align-items: center;
         justify-content: space-between;
-        gap: var(--yt-space-sm);
-        padding: 0;
-        min-height: 0;
+        gap: 10px;
+        margin-bottom: 12px;
       }
 
-      .meta-label {
-        font-weight: 500;
+      .brand-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 3px 9px;
+        background: rgba(0, 240, 255, 0.08);
+        border: 1px solid rgba(0, 240, 255, 0.22);
+        border-radius: 999px;
+      }
+
+      .brand-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--yt-accent);
+        box-shadow: 0 0 8px var(--yt-accent);
+        display: inline-block;
+      }
+
+      .brand-dot.completed {
+        background: var(--yt-success);
+        box-shadow: 0 0 8px var(--yt-success);
+      }
+
+      .brand-name {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
         color: var(--yt-text-secondary);
-        font-size: 13px;
       }
 
-      .meta-value {
-        font-weight: 500;
-        color: var(--yt-text-primary);
-        font-size: 13px;
-        text-align: right;
+      .progress-pill {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+        color: var(--yt-accent);
+        background: rgba(0, 240, 255, 0.12);
+        border: 1px solid rgba(0, 240, 255, 0.28);
+        padding: 3px 10px;
+        border-radius: 999px;
+        white-space: nowrap;
       }
 
-      .meta-value.completed {
+      .progress-pill.completed {
+        color: var(--yt-success);
+        background: rgba(0, 255, 133, 0.12);
+        border-color: rgba(0, 255, 133, 0.28);
+      }
+
+      .widget-body {
+        margin-bottom: 16px;
+      }
+
+      .widget-heading {
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 1.35;
+        color: #ffffff;
+        letter-spacing: -0.2px;
+        margin-bottom: 5px;
+      }
+
+      .widget-subtext {
+        font-size: 12px;
+        line-height: 1.45;
+        color: var(--yt-text-secondary);
+      }
+
+      .progress-bar-wrapper {
+        width: 100%;
+        height: 6px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 999px;
+        overflow: hidden;
+        margin-bottom: 14px;
+      }
+
+      .progress-bar-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #00f0ff 0%, #7000ff 100%);
+        border-radius: 999px;
+        box-shadow: 0 0 10px rgba(0, 240, 255, 0.45);
+        transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+
+      .stat-card {
+        background: rgba(255, 255, 255, 0.035);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: 8px;
+        padding: 8px 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        transition: background 0.2s ease, border-color 0.2s ease;
+      }
+
+      .stat-card:hover {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.12);
+      }
+
+      .stat-label {
+        font-size: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--yt-text-muted);
+      }
+
+      .stat-value {
+        font-size: 12px;
+        font-weight: 600;
+        color: #ffffff;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .stat-value.completed {
         color: var(--yt-success);
       }
 
-      .progress-section {
-        margin-top: var(--yt-space-xs);
-      }
-
-      .progress-bar-container {
-        width: 100%;
-        height: 4px;
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 2px;
-        overflow: hidden;
-      }
-
       .plans-footer {
-        margin-top: var(--yt-space-xs);
-        margin-bottom: var(--yt-space-md);
+        margin-top: 0;
       }
 
       .btn {
         width: 100%;
-        padding: 10px 16px;
-        font-size: 14px;
-        font-weight: 500;
-        border: none;
-        border-radius: var(--yt-radius-full);
-        cursor: pointer;
-        transition: all var(--yt-transition);
-        text-align: center;
-        font-family: "Roboto", sans-serif;
-        letter-spacing: 0.2px;
-      }
-
-      .btn-secondary {
-        background-color: var(--yt-accent);
-        color: #050510;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px 18px;
+        font-size: 13px;
         font-weight: 600;
-        border: 1px solid var(--yt-accent);
-        box-shadow: 0 0 10px rgba(0, 243, 255, 0.4);
+        letter-spacing: 0.3px;
+        border: none;
+        border-radius: 999px;
+        cursor: pointer;
+        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        text-align: center;
+        font-family: inherit;
+        text-decoration: none;
+        box-sizing: border-box;
       }
 
-      .btn-secondary:hover {
-        background-color: var(--yt-accent-hover);
-        color: #ffffff;
-        border-color: var(--yt-accent-hover);
-        box-shadow: 0 0 15px rgba(188, 19, 254, 0.6);
+      .btn-primary {
+        background: linear-gradient(135deg, #00f0ff 0%, #00b4d8 100%);
+        color: #070a10;
+        box-shadow: 0 4px 16px rgba(0, 240, 255, 0.35);
       }
 
-      .btn-secondary:active {
-        opacity: 0.9;
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 22px rgba(0, 240, 255, 0.5);
+        background: linear-gradient(135deg, #33f3ff 0%, #00c6ff 100%);
       }
 
-      .btn-small {
-        width: auto;
-        padding: 6px 14px;
-        font-size: 12px;
-        background-color: rgba(80, 0, 0, 0.45);
-        color: var(--yt-text-primary);
-        border-radius: var(--yt-radius-full);
+      .btn-primary:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 10px rgba(0, 240, 255, 0.3);
       }
 
-      .btn-small:hover {
-        background-color: rgba(80, 0, 0, 0.6);
+      .btn-arrow {
+        transition: transform 0.2s ease;
+      }
+
+      .btn-primary:hover .btn-arrow {
+        transform: translateX(3px);
       }
 
       @media (max-width: 500px) {
-        .container {
-          padding: var(--yt-space-md);
+        .section {
+          padding: 14px;
         }
 
-        .section-compact {
-          padding: var(--yt-space-md);
+        .stats-grid {
+          grid-template-columns: 1fr;
+          gap: 6px;
         }
 
-        .progress-hero-percent {
-          font-size: 18px;
-        }
-
-        .meta-row {
-          align-items: flex-start;
-          flex-direction: column;
-          gap: 2px;
-        }
-
-        .meta-value {
-          text-align: left;
+        .stat-card {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          padding: 6px 10px;
         }
       }
     `;
