@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PlanUP – Quick Feedback</title>
+  <meta name="description" content="PlanUP - YouTube Playlist & One-Shot Planner">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07090e;
+      --card-bg: rgba(15, 23, 42, 0.75);
+      --card-border: rgba(0, 240, 255, 0.16);
+      --card-hover: rgba(0, 240, 255, 0.35);
+      --cyan: #00f0ff;
+      --purple: #8b5cf6;
+      --text-main: #f8fafc;
+      --text-sub: #94a3b8;
+      --text-muted: #64748b;
+      --success: #00ff85;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(0, 240, 255, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(139, 92, 246, 0.08) 0%, transparent 40%);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 16px;
+    }
+
+    .wrapper {
+      max-width: 620px;
+      width: 100%;
+    }
+
+    /* Brand Header */
+    .brand-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(0, 240, 255, 0.08);
+      border: 1px solid rgba(0, 240, 255, 0.25);
+      padding: 6px 14px;
+      border-radius: 999px;
+      backdrop-filter: blur(8px);
+    }
+
+    .brand-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #00f0ff, #8b5cf6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 800;
+      color: #050811;
+      box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+    }
+
+    .brand-name {
+      font-family: 'Outfit', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #fff;
+    }
+
+    .brand-name span {
+      color: var(--cyan);
+    }
+
+    .badge-uninstalled {
+      font-size: 11px;
+      font-weight: 600;
+      color: #f43f5e;
+      background: rgba(244, 63, 94, 0.12);
+      border: 1px solid rgba(244, 63, 94, 0.28);
+      padding: 4px 10px;
+      border-radius: 999px;
+      letter-spacing: 0.3px;
+    }
+
+    /* Main Card */
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 36px 32px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55), 0 0 30px rgba(0, 240, 255, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--cyan), var(--purple), transparent);
+    }
+
+    .header-text {
+      margin-bottom: 28px;
+    }
+
+    .header-text h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .header-text p {
+      color: var(--text-sub);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* Question Block */
+    .q-block {
+      margin-bottom: 24px;
+    }
+
+    .q-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--cyan);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Chip Selection Grid */
+    .chips-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 9px;
+    }
+
+    @media (max-width: 520px) {
+      .chips-grid { grid-template-columns: 1fr; }
+    }
+
+    .chip {
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 11px 14px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-sub);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      user-select: none;
+    }
+
+    .chip:hover {
+      background: rgba(0, 240, 255, 0.06);
+      border-color: rgba(0, 240, 255, 0.3);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    .chip.selected {
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(139, 92, 246, 0.15));
+      border-color: var(--cyan);
+      color: #fff;
+      box-shadow: 0 0 14px rgba(0, 240, 255, 0.25);
+    }
+
+    .chip-radio {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+
+    .chip.selected .chip-radio {
+      border-color: var(--cyan);
+      background: var(--cyan);
+      box-shadow: 0 0 8px var(--cyan);
+    }
+
+    /* Feature Grid */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    @media (max-width: 520px) {
+      .feature-grid { grid-template-columns: 1fr; }
+    }
+
+    .feature-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      padding: 10px 12px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-sub);
+      text-align: center;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .feature-card:hover {
+      background: rgba(139, 92, 246, 0.08);
+      border-color: rgba(139, 92, 246, 0.35);
+      color: #fff;
+    }
+
+    .feature-card.selected {
+      background: rgba(139, 92, 246, 0.2);
+      border-color: var(--purple);
+      color: #fff;
+      box-shadow: 0 0 12px rgba(139, 92, 246, 0.3);
+    }
+
+    /* Rating Emojis */
+    .rating-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .rate-btn {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      padding: 10px;
+      border-radius: 12px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s ease;
+      color: var(--text-muted);
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .rate-btn .emoji { font-size: 20px; transition: transform 0.2s ease; }
+
+    .rate-btn:hover {
+      background: rgba(255, 255, 255, 0.07);
+      color: #fff;
+    }
+
+    .rate-btn:hover .emoji { transform: scale(1.2); }
+
+    .rate-btn.selected {
+      background: rgba(0, 240, 255, 0.12);
+      border-color: var(--cyan);
+      color: var(--cyan);
+      box-shadow: 0 0 12px rgba(0, 240, 255, 0.25);
+    }
+
+    /* Textarea */
+    textarea {
+      width: 100%;
+      height: 76px;
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 12px 14px;
+      color: #fff;
+      font-family: inherit;
+      font-size: 13px;
+      resize: none;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    textarea:focus {
+      border-color: var(--cyan);
+      background: rgba(0, 240, 255, 0.03);
+    }
+
+    textarea::placeholder { color: var(--text-muted); }
+
+    /* Submit Button */
+    .submit-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #00f0ff 0%, #00b4d8 50%, #7000ff 100%);
+      color: #050811;
+      font-family: 'Outfit', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      padding: 13px;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      box-shadow: 0 4px 22px rgba(0, 240, 255, 0.4);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      margin-top: 10px;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0, 240, 255, 0.6);
+      filter: brightness(1.08);
+    }
+
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+
+    .footer-links {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .reinstall-btn {
+      font-size: 13px;
+      color: var(--cyan);
+      text-decoration: none;
+      font-weight: 600;
+      transition: opacity 0.2s ease;
+    }
+
+    .reinstall-btn:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+
+    /* Thank You State */
+    .thankyou-state {
+      display: none;
+      text-align: center;
+      padding: 30px 10px;
+      animation: fadeIn 0.4s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .thankyou-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+      display: inline-block;
+      animation: pulse 1.5s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from { transform: scale(1); }
+      to { transform: scale(1.1); }
+    }
+
+    .thankyou-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .thankyou-title span { color: var(--cyan); }
+
+    .thankyou-desc {
+      color: var(--text-sub);
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 440px;
+      margin: 0 auto 26px auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="brand-bar">
+      <div class="brand-logo">
+        <div class="brand-icon">⚡</div>
+        <div class="brand-name">Plan<span>UP</span></div>
+      </div>
+      <div class="badge-uninstalled">Extension Removed</div>
+    </div>
+
+    <div class="card">
+      <div id="formSection">
+        <div class="header-text">
+          <h1>Help Us Level Up PlanUP</h1>
+          <p>We're sad to see you leave! A quick 30-second feedback helps us make YouTube study planning better for everyone.</p>
+        </div>
+
+        <!-- Question 1: Reason -->
+        <div class="q-block">
+          <div class="q-title">1. What made you uninstall PlanUP?</div>
+          <div class="chips-grid">
+            <div class="chip" data-name="reason" data-val="Finished Course">
+              <span class="chip-radio"></span>
+              <span>🎯 Finished my course / goals</span>
+            </div>
+            <div class="chip" data-name="reason" data-val="One-Shot Issue">
+              <span class="chip-radio"></span>
+              <span>📺 One-Shot (2hr+) planner issue</span>
+            </div>
+            <div class="chip" data-name="reason" data-val="Daily Quota">
+              <span class="chip-radio"></span>
+              <span>⏱️ Daily watch pace didn't fit</span>
+            </div>
+            <div class="chip" data-name="reason" data-val="Sidebar Conflict">
+              <span class="chip-radio"></span>
+              <span>🔄 YouTube sidebar widget issue</span>
+            </div>
+            <div class="chip" data-name="reason" data-val="Too Complex">
+              <span class="chip-radio"></span>
+              <span>⚡ Too complex / difficult</span>
+            </div>
+            <div class="chip" data-name="reason" data-val="Temporary">
+              <span class="chip-radio"></span>
+              <span>🛠️ Temporary break / testing</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 2: Features to improve -->
+        <div class="q-block">
+          <div class="q-title">2. Which PlanUP feature could be improved?</div>
+          <div class="feature-grid">
+            <div class="feature-card" data-feat="One-Shot Planner">One-Shot (>2h) Planner</div>
+            <div class="feature-card" data-feat="Sidebar Progress">YouTube Sidebar Widget</div>
+            <div class="feature-card" data-feat="Daily Quota">Daily Watch Quota</div>
+            <div class="feature-card" data-feat="Speed Adjustment">Playback Speed Sync</div>
+            <div class="feature-card" data-feat="Habit Streaks">Habits & Streaks</div>
+            <div class="feature-card" data-feat="Everything Good">Loved All Features</div>
+          </div>
+        </div>
+
+        <!-- Question 3: Overall Experience -->
+        <div class="q-block">
+          <div class="q-title">3. Overall experience with PlanUP?</div>
+          <div class="rating-row">
+            <div class="rate-btn" data-rate="Poor">
+              <span class="emoji">😞</span>
+              <span>Poor</span>
+            </div>
+            <div class="rate-btn" data-rate="Okay">
+              <span class="emoji">😐</span>
+              <span>Okay</span>
+            </div>
+            <div class="rate-btn" data-rate="Good">
+              <span class="emoji">🙂</span>
+              <span>Good</span>
+            </div>
+            <div class="rate-btn" data-rate="Great">
+              <span class="emoji">🚀</span>
+              <span>Great</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 4: Comment -->
+        <div class="q-block">
+          <div class="q-title">4. Any ideas or suggestions? (Optional)</div>
+          <textarea id="commentBox" placeholder="Tell us what feature would bring you back to PlanUP..."></textarea>
+        </div>
+
+        <button class="submit-btn" id="submitBtn">Submit Feedback & Help PlanUP</button>
+
+        <div class="footer-links">
+          <a href="https://chromewebstore.google.com" class="reinstall-btn">Changed your mind? Reinstall PlanUP on Chrome Web Store →</a>
+        </div>
+      </div>
+
+      <!-- Thank you message -->
+      <div id="thankYouSection" class="thankyou-state">
+        <div class="thankyou-icon">🚀</div>
+        <h2 class="thankyou-title">Thank You for Your Feedback! <span>❤️</span></h2>
+        <p class="thankyou-desc">Your thoughts will help us build a more powerful, student-focused study planner. We hope to see you back soon on your learning journey!</p>
+        <a href="https://chromewebstore.google.com" class="submit-btn" style="display:inline-block; text-decoration:none; max-width:280px;">Reinstall PlanUP Anytime</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Single select for reason chips
+    document.querySelectorAll('.chip').forEach(el => {
+      el.addEventListener('click', () => {
+        document.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
+        el.classList.add('selected');
+      });
+    });
+
+    // Multi-select for feature cards
+    document.querySelectorAll('.feature-card').forEach(el => {
+      el.addEventListener('click', () => {
+        el.classList.toggle('selected');
+      });
+    });
+
+    // Rating selection
+    document.querySelectorAll('.rate-btn').forEach(el => {
+      el.addEventListener('click', () => {
+        document.querySelectorAll('.rate-btn').forEach(r => r.classList.remove('selected'));
+        el.classList.add('selected');
+      });
+    });
+
+    // Submit handler
+    document.getElementById('submitBtn').addEventListener('click', () => {
+      document.getElementById('formSection').style.display = 'none';
+      document.getElementById('thankYouSection').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
