@@ -366,6 +366,8 @@ h1, h2, h3, h4 {
 }
 
 .hero-main-card {
+  max-width: 440px;
+  margin: 0 auto;
   background: var(--card-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
