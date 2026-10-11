@@ -1,10 +1,5 @@
 # Frontend Redesign - The "Cyberpunk Gaming" Theme 🎮🚀
 
-The old boring red YouTube theme is gone! Now we have given PlanUP a completely new, modern, and unique "Gamified Cyberpunk" look that makes it feel like a pro-level gaming app.
-
-Here is a look at what we've changed:
-
----
 
 ## 1. New Color Scheme (Neon Cyan & Purple) 💜🩵
 Previously everything was red which felt a bit simple. Now we have deepened the dark theme (`#0B0E14`) and added:
