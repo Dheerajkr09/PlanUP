@@ -58,6 +58,10 @@ app.options('/api/playlist-info', (req, res) => res.status(200).json({ ok: true 
 app.get('/api/playlist-info', (req, res) => playlistInfo(req, res));
 app.post('/api/playlist-info', (req, res) => playlistInfo(req, res));
 
-app.listen(PORT, () => {
-  console.log(`\n✅ Backend listening on http://localhost:${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production' && !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`\n✅ Backend listening on http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;
