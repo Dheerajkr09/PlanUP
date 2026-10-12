@@ -11,6 +11,9 @@
     <img src="https://img.shields.io/badge/Manifest-V3-10b981?style=flat-square" alt="Manifest V3" />
     <img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="License" />
   </p>
+  <p>
+    🌐 <b>Official Website & Demo:</b> <a href="https://plan-up-jade.vercel.app"><b>plan-up-jade.vercel.app</b></a>
+  </p>
 </div>
 
 ---
