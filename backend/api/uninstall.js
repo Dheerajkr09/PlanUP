@@ -501,7 +501,7 @@ const getHtmlContent = () => `<!DOCTYPE html>
         <button class="submit-btn" id="submitBtn">Submit Feedback & Help PlanUP</button>
 
         <div class="footer-links">
-          <a href="https://chromewebstore.google.com/detail/planup-youtube-playlist-o/gfjdmoeajoamjbckckfamfcmmbhagpjhl" class="reinstall-btn">Changed your mind? Reinstall PlanUP on Chrome Web Store →</a>
+          <a href="https://chromewebstore.google.com/detail/planup-youtube-playlist-o/gfjdmoeajoamjbkckfamfcmmbhagpjhl" class="reinstall-btn">Changed your mind? Reinstall PlanUP on Chrome Web Store →</a>
         </div>
       </div>
 
@@ -510,7 +510,7 @@ const getHtmlContent = () => `<!DOCTYPE html>
         <div class="thankyou-icon">🚀</div>
         <h2 class="thankyou-title">Thank You for Your Feedback! <span>❤️</span></h2>
         <p class="thankyou-desc">Your thoughts will help us build a more powerful, student-focused study planner. We hope to see you back soon on your learning journey!</p>
-        <a href="https://chromewebstore.google.com/detail/planup-youtube-playlist-o/gfjdmoeajoamjbckckfamfcmmbhagpjhl" class="submit-btn" style="display:inline-block; text-decoration:none; max-width:280px;">Reinstall PlanUP Anytime</a>
+        <a href="https://chromewebstore.google.com/detail/planup-youtube-playlist-o/gfjdmoeajoamjbkckfamfcmmbhagpjhl" class="submit-btn" style="display:inline-block; text-decoration:none; max-width:280px;">Reinstall PlanUP Anytime</a>
       </div>
     </div>
   </div>
