@@ -1,12 +1,13 @@
 <div align="center">
-  <img src="assets/icon128.png" alt="PlanUP Logo" width="100" />
+  <img src="assets/icon128.png" alt="PlanUP Logo" width="96" />
   <h1>PlanUP</h1>
   <p><b>Plan Your Learning. Study Smart on YouTube.</b></p>
-  <p>A privacy-first Chrome extension that transforms overwhelming YouTube playlists and marathon lectures into structured, achievable daily study goals directly inside YouTube.</p>
+  <p>A smart browser extension that turns long YouTube playlists and marathon lectures into structured, achievable daily study goals directly inside YouTube.</p>
 
   <p>
+    <a href="https://chromewebstore.google.com/detail/planup-youtube-playlist-o/gfjdmoeajoamjbkckfamfcmmbhagpjhl"><img src="https://img.shields.io/badge/Chrome_Web_Store-PlanUP-4285F4?style=flat-square&logo=googlechrome&logoColor=white" alt="Chrome Web Store" /></a>
     <a href="https://plan-up-jade.vercel.app"><img src="https://img.shields.io/badge/Website-plan--up-00f0ff?style=flat-square" alt="Website" /></a>
-    <a href="https://plan-up-jade.vercel.app/support"><img src="https://img.shields.io/badge/Support-UPI%20%26%20Contribute-38bdf8?style=flat-square" alt="Support" /></a>
+    <img src="https://img.shields.io/badge/Version-v1.3.3-8a2be2?style=flat-square" alt="Version v1.3.3" />
     <img src="https://img.shields.io/badge/Manifest-V3-10b981?style=flat-square" alt="Manifest V3" />
     <img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="License" />
   </p>
@@ -18,39 +19,37 @@
 
 Self-studying on YouTube is powerful, but long playlists and 6-hour marathon courses are easy to abandon. **PlanUP** embeds directly into YouTube to give you an actionable roadmap:
 
-- **No spreadsheets** or manual note-taking
-- **No tab switching** — track progress right on the video page
-- **No data collection** — all progress stays 100% on your device
+- **Automated Daily Goals:** We calculate daily watch quotas so you always know what to finish today.
+- **In-Page Tracking:** Never switch tabs—track progress right beside your video player.
+- **Stay Consistent:** Keep your momentum alive with daily streaks and XP rewards.
 
 ---
 
 ## ✨ Features
 
-- **In-Page Sidebar Tracker:** Live progress bar, current day target, and next video cues integrated directly into the YouTube playlist sidebar.
-- **Dual Planning Modes:**
-  - **Video-by-Video:** Complete a fixed number of videos each day. Best for short, structured courses.
-  - **Custom Time Schedule:** Set a daily watch budget (e.g., 45 mins/day). Long lectures are automatically divided across days.
-- **One-Shot & Livestream Support:** Plan multi-hour marathon videos and archived livestreams as structured multi-day modules.
-- **Gamified Discipline:** Maintain daily study streaks and earn XP levels as you complete your syllabus.
-- **100% Privacy-First:** Stores all study plans, progress, and streaks in your browser’s local storage (`chrome.storage.local`). Zero analytics, zero trackers.
+- **Smart Playlist Planner:** Break long 40+ video bootcamps into balanced daily milestones based on your preferred pace or target completion date.
+- **One-Shot Marathon Mode:** Tackle multi-hour tutorial videos (>2h) by dividing them into manageable daily timestamps.
+- **In-Page YouTube HUD:** A distraction-free overlay directly on the YouTube video page showing your active goals and progress.
+- **Gamified Discipline:** Maintain fire streaks and level up your learner XP as you complete your syllabus.
+- **Adaptive Scheduling:** Choose between target completion date pacing or fixed daily watch minutes.
 
 ---
 
 ## 🚀 Installation
 
-### Option 1: Chrome Web Store
-> *Currently submitted and under official review.* Once approved, install directly with one click from the Chrome Web Store.
+### Option 1: Chrome Web Store (Recommended)
+
+Install PlanUP directly with one click from the official store:
+
+👉 **[Add PlanUP to Chrome](https://chromewebstore.google.com/detail/planup-youtube-playlist-o/gfjdmoeajoamjbkckfamfcmmbhagpjhl)**
 
 ### Option 2: Load Unpacked (Developer Mode)
 
 1. Clone or download this repository.
-2. Open Google Chrome and navigate to `chrome://extensions`.
+2. Open Google Chrome and go to `chrome://extensions`.
 3. Enable **Developer mode** (toggle in the top-right corner).
-4. Click **Load unpacked** (top-left) and select the `my_project` folder:
-   ```text
-   C:\Users\HP\Desktop\yt plan\project\my_project
-   ```
-5. Open any YouTube playlist and click **Add New Plan** to get started!
+4. Click **Load unpacked** (top-left) and select this project directory.
+5. Open any YouTube playlist or video to start planning!
 
 ---
 
@@ -62,16 +61,14 @@ Self-studying on YouTube is powerful, but long playlists and 6-hour marathon cou
 
 ---
 
-## 💙 Support & Community
+## 💙 Links & Support
 
-PlanUP is an independent, 100% free tool built for students and self-learners. If it helps you study with consistency, consider supporting its development:
-
-- **Contribute / Support:** [Support PlanUP](https://plan-up-jade.vercel.app/support)
+- **Official Chrome Store:** [PlanUP Extension](https://chromewebstore.google.com/detail/planup-youtube-playlist-o/gfjdmoeajoamjbkckfamfcmmbhagpjhl)
 - **Live Landing Page:** [plan-up-jade.vercel.app](https://plan-up-jade.vercel.app)
-- **Privacy Policy:** [Privacy Policy](https://plan-up-jade.vercel.app/privacy-policy)
+- **Support & Contribute:** [Support PlanUP](https://plan-up-jade.vercel.app/support)
 
 ---
 
 ## 📄 License
 
-This project is open-source under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE).
